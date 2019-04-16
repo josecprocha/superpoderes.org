@@ -1,11 +1,38 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
+###############################################################################
+# From github collection of useful .gitignore templates:
+# https://github.com/github/gitignore
+# https://github.com/github/gitignore/blob/master/Laravel.gitignore
+###############################################################################
+
 /vendor
-.env
-.phpunit.result.cache
-Homestead.json
-Homestead.yaml
+/node_modules
 npm-debug.log
 yarn-error.log
+
+# Laravel 5 & Lumen
+/public/storage
+/public/hot
+/storage/*.key
+Homestead.yaml
+Homestead.json
+/.vagrant
+.phpunit.result.cache
+
+###############################################################################
+# .gitignore lines specific for this project
+# Remove multiple environment configuration files, analytics tools files and
+# annoying files that some windows apps creates.
+###############################################################################
+
+# Laravel configuration file for TESTING environment
+.env.testing
+# Laravel configuration file for LOCAL environment
+.env
+# Laravel configuration file for SERVER environment
+.env.production
+
+# Files in Public Folder for Analytics tools
+/public/google*.html
+
+# Google Drive and Mark Folder .ini annoying files
+desktop.ini
