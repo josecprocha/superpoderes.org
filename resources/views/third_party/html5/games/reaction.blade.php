@@ -22,7 +22,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <meta charset="UTF-8">
   <title>Reaction - A Responsive JQuery Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{!! asset('third_party/html5/reaction.css') !!}" />
+  <link rel="stylesheet" href="{!! asset('css/third_party_html5/reaction.css') !!}" />
 </head>
 
 <body>
@@ -167,6 +167,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <a href="javascript:void(0)" class="gameovertext" onclick="restart()">Restart</a>
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-  <script src="{!! asset('third_party/html5/reaction.js') !!}"></script>
+  <script src="{!! asset('js/third_party_html5/reaction.js') !!}"></script>
 </body>
 </html>

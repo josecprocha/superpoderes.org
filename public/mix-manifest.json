@@ -1,10 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/third_party/html5/hanoi.css": "/third_party/html5/hanoi.css",
-    "/third_party/html5/hanoi.js": "/third_party/html5/hanoi.js",
-    "/third_party/html5/cubnpup.js": "/third_party/html5/cubnpup.js",
-    "/third_party/html5/reaction.js": "/third_party/html5/reaction.js",
-    "/third_party/html5/cubnpup.css": "/third_party/html5/cubnpup.css",
-    "/third_party/html5/reaction.css": "/third_party/html5/reaction.css"
+    "/css/third_party_html5/hanoi.css": "/css/third_party_html5/hanoi.css",
+    "/js/third_party_html5/hanoi.js": "/js/third_party_html5/hanoi.js",
+    "/js/third_party_html5/cubnpup.js": "/js/third_party_html5/cubnpup.js",
+    "/js/third_party_html5/reaction.js": "/js/third_party_html5/reaction.js",
+    "/css/third_party_html5/cubnpup.css": "/css/third_party_html5/cubnpup.css",
+    "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css"
 }

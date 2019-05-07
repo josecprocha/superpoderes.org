@@ -25,7 +25,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Coda'>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/sweetalert2/3.0.3/sweetalert2.min.css'>
-  <link rel="stylesheet" href="{!! asset('third_party/html5/hanoi.css') !!}" />
+  <link rel="stylesheet" href="{!! asset('css/third_party_html5/hanoi.css') !!}" />
 </head>
 <body>
   <div id="canves">
@@ -50,6 +50,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
   <script src='https://cdn.jsdelivr.net/sweetalert2/3.0.3/sweetalert2.min.js'></script>
-  <script src="{!! asset('third_party/html5/hanoi.js') !!}"></script>
+  <script src="{!! asset('js/third_party_html5/hanoi.js') !!}"></script>
 </body>
 </html>

@@ -28,11 +28,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <meta charset="UTF-8">
   <title>Cub n Pup - puzzle game demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-      <link rel="stylesheet" href="cubnpup.css">
-
-
+  <link rel="stylesheet" href="{!! asset('css/third_party_html5/cubnpup.css') !!}" />
 </head>
 
 <body>
@@ -786,16 +782,7 @@ instruction: Red links are fixed in place, but rotate with grid
 . . . . * .
 </pre>
 
-
-</div>
-
-
-
-    <script  src="cubnpup.js"></script>
-
-
-
-
+  </div>
+  <script src="{!! asset('js/third_party_html5/cubnpup.js') !!}"></script>
 </body>
-
 </html>

@@ -29,22 +29,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 |
 */
 
-Route::get('/third_party', function () {
+Route::get('third_party', function () {
   return view('third_party.select'); // Beginning
 });
 
-Route::get('/third_party/html5', function () {
+Route::get('third_party/html5', function () {
   return view('third_party.html5.html5select'); // Game Select
 });
 
-Route::get('/third_party/html5/hanoi', function () {
+Route::get('third_party/html5/hanoi', function () {
   return view('third_party.html5.games.hanoi');
 });
 
-Route::get('/third_party/html5/cubnpup', function () {
+Route::get('third_party/html5/cubnpup', function () {
   return view('third_party.html5.games.cubnpup');
 });
 
-Route::get('/third_party/html5/reaction', function () {
+Route::get('third_party/html5/reaction', function () {
   return view('third_party.html5.games.reaction');
 });
