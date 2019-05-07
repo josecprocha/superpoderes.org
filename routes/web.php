@@ -29,18 +29,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 |
 */
 
-Route::get('/test', function () {
-  return view('test.home'); // Beginning
+Route::get('/third_party', function () {
+  return view('third_party.select'); // Beginning
 });
 
-Route::get('/test/html5', function () {
-  return view('test.html5.home'); // Game Select
+Route::get('/third_party/html5', function () {
+  return view('third_party.html5.html5select'); // Game Select
 });
 
-Route::get('/test/html5/hanoi', function () {
-  return view('test.html5.games.hanoi');
+Route::get('/third_party/html5/hanoi', function () {
+  return view('third_party.html5.games.hanoi');
 });
 
-Route::get('/test/html5/cubnpup', function () {
-  return view('test.html5.games.cubnpup');
+Route::get('/third_party/html5/cubnpup', function () {
+  return view('third_party.html5.games.cubnpup');
 });

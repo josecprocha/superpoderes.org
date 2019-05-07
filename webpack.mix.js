@@ -14,8 +14,8 @@ const mix = require('laravel-mix');
 // More info: https://scotch.io/tutorials/using-laravel-mix-with-webpack-for-all-your-assets
 
 mix.js('resources/js/app.js', 'public/js')
-  .copy('resources/js/test_html5_hanoi.js', 'public/test/html5/hanoi.js')
-  .copy('resources/js/test_html5_cubnpup.js', 'public/test/html5/cubnpup.js')
+  .copy('resources/js/third_party_html5_hanoi.js', 'public/third_party/html5/hanoi.js')
+  .copy('resources/js/third_party_html5_cubnpup.js', 'public/third_party/html5/cubnpup.js')
   .sass('resources/sass/app.scss', 'public/css')
-  .sass('resources/sass/test_html5_hanoi.scss', 'public/test/html5/hanoi.css')
-  .copy('resources/sass/test_html5_cubnpup.css', 'public/test/html5/cubnpup.css');
+  .sass('resources/sass/third_party_html5_hanoi.scss', 'public/third_party/html5/hanoi.css')
+  .copy('resources/sass/third_party_html5_cubnpup.css', 'public/third_party/html5/cubnpup.css');

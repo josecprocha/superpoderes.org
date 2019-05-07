@@ -1,8 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/test/html5/hanoi.css": "/test/html5/hanoi.css",
-    "/test/html5/hanoi.js": "/test/html5/hanoi.js",
-    "/test/html5/cubnpup.js": "/test/html5/cubnpup.js",
-    "/test/html5/cubnpup.css": "/test/html5/cubnpup.css"
+    "/third_party/html5/hanoi.css": "/third_party/html5/hanoi.css",
+    "/third_party/html5/hanoi.js": "/third_party/html5/hanoi.js",
+    "/third_party/html5/cubnpup.js": "/third_party/html5/cubnpup.js",
+    "/third_party/html5/cubnpup.css": "/third_party/html5/cubnpup.css"
 }
