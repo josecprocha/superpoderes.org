@@ -16,6 +16,8 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
   .copy('resources/js/third_party_html5_hanoi.js', 'public/third_party/html5/hanoi.js')
   .copy('resources/js/third_party_html5_cubnpup.js', 'public/third_party/html5/cubnpup.js')
+  .copy('resources/js/third_party_html5_reaction.js', 'public/third_party/html5/reaction.js')
   .sass('resources/sass/app.scss', 'public/css')
   .sass('resources/sass/third_party_html5_hanoi.scss', 'public/third_party/html5/hanoi.css')
-  .copy('resources/sass/third_party_html5_cubnpup.css', 'public/third_party/html5/cubnpup.css');
+  .copy('resources/sass/third_party_html5_cubnpup.css', 'public/third_party/html5/cubnpup.css')
+  .copy('resources/sass/third_party_html5_reaction.css', 'public/third_party/html5/reaction.css');

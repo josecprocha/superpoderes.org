@@ -45,6 +45,21 @@
         </div>
       </div>
 
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/reaction.jpg') }}" alt="Reaction image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Cub n Pup</h4>
+          {{--<p class="card-text">Drag cub to star, Drag grid to rotate. This is a proof-of-concept for a game. Basic art, no sound, no options, no polish. But the core game-play is there. It's more of a mobile game, focused on dragging — inspired by Threes.</p>--}}
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/cubnpup') }}" class="card-link">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+
       {{--
       <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
 

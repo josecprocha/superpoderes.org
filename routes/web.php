@@ -44,3 +44,7 @@ Route::get('/third_party/html5/hanoi', function () {
 Route::get('/third_party/html5/cubnpup', function () {
   return view('third_party.html5.games.cubnpup');
 });
+
+Route::get('/third_party/html5/reaction', function () {
+  return view('third_party.html5.games.reaction');
+});
