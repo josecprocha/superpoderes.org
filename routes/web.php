@@ -48,3 +48,11 @@ Route::get('third_party/html5/cubnpup', function () {
 Route::get('third_party/html5/reaction', function () {
   return view('third_party.html5.games.reaction');
 });
+
+Route::get('third_party/html5/crosshatch', function () {
+  return view('third_party.html5.games.crosshatch');
+});
+
+Route::get('third_party/html5/pathfinder', function () {
+  return view('third_party.html5.games.pathfinder');
+});

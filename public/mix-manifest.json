@@ -5,6 +5,10 @@
     "/js/third_party_html5/hanoi.js": "/js/third_party_html5/hanoi.js",
     "/js/third_party_html5/cubnpup.js": "/js/third_party_html5/cubnpup.js",
     "/js/third_party_html5/reaction.js": "/js/third_party_html5/reaction.js",
+    "/js/third_party_html5/crosshatch.js": "/js/third_party_html5/crosshatch.js",
+    "/js/third_party_html5/pathfinder.js": "/js/third_party_html5/pathfinder.js",
     "/css/third_party_html5/cubnpup.css": "/css/third_party_html5/cubnpup.css",
-    "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css"
+    "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css",
+    "/css/third_party_html5/crosshatch.css": "/css/third_party_html5/crosshatch.css",
+    "/css/third_party_html5/pathfinder.css": "/css/third_party_html5/pathfinder.css"
 }
