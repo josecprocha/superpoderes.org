@@ -132,6 +132,19 @@
 
       <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/planetdefense.jpg') }}" alt="JS Planet Defense image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">JS Planet Defense</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/planetdefense') }}" class="card-link">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+
       {{--
       <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
 

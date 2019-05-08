@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*
 |--------------------------------------------------------------------------
-| "test" pages
+| "Third Party" pages
 |--------------------------------------------------------------------------
 |
 | Pages designed to find out what works on the devices children have
@@ -71,4 +71,8 @@ Route::get('third_party/html5/interactivesnake', function () {
 
 Route::get('third_party/html5/tetris', function () {
   return view('third_party.html5.games.tetris');
+});
+
+Route::get('third_party/html5/planetdefense', function () {
+  return view('third_party.html5.games.planetdefense');
 });
