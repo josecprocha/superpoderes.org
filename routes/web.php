@@ -60,3 +60,7 @@ Route::get('third_party/html5/pathfinder', function () {
 Route::get('third_party/html5/platform', function () {
   return view('third_party.html5.games.platform');
 });
+
+Route::get('third_party/html5/savetheprincess', function () {
+  return view('third_party.html5.games.savetheprincess');
+});
