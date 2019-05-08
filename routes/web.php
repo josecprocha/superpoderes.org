@@ -88,3 +88,7 @@ Route::get('third_party/html5/glitchmaze', function () {
 Route::get('third_party/html5/maze', function () {
   return view('third_party.html5.games.maze');
 });
+
+Route::get('third_party/html5/crossthestreet', function () {
+  return view('third_party.html5.games.crossthestreet');
+});
