@@ -76,3 +76,7 @@ Route::get('third_party/html5/tetris', function () {
 Route::get('third_party/html5/planetdefense', function () {
   return view('third_party.html5.games.planetdefense');
 });
+
+Route::get('third_party/html5/asteroids', function () {
+  return view('third_party.html5.games.asteroids');
+});
