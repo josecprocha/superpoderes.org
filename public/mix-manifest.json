@@ -17,6 +17,7 @@
     "/js/third_party_html5/glitchmaze.js": "/js/third_party_html5/glitchmaze.js",
     "/js/third_party_html5/maze.js": "/js/third_party_html5/maze.js",
     "/js/third_party_html5/crossthestreet.js": "/js/third_party_html5/crossthestreet.js",
+    "/js/third_party_html5/crosstotheotherside.js": "/js/third_party_html5/crosstotheotherside.js",
     "/css/third_party_html5/cubnpup.css": "/css/third_party_html5/cubnpup.css",
     "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css",
     "/css/third_party_html5/crosshatch.css": "/css/third_party_html5/crosshatch.css",
@@ -25,5 +26,6 @@
     "/css/third_party_html5/interactivesnake.css": "/css/third_party_html5/interactivesnake.css",
     "/css/third_party_html5/planetdefense.css": "/css/third_party_html5/planetdefense.css",
     "/css/third_party_html5/asteroids.css": "/css/third_party_html5/asteroids.css",
-    "/css/third_party_html5/crossthestreet.css": "/css/third_party_html5/crossthestreet.css"
+    "/css/third_party_html5/crossthestreet.css": "/css/third_party_html5/crossthestreet.css",
+    "/css/third_party_html5/crosstotheotherside.css": "/css/third_party_html5/crosstotheotherside.css"
 }

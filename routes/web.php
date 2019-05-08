@@ -92,3 +92,7 @@ Route::get('third_party/html5/maze', function () {
 Route::get('third_party/html5/crossthestreet', function () {
   return view('third_party.html5.games.crossthestreet');
 });
+
+Route::get('third_party/html5/crosstotheotherside', function () {
+  return view('third_party.html5.games.crosstotheotherside');
+});
