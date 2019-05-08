@@ -56,3 +56,7 @@ Route::get('third_party/html5/crosshatch', function () {
 Route::get('third_party/html5/pathfinder', function () {
   return view('third_party.html5.games.pathfinder');
 });
+
+Route::get('third_party/html5/platform', function () {
+  return view('third_party.html5.games.platform');
+});
