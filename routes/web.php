@@ -80,3 +80,7 @@ Route::get('third_party/html5/planetdefense', function () {
 Route::get('third_party/html5/asteroids', function () {
   return view('third_party.html5.games.asteroids');
 });
+
+Route::get('third_party/html5/glitchmaze', function () {
+  return view('third_party.html5.games.glitchmaze');
+});
