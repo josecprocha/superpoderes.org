@@ -30,7 +30,7 @@
           {{--<p class="card-text">The Tower of Hanoi  is a mathematical game or puzzle. It consists of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.</p>--}}
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/hanoi') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/hanoi') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -41,7 +41,7 @@
           {{--<p class="card-text">Drag cub to star, Drag grid to rotate. This is a proof-of-concept for a game. Basic art, no sound, no options, no polish. But the core game-play is there. It's more of a mobile game, focused on dragging — inspired by Threes.</p>--}}
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/cubnpup') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/cubnpup') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -53,7 +53,7 @@
           <h4 class="card-title">React</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/reaction') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/reaction') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -65,7 +65,7 @@
           <h4 class="card-title">Canvas Crosshatch</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crosshatch') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/crosshatch') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -78,7 +78,7 @@
           <h4 class="card-title">Path Finder</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/pathfinder') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/pathfinder') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -90,7 +90,7 @@
           <h4 class="card-title">Platform</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/platform') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/platform') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -103,7 +103,7 @@
           <h4 class="card-title">Save the Princess</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/savetheprincess') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/savetheprincess') }}" class="btn btn-primary disabled">Play!</a>
         </div>
       </div>
 
@@ -113,7 +113,7 @@
           <h4 class="card-title">Interactive Snake</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/interactivesnake') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/interactivesnake') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -126,7 +126,7 @@
           <h4 class="card-title">Tetris</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/tetris') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/tetris') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -138,7 +138,7 @@
           <h4 class="card-title">Asteroids</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/asteroids') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/asteroids') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -151,7 +151,7 @@
           <h4 class="card-title">Glitch Maze</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/glitchmaze') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/glitchmaze') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -161,7 +161,7 @@
           <h4 class="card-title">Maze</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/maze') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/maze') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -175,7 +175,7 @@
           <h4 class="card-title">Cross the Street</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crossthestreet') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/crossthestreet') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
@@ -185,7 +185,7 @@
           <h4 class="card-title">Cross to the Other Side</h4>
         </div>
         <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crosstotheotherside') }}" class="card-link">Play!</a>
+          <a href="{{ url('/third_party/html5/crosstotheotherside') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
 
