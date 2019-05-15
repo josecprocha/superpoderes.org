@@ -24,14 +24,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 | "Third Party" pages
 |--------------------------------------------------------------------------
 |
-| Pages designed to find out what works on the devices children have
-| available.
+| Page with the third-party content selection menu.
 |
 */
 
 Route::get('third_party', function () {
   return view('third_party.select'); // Beginning
 });
+
+/*
+|--------------------------------------------------------------------------
+| HTML5 games pages
+|--------------------------------------------------------------------------
+|
+| Pages with selected codepen.io games.
+|
+*/
 
 Route::get('third_party/html5', function () {
   return view('third_party.html5.html5select'); // Game Select
@@ -95,4 +103,21 @@ Route::get('third_party/html5/crossthestreet', function () {
 
 Route::get('third_party/html5/crosstotheotherside', function () {
   return view('third_party.html5.games.crosstotheotherside');
+});
+
+/*
+|--------------------------------------------------------------------------
+| HTML5 games pages 2
+|--------------------------------------------------------------------------
+|
+| Pages with more selected codepen.io games.
+|
+*/
+
+Route::get('third_party/html5_2', function () {
+  return view('third_party.html5.html5select2'); // Game Select
+});
+
+Route::get('third_party/html5/swinepeeper', function () {
+  return view('third_party.html5.games.swinepeeper');
 });
