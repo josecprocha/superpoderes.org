@@ -127,7 +127,6 @@ Route::get('third_party/html5/swinepeeper', function () {
   return view('third_party.html5.games.swinepeeper');
 });
 
-
 // Experiments
 
 // Fun
