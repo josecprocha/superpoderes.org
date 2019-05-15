@@ -49,6 +49,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/js/third_party_html5_tetris.js', 'public/js/third_party_html5/tetris.js')
   .copy('resources/js/third_party_html5_swinepeeper.js', 'public/js/third_party_html5/swinepeeper.js')
   .copy('resources/sass/third_party_html5_swinepeeper.css', 'public/css/third_party_html5/swinepeeper.css')
+  .copy('resources/js/third_party_html5_chess.js', 'public/js/third_party_html5/chess.js')
+  .copy('resources/sass/third_party_html5_chess.css', 'public/css/third_party_html5/chess.css')
   // Experiments
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')

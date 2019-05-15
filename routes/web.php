@@ -131,6 +131,10 @@ Route::get('third_party/html5/swinepeeper', function () {
   return view('third_party.html5.games.swinepeeper');
 });
 
+Route::get('third_party/html5/chess', function () {
+  return view('third_party.html5.games.chess');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {
