@@ -51,26 +51,13 @@ Route::get('third_party', function () {
   return view('third_party.select'); // Beginning
 });
 
-/*
-|--------------------------------------------------------------------------
-| HTML5 games pages
-|--------------------------------------------------------------------------
-|
-| Pages with selected codepen.io games.
-|
-*/
+// Selected codepen.io games.
 
 Route::get('third_party/html5', function () {
   return view('third_party.html5.html5select'); // Game Select
 });
 
-Route::get('third_party/html5/hanoi', function () {
-  return view('third_party.html5.games.hanoi');
-});
-
-Route::get('third_party/html5/cubnpup', function () {
-  return view('third_party.html5.games.cubnpup');
-});
+// Mouse
 
 Route::get('third_party/html5/reaction', function () {
   return view('third_party.html5.games.reaction');
@@ -88,20 +75,18 @@ Route::get('third_party/html5/platform', function () {
   return view('third_party.html5.games.platform');
 });
 
+Route::get('third_party/html5/planetdefense', function () {
+  return view('third_party.html5.games.planetdefense');
+});
+
+// Keyboard Action
+
 Route::get('third_party/html5/savetheprincess', function () {
   return view('third_party.html5.games.savetheprincess');
 });
 
 Route::get('third_party/html5/interactivesnake', function () {
   return view('third_party.html5.games.interactivesnake');
-});
-
-Route::get('third_party/html5/tetris', function () {
-  return view('third_party.html5.games.tetris');
-});
-
-Route::get('third_party/html5/planetdefense', function () {
-  return view('third_party.html5.games.planetdefense');
 });
 
 Route::get('third_party/html5/asteroids', function () {
@@ -124,19 +109,29 @@ Route::get('third_party/html5/crosstotheotherside', function () {
   return view('third_party.html5.games.crosstotheotherside');
 });
 
-/*
-|--------------------------------------------------------------------------
-| HTML5 games pages 2
-|--------------------------------------------------------------------------
-|
-| Pages with more selected codepen.io games.
-|
-*/
+// Puzzles
 
-Route::get('third_party/html5_2', function () {
-  return view('third_party.html5.html5select2'); // Game Select
+Route::get('third_party/html5/hanoi', function () {
+  return view('third_party.html5.games.hanoi');
+});
+
+Route::get('third_party/html5/cubnpup', function () {
+  return view('third_party.html5.games.cubnpup');
+});
+
+Route::get('third_party/html5/tetris', function () {
+  return view('third_party.html5.games.tetris');
 });
 
 Route::get('third_party/html5/swinepeeper', function () {
   return view('third_party.html5.games.swinepeeper');
 });
+
+
+// Experiments
+
+// Fun
+
+// Math
+
+// Language
