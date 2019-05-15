@@ -35,5 +35,7 @@
     "/css/third_party_html5/swinepeeper.css": "/css/third_party_html5/swinepeeper.css",
     "/js/third_party_html5/chess.js": "/js/third_party_html5/chess.js",
     "/css/third_party_html5/chess.css": "/css/third_party_html5/chess.css",
-    "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js"
+    "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js",
+    "/js/third_party_html5/crosswordgenerator.js": "/js/third_party_html5/crosswordgenerator.js",
+    "/css/third_party_html5/crosswordgenerator.css": "/css/third_party_html5/crosswordgenerator.css"
 }

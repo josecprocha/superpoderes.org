@@ -146,3 +146,7 @@ Route::get('third_party/html5/planetsquiz', function () {
 // Math
 
 // Language
+
+Route::get('third_party/html5/crosswordgenerator', function () {
+  return view('third_party.html5.games.crosswordgenerator');
+});

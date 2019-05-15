@@ -57,4 +57,6 @@ mix.js('resources/js/app.js', 'public/js')
   // Fun
   // Math
   // Language
+  .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')
+  .copy('resources/sass/third_party_html5_crosswordgenerator.css', 'public/css/third_party_html5/crosswordgenerator.css')
   ;
