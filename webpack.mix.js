@@ -55,6 +55,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
   // Fun
+  .copy('resources/js/third_party_html5_clicksoccer.js', 'public/js/third_party_html5/clicksoccer.js')
+  .copy('resources/sass/third_party_html5_clicksoccer.css', 'public/css/third_party_html5/clicksoccer.css')
   // Math
   // Language
   .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')

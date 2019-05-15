@@ -36,6 +36,8 @@
     "/js/third_party_html5/chess.js": "/js/third_party_html5/chess.js",
     "/css/third_party_html5/chess.css": "/css/third_party_html5/chess.css",
     "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js",
+    "/js/third_party_html5/clicksoccer.js": "/js/third_party_html5/clicksoccer.js",
+    "/css/third_party_html5/clicksoccer.css": "/css/third_party_html5/clicksoccer.css",
     "/js/third_party_html5/crosswordgenerator.js": "/js/third_party_html5/crosswordgenerator.js",
     "/css/third_party_html5/crosswordgenerator.css": "/css/third_party_html5/crosswordgenerator.css"
 }

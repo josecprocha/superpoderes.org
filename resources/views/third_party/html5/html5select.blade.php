@@ -312,6 +312,16 @@
   <div class="container-fluid" id="content">
     <div class="card-deck">
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/clicksoccer.jpg') }}" alt="Click Soccer image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Click Soccer</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/clicksoccer') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
     </div>
   </div>
 

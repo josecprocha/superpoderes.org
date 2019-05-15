@@ -143,6 +143,10 @@ Route::get('third_party/html5/planetsquiz', function () {
 
 // Fun
 
+Route::get('third_party/html5/clicksoccer', function () {
+  return view('third_party.html5.games.clicksoccer');
+});
+
 // Math
 
 // Language
