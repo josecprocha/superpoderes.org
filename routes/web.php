@@ -135,6 +135,10 @@ Route::get('third_party/html5/chess', function () {
   return view('third_party.html5.games.chess');
 });
 
+Route::get('third_party/html5/tictacdoom', function () {
+  return view('third_party.html5.games.tictacdoom');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {
