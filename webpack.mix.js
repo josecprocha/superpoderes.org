@@ -26,6 +26,8 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5_platform.scss', 'public/css/third_party_html5/platform.css')
   .copy('resources/js/third_party_html5_planetdefense.js', 'public/js/third_party_html5/planetdefense.js')
   .copy('resources/sass/third_party_html5_planetdefense.css', 'public/css/third_party_html5/planetdefense.css')
+  .copy('resources/js/third_party_html5_mouseminigame.js', 'public/js/third_party_html5/mouseminigame.js')
+  .copy('resources/sass/third_party_html5_mouseminigame.css', 'public/css/third_party_html5/mouseminigame.css')
   // Keyboard Action
   .copy('resources/js/third_party_html5_savetheprincess.js', 'public/js/third_party_html5/savetheprincess.js')
   .copy('resources/sass/third_party_html5_savetheprincess.css', 'public/css/third_party_html5/savetheprincess.css')
@@ -46,5 +48,11 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_cubnpup.css', 'public/css/third_party_html5/cubnpup.css')
   .copy('resources/js/third_party_html5_tetris.js', 'public/js/third_party_html5/tetris.js')
   .copy('resources/js/third_party_html5_swinepeeper.js', 'public/js/third_party_html5/swinepeeper.js')
-  .copy('resources/sass/third_party_html5_swinepeeper.css', 'public/css/third_party_html5/swinepeeper.css');
-
+  .copy('resources/sass/third_party_html5_swinepeeper.css', 'public/css/third_party_html5/swinepeeper.css')
+  // Experiments
+  .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
+  .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
+  // Fun
+  // Math
+  // Language
+  ;

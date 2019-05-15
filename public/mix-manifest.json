@@ -3,6 +3,7 @@
     "/css/app.css": "/css/app.css",
     "/css/third_party_html5/platform.css": "/css/third_party_html5/platform.css",
     "/css/third_party_html5/hanoi.css": "/css/third_party_html5/hanoi.css",
+    "/css/third_party_html5/planetsquiz.css": "/css/third_party_html5/planetsquiz.css",
     "/js/third_party_html5/reaction.js": "/js/third_party_html5/reaction.js",
     "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css",
     "/js/third_party_html5/crosshatch.js": "/js/third_party_html5/crosshatch.js",
@@ -12,6 +13,8 @@
     "/js/third_party_html5/platform.js": "/js/third_party_html5/platform.js",
     "/js/third_party_html5/planetdefense.js": "/js/third_party_html5/planetdefense.js",
     "/css/third_party_html5/planetdefense.css": "/css/third_party_html5/planetdefense.css",
+    "/js/third_party_html5/mouseminigame.js": "/js/third_party_html5/mouseminigame.js",
+    "/css/third_party_html5/mouseminigame.css": "/css/third_party_html5/mouseminigame.css",
     "/js/third_party_html5/savetheprincess.js": "/js/third_party_html5/savetheprincess.js",
     "/css/third_party_html5/savetheprincess.css": "/css/third_party_html5/savetheprincess.css",
     "/js/third_party_html5/interactivesnake.js": "/js/third_party_html5/interactivesnake.js",
@@ -29,5 +32,6 @@
     "/css/third_party_html5/cubnpup.css": "/css/third_party_html5/cubnpup.css",
     "/js/third_party_html5/tetris.js": "/js/third_party_html5/tetris.js",
     "/js/third_party_html5/swinepeeper.js": "/js/third_party_html5/swinepeeper.js",
-    "/css/third_party_html5/swinepeeper.css": "/css/third_party_html5/swinepeeper.css"
+    "/css/third_party_html5/swinepeeper.css": "/css/third_party_html5/swinepeeper.css",
+    "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js"
 }

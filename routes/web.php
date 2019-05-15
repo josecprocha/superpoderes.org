@@ -79,6 +79,10 @@ Route::get('third_party/html5/planetdefense', function () {
   return view('third_party.html5.games.planetdefense');
 });
 
+Route::get('third_party/html5/mouseminigame', function () {
+  return view('third_party.html5.games.mouseminigame');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
@@ -128,6 +132,10 @@ Route::get('third_party/html5/swinepeeper', function () {
 });
 
 // Experiments
+
+Route::get('third_party/html5/planetsquiz', function () {
+  return view('third_party.html5.games.planetsquiz');
+});
 
 // Fun
 
