@@ -61,6 +61,9 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_clicksoccer.css', 'public/css/third_party_html5/clicksoccer.css')
   .copy('resources/js/third_party_html5_pong.js', 'public/js/third_party_html5/pong.js')
   .copy('resources/sass/third_party_html5_pong.css', 'public/css/third_party_html5/pong.css')
+      // Need to discover a way to @import "compass/css3"
+      // .compass('resources/sass/third_party_html5_tictactoe.scss', 'public/css/third_party_html5/tictactoe.css')
+  .copy('resources/sass/third_party_html5_tictactoe.css', 'public/css/third_party_html5/tictactoe.css')
   // Math
   // Language
   .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')

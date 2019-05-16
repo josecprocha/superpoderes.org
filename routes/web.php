@@ -155,6 +155,10 @@ Route::get('third_party/html5/pong', function () {
   return view('third_party.html5.games.pong');
 });
 
+Route::get('third_party/html5/tictactoe', function () {
+  return view('third_party.html5.games.tictactoe');
+});
+
 // Math
 
 // Language
