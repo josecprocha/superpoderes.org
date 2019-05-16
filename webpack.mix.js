@@ -41,7 +41,7 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_crossthestreet.css', 'public/css/third_party_html5/crossthestreet.css')
   .copy('resources/js/third_party_html5_crosstotheotherside.js', 'public/js/third_party_html5/crosstotheotherside.js')
   .copy('resources/sass/third_party_html5_crosstotheotherside.css', 'public/css/third_party_html5/crosstotheotherside.css')
-  // Puzzles tictacdoom
+  // Puzzles
   .copy('resources/js/third_party_html5_hanoi.js', 'public/js/third_party_html5/hanoi.js')
   .sass('resources/sass/third_party_html5_hanoi.scss', 'public/css/third_party_html5/hanoi.css')
   .copy('resources/js/third_party_html5_cubnpup.js', 'public/js/third_party_html5/cubnpup.js')
@@ -53,6 +53,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_chess.css', 'public/css/third_party_html5/chess.css')
   .copy('resources/js/third_party_html5_tictacdoom.js', 'public/js/third_party_html5/tictacdoom.js')
   .copy('resources/sass/third_party_html5_tictacdoom.css', 'public/css/third_party_html5/tictacdoom.css')
+  .copy('resources/js/third_party_html5_gomoku.js', 'public/js/third_party_html5/gomoku.js')
+  .sass('resources/sass/third_party_html5_gomoku.scss', 'public/css/third_party_html5/gomoku.css')
   // Experiments
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')

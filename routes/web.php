@@ -139,6 +139,10 @@ Route::get('third_party/html5/tictacdoom', function () {
   return view('third_party.html5.games.tictacdoom');
 });
 
+Route::get('third_party/html5/gomoku', function () {
+  return view('third_party.html5.games.gomoku');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {
