@@ -28,6 +28,7 @@ Homestead.json
 .env.testing
 # Laravel configuration file for LOCAL environment
 .env
+.env.local
 # Laravel configuration file for SERVER environment
 .env.production
 
