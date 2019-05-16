@@ -151,6 +151,10 @@ Route::get('third_party/html5/clicksoccer', function () {
   return view('third_party.html5.games.clicksoccer');
 });
 
+Route::get('third_party/html5/pong', function () {
+  return view('third_party.html5.games.pong');
+});
+
 // Math
 
 // Language
