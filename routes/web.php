@@ -183,6 +183,10 @@ Route::get('third_party/html5/matchcolor', function () {
   return view('third_party.html5.games.matchcolor');
 });
 
+Route::get('third_party/html5/paperstonescissors', function () {
+  return view('third_party.html5.games.paperstonescissors');
+});
+
 // Math
 
 // Language

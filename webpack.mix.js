@@ -76,6 +76,8 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5_memory.scss', 'public/css/third_party_html5/memory.css')
   .copy('resources/js/third_party_html5_matchcolor.js', 'public/js/third_party_html5/matchcolor.js')
   .copy('resources/sass/third_party_html5_matchcolor.css', 'public/css/third_party_html5/matchcolor.css')
+  .copy('resources/js/third_party_html5_paperstonescissors.js', 'public/js/third_party_html5/paperstonescissors.js')
+  .copy('resources/sass/third_party_html5_paperstonescissors.css', 'public/css/third_party_html5/paperstonescissors.css')
   // Math
   // Language
   .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')
