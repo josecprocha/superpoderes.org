@@ -163,6 +163,10 @@ Route::get('third_party/html5/tictactoe', function () {
   return view('third_party.html5.games.tictactoe');
 });
 
+Route::get('third_party/html5/checkers', function () {
+  return view('third_party.html5.games.checkers');
+});
+
 // Math
 
 // Language
