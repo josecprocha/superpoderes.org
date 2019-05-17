@@ -55,6 +55,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_tictacdoom.css', 'public/css/third_party_html5/tictacdoom.css')
   .copy('resources/js/third_party_html5_gomoku.js', 'public/js/third_party_html5/gomoku.js')
   .sass('resources/sass/third_party_html5_gomoku.scss', 'public/css/third_party_html5/gomoku.css')
+  .copy('resources/js/third_party_html5_mcdraughts.js', 'public/js/third_party_html5/mcdraughts.js')
+  .copy('resources/sass/third_party_html5_mcdraughts.css', 'public/css/third_party_html5/mcdraughts.css')
   // Experiments
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
@@ -68,6 +70,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_tictactoe.css', 'public/css/third_party_html5/tictactoe.css')
   .copy('resources/js/third_party_html5_checkers.js', 'public/js/third_party_html5/checkers.js')
   .copy('resources/sass/third_party_html5_checkers.css', 'public/css/third_party_html5/checkers.css')
+  .copy('resources/js/third_party_html5_memory.js', 'public/js/third_party_html5/memory.js')
+  .sass('resources/sass/third_party_html5_memory.scss', 'public/css/third_party_html5/memory.css')
   // Math
   // Language
   .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')

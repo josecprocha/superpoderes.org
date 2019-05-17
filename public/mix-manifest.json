@@ -5,6 +5,7 @@
     "/css/third_party_html5/hanoi.css": "/css/third_party_html5/hanoi.css",
     "/css/third_party_html5/gomoku.css": "/css/third_party_html5/gomoku.css",
     "/css/third_party_html5/planetsquiz.css": "/css/third_party_html5/planetsquiz.css",
+    "/css/third_party_html5/memory.css": "/css/third_party_html5/memory.css",
     "/js/third_party_html5/reaction.js": "/js/third_party_html5/reaction.js",
     "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css",
     "/js/third_party_html5/crosshatch.js": "/js/third_party_html5/crosshatch.js",
@@ -39,6 +40,8 @@
     "/js/third_party_html5/tictacdoom.js": "/js/third_party_html5/tictacdoom.js",
     "/css/third_party_html5/tictacdoom.css": "/css/third_party_html5/tictacdoom.css",
     "/js/third_party_html5/gomoku.js": "/js/third_party_html5/gomoku.js",
+    "/js/third_party_html5/mcdraughts.js": "/js/third_party_html5/mcdraughts.js",
+    "/css/third_party_html5/mcdraughts.css": "/css/third_party_html5/mcdraughts.css",
     "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js",
     "/js/third_party_html5/clicksoccer.js": "/js/third_party_html5/clicksoccer.js",
     "/css/third_party_html5/clicksoccer.css": "/css/third_party_html5/clicksoccer.css",
@@ -47,6 +50,7 @@
     "/css/third_party_html5/tictactoe.css": "/css/third_party_html5/tictactoe.css",
     "/js/third_party_html5/checkers.js": "/js/third_party_html5/checkers.js",
     "/css/third_party_html5/checkers.css": "/css/third_party_html5/checkers.css",
+    "/js/third_party_html5/memory.js": "/js/third_party_html5/memory.js",
     "/js/third_party_html5/crosswordgenerator.js": "/js/third_party_html5/crosswordgenerator.js",
     "/css/third_party_html5/crosswordgenerator.css": "/css/third_party_html5/crosswordgenerator.css"
 }

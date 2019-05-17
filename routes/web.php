@@ -143,6 +143,10 @@ Route::get('third_party/html5/gomoku', function () {
   return view('third_party.html5.games.gomoku');
 });
 
+Route::get('third_party/html5/mcdraughts', function () {
+  return view('third_party.html5.games.mcdraughts');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {
@@ -165,6 +169,10 @@ Route::get('third_party/html5/tictactoe', function () {
 
 Route::get('third_party/html5/checkers', function () {
   return view('third_party.html5.games.checkers');
+});
+
+Route::get('third_party/html5/memory', function () {
+  return view('third_party.html5.games.memory');
 });
 
 // Math
