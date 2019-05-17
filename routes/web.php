@@ -147,6 +147,10 @@ Route::get('third_party/html5/mcdraughts', function () {
   return view('third_party.html5.games.mcdraughts');
 });
 
+Route::get('third_party/html5/blockpuzzle', function () {
+  return view('third_party.html5.games.blockpuzzle');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {

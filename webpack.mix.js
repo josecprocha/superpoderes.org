@@ -57,6 +57,8 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5_gomoku.scss', 'public/css/third_party_html5/gomoku.css')
   .copy('resources/js/third_party_html5_mcdraughts.js', 'public/js/third_party_html5/mcdraughts.js')
   .copy('resources/sass/third_party_html5_mcdraughts.css', 'public/css/third_party_html5/mcdraughts.css')
+  .copy('resources/js/third_party_html5_blockpuzzle.js', 'public/js/third_party_html5/blockpuzzle.js')
+  .copy('resources/sass/third_party_html5_blockpuzzle.css', 'public/css/third_party_html5/blockpuzzle.css')
   // Experiments
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
