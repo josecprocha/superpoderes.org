@@ -198,3 +198,7 @@ Route::get('third_party/html5/paperstonescissors', function () {
 Route::get('third_party/html5/crosswordgenerator', function () {
   return view('third_party.html5.games.crosswordgenerator');
 });
+
+Route::get('third_party/html5/wordsearch2', function () {
+  return view('third_party.html5.games.wordsearch2');
+});

@@ -7,6 +7,7 @@
     "/css/third_party_html5/gomoku.css": "/css/third_party_html5/gomoku.css",
     "/css/third_party_html5/planetsquiz.css": "/css/third_party_html5/planetsquiz.css",
     "/css/third_party_html5/memory.css": "/css/third_party_html5/memory.css",
+    "/css/third_party_html5/wordsearch2.css": "/css/third_party_html5/wordsearch2.css",
     "/js/third_party_html5/reaction.js": "/js/third_party_html5/reaction.js",
     "/css/third_party_html5/reaction.css": "/css/third_party_html5/reaction.css",
     "/js/third_party_html5/crosshatch.js": "/js/third_party_html5/crosshatch.js",
@@ -60,5 +61,6 @@
     "/js/third_party_html5/paperstonescissors.js": "/js/third_party_html5/paperstonescissors.js",
     "/css/third_party_html5/paperstonescissors.css": "/css/third_party_html5/paperstonescissors.css",
     "/js/third_party_html5/crosswordgenerator.js": "/js/third_party_html5/crosswordgenerator.js",
-    "/css/third_party_html5/crosswordgenerator.css": "/css/third_party_html5/crosswordgenerator.css"
+    "/css/third_party_html5/crosswordgenerator.css": "/css/third_party_html5/crosswordgenerator.css",
+    "/js/third_party_html5/wordsearch2.js": "/js/third_party_html5/wordsearch2.js"
 }

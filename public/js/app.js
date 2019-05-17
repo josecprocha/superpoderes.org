@@ -49486,10 +49486,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/third_party_html5_wordsearch2.scss":
+/*!***********************************************************!*\
+  !*** ./resources/sass/third_party_html5_wordsearch2.scss ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/third_party_html5_mahjongg.less ./resources/sass/app.scss ./resources/sass/third_party_html5_platform.scss ./resources/sass/third_party_html5_hanoi.scss ./resources/sass/third_party_html5_gomoku.scss ./resources/sass/third_party_html5_planetsquiz.scss ./resources/sass/third_party_html5_memory.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/third_party_html5_mahjongg.less ./resources/sass/app.scss ./resources/sass/third_party_html5_platform.scss ./resources/sass/third_party_html5_hanoi.scss ./resources/sass/third_party_html5_gomoku.scss ./resources/sass/third_party_html5_planetsquiz.scss ./resources/sass/third_party_html5_memory.scss ./resources/sass/third_party_html5_wordsearch2.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49500,7 +49511,8 @@ __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_hanoi.scss */"./resources/sass/third_party_html5_hanoi.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_gomoku.scss */"./resources/sass/third_party_html5_gomoku.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_planetsquiz.scss */"./resources/sass/third_party_html5_planetsquiz.scss");
-module.exports = __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_memory.scss */"./resources/sass/third_party_html5_memory.scss");
+__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_memory.scss */"./resources/sass/third_party_html5_memory.scss");
+module.exports = __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5_wordsearch2.scss */"./resources/sass/third_party_html5_wordsearch2.scss");
 
 
 /***/ })

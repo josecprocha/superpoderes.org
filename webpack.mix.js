@@ -84,4 +84,6 @@ mix.js('resources/js/app.js', 'public/js')
   // Language
   .copy('resources/js/third_party_html5_crosswordgenerator.js', 'public/js/third_party_html5/crosswordgenerator.js')
   .copy('resources/sass/third_party_html5_crosswordgenerator.css', 'public/css/third_party_html5/crosswordgenerator.css')
+  .copy('resources/js/third_party_html5_wordsearch2.js', 'public/js/third_party_html5/wordsearch2.js')
+  .sass('resources/sass/third_party_html5_wordsearch2.scss', 'public/css/third_party_html5/wordsearch2.css')
   ;

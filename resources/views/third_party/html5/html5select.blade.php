@@ -497,6 +497,18 @@
         </div>
       </div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/wordsearch2.jpg') }}" alt="Word Search 2 image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Word Search 2</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/wordsearch2') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+
     </div>
   </div>
 
