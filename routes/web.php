@@ -179,6 +179,10 @@ Route::get('third_party/html5/memory', function () {
   return view('third_party.html5.games.memory');
 });
 
+Route::get('third_party/html5/matchcolor', function () {
+  return view('third_party.html5.games.matchcolor');
+});
+
 // Math
 
 // Language
