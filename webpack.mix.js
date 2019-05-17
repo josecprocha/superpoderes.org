@@ -59,6 +59,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_mcdraughts.css', 'public/css/third_party_html5/mcdraughts.css')
   .copy('resources/js/third_party_html5_blockpuzzle.js', 'public/js/third_party_html5/blockpuzzle.js')
   .copy('resources/sass/third_party_html5_blockpuzzle.css', 'public/css/third_party_html5/blockpuzzle.css')
+  .copy('resources/js/third_party_html5_mahjongg.js', 'public/js/third_party_html5/mahjongg.js')
+  .less('resources/sass/third_party_html5_mahjongg.less', 'public/css/third_party_html5/mahjongg.css')
   // Experiments
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')

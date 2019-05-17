@@ -1,5 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
+    "/css/third_party_html5/mahjongg.css": "/css/third_party_html5/mahjongg.css",
     "/css/app.css": "/css/app.css",
     "/css/third_party_html5/platform.css": "/css/third_party_html5/platform.css",
     "/css/third_party_html5/hanoi.css": "/css/third_party_html5/hanoi.css",
@@ -44,6 +45,7 @@
     "/css/third_party_html5/mcdraughts.css": "/css/third_party_html5/mcdraughts.css",
     "/js/third_party_html5/blockpuzzle.js": "/js/third_party_html5/blockpuzzle.js",
     "/css/third_party_html5/blockpuzzle.css": "/css/third_party_html5/blockpuzzle.css",
+    "/js/third_party_html5/mahjongg.js": "/js/third_party_html5/mahjongg.js",
     "/js/third_party_html5/planetsquiz.js": "/js/third_party_html5/planetsquiz.js",
     "/js/third_party_html5/clicksoccer.js": "/js/third_party_html5/clicksoccer.js",
     "/css/third_party_html5/clicksoccer.css": "/css/third_party_html5/clicksoccer.css",

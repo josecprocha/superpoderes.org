@@ -151,6 +151,10 @@ Route::get('third_party/html5/blockpuzzle', function () {
   return view('third_party.html5.games.blockpuzzle');
 });
 
+Route::get('third_party/html5/mahjongg', function () {
+  return view('third_party.html5.games.mahjongg');
+});
+
 // Experiments
 
 Route::get('third_party/html5/planetsquiz', function () {
