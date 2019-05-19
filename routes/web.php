@@ -113,7 +113,7 @@ Route::get('third_party/html5/crosstotheotherside', function () {
   return view('third_party.html5.games.crosstotheotherside');
 });
 
-// Puzzles
+// Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
   return view('third_party.html5.games.hanoi');
@@ -155,17 +155,29 @@ Route::get('third_party/html5/mahjongg', function () {
   return view('third_party.html5.games.mahjongg');
 });
 
-// Experiments
+Route::get('third_party/html5/bycss', function () {
+  return view('third_party.html5.games.bycss');
+});
+
+// Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
   return view('third_party.html5.games.planetsquiz');
 });
 
-// Fun
+// Esports and Challenge
 
 Route::get('third_party/html5/clicksoccer', function () {
   return view('third_party.html5.games.clicksoccer');
 });
+
+// Memory Championship Training
+
+Route::get('third_party/html5/memory', function () {
+  return view('third_party.html5.games.memory');
+});
+
+// Friends
 
 Route::get('third_party/html5/pong', function () {
   return view('third_party.html5.games.pong');
@@ -179,9 +191,7 @@ Route::get('third_party/html5/checkers', function () {
   return view('third_party.html5.games.checkers');
 });
 
-Route::get('third_party/html5/memory', function () {
-  return view('third_party.html5.games.memory');
-});
+// Fun and Rest
 
 Route::get('third_party/html5/matchcolor', function () {
   return view('third_party.html5.games.matchcolor');
@@ -191,7 +201,7 @@ Route::get('third_party/html5/paperstonescissors', function () {
   return view('third_party.html5.games.paperstonescissors');
 });
 
-// Math
+// Mental Calculation and Math
 
 // Language
 
