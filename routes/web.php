@@ -191,6 +191,10 @@ Route::get('third_party/html5/checkers', function () {
   return view('third_party.html5.games.checkers');
 });
 
+Route::get('third_party/html5/3dhartwigchess', function () {
+  return view('third_party.html5.games.3dhartwigchess');
+});
+
 // Fun and Rest
 
 Route::get('third_party/html5/matchcolor', function () {
