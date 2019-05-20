@@ -113,6 +113,10 @@ Route::get('third_party/html5/crosstotheotherside', function () {
   return view('third_party.html5.games.crosstotheotherside');
 });
 
+Route::get('third_party/html5/asteroidsB', function () {
+  return view('third_party.html5.games.asteroidsB');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {

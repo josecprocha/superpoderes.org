@@ -41,6 +41,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_crossthestreet.css', 'public/css/third_party_html5/crossthestreet.css')
   .copy('resources/js/third_party_html5_crosstotheotherside.js', 'public/js/third_party_html5/crosstotheotherside.js')
   .copy('resources/sass/third_party_html5_crosstotheotherside.css', 'public/css/third_party_html5/crosstotheotherside.css')
+  .copy('resources/js/third_party_html5_asteroidsB.js', 'public/js/third_party_html5/asteroidsB.js')
+  .copy('resources/sass/third_party_html5_asteroidsB.css', 'public/css/third_party_html5/asteroidsB.css')
   // Puzzles and Mind Sport
   .copy('resources/js/third_party_html5_hanoi.js', 'public/js/third_party_html5/hanoi.js')
   .sass('resources/sass/third_party_html5_hanoi.scss', 'public/css/third_party_html5/hanoi.css')
