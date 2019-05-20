@@ -103,6 +103,10 @@ Route::get('third_party/html5/ultimatearcadeshooter', function () {
   return view('third_party.html5.games.ultimatearcadeshooter');
 });
 
+Route::get('third_party/html5/connectingdots', function () {
+  return view('third_party.html5.games.connectingdots');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
