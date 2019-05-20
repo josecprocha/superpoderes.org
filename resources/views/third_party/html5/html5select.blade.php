@@ -26,7 +26,17 @@
   --}}
 
   <br />
-  <h1>Mouse</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1554576575-a4e7b6e8409d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    /* https://unsplash.com/photos/Gcc87LTQXDg */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Mouse</h1>
+    <p class="lead">Games to train fine motor coordination using the mouse.</p>
+  </div>
   <br />
 
 	<div class="container-fluid" id="content">
@@ -197,8 +207,19 @@
   --}}
 
   <br />
-  <h1>Keyboard Action</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1480506132288-68f7705954bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1093&q=80');
+    /* https://unsplash.com/photos/feXpdV001o4 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Keyboard Action</h1>
+    <p class="lead">Action games using the arrow keys and space button to train coordination and intentional use of the keyboard.</p>
+  </div>
   <br />
+
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
@@ -309,8 +330,19 @@
   --}}
 
   <br />
-  <h1>Puzzles and Mind Sport</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1526566661780-1a67ea3c863e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80');
+    /* https://unsplash.com/photos/5siQcvSxCP8 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Puzzles and Mind Sport</h1>
+    <p class="lead">Games to welcome children to the world of Mind Sports.</p>
+  </div>
   <br />
+
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
@@ -456,7 +488,17 @@
   --}}
 
   <br />
-  <h1>Experiments and Science</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1555680202-c86f0e12f086?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    /* https://unsplash.com/photos/H-qqp_Eqaww */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Experiments and Science</h1>
+    <p class="lead">No game, just simulation of equipment that allows children to learn by experimenting.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -483,7 +525,17 @@
   --}}
 
   <br />
-  <h1>Esports and Challenge</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1499551660540-eaf0697882f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80');
+    /* https://unsplash.com/photos/eY9nCR7G0xw */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Esports and Challenge</h1>
+    <p class="lead">Challenging games where you often need to think and act quickly to win challenges.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -510,7 +562,17 @@
   --}}
 
   <br />
-  <h1>Memory Championship Training</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1533478684236-61e1192879e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1049&q=80');
+    /* https://unsplash.com/photos/h2VrZPWLhIU */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Memory Championship Training</h1>
+    <p class="lead">Games where you need to memorize information to win.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -537,7 +599,17 @@
   --}}
 
   <br />
-  <h1>Friends</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1483428400520-675ef69a3bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80');
+    /* https://unsplash.com/photos/vpxeE7s-my4 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Friends</h1>
+    <p class="lead">Games for two people play on the same computer.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -601,7 +673,17 @@
   --}}
 
   <br />
-  <h1>Fun and Rest</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1498196645145-687fd3bfe912?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    /* https://unsplash.com/photos/mUFFI4CkmAI */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Fun and Rest</h1>
+    <p class="lead">No games, only objects to promote fun.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -640,7 +722,17 @@
   --}}
 
   <br />
-  <h1>Mental Calculation and Math</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1502570149819-b2260483d302?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    /* https://unsplash.com/photos/yD5rv8_WzxA */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Mental Calculation and Math</h1>
+    <p class="lead">Games involving numbers, mathematical concepts and mental calculation.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
@@ -657,7 +749,17 @@
   --}}
 
   <br />
-  <h1>Language</h1>
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    /* https://unsplash.com/photos/oCZHIa1D4EU */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Language</h1>
+    <p class="lead">Reading, writing and language games.</p>
+  </div>
   <br />
 
   <div class="container-fluid" id="content">
