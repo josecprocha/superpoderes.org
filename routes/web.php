@@ -87,6 +87,10 @@ Route::get('third_party/html5/powersurge', function () {
   return view('third_party.html5.games.powersurge');
 });
 
+Route::get('third_party/html5/reactionB', function () {
+  return view('third_party.html5.games.reactionB');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
