@@ -83,6 +83,10 @@ Route::get('third_party/html5/mouseminigame', function () {
   return view('third_party.html5.games.mouseminigame');
 });
 
+Route::get('third_party/html5/powersurge', function () {
+  return view('third_party.html5.games.powersurge');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {

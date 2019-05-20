@@ -28,6 +28,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_planetdefense.css', 'public/css/third_party_html5/planetdefense.css')
   .copy('resources/js/third_party_html5_mouseminigame.js', 'public/js/third_party_html5/mouseminigame.js')
   .copy('resources/sass/third_party_html5_mouseminigame.css', 'public/css/third_party_html5/mouseminigame.css')
+  .copy('resources/js/third_party_html5_powersurge.js', 'public/js/third_party_html5/powersurge.js')
+  .copy('resources/sass/third_party_html5_powersurge.css', 'public/css/third_party_html5/powersurge.css')
   // Keyboard Action
   .copy('resources/js/third_party_html5_savetheprincess.js', 'public/js/third_party_html5/savetheprincess.js')
   .copy('resources/sass/third_party_html5_savetheprincess.css', 'public/css/third_party_html5/savetheprincess.css')
