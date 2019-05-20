@@ -91,6 +91,10 @@ Route::get('third_party/html5/reactionB', function () {
   return view('third_party.html5.games.reactionB');
 });
 
+Route::get('third_party/html5/shootthetarget', function () {
+  return view('third_party.html5.games.shootthetarget');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {

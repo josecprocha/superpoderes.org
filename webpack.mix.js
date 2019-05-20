@@ -32,6 +32,7 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_powersurge.css', 'public/css/third_party_html5/powersurge.css')
   .copy('resources/js/third_party_html5_reactionB.js', 'public/js/third_party_html5/reactionB.js')
   .sass('resources/sass/third_party_html5_reactionB.scss', 'public/css/third_party_html5/reactionB.css')
+  .sass('resources/sass/third_party_html5_shootthetarget.scss', 'public/css/third_party_html5/shootthetarget.css')
   // Keyboard Action
   .copy('resources/js/third_party_html5_savetheprincess.js', 'public/js/third_party_html5/savetheprincess.js')
   .copy('resources/sass/third_party_html5_savetheprincess.css', 'public/css/third_party_html5/savetheprincess.css')
