@@ -74,6 +74,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('resources/sass/third_party_html5_bycss.css', 'public/css/third_party_html5/bycss.css')
   .copy('resources/js/third_party_html5_connectingdots.js', 'public/js/third_party_html5/connectingdots.js')
   .copy('resources/sass/third_party_html5_connectingdots.css', 'public/css/third_party_html5/connectingdots.css')
+  .copy('resources/js/third_party_html5_fishing.js', 'public/js/third_party_html5/fishing.js')
+  .copy('resources/sass/third_party_html5_fishing.css', 'public/css/third_party_html5/fishing.css')
   // Experiments and Science
   .copy('resources/js/third_party_html5_planetsquiz.js', 'public/js/third_party_html5/planetsquiz.js')
   .sass('resources/sass/third_party_html5_planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')

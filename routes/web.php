@@ -107,6 +107,10 @@ Route::get('third_party/html5/connectingdots', function () {
   return view('third_party.html5.games.connectingdots');
 });
 
+Route::get('third_party/html5/fishing', function () {
+  return view('third_party.html5.games.fishing');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
