@@ -95,6 +95,14 @@ Route::get('third_party/html5/shootthetarget', function () {
   return view('third_party.html5.games.shootthetarget');
 });
 
+Route::get('third_party/html5/toddlerrainbow', function () {
+  return view('third_party.html5.games.toddlerrainbow');
+});
+
+Route::get('third_party/html5/ultimatearcadeshooter', function () {
+  return view('third_party.html5.games.ultimatearcadeshooter');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
