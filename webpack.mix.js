@@ -30,6 +30,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/platform.scss', 'public/css/third_party_html5/platform.css')
   .sass('resources/sass/third_party_html5/reactionB.scss', 'public/css/third_party_html5/reactionB.css')
   .sass('resources/sass/third_party_html5/shootthetarget.scss', 'public/css/third_party_html5/shootthetarget.css')
+  .sass('resources/sass/third_party_html5/fish.scss', 'public/css/third_party_html5/fish.css')
 
   // Keyboard Action
 

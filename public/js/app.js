@@ -49431,6 +49431,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/third_party_html5/fish.scss":
+/*!****************************************************!*\
+  !*** ./resources/sass/third_party_html5/fish.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/third_party_html5/gomoku.scss":
 /*!******************************************************!*\
   !*** ./resources/sass/third_party_html5/gomoku.scss ***!
@@ -49520,9 +49531,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/less/third_party_html5/mahjongg.less ./resources/sass/app.scss ./resources/sass/third_party_html5/platform.scss ./resources/sass/third_party_html5/reactionB.scss ./resources/sass/third_party_html5/shootthetarget.scss ./resources/sass/third_party_html5/hanoi.scss ./resources/sass/third_party_html5/gomoku.scss ./resources/sass/third_party_html5/planetsquiz.scss ./resources/sass/third_party_html5/memory.scss ./resources/sass/third_party_html5/wordsearch2.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/less/third_party_html5/mahjongg.less ./resources/sass/app.scss ./resources/sass/third_party_html5/platform.scss ./resources/sass/third_party_html5/reactionB.scss ./resources/sass/third_party_html5/shootthetarget.scss ./resources/sass/third_party_html5/fish.scss ./resources/sass/third_party_html5/hanoi.scss ./resources/sass/third_party_html5/gomoku.scss ./resources/sass/third_party_html5/planetsquiz.scss ./resources/sass/third_party_html5/memory.scss ./resources/sass/third_party_html5/wordsearch2.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49532,6 +49543,7 @@ __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\platform.scss */"./resources/sass/third_party_html5/platform.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\reactionB.scss */"./resources/sass/third_party_html5/reactionB.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\shootthetarget.scss */"./resources/sass/third_party_html5/shootthetarget.scss");
+__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\fish.scss */"./resources/sass/third_party_html5/fish.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\hanoi.scss */"./resources/sass/third_party_html5/hanoi.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\gomoku.scss */"./resources/sass/third_party_html5/gomoku.scss");
 __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\planetsquiz.scss */"./resources/sass/third_party_html5/planetsquiz.scss");
