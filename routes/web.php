@@ -115,6 +115,10 @@ Route::get('third_party/html5/fish', function () {
   return view('third_party.html5.games.fish');
 });
 
+Route::get('third_party/html5/vdasteroids', function () {
+  return view('third_party.html5.games.vdasteroids');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
