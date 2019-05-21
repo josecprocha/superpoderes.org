@@ -33,6 +33,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/fish.scss', 'public/css/third_party_html5/fish.css')
   .sass('resources/sass/third_party_html5/vdasteroids.sass', 'public/css/third_party_html5/vdasteroids.css')
   .sass('resources/sass/third_party_html5/breakout.scss', 'public/css/third_party_html5/breakout.css')
+  .sass('resources/sass/third_party_html5/whackamoleB.scss', 'public/css/third_party_html5/whackamoleB.css')
 
   // Keyboard Action
 

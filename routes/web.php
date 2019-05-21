@@ -127,6 +127,14 @@ Route::get('third_party/html5/toddlercolor', function () {
   return view('third_party.html5.games.toddlercolor');
 });
 
+Route::get('third_party/html5/whackamole', function () {
+  return view('third_party.html5.games.whackamole');
+});
+
+Route::get('third_party/html5/whackamoleB', function () {
+  return view('third_party.html5.games.whackamoleB');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
