@@ -267,6 +267,10 @@ Route::get('third_party/html5/bgmath', function () {
   return view('third_party.html5.games.bgmath');
 });
 
+Route::get('third_party/html5/mathemat1cs', function () {
+  return view('third_party.html5.games.mathemat1cs');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {
