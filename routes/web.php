@@ -119,6 +119,10 @@ Route::get('third_party/html5/vdasteroids', function () {
   return view('third_party.html5.games.vdasteroids');
 });
 
+Route::get('third_party/html5/breakout', function () {
+  return view('third_party.html5.games.breakout');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
