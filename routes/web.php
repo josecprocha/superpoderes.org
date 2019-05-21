@@ -255,6 +255,10 @@ Route::get('third_party/html5/paperstonescissors', function () {
 
 // Mental Calculation and Math
 
+Route::get('third_party/html5/mathness', function () {
+  return view('third_party.html5.games.mathness');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {
