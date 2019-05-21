@@ -259,6 +259,14 @@ Route::get('third_party/html5/mathness', function () {
   return view('third_party.html5.games.mathness');
 });
 
+Route::get('third_party/html5/arithmetic', function () {
+  return view('third_party.html5.games.arithmetic');
+});
+
+Route::get('third_party/html5/bgmath', function () {
+  return view('third_party.html5.games.bgmath');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {

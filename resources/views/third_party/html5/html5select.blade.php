@@ -797,6 +797,27 @@
         </div>
       </div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/arithmetic.jpg') }}" alt="Arithmetic image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Arithmetic</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/arithmetic') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/bgmath.jpg') }}" alt="Battlestar Galactica Math image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Battlestar Galactica Math</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/bgmath') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
 
     </div>
   </div>

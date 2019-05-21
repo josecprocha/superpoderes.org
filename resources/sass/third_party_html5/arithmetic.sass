@@ -1,0 +1,76 @@
+// $bg-color: linear-gradient(315deg, rgb(147,216,125), rgb(21,251,247))
+// $bg-color: linear-gradient(to bottom, rgb(227,98,76), rgb(156,57,46))
+$bg-color: #00be9c
+
+*,
+*::after,
+*::before
+  box-sizing: border-box
+
+html
+  height: 100%
+
+body
+  background: $bg-color
+  color: #fff
+  font-family: Oswald, "Segoe UI", Helvetica, Arial, sans-serif
+  font-weight: 300
+  height: 100%
+  line-height: 1.5
+  margin: 0
+  overflow: hidden
+  position: relative
+  text-align: center
+  text-shadow: .3vw .5vw rgba(black, .3)
+  width: 100%
+  -webkit-font-smoothing: antialiased
+
+h3
+  font-family: Bangers
+  font-size: 5vw
+  font-weight: 100
+
+ul
+  display: flex
+  align-items: center
+  justify-content: center
+  list-style: none outside none
+  margin: 0
+  padding: 0
+
+li
+  background: rgba(black, .3)
+  border: 0.15em solid rgba(black, .3)
+  border-radius: 0.2em
+  color: #fff
+  cursor: pointer
+  font-family: Bangers
+  font-size: 5vw
+  margin: .5em
+  padding: .3em
+  transition: .1s all ease-in-out
+  width: 20vw
+
+  &:hover
+    transform: scale(1.1)
+.selected
+  background: #94a8cc
+.correct
+  background: #83c057
+.wrong
+  background: #d44248
+  cursor: not-allowed
+
+p
+  font-size: 3vw
+
+
+.blinking
+  animation: blink .8s ease-out infinite
+  display: inline-block
+
+@keyframes blink
+  0%
+    transform: scale(1)
+  90%
+    transform: scale(1.3)
