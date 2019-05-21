@@ -123,6 +123,10 @@ Route::get('third_party/html5/breakout', function () {
   return view('third_party.html5.games.breakout');
 });
 
+Route::get('third_party/html5/toddlercolor', function () {
+  return view('third_party.html5.games.toddlercolor');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {

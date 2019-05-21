@@ -152,7 +152,7 @@
       <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
         <img class="card-img-top" src="{{ url('/img/third_party_html5/toddlerrainbow.jpg') }}" alt="Toddler Rainbow image." style="width:128px;height:128px;">
         <div class="card-body">
-          <h4 class="card-title">Toddler Rainbow the target!!</h4>
+          <h4 class="card-title">Toddler Rainbow</h4>
         </div>
         <div class="card-footer bg-transparent">
           <a href="{{ url('/third_party/html5/toddlerrainbow') }}" class="btn btn btn-primary">Play!</a>
@@ -233,6 +233,17 @@
 
       <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
       <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
+
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/toddlercolor.jpg') }}" alt="Toddler Color Game image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Toddler Color Game</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/toddlercolor') }}" class="btn btn btn-primary">Play!</a>
+        </div>
+      </div>
+
 
     </div>
   </div>
