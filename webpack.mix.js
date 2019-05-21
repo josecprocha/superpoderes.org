@@ -11,7 +11,16 @@ const mix = require('laravel-mix');
 |
 */
 
-// More info: https://scotch.io/tutorials/using-laravel-mix-with-webpack-for-all-your-assets
+/*
+|--------------------------------------------------------------------------
+| Mix Folder Structure
+|--------------------------------------------------------------------------
+|
+| "resources": Source files to be compiled.
+| "src": folders we want copied "as is" to the public directory.
+| More info: https://scotch.io/tutorials/using-laravel-mix-with-webpack-for-all-your-assets
+|
+*/
 
 mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/app.scss', 'public/css')
