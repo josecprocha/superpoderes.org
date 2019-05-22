@@ -221,10 +221,18 @@ Route::get('third_party/html5/planetsquiz', function () {
   return view('third_party.html5.games.planetsquiz');
 });
 
+Route::get('third_party/html5/lunarlander', function () {
+  return view('third_party.html5.games.lunarlander');
+});
+
 // Art
 
 Route::get('third_party/html5/drumkit', function () {
   return view('third_party.html5.games.drumkit');
+});
+
+Route::get('third_party/html5/pianokeyboard', function () {
+  return view('third_party.html5.games.pianokeyboard');
 });
 
 // Esports and Challenge

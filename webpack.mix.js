@@ -44,8 +44,10 @@ mix.js('resources/js/app.js', 'public/js')
 
   // Experiments and Science
   .sass('resources/sass/third_party_html5/planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
+  .sass('resources/sass/third_party_html5/lunarlander.scss', 'public/css/third_party_html5/lunarlander.css')
 
   // Art
+  .sass('resources/sass/third_party_html5/pianokeyboard.scss', 'public/css/third_party_html5/pianokeyboard.css')
 
   // Esports and Challenge
 

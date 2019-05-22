@@ -584,6 +584,18 @@
         </div>
       </div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/lunarlander.jpg') }}" alt="Lunar Lander image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Lunar Lander</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/lunarlander') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+
     </div>
   </div>
 
@@ -620,6 +632,18 @@
           <a href="{{ url('/third_party/html5/drumkit') }}" class="btn btn-primary">Play!</a>
         </div>
       </div>
+
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/pianokeyboard.jpg') }}" alt="Piano Keyboard image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Piano Keyboard</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/pianokeyboard') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
 
     </div>
   </div>
@@ -677,8 +701,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Memory Championship Training</h1>
-    <p class="lead">Games where you need to memorize information to win.</p>
+    <h1 class="display-4">Memory Training</h1>
+    <p class="lead">Games where you need to memorize information to win. For Memory Championship.</p>
   </div>
   <br />
 
