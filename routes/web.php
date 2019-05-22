@@ -221,6 +221,8 @@ Route::get('third_party/html5/planetsquiz', function () {
   return view('third_party.html5.games.planetsquiz');
 });
 
+// Art
+
 Route::get('third_party/html5/drumkit', function () {
   return view('third_party.html5.games.drumkit');
 });

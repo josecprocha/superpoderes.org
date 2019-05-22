@@ -45,6 +45,8 @@ mix.js('resources/js/app.js', 'public/js')
   // Experiments and Science
   .sass('resources/sass/third_party_html5/planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
 
+  // Art
+
   // Esports and Challenge
 
   // Memory Championship Training

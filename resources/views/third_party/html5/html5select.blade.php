@@ -584,6 +584,33 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  {{--
+    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
+    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+  --}}
+
+  <br />
+  <div class="jumbotron text-white rounded bg-dark"
+    style="
+    background-image: url('https://images.unsplash.com/photo-1452802447250-470a88ac82bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2048&q=80');
+    /* https://unsplash.com/photos/f6Xv0xs9JWg */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    ">
+    <h1 class="display-4">Art</h1>
+    <p class="lead">Music, painting and animation.</p>
+  </div>
+  <br />
+
+  <div class="container-fluid" id="content">
+    <div class="card-deck">
+
       <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
         <img class="card-img-top" src="{{ url('/img/third_party_html5/drumkit.jpg') }}" alt="JavaScript Drum Kit image." style="width:128px;height:128px;">
         <div class="card-body">
