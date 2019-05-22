@@ -239,6 +239,10 @@ Route::get('third_party/html5/pianokeyboard', function () {
   return view('third_party.html5.games.pianokeyboard');
 });
 
+Route::get('third_party/html5/animatedguitar', function () {
+  return view('third_party.html5.games.animatedguitar');
+});
+
 // Esports and Challenge
 
 Route::get('third_party/html5/clicksoccer', function () {
