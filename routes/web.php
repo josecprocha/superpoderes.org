@@ -135,6 +135,10 @@ Route::get('third_party/html5/whackamoleB', function () {
   return view('third_party.html5.games.whackamoleB');
 });
 
+Route::get('third_party/html5/paintbynumber', function () {
+  return view('third_party.html5.games.paintbynumber');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {
