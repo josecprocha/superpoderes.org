@@ -36,6 +36,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/whackamoleB.scss', 'public/css/third_party_html5/whackamoleB.css')
 
   // Keyboard Action
+  .sass('resources/sass/third_party_html5/cybersnake.scss', 'public/css/third_party_html5/cybersnake.css')
 
   // Puzzles and Mind Sport
   .sass('resources/sass/third_party_html5/hanoi.scss', 'public/css/third_party_html5/hanoi.css')
