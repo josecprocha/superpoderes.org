@@ -221,6 +221,10 @@ Route::get('third_party/html5/planetsquiz', function () {
   return view('third_party.html5.games.planetsquiz');
 });
 
+Route::get('third_party/html5/drumkit', function () {
+  return view('third_party.html5.games.drumkit');
+});
+
 // Esports and Challenge
 
 Route::get('third_party/html5/clicksoccer', function () {
