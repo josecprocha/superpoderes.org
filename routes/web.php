@@ -193,6 +193,10 @@ Route::get('third_party/html5/isometricsnake', function () {
   return view('third_party.html5.games.isometricsnake');
 });
 
+Route::get('third_party/html5/snakeC', function () {
+  return view('third_party.html5.games.snakeC');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
