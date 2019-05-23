@@ -181,6 +181,10 @@ Route::get('third_party/html5/snake', function () {
   return view('third_party.html5.games.snake');
 });
 
+Route::get('third_party/html5/snakeB', function () {
+  return view('third_party.html5.games.snakeB');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
