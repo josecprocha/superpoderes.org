@@ -30,48 +30,40 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <body>
 
-  <p id="log">
-  Log</p>
-<div id="opponent">
-  <div id="points">Show me what you can do.</div>
-  <div id="avatar"></div>
-</div>
-<div id="info">
-  <img id="guida" src="https://i.itsosticky.com/125r2ix.png" alt="">
-  <p>Thread must always move diagonally on the front side and vertically on the back, and to adiacent points only. </p>
-</div>
-<div class="controls">
-  <div class="colors">
-    <a class="white active"></a>
-    <a class="black"></a>
-    <a class="red"></a>
-    <a class="yellow"></a>
-    <a class="blue"></a>
+  <p id="log">Log</p>
+  <div id="opponent">
+    <div id="points">Show me what you can do.</div>
+    <div id="avatar"></div>
   </div>
-  <button id="endPath">Cut thread</button>
-  <button id="reset">Delete all</button>
+  <div id="info">
+    <img id="guida" src="https://i.itsosticky.com/125r2ix.png" alt="">
+    <p>Thread must always move diagonally on the front side and vertically on the back, and to adiacent points only. </p>
+  </div>
+  <div class="controls">
+    <div class="colors">
+      <a class="white active"></a>
+      <a class="black"></a>
+      <a class="red"></a>
+      <a class="yellow"></a>
+      <a class="blue"></a>
+    </div>
+    <button id="endPath">Cut thread</button>
+    <button id="reset">Delete all</button>
 
-  <!-- TODO: repeat drawing -->
-  <!--
-  <button id="replay" style="display: none;">Repeat drawing</button>
-  -->
-</div>
-<div id="cursor"></div>
+    <!-- TODO: repeat drawing -->
+    <!--
+    <button id="replay" style="display: none;">Repeat drawing</button>
+    -->
+  </div>
+  <div id="cursor"></div>
+  <img src="https://i.itsosticky.com/vux1e5.png" id="disegno">
+  <canvas id="filo" width="800" height="800"></canvas>
+  <canvas id="myCanvas" width="800" height="800"></canvas>
+  <div id="bg"></div>
 
-<img src="https://i.itsosticky.com/vux1e5.png" id="disegno">
-
-<canvas id="filo" width="800" height="800"></canvas>
-<canvas id="myCanvas" width="800" height="800"></canvas>
-<div id="bg"></div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-
-
-
-    <script src="{!! asset('js/third_party_html5/crosshatch.js') !!}"></script>
-
-
-
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script> --}}
+  <script src="{{url('node_modules/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{!! asset('js/third_party_html5/crosshatch.js') !!}"></script>
 
 </body>
-
 </html>

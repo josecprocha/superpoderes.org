@@ -23,12 +23,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Simple Canvas Game</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/crosstotheotherside.css') !!}" />
 </head>
 
 <body>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  {{-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> --}}
+  <script src="{{url('node_modules/jquery/dist/jquery.min.js')}}"></script>
   <script src="{!! asset('js/third_party_html5/crosstotheotherside.js') !!}"></script>
 </body>
 </html>

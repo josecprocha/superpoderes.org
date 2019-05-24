@@ -21,12 +21,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Connecting dots</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/connectingdots.css') !!}" />
 </head>
 
 <body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js'></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js'></script> --}}
+  <script src="{{url('node_modules/p5/lib/p5.min.js')}}"></script>
   <script src="{!! asset('js/third_party_html5/connectingdots.js') !!}"></script>
 </body>
 </html>

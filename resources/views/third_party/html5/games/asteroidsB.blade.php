@@ -29,7 +29,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Playable Canvas Asteroids</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/asteroidsB.css') !!}" />
 </head>
 
