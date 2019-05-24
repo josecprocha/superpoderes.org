@@ -483,6 +483,16 @@
       <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
       <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/savethesemicolon.jpg') }}" alt="Save the Semicolon image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Save the Semicolon</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/savethesemicolon') }}" class="btn btn-primary">Play!</a>
+        </div>
+      </div>
+
     </div>
   </div>
 

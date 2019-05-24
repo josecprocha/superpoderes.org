@@ -201,6 +201,10 @@ Route::get('third_party/html5/platformengine', function () {
   return view('third_party.html5.games.platformengine');
 });
 
+Route::get('third_party/html5/savethesemicolon', function () {
+  return view('third_party.html5.games.savethesemicolon');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
