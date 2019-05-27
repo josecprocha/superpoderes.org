@@ -205,6 +205,10 @@ Route::get('third_party/html5/savethesemicolon', function () {
   return view('third_party.html5.games.savethesemicolon');
 });
 
+Route::get('third_party/html5/destroythosemeteors', function () {
+  return view('third_party.html5.games.destroythosemeteors');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
