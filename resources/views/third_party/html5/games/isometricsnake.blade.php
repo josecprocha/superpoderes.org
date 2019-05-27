@@ -43,7 +43,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <div id="points">0</div>
   <div id="info">Press "space" key to start</div>
 
-  <script src='https://nosir.github.io/obelisk.js/dist/obelisk.min.1.0.2.js'></script>
+  {{-- <script src='https://nosir.github.io/obelisk.js/dist/obelisk.min.1.0.2.js'></script> --}}
+  <script src="{!! asset('js/obelisk.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/isometricsnake.js') !!}"></script>
 
 </body>

@@ -23,7 +23,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   {{--
   Scripts found only externaly:
-  https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
   https://s.cdpn.io/1137/hartwig.libs.js
   https://s.cdpn.io/1137/hartwig.app.js
   --}}
@@ -38,7 +37,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <link rel="apple-touch-icon" href="https://raw.github.com/juliangarnier/3D-Hartwig-chess-set/master/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/reset.css') !!}">
   <style>
 /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
 /*
@@ -1352,7 +1352,8 @@ tfoot th:last-child   { background-position: right bottom; background-size: 332%
   .loading #overlay { background-position: 50% 80%; }
 }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> --}}
+  <script src="{!! asset('js/prefixfree.min.js') !!}"></script>
 
 </head>
 

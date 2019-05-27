@@ -23,6 +23,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
+{{--
+Scripts found only externaly:
+https://fonts.googleapis.com/css?family=Press+Start+2P
+--}}
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -30,7 +35,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <meta charset="UTF-8">
   <title>🎯 🔫   Shoot the target!! HTML/CSS only game - Codepen Meetup 2017 - Alicante Frontend</title>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/normalize.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/shootthetarget.css') !!}" />
 </head>
 

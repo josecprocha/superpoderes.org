@@ -21,7 +21,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>MATHEMAT1CS</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+  {{-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'> --}}
+  <link rel="stylesheet" href="{!! asset('css/animate.min.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/mathemat1cs.css') !!}" />
 </head>
 
@@ -29,8 +30,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   @include('third_party.html5.games.mathemat1cs_angular')
 
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
-  <script src='https://siddii.github.io/angular-timer/dist/assets/js/angular-timer-all.min.js'></script>
+  {{-- <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script> --}}
+  <script src="{!! asset('js/angular.min.js') !!}"></script>
+  {{-- <script src='https://siddii.github.io/angular-timer/dist/assets/js/angular-timer-all.min.js'></script> --}}
+  <script src="{!! asset('js/angular-timer.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/mathemat1cs.js') !!}"></script>
 
 </body>

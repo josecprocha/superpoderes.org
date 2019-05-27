@@ -38,7 +38,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </div>
   </div>
 
-  <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script>
+  {{-- <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js'></script> --}}
+  <script src="{!! asset('js/angular.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/mahjongg.js') !!}"></script>
 
 </body>

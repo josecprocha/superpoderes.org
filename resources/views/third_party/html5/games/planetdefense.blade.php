@@ -24,7 +24,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>JS Planet defense game</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/reset.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/planetdefense.css') !!}" />
 </head>
 

@@ -62,7 +62,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <div id="bg"></div>
 
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script> --}}
-  <script src="{{url('node_modules/jquery/dist/jquery.min.js')}}"></script>
+  <script src="{!! asset('js/jquery.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/crosshatch.js') !!}"></script>
 
 </body>

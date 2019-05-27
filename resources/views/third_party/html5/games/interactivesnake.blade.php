@@ -13,13 +13,19 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
+{{--
+Scripts found only externaly:
+https://fonts.googleapis.com/css?family=Montserrat:400,600,700
+--}}
+
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>interactive snake</title>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+  {{--  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'> --}}
+  <link rel="stylesheet" href="{!! asset('css/all.css') !!}" />
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:400,600,700'>
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/interactivesnake.css') !!}" />
 </head>
@@ -50,10 +56,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       </div>
     </div>
   </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> --}}
+  <script src="{!! asset('js/jquery.min.js') !!}"></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.min.js'></script> --}}
+  <script src="{!! asset('js/howler.min.js') !!}"></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.min.js'></script> --}}
+  <script src="{!! asset('js/dat.gui.min.js') !!}"></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script> --}}
+  <script src="{!! asset('js/hammer.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/interactivesnake.js') !!}"></script>
 </body>
 </html>

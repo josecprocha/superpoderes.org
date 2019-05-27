@@ -23,7 +23,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Play Pong!</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/normalize.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/pong.css') !!}" />
 </head>
 
@@ -41,7 +42,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   -->
 
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  {{-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> --}}
+  <script src="{!! asset('js/jquery.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/pong.js') !!}"></script>
 
 </body>

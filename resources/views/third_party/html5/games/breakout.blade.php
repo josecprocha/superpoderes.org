@@ -16,7 +16,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 {{--
 Scripts found only externaly:
 https://fonts.googleapis.com/css?family=Press+Start+2P
-https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
 --}}
 
 <!DOCTYPE html>
@@ -26,7 +25,8 @@ https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css
   <meta charset="UTF-8">
   <title>Breakout</title>
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/reset.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/breakout.css') !!}" />
 </head>
 

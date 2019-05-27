@@ -23,8 +23,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Snake Game - CSS Renderer</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script> --}}
+  <script src="{!! asset('js/modernizr.js') !!}"></script>
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/reset.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/snake.css') !!}" />
 </head>
 

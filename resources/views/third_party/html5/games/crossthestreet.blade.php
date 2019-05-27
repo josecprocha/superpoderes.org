@@ -20,20 +20,16 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
-{{--
-Scripts found only externaly:
-https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js
-https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
---}}
-
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>Daily Pen #023: Cross The Street game</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script> --}}
+  <script src="{!! asset('js/modernizr.js') !!}" type="text/javascript"></script>
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/normalize.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/crossthestreet.css') !!}" />
 </head>
 
@@ -44,7 +40,7 @@ https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
   Made in a afternoon.
   -->
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/sketch.js/1.0.0/sketch.min.js'></script> --}}
-  <script src="{{url('node_modules/sketch-js/js/sketch.min.js')}}"></script>
+  <script src="{!! asset('js/sketch.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/crossthestreet.js') !!}"></script>
 </body>
 </html>

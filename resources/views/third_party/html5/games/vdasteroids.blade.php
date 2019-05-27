@@ -143,7 +143,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   <audio class='wow' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/wow.mp3' type='audio/mp3'></audio>
   <audio class='good' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/455279/good.mp3' type='audio/mp3'></audio>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script> --}}
+  <script src="{!! asset('js/jquery.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/vdasteroids.js') !!}"></script>
 
 </body>

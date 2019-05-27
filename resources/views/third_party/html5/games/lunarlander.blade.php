@@ -25,13 +25,25 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
+{{--
+Scripts that works only in older versions:
+https://cdn.rawgit.com/schteppe/poly-decomp.js/v0.1.0/build/decomp.min.js
+https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.9/pixi.js
+https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.js
+https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.3.2/gl-matrix-min.js
+Scripts found only externaly:
+https://codepen.io/clindsey/pen/OXKvxr.js
+https://codepen.io/clindsey/pen/pgBZBj.js
+--}}
+
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>lunar-lander-0.1.0</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/normalize.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/lunarlander.css') !!}" />
 </head>
 
@@ -54,12 +66,22 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <span id="right" class="key right">▶</span>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.1.1/chroma.min.js"></script>
+  {{-- Only old versions works of these libraries, in cdn, works --}}
+
   <script src="https://cdn.rawgit.com/schteppe/poly-decomp.js/v0.1.0/build/decomp.min.js"></script>
+  {{-- <script src="{!! asset('js/decomp.min.js') !!}"></script> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.9/pixi.js"></script>
+  {{-- <script src="{!! asset('js/pixi.js') !!}"></script> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.10.0/matter.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/lib/alea.js"></script>
+  {{-- <script src="{!! asset('js/matter.js') !!}"></script> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.3.2/gl-matrix-min.js"></script>
+  {{-- <script src="{!! asset('js/gl-matrix-min.js') !!}"></script> --}}
+
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.1.1/chroma.min.js"></script> --}}
+  <script src="{!! asset('js/chroma.min.js') !!}"></script>
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.2/lib/alea.js"></script> --}}
+  <script src="{!! asset('js/alea.js') !!}"></script>
+
   <script src="https://codepen.io/clindsey/pen/OXKvxr.js"></script> <!-- matter-engine-3.0.0 -->
   <script src="https://codepen.io/clindsey/pen/pgBZBj.js"></script> <!-- pixi render -->
   <script>
@@ -73,7 +95,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           requestAnimationFrame(loop)
         });
       };
-      script.src='//rawgit.com/mrdoob/stats.js/master/build/stats.min.js';
+      // script.src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js';
+      script.src='{!! asset('js/stats.min.js') !!}';
       document.head.appendChild(script);
     })()
   </script>

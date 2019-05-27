@@ -18,8 +18,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 {{--
 Scripts found only externaly:
-https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
-https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js
 https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js
 --}}
 
@@ -29,7 +27,8 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js
 <head>
   <meta charset="UTF-8">
   <title>SVG Animated Guitar (Play Me!) 🎸</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> --}}
+  <link rel="stylesheet" href="{!! asset('css/normalize.css') !!}" />
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/animatedguitar.css') !!}" />
 </head>
 
@@ -611,7 +610,8 @@ https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js
     <a target="blank"  href="https://twitter.com/iamjoshellis/"><i class="fa fa-twitter"></i></a>
   </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js'></script> --}}
+  <script src="{!! asset('js/TimelineMax.min.js') !!}"></script>
   <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/MorphSVGPlugin.min.js'></script>
   <script src="{!! asset('js/third_party_html5/animatedguitar.js') !!}"></script>
 

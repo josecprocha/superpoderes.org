@@ -20,6 +20,14 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
+{{--
+Scripts found only externaly:
+https://fonts.googleapis.com/css?family=Sniglet:400,800
+Scripts only work as cdn:
+http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js
+https://s3-us-west-2.amazonaws.com/s.cdpn.io/187048/jquery.mobile.custom.min.js
+--}}
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -365,11 +373,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <div class="boardExit questionBoard"></div>
   </div>
 </body>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
+{{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script> --}}
+<script src="{!! asset('js/TweenMax.min.js') !!}"></script>
+{{-- <script src='https://code.createjs.com/soundjs-0.6.0.min.js'></script> --}}
+<script src="{!! asset('js/soundjs.min.js') !!}"></script>
+{{-- <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/187048/jquery.jplayer.min.js'></script> --}}
+<script src="{!! asset('js/jquery.jplayer.min.js') !!}"></script>
+
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+{{-- <script src="{!! asset('js/jquery.min.js') !!}"></script> --}}
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/187048/jquery.mobile.custom.min.js'></script>
-<script src='https://code.createjs.com/soundjs-0.6.0.min.js'></script>
-<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/187048/jquery.jplayer.min.js'></script>
+{{-- <script src="{!! asset('js/jquery.mobile.js') !!}"></script> --}}
+
 <script src="{!! asset('js/third_party_html5/swinepeeper.js') !!}"></script>
 
 </body>

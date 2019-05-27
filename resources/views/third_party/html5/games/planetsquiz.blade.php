@@ -21,7 +21,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 <head>
   <meta charset="UTF-8">
   <title>Planets Quiz</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+  {{-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'> --}}
+  <link rel="stylesheet" href="{!! asset('css/ionicons.min.css') !!}">
   <link rel="stylesheet" href="{!! asset('css/third_party_html5/planetsquiz.css') !!}">
 </head>
 

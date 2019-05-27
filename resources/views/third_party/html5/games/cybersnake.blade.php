@@ -51,7 +51,7 @@ https://fonts.googleapis.com/css?family=Press+Start+2P
   </div>
 
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js'></script> --}}
-  <script src="{{url('node_modules/stats-js/build/stats.js')}}"></script>
+  <script src="{!! asset('js/stats.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/cybersnake.js') !!}"></script>
 
 </body>

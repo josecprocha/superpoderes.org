@@ -166,7 +166,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <span class="highscore gameovervalue"></span>
     <a href="javascript:void(0)" class="gameovertext" onclick="restart()">Restart</a>
   </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script> --}}
+  <script src="{!! asset('js/jquery.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/reaction.js') !!}"></script>
 </body>
 </html>

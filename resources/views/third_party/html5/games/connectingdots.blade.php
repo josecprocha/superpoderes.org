@@ -26,7 +26,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 <body>
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js'></script> --}}
-  <script src="{{url('node_modules/p5/lib/p5.min.js')}}"></script>
+  <script src="{!! asset('js/p5.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/connectingdots.js') !!}"></script>
 </body>
 </html>

@@ -65,7 +65,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       padding: 8px;
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+  {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> --}}
+  <script src="{!! asset('js/prefixfree.min.js') !!}"></script>
 </head>
 
 <body>
@@ -76,7 +77,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     <p><input id=heightInput type=number value=33> height</p>
     <p><button id=beginButton>start!</button></p>
   </div>
-  <script  src="js/index.js"></script>
   <script src="{!! asset('js/third_party_html5/maze.js') !!}"></script>
 </body>
 </html>
