@@ -507,10 +507,23 @@
         </div>
       </div>
 
+      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+        <img class="card-img-top" src="{{ url('/img/third_party_html5/canvasteroids.jpg') }}" alt="Canvasteroids image." style="width:128px;height:128px;">
+        <div class="card-body">
+          <h4 class="card-title">Canvasteroids</h4>
+        </div>
+        <div class="card-footer bg-transparent">
+          <a href="{{ url('/third_party/html5/canvasteroids') }}" class="btn btn-danger disabled">Play!</a>
+        </div>
+      </div>
+
+      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+
     </div>
   </div>
 
-  {{--
+  {{-- canvasteroids
     <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
     <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
     <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>

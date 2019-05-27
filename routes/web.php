@@ -209,6 +209,10 @@ Route::get('third_party/html5/destroythosemeteors', function () {
   return view('third_party.html5.games.destroythosemeteors');
 });
 
+Route::get('third_party/html5/canvasteroids', function () {
+  return view('third_party.html5.games.canvasteroids');
+});
+
 // Puzzles and Mind Sport
 
 Route::get('third_party/html5/hanoi', function () {
