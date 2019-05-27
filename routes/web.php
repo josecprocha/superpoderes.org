@@ -139,6 +139,10 @@ Route::get('third_party/html5/paintbynumber', function () {
   return view('third_party.html5.games.paintbynumber');
 });
 
+Route::get('third_party/html5/shootinghoops', function () {
+  return view('third_party.html5.games.shootinghoops');
+});
+
 // Keyboard Action
 
 Route::get('third_party/html5/savetheprincess', function () {

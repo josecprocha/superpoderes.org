@@ -55,7 +55,7 @@ label {
 }
 
 label:nth-of-type(1) {
-  left: 19%;
+  left: 96%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 2.7s;
@@ -63,7 +63,7 @@ label:nth-of-type(1) {
 }
 
 label:nth-of-type(2) {
-  left: 74%;
+  left: 100%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 5.4s;
@@ -71,7 +71,7 @@ label:nth-of-type(2) {
 }
 
 label:nth-of-type(3) {
-  left: 2%;
+  left: 12%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 8.1s;
@@ -79,7 +79,7 @@ label:nth-of-type(3) {
 }
 
 label:nth-of-type(4) {
-  left: 99%;
+  left: 1%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 10.8s;
@@ -87,7 +87,7 @@ label:nth-of-type(4) {
 }
 
 label:nth-of-type(5) {
-  left: 12%;
+  left: 2%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 13.5s;
@@ -95,7 +95,7 @@ label:nth-of-type(5) {
 }
 
 label:nth-of-type(6) {
-  left: 97%;
+  left: 44%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 16.2s;
@@ -103,7 +103,7 @@ label:nth-of-type(6) {
 }
 
 label:nth-of-type(7) {
-  left: 71%;
+  left: 64%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 18.9s;
@@ -111,7 +111,7 @@ label:nth-of-type(7) {
 }
 
 label:nth-of-type(8) {
-  left: 73%;
+  left: 69%;
   -webkit-animation-duration: 2.7s;
           animation-duration: 2.7s;
   -webkit-animation-delay: 21.6s;

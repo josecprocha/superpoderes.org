@@ -80,6 +80,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/vdasteroids.sass', 'public/css/third_party_html5/vdasteroids.css')
   .sass('resources/sass/third_party_html5/breakout.scss', 'public/css/third_party_html5/breakout.css')
   .sass('resources/sass/third_party_html5/whackamoleB.scss', 'public/css/third_party_html5/whackamoleB.css')
+  .sass('resources/sass/third_party_html5/shootinghoops.scss', 'public/css/third_party_html5/shootinghoops.css')
   // Keyboard Action
   .sass('resources/sass/third_party_html5/cybersnake.scss', 'public/css/third_party_html5/cybersnake.css')
   // Puzzles and Mind Sport
