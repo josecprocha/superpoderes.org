@@ -1,0 +1,135 @@
+{
+  "mouse":[
+    {
+      "id":"reaction",
+      "name":"React",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"crosshatch",
+      "name":"Canvas Crosshatch",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"pathfinder",
+      "name":"Path Finder",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"platform",
+      "name":"Platform",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"planetdefense",
+      "name":"Planet Defense",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"mouseminigame",
+      "name":"Mouse Mini Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"powersurge",
+      "name":"Power Surge",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"reactionB",
+      "name":"Reaction",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"shootthetarget",
+      "name":"Shoot the target!!",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"toddlerrainbow",
+      "name":"Toddler Rainbow",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+		{
+      "id":"ultimatearcadeshooter",
+      "name":"Ultimate Arcade Shooter",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"connectingdots",
+      "name":"Connecting Dots",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"fishing",
+      "name":"Fishing",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"fish",
+      "name":"Fish",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id":"vdasteroids",
+      "name":"Vincent Danna's Asteroids",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"breakout",
+      "name":"Breakout",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"toddlercolor",
+      "name":"Toddler Color Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"whackamole",
+      "name":"Whack a Mole",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"whackamoleB",
+      "name":"Whack a Mole and Simon",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id":"paintbynumber",
+      "name":"Paint by Number",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id":"shootinghoops",
+      "name":"Shooting Hoops",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "keyboard":[
+    {
+
+    }
+  ]
+}

@@ -10,22 +10,6 @@
 </head>
 <body>
 
-  <!--
-    extra small? <576px ?
-    wrap every 2 on sm: <div class="w-100 d-none d-sm-block d-md-none"></div>
-    wrap every 3 on md: <div class="w-100 d-none d-md-block d-lg-none"></div>
-    wrap every 4 on lg: <div class="w-100 d-none d-lg-block d-xl-none"></div>
-    wrap every 5 on xl: <div class="w-100 d-none d-xl-block"></div>
-    Idea from: https://www.codeply.com/go/nIB6oSbv6q
-  -->
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
-
   <br />
   <div class="jumbotron text-white rounded bg-dark"
     style="
@@ -40,267 +24,47 @@
   </div>
   <br />
 
-	<div class="container-fluid" id="content">
-    <div class="card-deck">
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/reaction.jpg') }}" alt="Reaction image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">React</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/reaction') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/crosshatch.jpg') }}" alt="Canvas Crosshatch image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Canvas Crosshatch</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crosshatch') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/pathfinder.jpg') }}" alt="Path Finder image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Path Finder</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/pathfinder') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/platform.jpg') }}" alt="Platform image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Platform</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/platform') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/planetdefense.jpg') }}" alt="Planet Defense image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Planet Defense</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/planetdefense') }}" class="btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/mouseminigame.jpg') }}" alt="Mouse Mini Game image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Mouse Mini Game</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/mouseminigame') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/powersurge.jpg') }}" alt="Power Surge image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Power Surge</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/powersurge') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/reactionB.jpg') }}" alt="Reaction image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Reaction</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/reactionB') }}" class="btn btn-dark">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/shootthetarget.jpg') }}" alt="Shoot the target image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Shoot the target!!</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/shootthetarget') }}" class="btn btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/toddlerrainbow.jpg') }}" alt="Toddler Rainbow image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Toddler Rainbow</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/toddlerrainbow') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/ultimatearcadeshooter.jpg') }}" alt="Ultimate Arcade Shooter image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Ultimate Arcade Shooter</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/ultimatearcadeshooter') }}" class="btn btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/connectingdots.jpg') }}" alt="Connecting Dots image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Connecting Dots</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/connectingdots') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/fishing.jpg') }}" alt="Fishing image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Fishing</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/fishing') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/fish.jpg') }}" alt="Fish image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Fish</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/fish') }}" class="btn btn btn-primary disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/vdasteroids.jpg') }}" alt="Vincent Danna's Asteroids image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Vincent Danna's Asteroids</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/vdasteroids') }}" class="btn btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/breakout.jpg') }}" alt="Breakout image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Breakout</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/breakout') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/toddlercolor.jpg') }}" alt="Toddler Color Game image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Toddler Color Game</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/toddlercolor') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/whackamole.jpg') }}" alt="Whack a Mole image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Whack a Mole</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/whackamole') }}" class="btn btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/whackamoleB.jpg') }}" alt="Whack a Mole and Simon image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Whack a Mole and Simon</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/whackamoleB') }}" class="btn btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/paintbynumber.jpg') }}" alt="Paint by Number image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Paint by Number</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/paintbynumber') }}" class="btn btn btn-primary disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/shootinghoops.jpg') }}" alt="Shooting Hoops image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Shooting Hoops</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/shootinghoops') }}" class="btn btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   {{--
+    extra small? <576px ?
     <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
     <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
     <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
     <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+    Idea from: https://www.codeply.com/go/nIB6oSbv6q
   --}}
+
+  {{-- About reading a json file
+    php var_dump($array['mouse']);
+    https://www.codewall.co.uk/how-to-read-json-file-using-php-examples/
+  --}}
+
+	<div class="container-fluid" id="content">
+    <div class="card-deck">
+      @foreach($array['mouse'] as $mouse)
+
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($mouse['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$mouse['id']}}.jpg" alt="{{$mouse['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$mouse['name']}}</h4>
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$mouse['id']}}" class="btn {{$mouse['btn']}} @if ($mouse['enabled'] == false) disabled @endif">Play!</a>
+          </div>
+        </div>
+
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
+
+      @endforeach
+
+    </div>
+  </div>
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -315,7 +79,6 @@
     <p class="lead">Action games using the arrow keys and space button to train coordination and intentional use of the keyboard.</p>
   </div>
   <br />
-
 
   <div class="container-fluid" id="content">
     <div class="card-deck">

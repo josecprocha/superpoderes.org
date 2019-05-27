@@ -54,7 +54,7 @@ Route::get('third_party', function () {
 // Selected codepen.io games.
 
 Route::get('third_party/html5', function () {
-  return view('third_party.html5.html5select'); // Game Select
+  return view('third_party.html5.html5select')->with('array', json_decode(file_get_contents('html5games.json'), true)); // Game Select
 });
 
 // Mouse
