@@ -345,6 +345,10 @@ Route::get('third_party/html5/mathemat1cs', function () {
   return view('third_party.html5.games.mathemat1cs');
 });
 
+Route::get('third_party/html5/blackjack', function () {
+  return view('third_party.html5.games.blackjack');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {
