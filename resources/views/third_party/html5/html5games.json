@@ -321,6 +321,12 @@
       "name":"Sudoku with Material Design",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"tictactoeB",
+      "name":"Tic Tac Toe",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[

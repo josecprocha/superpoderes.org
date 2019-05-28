@@ -275,6 +275,10 @@ Route::get('third_party/html5/materialsudoku', function () {
   return view('third_party.html5.games.materialsudoku');
 });
 
+Route::get('third_party/html5/tictactoeB', function () {
+  return view('third_party.html5.games.tictactoeB');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
