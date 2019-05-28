@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,8 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('node_modules/ionicons/dist/css/ionicons.min.css', 'public/css/ionicons.min.css')
   .copyDirectory('node_modules/ionicons/dist/fonts', 'public/fonts')
   .copy('node_modules/jplayer/dist/jplayer/jquery.jplayer.min.js', 'public/js/jquery.jplayer.min.js')
-  .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')
-  .copy('node_modules/jquery/dist/jquery.slim.min.js', 'public/js/jquery.slim.min.js')
+  .copy('node_modules/jQuery/dist/jquery.min.js', 'public/js/jquery.min.js')
+  .copy('node_modules/jQuery/dist/jquery.slim.min.js', 'public/js/jquery.slim.min.js')
   .copy('node_modules/jquery-color/jquery.color.js', 'public/js/jquery.color.js')
   .copy('node_modules/jquery-mobile/js/jquery.mobile.js', 'public/js/jquery.mobile.js')
   //.js('node_modules/jquery-ui/build/release.js', 'public/js/jquery-ui.js')
@@ -110,4 +111,33 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/2048.scss', 'public/css/third_party_html5/2048.css')
   // Language
   .sass('resources/sass/third_party_html5/wordsearch2.scss', 'public/css/third_party_html5/wordsearch2.css')
-  ;
+
+/*
+|--------------------------------------------------------------------------
+| Merging webpack.config.js custom configuration
+|--------------------------------------------------------------------------
+|
+| Method that allows to merge any short Webpack configuration overrides.
+| https://laravel.com/docs/5.8/mix#custom-webpack-configuration
+|
+*/
+
+.webpackConfig({
+  // https://stackoverflow.com/questions/50136195/how-to-include-webpack-plugins-when-using-laravel-mix
+  // https://webpack.js.org/configuration/
+  // https://www.npmjs.com/package/google-fonts-webpack-plugin
+  // https://www.npmjs.com/package/google-fonts-plugin
+  /*
+  plugins: [
+    new GoogleFontsPlugin({
+      fonts: [
+        { family: "Source Sans Pro" },
+        { family: "Roboto", variants: [ "400", "700italic" ] }
+      ],
+      path: "public/gfonts/"
+    }),
+  ],
+  */
+})
+;
+
