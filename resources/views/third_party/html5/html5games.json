@@ -309,6 +309,12 @@
       "name":"Chroma",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"sudoku",
+      "name":"Sudoku",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[
