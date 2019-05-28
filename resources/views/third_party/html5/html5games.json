@@ -443,6 +443,12 @@
       "name":"Blackjack",
       "btn": "btn-primary",
       "enabled":false
+    },
+    {
+      "id":"2048",
+      "name":"2048",
+      "btn": "btn-primary",
+      "enabled":true
     }
   ],
   "language":[

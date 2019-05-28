@@ -361,6 +361,10 @@ Route::get('third_party/html5/blackjack', function () {
   return view('third_party.html5.games.blackjack');
 });
 
+Route::get('third_party/html5/2048', function () {
+  return view('third_party.html5.games.2048');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {
