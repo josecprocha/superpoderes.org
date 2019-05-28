@@ -315,6 +315,12 @@
       "name":"Sudoku",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"materialsudoku",
+      "name":"Sudoku with Material Design",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[
