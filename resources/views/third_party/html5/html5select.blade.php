@@ -50,6 +50,7 @@
           @endif
           <div class="card-body">
             <h4 class="card-title">{{$mouse['name']}}</h4>
+            {{--<p class="card-text">{{ $mouse['info'] }}</p>--}}
           </div>
           <div class="card-footer bg-transparent">
             <a href="{{ url('/third_party/html5') }}/{{$mouse['id']}}" class="btn {{$mouse['btn']}} @if ($mouse['enabled'] == false) disabled @endif">Play!</a>
@@ -80,233 +81,34 @@
   </div>
   <br />
 
-  <div class="container-fluid" id="content">
+	<div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['keyboard'] as $keyboard)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/savetheprincess.jpg') }}" alt="Save The Princess image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Save the Princess</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($keyboard['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$keyboard['id']}}.jpg" alt="{{$keyboard['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$keyboard['name']}}</h4>
+            {{--<p class="card-text">{{ $keyboard['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$keyboard['id']}}" class="btn {{$keyboard['btn']}} @if ($keyboard['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/savetheprincess') }}" class="btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/interactivesnake.jpg') }}" alt="Interactive Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Interactive Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/interactivesnake') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/asteroids.jpg') }}" alt="Asteroids image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Asteroids</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/asteroids') }}" class="btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/glitchmaze.jpg') }}" alt="Asteroids image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Glitch Maze</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/glitchmaze') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/maze.jpg') }}" alt="Maze image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Maze</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/maze') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/crossthestreet.jpg') }}" alt="Cross the Street image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Cross the Street</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crossthestreet') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/crosstotheotherside.jpg') }}" alt="Cross to the Other Side image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Cross to the Other Side</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crosstotheotherside') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/asteroidsB.jpg') }}" alt="Asteroids image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Asteroids</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/asteroidsB') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/cybersnake.jpg') }}" alt="MVC Cyber Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">MVC Cyber Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/cybersnake') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/snake.jpg') }}" alt="Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/snake') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/snakeB.jpg') }}" alt="Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/snakeB') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/simplesnake.jpg') }}" alt="Simple Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Simple Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/simplesnake') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/isometricsnake.jpg') }}" alt="Isometric Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Isometric Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/isometricsnake') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/snakeC.jpg') }}" alt="Snake image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Snake</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/snakeC') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/platformengine.jpg') }}" alt="Platform Engine image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Platform Engine</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/platformengine') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/savethesemicolon.jpg') }}" alt="Save the Semicolon image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Save the Semicolon</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/savethesemicolon') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/destroythosemeteors.jpg') }}" alt="Destroy Those Meteors image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Destroy Those Meteors</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/destroythosemeteors') }}" class="btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/canvasteroids.jpg') }}" alt="Canvasteroids image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Canvasteroids</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/canvasteroids') }}" class="btn btn-danger disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{-- canvasteroids
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -322,149 +124,34 @@
   </div>
   <br />
 
-
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['puzzle'] as $puzzle)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/hanoi.jpg') }}" alt="Hanoi image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Tower of Hanoi</h4>
-          {{--<p class="card-text">The Tower of Hanoi  is a mathematical game or puzzle. It consists of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.</p>--}}
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($puzzle['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$puzzle['id']}}.jpg" alt="{{$puzzle['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$puzzle['name']}}</h4>
+            {{--<p class="card-text">{{ $puzzle['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$puzzle['id']}}" class="btn {{$puzzle['btn']}} @if ($puzzle['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/hanoi') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/cubnpup.jpg') }}" alt="Cub n Pup image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Cub n Pup</h4>
-          {{--<p class="card-text">Drag cub to star, Drag grid to rotate. This is a proof-of-concept for a game. Basic art, no sound, no options, no polish. But the core game-play is there. It's more of a mobile game, focused on dragging — inspired by Threes.</p>--}}
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/cubnpup') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/tetris.jpg') }}" alt="Tetris image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Tetris</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/tetris') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/swinepeeper.jpg') }}" alt="Swinepeeper image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Swinepeeper</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/swinepeeper') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/chess.jpg') }}" alt="Chess image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Chess</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/chess') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/tictacdoom.jpg') }}" alt="Tic Tac Doom image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Tic Tac Doom</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/tictacdoom') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/gomoku.jpg') }}" alt="Gomoku image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Gomoku</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/gomoku') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/mcdraughts.jpg') }}" alt="McDraughts image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">McDraughts</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/mcdraughts') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/blockpuzzle.jpg') }}" alt="Block Puzzle image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Block Puzzle</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/blockpuzzle') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/mahjongg.jpg') }}" alt="Mahjongg image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Mahjongg</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/mahjongg') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/bycss.jpg') }}" alt="Bycss image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Bycss</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/bycss') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -482,38 +169,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['experiment'] as $experiment)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/planetsquiz.jpg') }}" alt="Planets Quiz image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Planets Quiz</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($experiment['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$experiment['id']}}.jpg" alt="{{$experiment['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$experiment['name']}}</h4>
+            {{--<p class="card-text">{{ $experiment['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$experiment['id']}}" class="btn {{$experiment['btn']}} @if ($experiment['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/planetsquiz') }}" class="btn btn-primary disabled">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/lunarlander.jpg') }}" alt="Lunar Lander image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Lunar Lander</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/lunarlander') }}" class="btn btn-primary disabled">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -531,50 +212,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['art'] as $art)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/drumkit.jpg') }}" alt="JavaScript Drum Kit image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">JavaScript Drum Kit</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($art['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$art['id']}}.jpg" alt="{{$art['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$art['name']}}</h4>
+            {{--<p class="card-text">{{ $art['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$art['id']}}" class="btn {{$art['btn']}} @if ($art['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/drumkit') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/pianokeyboard.jpg') }}" alt="Piano Keyboard image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Piano Keyboard</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/pianokeyboard') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/animatedguitar.jpg') }}" alt="Animated Guitar image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Animated Guitar</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/animatedguitar') }}" class="btn btn-primary disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -592,26 +255,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['esports'] as $esports)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/clicksoccer.jpg') }}" alt="Click Soccer image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Click Soccer</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($esports['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$esports['id']}}.jpg" alt="{{$esports['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$esports['name']}}</h4>
+            {{--<p class="card-text">{{ $esports['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$esports['id']}}" class="btn {{$esports['btn']}} @if ($esports['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/clicksoccer') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
+
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -629,26 +298,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['memory'] as $memory)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/memory.jpg') }}" alt="Memory image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Memory</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($memory['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$memory['id']}}.jpg" alt="{{$memory['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$memory['name']}}</h4>
+            {{--<p class="card-text">{{ $memory['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$memory['id']}}" class="btn {{$memory['btn']}} @if ($memory['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/memory') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
+
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -666,63 +341,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['friends'] as $friends)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/pong.jpg') }}" alt="Pong image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Pong</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($friends['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$friends['id']}}.jpg" alt="{{$friends['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$friends['name']}}</h4>
+            {{--<p class="card-text">{{ $friends['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$friends['id']}}" class="btn {{$friends['btn']}} @if ($friends['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/pong') }}" class="btn btn-warning">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/tictactoe.jpg') }}" alt="Tic Tac Toe image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Tic Tac Toe</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/tictactoe') }}" class="btn btn-warning">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/checkers.jpg') }}" alt="Checkers image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Checkers</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/checkers') }}" class="btn btn-warning">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/3dhartwigchess.jpg') }}" alt="3D Hartwig Chess image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">3D Hartwig Chess</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/3dhartwigchess') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -740,38 +384,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['fun'] as $fun)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/matchcolor.jpg') }}" alt="Match Color image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Match Color</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($fun['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$fun['id']}}.jpg" alt="{{$fun['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$fun['name']}}</h4>
+            {{--<p class="card-text">{{ $fun['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$fun['id']}}" class="btn {{$fun['btn']}} @if ($fun['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/matchcolor') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/paperstonescissors.jpg') }}" alt="Paper Stone Scissors image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Paper - Stone - Scissors</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/paperstonescissors') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -789,75 +427,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['math'] as $math)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/mathness.jpg') }}" alt="Mathness image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Mathness</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($math['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$math['id']}}.jpg" alt="{{$math['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$math['name']}}</h4>
+            {{--<p class="card-text">{{ $math['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$math['id']}}" class="btn {{$math['btn']}} @if ($math['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/mathness') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/arithmetic.jpg') }}" alt="Arithmetic image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Arithmetic</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/arithmetic') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/bgmath.jpg') }}" alt="Battlestar Galactica Math image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Battlestar Galactica Math</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/bgmath') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/mathemat1cs.jpg') }}" alt="MATHEMATICS image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">MATHEMAT1CS</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/mathemat1cs') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-      <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/blackjack.jpg') }}" alt="Blackjack image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Blackjack</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/blackjack') }}" class="btn btn-dark disabled">Play!</a>
-        </div>
-      </div>
-
-      <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{--
-    <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-    <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div>
-    <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div>
-    <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div>
-  --}}
 
   <br />
   <div class="jumbotron text-white rounded bg-dark"
@@ -875,37 +470,32 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
+      @foreach($array['language'] as $language)
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/crosswordgenerator.jpg') }}" alt="Crossword Generator image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Crossword Generator</h4>
+        <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
+          @if ($language['enabled'])
+            <img class="card-img-top" src="{{ url('/img/third_party_html5') }}/{{$language['id']}}.jpg" alt="{{$language['name']}} image." style="width:128px;height:128px;">
+          @else
+            <img class="card-img-top" src="https://images.unsplash.com/photo-1508345228704-935cc84bf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=300&w=300&q=80" alt="Padlock image." style="width:128px;height:128px;">
+          @endif
+          <div class="card-body">
+            <h4 class="card-title">{{$language['name']}}</h4>
+            {{--<p class="card-text">{{ $language['info'] }}</p>--}}
+          </div>
+          <div class="card-footer bg-transparent">
+            <a href="{{ url('/third_party/html5') }}/{{$language['id']}}" class="btn {{$language['btn']}} @if ($language['enabled'] == false) disabled @endif">Play!</a>
+          </div>
         </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/crosswordgenerator') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
 
-      <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
-        <img class="card-img-top" src="{{ url('/img/third_party_html5/wordsearch2.jpg') }}" alt="Word Search 2 image." style="width:128px;height:128px;">
-        <div class="card-body">
-          <h4 class="card-title">Word Search 2</h4>
-        </div>
-        <div class="card-footer bg-transparent">
-          <a href="{{ url('/third_party/html5/wordsearch2') }}" class="btn btn-primary">Play!</a>
-        </div>
-      </div>
+        @if ($loop->iteration % 2 == 0) <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div> @endif
+        @if ($loop->iteration % 3 == 0) <div class="w-100 d-none d-md-block d-lg-none"><!-- wrap every 3 on md--></div> @endif
+        @if ($loop->iteration % 4 == 0) <div class="w-100 d-none d-lg-block d-xl-none"><!-- wrap every 4 on lg--></div> @endif
+        @if ($loop->iteration % 5 == 0) <div class="w-100 d-none d-xl-block"><!-- wrap every 5 on xl--></div> @endif
 
-      <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
+      @endforeach
 
     </div>
   </div>
-
-  {{-- CDN
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  --}}
 
   <script src="{!! asset('js/app.js') !!}"></script>
 
