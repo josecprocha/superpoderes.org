@@ -303,6 +303,12 @@
       "name":"Bycss",
       "btn": "btn-dark",
       "enabled": false
+    },
+    {
+      "id":"chroma",
+      "name":"Chroma",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[

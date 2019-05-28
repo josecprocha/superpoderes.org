@@ -263,6 +263,10 @@ Route::get('third_party/html5/bycss', function () {
   return view('third_party.html5.games.bycss');
 });
 
+Route::get('third_party/html5/chroma', function () {
+  return view('third_party.html5.games.chroma');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
