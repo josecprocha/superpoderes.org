@@ -1109,29 +1109,29 @@ body .game_segment .drip_container .drip {
   opacity: 1;
 }
 body .game_segment .drip_container .drip:nth-of-type(1) {
-  left: 10px;
-  -webkit-animation: drip 1.25s 2.9s linear infinite;
-          animation: drip 1.25s 2.9s linear infinite;
+  left: 141px;
+  -webkit-animation: drip 1.25s 2.8s linear infinite;
+          animation: drip 1.25s 2.8s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(2) {
-  left: 10px;
-  -webkit-animation: drip 1.25s 0.2s linear infinite;
-          animation: drip 1.25s 0.2s linear infinite;
+  left: 123px;
+  -webkit-animation: drip 1.25s 0.1s linear infinite;
+          animation: drip 1.25s 0.1s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(3) {
-  left: 20px;
-  -webkit-animation: drip 1.25s 4.3s linear infinite;
-          animation: drip 1.25s 4.3s linear infinite;
+  left: 113px;
+  -webkit-animation: drip 1.25s 2.7s linear infinite;
+          animation: drip 1.25s 2.7s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(4) {
-  left: 26px;
-  -webkit-animation: drip 1.25s 3.9s linear infinite;
-          animation: drip 1.25s 3.9s linear infinite;
+  left: 20px;
+  -webkit-animation: drip 1.25s 3.2s linear infinite;
+          animation: drip 1.25s 3.2s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(5) {
-  left: 44px;
-  -webkit-animation: drip 1.25s 2.9s linear infinite;
-          animation: drip 1.25s 2.9s linear infinite;
+  left: 99px;
+  -webkit-animation: drip 1.25s 0.4s linear infinite;
+          animation: drip 1.25s 0.4s linear infinite;
 }
 @-webkit-keyframes drip {
   0% {
