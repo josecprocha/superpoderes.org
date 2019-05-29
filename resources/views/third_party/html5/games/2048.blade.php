@@ -80,7 +80,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     </p>
   </div>
 
-  {{-- <script src='http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.min.js'></script> --}}
+  <script src="@includeFirst(['http://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.min.js','js/hammer.min.js'])"></script>
+
   <script src="{!! asset('js/hammer.min.js') !!}"></script>
   <script src="{!! asset('js/third_party_html5/2048.js') !!}"></script>
 </body>

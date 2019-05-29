@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const GoogleFontsPlugin = require("google-fonts-webpack-plugin");
 
 /*
 |--------------------------------------------------------------------------
@@ -111,33 +110,4 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/2048.scss', 'public/css/third_party_html5/2048.css')
   // Language
   .sass('resources/sass/third_party_html5/wordsearch2.scss', 'public/css/third_party_html5/wordsearch2.css')
-
-/*
-|--------------------------------------------------------------------------
-| Merging webpack.config.js custom configuration
-|--------------------------------------------------------------------------
-|
-| Method that allows to merge any short Webpack configuration overrides.
-| https://laravel.com/docs/5.8/mix#custom-webpack-configuration
-|
-*/
-
-.webpackConfig({
-  // https://stackoverflow.com/questions/50136195/how-to-include-webpack-plugins-when-using-laravel-mix
-  // https://webpack.js.org/configuration/
-  // https://www.npmjs.com/package/google-fonts-webpack-plugin
-  // https://www.npmjs.com/package/google-fonts-plugin
-  /*
-  plugins: [
-    new GoogleFontsPlugin({
-      fonts: [
-        { family: "Source Sans Pro" },
-        { family: "Roboto", variants: [ "400", "700italic" ] }
-      ],
-      path: "public/gfonts/"
-    }),
-  ],
-  */
-})
 ;
-
