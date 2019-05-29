@@ -279,6 +279,18 @@ Route::get('third_party/html5/tictactoeB', function () {
   return view('third_party.html5.games.tictactoeB');
 });
 
+Route::get('third_party/html5/15', function () {
+  return view('third_party.html5.games.15');
+});
+
+Route::get('third_party/html5/minesweeper', function () {
+  return view('third_party.html5.games.minesweeper');
+});
+
+Route::get('third_party/html5/minesweeperB', function () {
+  return view('third_party.html5.games.minesweeperB');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {

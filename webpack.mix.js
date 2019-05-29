@@ -91,6 +91,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/gomoku.scss', 'public/css/third_party_html5/gomoku.css')
   .less('resources/less/third_party_html5/mahjongg.less', 'public/css/third_party_html5/mahjongg.css')
   .sass('resources/sass/third_party_html5/chroma.scss', 'public/css/third_party_html5/chroma.css')
+  .sass('resources/sass/third_party_html5/15.scss', 'public/css/third_party_html5/15.css')
   // Experiments and Science
   .sass('resources/sass/third_party_html5/planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
   .sass('resources/sass/third_party_html5/lunarlander.scss', 'public/css/third_party_html5/lunarlander.css')

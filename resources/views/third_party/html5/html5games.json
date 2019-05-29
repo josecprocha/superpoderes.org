@@ -327,6 +327,24 @@
       "name":"Tic Tac Toe",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"15",
+      "name":"15 Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"minesweeper",
+      "name":"Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"minesweeperB",
+      "name":"Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[

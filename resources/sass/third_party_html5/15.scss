@@ -1,0 +1,98 @@
+$colorBackgroundBorder: rgb(31,31,127);
+$colorBackground: rgb(31,31,127);
+$colorBlocksEven: rgb(179,195,218);
+$colorBlocksOdd: rgb(222,36,36);
+$sizeBorder: 2px;
+body {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+}
+.message {
+  box-sizing: border-box;
+  display: inline-block;
+  z-index: 1;
+  width: 100%;
+  border: 5px solid;
+  border-radius: 0 0 4px 4px;
+  border-color: transparentize(black,0.75);
+  border-bottom-color: transparentize(white,0.85);
+  border-right-color: transparentize(white,0.85);
+  background: $colorBackground;
+  #xvgame,
+  .text,
+  #restart {
+    line-height: 220%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  #xvgame,
+  #restart {
+    width: 54px;
+    margin-top: 20px;
+    float: right;
+    right: 20px;
+    border-radius: 4px;
+  }
+  #xvgame {
+    margin-left: 20px;
+    height: 33px;
+    float: left;
+  }
+  .text {
+    height: 140px;
+    font-size: 200%;
+    color: white;
+  }
+  #restart {
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+    background: $colorBlocksEven;
+    color: black;
+  }
+}
+.game-wrapper {
+  margin: 0 auto;
+}
+.outer-wrapper {
+  background: $colorBackground;
+  border-color: transparentize(black,0.85);
+  border-top-color: transparentize(white,0.85);
+  border-left-color: transparentize(white,0.85);
+  border-radius: 4px 4px 0 0;
+}
+.wrapper {
+  position: relative; // important for position absolute on child!
+  background: darken($colorBackground,10%);
+  border: 2px solid black;
+  border-radius: 3px;
+  .fg-both {
+    position: absolute;
+  }
+  .fg-block {
+    cursor: pointer;
+    transition: all 0.05s ease;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 200%;
+    border: $sizeBorder solid transparentize(black,0.75);
+    border-top: $sizeBorder solid transparentize(white,0.5);
+    border-left: $sizeBorder solid transparentize(white,0.5);
+    border-radius: 4px;
+    &.red {
+      color: lighten($colorBlocksEven,50%);
+      background: $colorBlocksOdd;
+    }
+    &.white {
+      background: $colorBlocksEven;
+    }
+  }
+}
