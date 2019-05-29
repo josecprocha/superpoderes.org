@@ -527,6 +527,12 @@
       "name":"2048",
       "btn": "btn-primary",
       "enabled":true
+    },
+    {
+      "id":"3072",
+      "name":"3072",
+      "btn": "btn-primary",
+      "enabled":true
     }
   ],
   "language":[

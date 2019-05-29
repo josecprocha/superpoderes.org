@@ -113,6 +113,7 @@ mix.js('resources/js/app.js', 'public/js')
   // Mental Calculation and Math
   .sass('resources/sass/third_party_html5/arithmetic.sass', 'public/css/third_party_html5/arithmetic.css')
   .sass('resources/sass/third_party_html5/2048.scss', 'public/css/third_party_html5/2048.css')
+  .sass('resources/sass/third_party_html5/3072.scss', 'public/css/third_party_html5/3072.css')
   // Language
   .sass('resources/sass/third_party_html5/wordsearch2.scss', 'public/css/third_party_html5/wordsearch2.css')
 ;

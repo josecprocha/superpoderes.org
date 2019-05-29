@@ -417,6 +417,10 @@ Route::get('third_party/html5/2048', function () {
   return view('third_party.html5.games.2048');
 });
 
+Route::get('third_party/html5/3072', function () {
+  return view('third_party.html5.games.3072');
+});
+
 // Language
 
 Route::get('third_party/html5/crosswordgenerator', function () {
