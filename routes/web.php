@@ -291,6 +291,10 @@ Route::get('third_party/html5/minesweeperB', function () {
   return view('third_party.html5.games.minesweeperB');
 });
 
+Route::get('third_party/html5/infiniteminesweeper', function () {
+  return view('third_party.html5.games.infiniteminesweeper');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
@@ -325,6 +329,10 @@ Route::get('third_party/html5/clicksoccer', function () {
 
 Route::get('third_party/html5/memory', function () {
   return view('third_party.html5.games.memory');
+});
+
+Route::get('third_party/html5/reactmemory', function () {
+  return view('third_party.html5.games.reactmemory');
 });
 
 // Friends

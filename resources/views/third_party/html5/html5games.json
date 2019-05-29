@@ -345,6 +345,12 @@
       "name":"Mine Sweeper",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"infiniteminesweeper",
+      "name":"Infinite Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[
@@ -393,6 +399,12 @@
     {
       "id":"memory",
       "name":"Memory",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"reactmemory",
+      "name":"React Memory",
       "btn": "btn-primary",
       "enabled": true
     }

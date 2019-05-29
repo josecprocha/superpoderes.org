@@ -1,0 +1,159 @@
+body, html { width: 100%; height : 100%; padding : 0; margin : 0; background : #252525; font-family : "Verdana"; color : black; }
+
+body.game-over
+{
+	overflow : hidden;
+}
+
+.runway
+{
+	width       : 100%;
+	max-width   : 1024px;
+	margin      : auto;
+	padding     : 20px;
+	box-sizing  : border-box;
+	position    : relative;
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.25);
+}
+
+.row
+{
+	width : 100%;
+	box-sizing : border-box;
+	font-size : 0;
+	position : relative;
+}
+
+.row .tile
+{
+	width : 5%;
+	font-size : 12px;
+	position : relative;
+	border-top : 1px solid rgba(255,255,255,0.15);
+	border-left : 1px solid rgba(255,255,255,0.15);
+	border-bottom :1px solid  rgba(255,255,255,0.25);
+	border-right :1px solid  rgba(255,255,255,0.25);
+	box-sizing : border-box;
+	display : inline-block;
+}
+
+.row .tile::before
+{
+	width           : 100%;
+	content         : " ";
+	display         : block;
+	padding-bottom  : 100%;
+}
+
+.row .tile.mine::after
+{
+	width           : 80%;
+	content         : " ";
+	display         : block;
+	height           : 80%;
+	border-radius   : 50%;
+	background      : red;
+	position        : absolute;
+	top             : 10%;
+	left            : 10%;
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.75);
+}
+
+.row .tile:hover
+{
+	background : #505050;
+}
+
+.row .tile.revealed, .row .tile.mine
+{
+	background : #cccccc;
+	box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
+}
+
+.row .tile span
+{
+	position : absolute;
+	width : 100%;
+	text-align : center;
+	color   : #000000;
+	top : 50%;
+	-webkit-transform : translateY(-50%);
+	        transform : translateY(-50%);
+}
+
+.header
+{
+	padding : 40px 0;
+	text-align : center;
+	font-size : 24px;
+	width : 100%;
+	color : white;
+}
+
+.trim
+{
+	width : 100%;
+	text-align : center;
+	color : white;
+	margin-bottom : 20px;
+}
+
+.trim .label
+{
+	display : inline-block;
+	margin : auto 20px;
+}
+.trim .pointer
+{
+	width: 0;
+	height: 0;
+	display : inline-block;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+
+	border-top: 7px solid white;
+}
+
+.game-over-banner
+{
+	position : fixed;
+	width : 100%;
+	height : 100%;
+	top : 0;
+	left : 0;
+	display : none;
+	background : rgba(0,0,0,0.5);
+
+}
+
+.game-over .game-over-banner { display : block; }
+
+.content
+{
+	position : absolute;
+	left : 0;
+	top : 50%;
+	width : 100%;
+	color : white;
+	padding : 50px 0;
+	text-align : center;
+	background : rgba(0,0,0,0.5);
+	-webkit-transform : translateY(-50%);
+	        transform : translateY(-50%);
+}
+
+.button
+{
+	cursor : pointer;
+	padding : 20px 40px;
+	margin : auto;
+	background : #505050;
+	display : inline-block;
+	margin-top : 20px;
+	border-radius : 5px;
+}
+
+.button:hover
+{
+	background : #252525;
+}
