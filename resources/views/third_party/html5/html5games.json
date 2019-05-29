@@ -363,6 +363,18 @@
       "name":"Align 4",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"tetrisB",
+      "name":"Tetris",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"rotation",
+      "name":"Rotation",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[

@@ -303,6 +303,14 @@ Route::get('third_party/html5/align4', function () {
   return view('third_party.html5.games.align4');
 });
 
+Route::get('third_party/html5/tetrisB', function () {
+  return view('third_party.html5.games.tetrisB');
+});
+
+Route::get('third_party/html5/rotation', function () {
+  return view('third_party.html5.games.rotation');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
