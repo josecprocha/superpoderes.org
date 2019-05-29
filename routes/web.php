@@ -313,6 +313,10 @@ Route::get('third_party/html5/lunarlander', function () {
   return view('third_party.html5.games.lunarlander');
 });
 
+Route::get('third_party/html5/multiplicationtoy', function () {
+  return view('third_party.html5.games.multiplicationtoy');
+});
+
 // Art
 
 Route::get('third_party/html5/drumkit', function () {
@@ -341,6 +345,10 @@ Route::get('third_party/html5/memory', function () {
 
 Route::get('third_party/html5/reactmemory', function () {
   return view('third_party.html5.games.reactmemory');
+});
+
+Route::get('third_party/html5/flip', function () {
+  return view('third_party.html5.games.flip');
 });
 
 // Friends

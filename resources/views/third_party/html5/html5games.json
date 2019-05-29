@@ -377,6 +377,12 @@
       "name":"Lunar Lander",
       "btn": "btn-primary",
       "enabled": false
+    },
+    {
+      "id":"multiplicationtoy",
+      "name":"Multiplication Toy",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "art":[
@@ -417,6 +423,12 @@
     {
       "id":"reactmemory",
       "name":"React Memory",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"flip",
+      "name":"Flip",
       "btn": "btn-primary",
       "enabled": true
     }
