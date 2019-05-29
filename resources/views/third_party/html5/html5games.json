@@ -487,6 +487,12 @@
       "name":"3D Hartwig Chess",
       "btn": "btn-dark",
       "enabled": false
+    },
+    {
+      "id":"dots",
+      "name":"Dots",
+      "btn": "btn-warning",
+      "enabled": true
     }
   ],
   "fun":[

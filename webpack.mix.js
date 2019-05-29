@@ -111,6 +111,7 @@ mix.js('resources/js/app.js', 'public/js')
       /* Need to discover a way to @import "compass/css3"
         .compass('resources/sass/third_party_html5/tictactoe.scss', 'public/css/third_party_html5/tictactoe.css')
       */
+  .sass('resources/sass/third_party_html5/dots.scss', 'public/css/third_party_html5/dots.css')
   // Fun and Rest
   // Mental Calculation and Math
   .sass('resources/sass/third_party_html5/arithmetic.sass', 'public/css/third_party_html5/arithmetic.css')
