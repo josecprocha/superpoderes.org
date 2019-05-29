@@ -28,7 +28,7 @@ mix.js('resources/js/app.js', 'public/js')
 
   // node_modules
   .copy('node_modules/@fortawesome/fontawesome-free/css/all.css', 'public/css/all.css')
-  .copy('node_modules/@fortawesome/fontawesome-free/js/all.js', 'public/js/all.css')
+  .copy('node_modules/@fortawesome/fontawesome-free/js/all.js', 'public/js/all.js')
   .copyDirectory('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts')
   .copy('node_modules/angular/angular.min.js', 'public/js/angular.min.js')
   .copy('node_modules/angular-timer/dist/angular-timer.min.js', 'public/js/angular-timer.min.js')
@@ -95,6 +95,8 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/themine.scss', 'public/css/third_party_html5/themine.css')
   .sass('resources/sass/third_party_html5/align4.scss', 'public/css/third_party_html5/align4.css')
   .sass('resources/sass/third_party_html5/tetrisB.scss', 'public/css/third_party_html5/tetrisB.css')
+  .sass('resources/sass/third_party_html5/solitaire.scss', 'public/css/third_party_html5/solitaire.css')
+  .sass('resources/sass/third_party_html5/noughtsncrosses.scss', 'public/css/third_party_html5/noughtsncrosses.css')
   // Experiments and Science
   .sass('resources/sass/third_party_html5/planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
   .sass('resources/sass/third_party_html5/lunarlander.scss', 'public/css/third_party_html5/lunarlander.css')

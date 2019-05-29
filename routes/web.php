@@ -311,6 +311,18 @@ Route::get('third_party/html5/rotation', function () {
   return view('third_party.html5.games.rotation');
 });
 
+Route::get('third_party/html5/solitaire', function () {
+  return view('third_party.html5.games.solitaire');
+});
+
+Route::get('third_party/html5/tictactoeC', function () {
+  return view('third_party.html5.games.tictactoeC');
+});
+
+Route::get('third_party/html5/noughtsncrosses', function () {
+  return view('third_party.html5.games.noughtsncrosses');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {

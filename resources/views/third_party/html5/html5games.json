@@ -148,13 +148,13 @@
     },
     {
       "id":"maze",
-      "name":"Glitch Maze",
+      "name":"Maze",
       "btn": "btn-primary",
       "enabled": true
     },
     {
       "id":"glitchmaze",
-      "name":"Maze",
+      "name":"Glitch Maze",
       "btn": "btn-primary",
       "enabled": true
     },
@@ -373,6 +373,24 @@
     {
       "id":"rotation",
       "name":"Rotation",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"solitaire",
+      "name":"Solitaire",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id":"tictactoeC",
+      "name":"Tic Tac Toe",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"noughtsncrosses",
+      "name":"Noughts & Crosses (Tic Tac Toe)",
       "btn": "btn-primary",
       "enabled": true
     }

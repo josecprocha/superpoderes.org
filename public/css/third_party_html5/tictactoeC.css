@@ -1,0 +1,117 @@
+body {
+  font-family: 'Seymour One', sans-serif;
+  color: white;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to top, rgba(225, 255, 255, 1) 0%, rgba(200, 238, 251, 1) 50%, rgba(177, 216, 245, 1) 100%);
+}
+
+#label {
+  font-size: 8vmin;
+  text-align: center;
+  text-shadow: 3px 5px 0 #000;
+  margin: 0;
+}
+
+.gameBoard {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+}
+
+h1 {
+  margin: 3.5vh;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+button {
+  height: 7vmin;
+  margin: .5vmin;
+  font-size: 4vmin;
+  color: #112;
+}
+
+.gameBoard {
+  background: #112;
+  width: 80vmin;
+  margin: 0 auto;
+  padding: 2vmin 0vmin;
+  border-radius: 15px;
+}
+
+.square {
+  display: inline-block;
+  text-align: center;
+  background: grey;
+  width: 22vmin;
+  height: 22vmin;
+  margin: 1vmin;
+  font-size: 6vmin;
+  padding: 0;
+  text-shadow: 3px 5px 0 black;
+}
+
+.X {
+  background: red;
+}
+
+.O {
+  background: blue;
+}
+
+.score {
+  font-size: 4vmin;
+  margin: 0 4vmin;
+}
+
+#winsLabel {
+  float: left;
+}
+
+#xScoreLabel {
+  color: red;
+  display: inline
+}
+
+#xScore,
+#oScore {
+  color: white;
+}
+
+#oScoreLabel {
+  color: blue;
+  float: right;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
+
+.modal {
+  width: 100vw;
+  padding: 32.895vh 0;
+  background: rgba(0, 0, 0, .7);
+  position: absolute;
+  text-align: center;
+  font-size: 8vmin;
+  text-shadow: 3px 5px 0 black;
+}
+
+#endGame {
+  display: none;
+}
+
+#endGameDraw {
+  display: none;
+}
