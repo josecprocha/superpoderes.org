@@ -299,6 +299,10 @@ Route::get('third_party/html5/themine', function () {
   return view('third_party.html5.games.themine');
 });
 
+Route::get('third_party/html5/align4', function () {
+  return view('third_party.html5.games.align4');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
@@ -365,6 +369,10 @@ Route::get('third_party/html5/matchcolor', function () {
 
 Route::get('third_party/html5/paperstonescissors', function () {
   return view('third_party.html5.games.paperstonescissors');
+});
+
+Route::get('third_party/html5/pinballphysics', function () {
+  return view('third_party.html5.games.pinballphysics');
 });
 
 // Mental Calculation and Math

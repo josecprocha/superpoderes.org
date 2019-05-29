@@ -357,6 +357,12 @@
       "name":"The Mine",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"align4",
+      "name":"Align 4",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[
@@ -451,6 +457,12 @@
     {
       "id":"paperstonescissors",
       "name":"Paper - Stone - Scissors",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id":"pinballphysics",
+      "name":"Pinball Physics",
       "btn": "btn-primary",
       "enabled": true
     }
