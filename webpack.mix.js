@@ -97,6 +97,7 @@ mix.js('resources/js/app.js', 'public/js')
   .sass('resources/sass/third_party_html5/tetrisB.scss', 'public/css/third_party_html5/tetrisB.css')
   .sass('resources/sass/third_party_html5/solitaire.scss', 'public/css/third_party_html5/solitaire.css')
   .sass('resources/sass/third_party_html5/noughtsncrosses.scss', 'public/css/third_party_html5/noughtsncrosses.css')
+  .sass('resources/sass/third_party_html5/risk.scss', 'public/css/third_party_html5/risk.css')
   // Experiments and Science
   .sass('resources/sass/third_party_html5/planetsquiz.scss', 'public/css/third_party_html5/planetsquiz.css')
   .sass('resources/sass/third_party_html5/lunarlander.scss', 'public/css/third_party_html5/lunarlander.css')

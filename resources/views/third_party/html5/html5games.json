@@ -393,6 +393,12 @@
       "name":"Noughts & Crosses (Tic Tac Toe)",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"risk",
+      "name":"Risk",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[

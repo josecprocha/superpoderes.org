@@ -323,6 +323,10 @@ Route::get('third_party/html5/noughtsncrosses', function () {
   return view('third_party.html5.games.noughtsncrosses');
 });
 
+Route::get('third_party/html5/risk', function () {
+  return view('third_party.html5.games.risk');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {
