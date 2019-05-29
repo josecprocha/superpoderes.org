@@ -295,6 +295,10 @@ Route::get('third_party/html5/infiniteminesweeper', function () {
   return view('third_party.html5.games.infiniteminesweeper');
 });
 
+Route::get('third_party/html5/themine', function () {
+  return view('third_party.html5.games.themine');
+});
+
 // Experiments and Science
 
 Route::get('third_party/html5/planetsquiz', function () {

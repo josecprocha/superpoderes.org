@@ -351,6 +351,12 @@
       "name":"Infinite Mine Sweeper",
       "btn": "btn-primary",
       "enabled": true
+    },
+    {
+      "id":"themine",
+      "name":"The Mine",
+      "btn": "btn-primary",
+      "enabled": true
     }
   ],
   "experiment":[
