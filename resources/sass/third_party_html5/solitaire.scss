@@ -119,9 +119,11 @@ $offset: $width / 5;
 	box-sizing: border-box;
 }
 
+/*
 .stack.over {
-    // border: 1px dashed #fff;
+  border: 1px dashed #fff;
 }
+*/
 
 .dealer,
 .stacks {
@@ -198,9 +200,11 @@ $offset: $width / 5;
 	border-radius: $radius;
 }
 
+/*
 .card .front {
-	// transform: rotateY( 0deg );
+	transform: rotateY( 0deg );
 }
+*/
 
 .card .rear {
 	background-color: #fff;
@@ -430,12 +434,14 @@ $king: -170px;
 
 /* no clicky on child elements */
 
+/*
 .card:not(.flipped),
 .card .value,
 .card .middle,
 .card span {
-	// pointer-events: none;
+	pointer-events: none;
 }
+*/
 
 // .hearts .middle span::after {
 // 	font-size: $width / 3;

@@ -52,7 +52,7 @@ mix.js('resources/js/app.js', 'public/js')
   .copy('node_modules/jplayer/dist/jplayer/jquery.jplayer.min.js', 'public/js/jquery.jplayer.min.js')
   .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')
   .copy('node_modules/jquery/dist/jquery.slim.min.js', 'public/js/jquery.slim.min.js')
-  .copy('node_modules/jquery-color/jquery.color.js', 'public/js/jquery.color.js')
+  //.copy('node_modules/jquery-color/jquery.color.js', 'public/js/jquery.color.js') // problematic package: depends on "jQuery"
   .copy('node_modules/jquery-mobile/js/jquery.mobile.js', 'public/js/jquery.mobile.js')
   //.js('node_modules/jquery-ui/build/release.js', 'public/js/jquery-ui.js')
   .copy('node_modules/matter-js/build/matter.js', 'public/js/matter.js')

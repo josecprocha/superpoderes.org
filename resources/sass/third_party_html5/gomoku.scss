@@ -2,11 +2,10 @@
 // Using RubyGems:
 // @import "bourbon";
 // Using Laravel:
-// @import "node_modules/bourbon/app/assets/stylesheets/bourbon";
-// @import "node_modules/bourbon-neat/core/neat";
 @import "node_modules/bourbon/core/_bourbon.scss";
-@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+@import "node_modules/bourbon-neat/core/_neat.scss";
 @import "node_modules/compass-mixins/lib/_compass.scss";
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
 
 $FlatWetAsphalt : #34495e;
 $FlatAlizarin : #e74c3c;

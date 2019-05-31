@@ -33,7 +33,7 @@ p {
   padding: 20px;
   float: left;
   margin: 30px 20px;
-  width: 500px;
+  width: 520px; // fix letters out of the board
 }
 
 #puzzle div {
@@ -107,7 +107,7 @@ button::-moz-focus-inner {
   padding:  0 0 7px;
   font: 1em sans-serif;
   display: inline-block;
-  float: left;
+  // float: left; // only work if display:block?
   width: 100px;
 }
 

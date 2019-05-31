@@ -995,9 +995,7 @@ Instead of doing  input#index39:checked + input + div + div { props }
 
     @for $i from 1 through $columns {
         @keyframes walk-#{$i} {
-          //0%, 100% {
-            animation: walkCycle(6, 48, 48, 1);
-          //}
+          animation: walkCycle(6, 48, 48, 1);
         }
     }
 

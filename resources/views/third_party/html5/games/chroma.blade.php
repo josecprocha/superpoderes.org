@@ -441,8 +441,8 @@ ul {
 
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> --}}
   <script src="{!! asset('js/jquery.min.js') !!}"></script>
-  {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js'></script> --}}
-  <script src="{!! asset('js/jquery.color.js') !!}"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.min.js'></script>
+  {{-- <script src="{!! asset('js/jquery.color.js') !!}"></script> --}}
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
   {{-- <script src="{!! asset('js/jquery-ui.js') !!}"></script> --}}
 

@@ -1028,6 +1028,7 @@ body .mistake {
 body .game.clone {
   position: absolute;
   -webkit-filter: blur(2px);
+  filter: blur(2px);
   opacity: 0.15;
   pointer-events: none;
   top: 30px;

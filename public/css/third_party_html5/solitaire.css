@@ -217,6 +217,12 @@ button:hover {
   box-sizing: border-box;
 }
 
+/*
+.stack.over {
+  border: 1px dashed #fff;
+}
+*/
+
 .dealer,
 .stacks {
   float: left;
@@ -302,6 +308,12 @@ button:hover {
           backface-visibility: hidden;
   border-radius: 6.25px;
 }
+
+/*
+.card .front {
+	transform: rotateY( 0deg );
+}
+*/
 
 .card .rear {
   background-color: #fff;
@@ -523,6 +535,15 @@ button:hover {
 }
 
 /* no clicky on child elements */
+
+/*
+.card:not(.flipped),
+.card .value,
+.card .middle,
+.card span {
+	pointer-events: none;
+}
+*/
 
 /* ACE */
 
