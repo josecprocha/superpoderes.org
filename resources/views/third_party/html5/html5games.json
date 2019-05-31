@@ -499,6 +499,12 @@
       "name":"Dots",
       "btn": "btn-warning",
       "enabled": true
+    },
+    {
+      "id":"fanorona",
+      "name":"Fanorona (WIP)",
+      "btn": "btn-warning",
+      "enabled": true
     }
   ],
   "fun":[

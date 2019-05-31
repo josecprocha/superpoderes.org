@@ -397,6 +397,10 @@ Route::get('third_party/html5/dots', function () {
   return view('third_party.html5.games.dots');
 });
 
+Route::get('third_party/html5/fanorona', function () {
+  return view('third_party.html5.games.fanorona');
+});
+
 // Fun and Rest
 
 Route::get('third_party/html5/matchcolor', function () {

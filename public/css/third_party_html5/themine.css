@@ -1109,29 +1109,29 @@ body .game_segment .drip_container .drip {
   opacity: 1;
 }
 body .game_segment .drip_container .drip:nth-of-type(1) {
-  left: 12px;
-  -webkit-animation: drip 1.25s 2.9s linear infinite;
-          animation: drip 1.25s 2.9s linear infinite;
+  left: 116px;
+  -webkit-animation: drip 1.25s 1.4s linear infinite;
+          animation: drip 1.25s 1.4s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(2) {
-  left: 8px;
-  -webkit-animation: drip 1.25s 0.1s linear infinite;
-          animation: drip 1.25s 0.1s linear infinite;
+  left: 52px;
+  -webkit-animation: drip 1.25s 2.4s linear infinite;
+          animation: drip 1.25s 2.4s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(3) {
-  left: 46px;
-  -webkit-animation: drip 1.25s 4.8s linear infinite;
-          animation: drip 1.25s 4.8s linear infinite;
+  left: 104px;
+  -webkit-animation: drip 1.25s 2.7s linear infinite;
+          animation: drip 1.25s 2.7s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(4) {
-  left: 73px;
-  -webkit-animation: drip 1.25s 4.1s linear infinite;
-          animation: drip 1.25s 4.1s linear infinite;
+  left: 138px;
+  -webkit-animation: drip 1.25s 4.5s linear infinite;
+          animation: drip 1.25s 4.5s linear infinite;
 }
 body .game_segment .drip_container .drip:nth-of-type(5) {
-  left: 20px;
-  -webkit-animation: drip 1.25s 4.6s linear infinite;
-          animation: drip 1.25s 4.6s linear infinite;
+  left: 65px;
+  -webkit-animation: drip 1.25s 2.7s linear infinite;
+          animation: drip 1.25s 2.7s linear infinite;
 }
 @-webkit-keyframes drip {
   0% {
@@ -1240,6 +1240,7 @@ body .game_segment .tiles .tile img {
 }
 body .game_segment .tiles .tile img:hover {
   -webkit-filter: drop-shadow(2px 0px white) drop-shadow(-2px 0px white) drop-shadow(0px -2px white);
+  filter: drop-shadow(2px 0px white) drop-shadow(-2px 0px white) drop-shadow(0px -2px white);
 }
 body .game_segment .tiles .tile label {
   pointer-events: none;
