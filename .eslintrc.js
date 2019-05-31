@@ -11,10 +11,3 @@ module.exports = {
     'prettier/prettier': ['error']
   }
 };
-
-/*
-module.exports = {
-  plugins: ['prettier'],
-
-};
-*/
