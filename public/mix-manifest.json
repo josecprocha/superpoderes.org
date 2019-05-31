@@ -58,6 +58,7 @@
     "/js/matter.js": "/js/matter.js",
     "/js/modernizr.js": "/js/modernizr.js",
     "/css/normalize.css": "/css/normalize.css",
+    "/js/obelisk.min.js": "/js/obelisk.min.js",
     "/js/p5.min.js": "/js/p5.min.js",
     "/js/pixi.js": "/js/pixi.js",
     "/js/decomp.min.js": "/js/decomp.min.js",

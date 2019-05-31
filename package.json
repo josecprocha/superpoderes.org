@@ -48,6 +48,7 @@
         "matter-js": "0.14.2",
         "modernizr": "3.7.1",
         "normalize.css": "8.0.1",
+        "obelisk.js": "^1.2.2",
         "p5": "^0.8.0",
         "pixi.js": "5.0.3",
         "poly-decomp": "0.3.0",
