@@ -2,7 +2,7 @@
 const WEB_WORKER_URL = location.href.concat('/../../../js/third_party_html5/align4.worker.js');
 
 const BLURBS = {
-  'start': {
+  start: {
     header: 'Get Ready',
     blurb: 'Select your difficulty and start the game.'
   },
@@ -11,7 +11,7 @@ const BLURBS = {
     blurb: 'Click on the board to drop your chip.'
   },
   'p2-turn': {
-    header: 'Computer\'s Turn',
+    header: "Computer's Turn",
     blurb: 'The computer is trying to find the best way to make you lose.'
   },
   'p1-win': {
@@ -20,16 +20,16 @@ const BLURBS = {
   },
   'p2-win': {
     header: 'Computer Wins',
-    blurb: 'Try again when you\'re done wiping your tears of shame.'
+    blurb: "Try again when you're done wiping your tears of shame."
   },
-  'tie': {
+  tie: {
     header: 'Tie',
-    blurb: 'Everyone\'s a winner! Or loser. Depends on how you look at it.'
+    blurb: "Everyone's a winner! Or loser. Depends on how you look at it."
   }
 };
 const OUTLOOKS = {
   'win-imminent': 'Uh oh, computer is feeling saucy!',
-  'loss-imminent': 'Computer is unsure. Now\'s your chance!'
+  'loss-imminent': "Computer is unsure. Now's your chance!"
 };
 
 // global variables
@@ -44,23 +44,33 @@ $(function() {
 
   // create worker
   worker = new Worker(WEB_WORKER_URL);
-  worker.addEventListener('message', function(e) {
-    switch(e.data.messageType) {
-      case 'reset-done':
-        startHumanTurn();
-        break;
-      case 'human-move-done':
-        endHumanTurn(e.data.coords, e.data.isWin, e.data.winningChips, e.data.isBoardFull);
-        break;
-      case 'progress':
-        updateComputerTurn(e.data.col);
-        break;
-      case 'computer-move-done':
-        endComputerTurn(e.data.coords, e.data.isWin, e.data.winningChips, e.data.isBoardFull,
-          e.data.isWinImminent, e.data.isLossImminent);
-        break;
-    }
-  }, false);
+  worker.addEventListener(
+    'message',
+    function(e) {
+      switch (e.data.messageType) {
+        case 'reset-done':
+          startHumanTurn();
+          break;
+        case 'human-move-done':
+          endHumanTurn(e.data.coords, e.data.isWin, e.data.winningChips, e.data.isBoardFull);
+          break;
+        case 'progress':
+          updateComputerTurn(e.data.col);
+          break;
+        case 'computer-move-done':
+          endComputerTurn(
+            e.data.coords,
+            e.data.isWin,
+            e.data.winningChips,
+            e.data.isBoardFull,
+            e.data.isWinImminent,
+            e.data.isLossImminent
+          );
+          break;
+      }
+    },
+    false
+  );
 });
 
 function setBlurb(key) {
@@ -70,10 +80,8 @@ function setBlurb(key) {
 
 function setOutlook(key) {
   var $outlook = $('.info .outlook');
-  if(key) {
-    $outlook
-      .text(OUTLOOKS[key])
-      .show();
+  if (key) {
+    $outlook.text(OUTLOOKS[key]).show();
   } else {
     $outlook.hide();
   }
@@ -85,7 +93,7 @@ function startGame() {
   $('.lit-cells, .chips').empty();
 
   worker.postMessage({
-    messageType: 'reset',
+    messageType: 'reset'
   });
 }
 
@@ -95,7 +103,7 @@ function startHumanTurn() {
 
   // if mouse is already over a column, show cursor chip there
   var col = $('.click-columns div:hover').index();
-  if(col !== -1) {
+  if (col !== -1) {
     createCursorChip(1, col);
   }
 
@@ -126,14 +134,14 @@ function startHumanTurn() {
 
 function endHumanTurn(coords, isWin, winningChips, isBoardFull) {
   $('.click-columns div').removeClass('hover');
-  if(!coords) {
+  if (!coords) {
     // column was full, human goes again
     startHumanTurn();
   } else {
     dropCursorChip(coords.row, function() {
-      if(isWin) {
+      if (isWin) {
         endGame('p1-win', winningChips);
-      } else if(isBoardFull) {
+      } else if (isBoardFull) {
         endGame('tie');
       } else {
         // pass turn to computer
@@ -168,7 +176,7 @@ function endComputerTurn(coords, isWin, winningChips, isBoardFull, isWinImminent
       } else if (isBoardFull) {
         endGame('tie');
       } else {
-        if(isWinImminent) {
+        if (isWinImminent) {
           setOutlook('win-imminent');
         } else if (isLossImminent) {
           setOutlook('loss-imminent');
@@ -189,9 +197,9 @@ function endGame(blurbKey, winningChips) {
   setBlurb(blurbKey);
   setOutlook();
 
-  if(winningChips) {
+  if (winningChips) {
     // not a tie, highlight the chips in the winning run
-    for(var i = 0; i < winningChips.length; i++) {
+    for (var i = 0; i < winningChips.length; i++) {
       createLitCell(winningChips[i].col, winningChips[i].row);
     }
   }
@@ -199,21 +207,23 @@ function endGame(blurbKey, winningChips) {
 
 function createLitCell(col, row) {
   $('<div>')
-  .css({
-    'left': indexToPixels(col),
-    'bottom': indexToPixels(row)
-  })
-  .appendTo('.lit-cells');
+    .css({
+      left: indexToPixels(col),
+      bottom: indexToPixels(row)
+    })
+    .appendTo('.lit-cells');
 }
 
 function createCursorChip(player, col) {
   var playerClass = 'p' + player;
-  $('<div>', { 'class': 'cursor ' + playerClass })
+  $('<div>', { class: 'cursor ' + playerClass })
     .css('left', indexToPixels(col))
     .appendTo('.chips');
 
   // also highlight column
-  $('.lit-columns div').eq(col).addClass('lit');
+  $('.lit-columns div')
+    .eq(col)
+    .addClass('lit');
 }
 
 function destroyCursorChip() {
@@ -224,7 +234,9 @@ function destroyCursorChip() {
 function moveCursorChip(col, callback) {
   $('.chips .cursor').css('left', indexToPixels(col));
   $('.lit-columns .lit').removeClass('lit');
-  $('.lit-columns div').eq(col).addClass('lit');
+  $('.lit-columns div')
+    .eq(col)
+    .addClass('lit');
 
   // callback is only used when the computer is about to drop a chip
   // give it a slight delay for visual interest
@@ -234,12 +246,12 @@ function moveCursorChip(col, callback) {
 function dropCursorChip(row, callback) {
   // speed of animation depends on how far the chip has to drop
   var ms = (7 - row) * 40;
-  var duration = (ms / 1000) + 's';
+  var duration = ms / 1000 + 's';
 
   $('.chips .cursor')
     .removeClass('cursor')
     .css({
-      'bottom': indexToPixels(row),
+      bottom: indexToPixels(row),
       'transition-duration': duration,
       'animation-delay': duration
     })
@@ -250,5 +262,5 @@ function dropCursorChip(row, callback) {
 }
 
 function indexToPixels(index) {
-  return (index * 61 + 1) + 'px';
+  return index * 61 + 1 + 'px';
 }

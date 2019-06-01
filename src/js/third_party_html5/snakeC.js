@@ -1,11 +1,11 @@
-var Snake = Sketch.create({fullscreen: false, width: 512, height: 512}), i = 0;
+var Snake = Sketch.create({ fullscreen: false, width: 512, height: 512 }),
+  i = 0;
 
 function distance(ax, ay, bx, by) {
-  return Math.sqrt(Math.pow( ax - bx, 2) + Math.pow( ay - by, 2));
-};
+  return Math.sqrt(Math.pow(ax - bx, 2) + Math.pow(ay - by, 2));
+}
 
 function Particle(options) {
-
   this.x = options.x;
   this.y = options.y;
   this.vx = options.vx;
@@ -18,11 +18,9 @@ function Particle(options) {
   this.aceleration = 1.02;
 
   this.angle = 0;
-
-};
+}
 
 Particle.prototype.update = function() {
-
   this.x += this.vx;
   this.y += this.vy;
 
@@ -32,49 +30,43 @@ Particle.prototype.update = function() {
   this.angle += 0.02;
 
   this.size *= 0.99;
-
 };
 
 Particle.prototype.draw = function() {
   Snake.fillRect(this.x, this.y, this.size, this.size);
 };
 
-function SnakeNode(x,y){
+function SnakeNode(x, y) {
   this.x = x;
   this.y = y;
   this.size = Snake.gridSize;
 }
 
 SnakeNode.prototype.update = function() {
-
-  if(this.x < 0){
+  if (this.x < 0) {
     this.x = Snake.cols - 1;
   }
 
-  if(this.x > Snake.cols - 1){
+  if (this.x > Snake.cols - 1) {
     this.x = 0;
   }
 
-  if(this.y < 0){
+  if (this.y < 0) {
     this.y = Snake.rows - 1;
   }
 
-  if(this.y > Snake.rows - 1){
+  if (this.y > Snake.rows - 1) {
     this.y = 0;
   }
-
 };
 
 SnakeNode.prototype.draw = function() {
-
-  Snake.fillRect((this.x * this.size) + 1, (this.y * this.size) + 1, this.size - 2, this.size - 2);
-
+  Snake.fillRect(this.x * this.size + 1, this.y * this.size + 1, this.size - 2, this.size - 2);
 };
 
 Snake.setup = function() {
-
   this.snake = [];
-  this.food = {x: 0, y: 0};
+  this.food = { x: 0, y: 0 };
   this.gridSize = 16;
   this.cols = Math.round(this.width / this.gridSize);
   this.rows = Math.round(this.height / this.gridSize);
@@ -82,19 +74,43 @@ Snake.setup = function() {
   //more is less
   this.speed = 4;
   this.direction = 'right';
-  this.head = {x: 0,y: 0};
-  this.tail = {x: 0,y: 0};
+  this.head = { x: 0, y: 0 };
+  this.tail = { x: 0, y: 0 };
   this.particles = [];
   this.particlesMax = 80;
   this.particlesIndex = 0;
   this.score = 0;
 
- this.sound = new Audio();
- this.sound.src = jsfxr([0,,0.1812,,0.1349,0.4524,,0.2365,,,,,,0.0819,,,,,1,,,,,0.5]);
+  this.sound = new Audio();
+  this.sound.src = jsfxr([
+    0,
+    ,
+    0.1812,
+    ,
+    0.1349,
+    0.4524,
+    ,
+    0.2365,
+    ,
+    ,
+    ,
+    ,
+    ,
+    0.0819,
+    ,
+    ,
+    ,
+    ,
+    1,
+    ,
+    ,
+    ,
+    ,
+    0.5
+  ]);
 
   this.makeSnake();
   this.makeFood();
-
 };
 
 Snake.init = function() {
@@ -105,75 +121,56 @@ Snake.init = function() {
 };
 
 Snake.makeFood = function() {
-
-  this.food.x = Math.round(random( 1, this.cols - 1 ));
-  this.food.y = Math.round(random( 1, this.rows - 1 ));
+  this.food.x = Math.round(random(1, this.cols - 1));
+  this.food.y = Math.round(random(1, this.rows - 1));
 
   for (i = 0; i < 20; i++) {
-    this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
-      x: random(this.food.x * this.gridSize, (this.food.x * this.gridSize) + this.gridSize ),
-      y:  random(this.food.y * this.gridSize, (this.food.y * this.gridSize) + this.gridSize ),
-      vx: random([-5,-3,5,3]),
-      vy: random([-5,-3,5,3]),
-      size: random(4,8),
-      orbitX: random(-8,8),
-      orbitY: random(-8,8),
-      speedX: random(-8,8),
-      speedY: random(-8,8)
+    this.particles[this.particlesIndex++ % this.particlesMax] = new Particle({
+      x: random(this.food.x * this.gridSize, this.food.x * this.gridSize + this.gridSize),
+      y: random(this.food.y * this.gridSize, this.food.y * this.gridSize + this.gridSize),
+      vx: random([-5, -3, 5, 3]),
+      vy: random([-5, -3, 5, 3]),
+      size: random(4, 8),
+      orbitX: random(-8, 8),
+      orbitY: random(-8, 8),
+      speedX: random(-8, 8),
+      speedY: random(-8, 8)
     });
-  };
-
+  }
 };
 
 Snake.makeSnake = function() {
-
   var length = 6;
   this.snake = [];
 
   for (i = length - 1; i >= 0; i--) {
-
     this.snake.push(new SnakeNode(i, 0));
-
-  };
-
-
+  }
 };
 
 Snake.keydown = function() {
-
-  if( this.keys.RIGHT && this.direction !== 'left'){
-
+  if (this.keys.RIGHT && this.direction !== 'left') {
     this.direction = 'right';
-
   }
 
-  if( this.keys.LEFT && this.direction !== 'right'){
-
+  if (this.keys.LEFT && this.direction !== 'right') {
     this.direction = 'left';
-
   }
 
-  if( this.keys.UP && this.direction !== 'down'){
-
+  if (this.keys.UP && this.direction !== 'down') {
     this.direction = 'up';
-
   }
 
-  if( this.keys.DOWN && this.direction !== 'up' ){
-
+  if (this.keys.DOWN && this.direction !== 'up') {
     this.direction = 'down';
-
   }
-
 };
 
 Snake.update = function() {
+  if (this.tick % this.speed === 0) {
+    this.head = { x: this.snake[0].x, y: this.snake[0].y };
 
-  if(this.tick % this.speed === 0){
-
-    this.head = {x: this.snake[0].x, y: this.snake[0].y};
-
-    switch(this.direction){
+    switch (this.direction) {
       case 'right':
         this.head.x++;
         break;
@@ -185,97 +182,89 @@ Snake.update = function() {
         break;
       case 'down':
         this.head.y++;
-        break
+        break;
     }
 
-    if(this.head.x === this.food.x && this.head.y === this.food.y){
-
-   this.sound.play();
+    if (this.head.x === this.food.x && this.head.y === this.food.y) {
+      this.sound.play();
       this.tail = new SnakeNode(this.head.x, this.head.y);
       for (var i = 0; i < 20; i++) {
-        this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
-          x: random(this.food.x * this.gridSize, (this.food.x * this.gridSize) + this.gridSize ),
-          y:  random(this.food.y * this.gridSize, (this.food.y * this.gridSize) + this.gridSize ),
-          vx: random([-5,-3,5,3]),
-          vy: random([-5,-3,5,3]),
-          size: random(4,8),
-          orbitX: random(-8,8),
-          orbitY: random(-8,8),
-          speedX: random(-8,8),
-          speedY: random(-8,8),
+        this.particles[this.particlesIndex++ % this.particlesMax] = new Particle({
+          x: random(this.food.x * this.gridSize, this.food.x * this.gridSize + this.gridSize),
+          y: random(this.food.y * this.gridSize, this.food.y * this.gridSize + this.gridSize),
+          vx: random([-5, -3, 5, 3]),
+          vy: random([-5, -3, 5, 3]),
+          size: random(4, 8),
+          orbitX: random(-8, 8),
+          orbitY: random(-8, 8),
+          speedX: random(-8, 8),
+          speedY: random(-8, 8),
           color: '#181818'
         });
       }
 
       this.makeFood();
       this.score++;
-
     } else {
-
       this.tail = this.snake.pop();
       this.tail.x = this.head.x;
       this.tail.y = this.head.y;
-
     }
 
     this.snake.unshift(this.tail);
 
     for (i = 0; i < this.snake.length; i++) {
-
-      if(i > 0 && this.head.x === this.snake[i].x && this.head.y === this.snake[i].y){
+      if (i > 0 && this.head.x === this.snake[i].x && this.head.y === this.snake[i].y) {
         this.init();
         return false;
       }
 
       this.snake[i].update();
-
-    };
-
+    }
   }
 
   for (i = this.particles.length - 1; i >= 0; i--) {
     this.particles[i].update();
-  };
+  }
 
   this.tick++;
-
 };
 
 Snake.draw = function() {
-
   this.fillStyle = '#181818';
 
   for (i = 0; i < this.snake.length; i++) {
-
     this.snake[i].draw();
-
-  };
+  }
 
   for (i = this.particles.length - 1; i >= 0; i--) {
     this.particles[i].draw();
-  };
+  }
 
-    if(this.tick % 2 === 0){
-      this.particles[(this.particlesIndex++)%this.particlesMax] = new Particle({
-        x: random(this.food.x * this.gridSize, (this.food.x * this.gridSize) + this.gridSize ),
-        y:  random(this.food.y * this.gridSize, (this.food.y * this.gridSize) + this.gridSize ),
-        vx: random([-1,1]),
-        vy: random([-1,1]),
-        size: random(1,2),
-        orbitX: random(-2,2),
-        orbitY: random(-2,2),
-        speedX: random(-2,2),
-        speedY: random(-2,2),
-        color: '#181818'
-      });
+  if (this.tick % 2 === 0) {
+    this.particles[this.particlesIndex++ % this.particlesMax] = new Particle({
+      x: random(this.food.x * this.gridSize, this.food.x * this.gridSize + this.gridSize),
+      y: random(this.food.y * this.gridSize, this.food.y * this.gridSize + this.gridSize),
+      vx: random([-1, 1]),
+      vy: random([-1, 1]),
+      size: random(1, 2),
+      orbitX: random(-2, 2),
+      orbitY: random(-2, 2),
+      speedX: random(-2, 2),
+      speedY: random(-2, 2),
+      color: '#181818'
+    });
+  }
 
-    }
+  this.fillText(this.score, this.food.x * this.gridSize, this.food.y * this.gridSize);
 
-    this.fillText(this.score, (this.food.x * this.gridSize), (this.food.y * this.gridSize));
-
-    this.fillRect((this.food.x * this.gridSize) + 1, (this.food.y * this.gridSize) + 1, this.gridSize - 2, this.gridSize - 2);
-
-  };
+  this.fillRect(
+    this.food.x * this.gridSize + 1,
+    this.food.y * this.gridSize + 1,
+    this.gridSize - 2,
+    this.gridSize - 2
+  );
+};
 
 /**
  * SfxrParams
@@ -333,26 +322,24 @@ function SfxrParams() {
    *                x: masterVolume
    * @return If the string successfully parsed
    */
-  this.setSettings = function(values)
-  {
-    for ( var i = 0; i < 24; i++ )
-    {
-      this[String.fromCharCode( 97 + i )] = values[i] || 0;
+  this.setSettings = function(values) {
+    for (var i = 0; i < 24; i++) {
+      this[String.fromCharCode(97 + i)] = values[i] || 0;
     }
 
     // I moved this here from the reset(true) function
-    if (this['c'] < .01) {
-      this['c'] = .01;
+    if (this['c'] < 0.01) {
+      this['c'] = 0.01;
     }
 
     var totalTime = this['b'] + this['c'] + this['e'];
-    if (totalTime < .18) {
-      var multiplier = .18 / totalTime;
-      this['b']  *= multiplier;
+    if (totalTime < 0.18) {
+      var multiplier = 0.18 / totalTime;
+      this['b'] *= multiplier;
       this['c'] *= multiplier;
-      this['e']   *= multiplier;
+      this['e'] *= multiplier;
     }
-  }
+  };
 }
 
 /**
@@ -384,7 +371,7 @@ function SfxrSynth() {
   //
   //--------------------------------------------------------------------------
 
-  this._params = new SfxrParams();  // Params instance
+  this._params = new SfxrParams(); // Params instance
 
   //--------------------------------------------------------------------------
   //
@@ -393,21 +380,17 @@ function SfxrSynth() {
   //--------------------------------------------------------------------------
 
   var _envelopeLength0, // Length of the attack stage
-      _envelopeLength1, // Length of the sustain stage
-      _envelopeLength2, // Length of the decay stage
-
-      _period,          // Period of the wave
-      _maxPeriod,       // Maximum period before sound stops (from minFrequency)
-
-      _slide,           // Note slide
-      _deltaSlide,      // Change in slide
-
-      _changeAmount,    // Amount to change the note by
-      _changeTime,      // Counter for the note change
-      _changeLimit,     // Once the time reaches this limit, the note changes
-
-      _squareDuty,      // Offset of center switching point in the square wave
-      _dutySweep;       // Amount to change the duty by
+    _envelopeLength1, // Length of the sustain stage
+    _envelopeLength2, // Length of the decay stage
+    _period, // Period of the wave
+    _maxPeriod, // Maximum period before sound stops (from minFrequency)
+    _slide, // Note slide
+    _deltaSlide, // Change in slide
+    _changeAmount, // Amount to change the note by
+    _changeTime, // Counter for the note change
+    _changeLimit, // Once the time reaches this limit, the note changes
+    _squareDuty, // Offset of center switching point in the square wave
+    _dutySweep; // Amount to change the duty by
 
   //--------------------------------------------------------------------------
   //
@@ -423,21 +406,21 @@ function SfxrSynth() {
     // Shorter reference
     var p = this._params;
 
-    _period       = 100 / (p['f'] * p['f'] + .001);
-    _maxPeriod    = 100 / (p['g']   * p['g']   + .001);
+    _period = 100 / (p['f'] * p['f'] + 0.001);
+    _maxPeriod = 100 / (p['g'] * p['g'] + 0.001);
 
-    _slide        = 1 - p['h'] * p['h'] * p['h'] * .01;
-    _deltaSlide   = -p['i'] * p['i'] * p['i'] * .000001;
+    _slide = 1 - p['h'] * p['h'] * p['h'] * 0.01;
+    _deltaSlide = -p['i'] * p['i'] * p['i'] * 0.000001;
 
     if (!p['a']) {
-      _squareDuty = .5 - p['n'] / 2;
-      _dutySweep  = -p['o'] * .00005;
+      _squareDuty = 0.5 - p['n'] / 2;
+      _dutySweep = -p['o'] * 0.00005;
     }
 
-    _changeAmount =  1 + p['l'] * p['l'] * (p['l'] > 0 ? -.9 : 10);
-    _changeTime   = 0;
-    _changeLimit  = p['m'] == 1 ? 0 : (1 - p['m']) * (1 - p['m']) * 20000 + 32;
-  }
+    _changeAmount = 1 + p['l'] * p['l'] * (p['l'] > 0 ? -0.9 : 10);
+    _changeTime = 0;
+    _changeLimit = p['m'] == 1 ? 0 : (1 - p['m']) * (1 - p['m']) * 20000 + 32;
+  };
 
   // I split the reset() function into two functions for better readability
   this.totalReset = function() {
@@ -447,13 +430,13 @@ function SfxrSynth() {
     var p = this._params;
 
     // Calculating the length is all that remained here, everything else moved somewhere
-    _envelopeLength0 = p['b']  * p['b']  * 100000;
+    _envelopeLength0 = p['b'] * p['b'] * 100000;
     _envelopeLength1 = p['c'] * p['c'] * 100000;
-    _envelopeLength2 = p['e']   * p['e']   * 100000 + 12;
+    _envelopeLength2 = p['e'] * p['e'] * 100000 + 12;
     // Full length of the volume envelop (and therefore sound)
     // Make sure the length can be divided by 3 so we will not need the padding "==" after base64 encode
-    return ((_envelopeLength0 + _envelopeLength1 + _envelopeLength2) / 3 | 0) * 3;
-  }
+    return (((_envelopeLength0 + _envelopeLength1 + _envelopeLength2) / 3) | 0) * 3;
+  };
 
   /**
    * Writes the wave to the supplied buffer ByteArray
@@ -466,71 +449,71 @@ function SfxrSynth() {
 
     // If the filters are active
     var _filters = p['s'] != 1 || p['v'],
-        // Cutoff multiplier which adjusts the amount the wave position can move
-        _hpFilterCutoff = p['v'] * p['v'] * .1,
-        // Speed of the high-pass cutoff multiplier
-        _hpFilterDeltaCutoff = 1 + p['w'] * .0003,
-        // Cutoff multiplier which adjusts the amount the wave position can move
-        _lpFilterCutoff = p['s'] * p['s'] * p['s'] * .1,
-        // Speed of the low-pass cutoff multiplier
-        _lpFilterDeltaCutoff = 1 + p['t'] * .0001,
-        // If the low pass filter is active
-        _lpFilterOn = p['s'] != 1,
-        // masterVolume * masterVolume (for quick calculations)
-        _masterVolume = p['x'] * p['x'],
-        // Minimum frequency before stopping
-        _minFreqency = p['g'],
-        // If the phaser is active
-        _phaser = p['q'] || p['r'],
-        // Change in phase offset
-        _phaserDeltaOffset = p['r'] * p['r'] * p['r'] * .2,
-        // Phase offset for phaser effect
-        _phaserOffset = p['q'] * p['q'] * (p['q'] < 0 ? -1020 : 1020),
-        // Once the time reaches this limit, some of the    iables are reset
-        _repeatLimit = p['p'] ? ((1 - p['p']) * (1 - p['p']) * 20000 | 0) + 32 : 0,
-        // The punch factor (louder at begining of sustain)
-        _sustainPunch = p['d'],
-        // Amount to change the period of the wave by at the peak of the vibrato wave
-        _vibratoAmplitude = p['j'] / 2,
-        // Speed at which the vibrato phase moves
-        _vibratoSpeed = p['k'] * p['k'] * .01,
-        // The type of wave to generate
-        _waveType = p['a'];
+      // Cutoff multiplier which adjusts the amount the wave position can move
+      _hpFilterCutoff = p['v'] * p['v'] * 0.1,
+      // Speed of the high-pass cutoff multiplier
+      _hpFilterDeltaCutoff = 1 + p['w'] * 0.0003,
+      // Cutoff multiplier which adjusts the amount the wave position can move
+      _lpFilterCutoff = p['s'] * p['s'] * p['s'] * 0.1,
+      // Speed of the low-pass cutoff multiplier
+      _lpFilterDeltaCutoff = 1 + p['t'] * 0.0001,
+      // If the low pass filter is active
+      _lpFilterOn = p['s'] != 1,
+      // masterVolume * masterVolume (for quick calculations)
+      _masterVolume = p['x'] * p['x'],
+      // Minimum frequency before stopping
+      _minFreqency = p['g'],
+      // If the phaser is active
+      _phaser = p['q'] || p['r'],
+      // Change in phase offset
+      _phaserDeltaOffset = p['r'] * p['r'] * p['r'] * 0.2,
+      // Phase offset for phaser effect
+      _phaserOffset = p['q'] * p['q'] * (p['q'] < 0 ? -1020 : 1020),
+      // Once the time reaches this limit, some of the    iables are reset
+      _repeatLimit = p['p'] ? (((1 - p['p']) * (1 - p['p']) * 20000) | 0) + 32 : 0,
+      // The punch factor (louder at begining of sustain)
+      _sustainPunch = p['d'],
+      // Amount to change the period of the wave by at the peak of the vibrato wave
+      _vibratoAmplitude = p['j'] / 2,
+      // Speed at which the vibrato phase moves
+      _vibratoSpeed = p['k'] * p['k'] * 0.01,
+      // The type of wave to generate
+      _waveType = p['a'];
 
-    var _envelopeLength      = _envelopeLength0,     // Length of the current envelope stage
-        _envelopeOverLength0 = 1 / _envelopeLength0, // (for quick calculations)
-        _envelopeOverLength1 = 1 / _envelopeLength1, // (for quick calculations)
-        _envelopeOverLength2 = 1 / _envelopeLength2; // (for quick calculations)
+    var _envelopeLength = _envelopeLength0, // Length of the current envelope stage
+      _envelopeOverLength0 = 1 / _envelopeLength0, // (for quick calculations)
+      _envelopeOverLength1 = 1 / _envelopeLength1, // (for quick calculations)
+      _envelopeOverLength2 = 1 / _envelopeLength2; // (for quick calculations)
 
     // Damping muliplier which restricts how fast the wave position can move
-    var _lpFilterDamping = 5 / (1 + p['u'] * p['u'] * 20) * (.01 + _lpFilterCutoff);
-    if (_lpFilterDamping > .8) {
-      _lpFilterDamping = .8;
+    var _lpFilterDamping = (5 / (1 + p['u'] * p['u'] * 20)) * (0.01 + _lpFilterCutoff);
+    if (_lpFilterDamping > 0.8) {
+      _lpFilterDamping = 0.8;
     }
     _lpFilterDamping = 1 - _lpFilterDamping;
 
-    var _finished = false,     // If the sound has finished
-        _envelopeStage    = 0, // Current stage of the envelope (attack, sustain, decay, end)
-        _envelopeTime     = 0, // Current time through current enelope stage
-        _envelopeVolume   = 0, // Current volume of the envelope
-        _hpFilterPos      = 0, // Adjusted wave position after high-pass filter
-        _lpFilterDeltaPos = 0, // Change in low-pass wave position, as allowed by the cutoff and damping
-        _lpFilterOldPos,       // Previous low-pass wave position
-        _lpFilterPos      = 0, // Adjusted wave position after low-pass filter
-        _periodTemp,           // Period modified by vibrato
-        _phase            = 0, // Phase through the wave
-        _phaserInt,            // Integer phaser offset, for bit maths
-        _phaserPos        = 0, // Position through the phaser buffer
-        _pos,                  // Phase expresed as a Number from 0-1, used for fast sin approx
-        _repeatTime       = 0, // Counter for the repeats
-        _sample,               // Sub-sample calculated 8 times per actual sample, averaged out to get the super sample
-        _superSample,          // Actual sample writen to the wave
-        _vibratoPhase     = 0; // Phase through the vibrato sine wave
+    var _finished = false, // If the sound has finished
+      _envelopeStage = 0, // Current stage of the envelope (attack, sustain, decay, end)
+      _envelopeTime = 0, // Current time through current enelope stage
+      _envelopeVolume = 0, // Current volume of the envelope
+      _hpFilterPos = 0, // Adjusted wave position after high-pass filter
+      _lpFilterDeltaPos = 0, // Change in low-pass wave position, as allowed by the cutoff and damping
+      _lpFilterOldPos, // Previous low-pass wave position
+      _lpFilterPos = 0, // Adjusted wave position after low-pass filter
+      _periodTemp, // Period modified by vibrato
+      _phase = 0, // Phase through the wave
+      _phaserInt, // Integer phaser offset, for bit maths
+      _phaserPos = 0, // Position through the phaser buffer
+      _pos, // Phase expresed as a Number from 0-1, used for fast sin approx
+      _repeatTime = 0, // Counter for the repeats
+      _sample, // Sub-sample calculated 8 times per actual sample, averaged out to get the super sample
+      _superSample, // Actual sample writen to the wave
+      _vibratoPhase = 0; // Phase through the vibrato sine wave
 
     // Buffer of wave values used to create the out of phase second wave
     var _phaserBuffer = new Array(1024),
-        // Buffer of random values used to generate noise
-        _noiseBuffer  = new Array(32);
+      // Buffer of random values used to generate noise
+      _noiseBuffer = new Array(32);
     for (var i = _phaserBuffer.length; i--; ) {
       _phaserBuffer[i] = 0;
     }
@@ -589,8 +572,8 @@ function SfxrSynth() {
         _squareDuty += _dutySweep;
         if (_squareDuty < 0) {
           _squareDuty = 0;
-        } else if (_squareDuty > .5) {
-          _squareDuty = .5;
+        } else if (_squareDuty > 0.5) {
+          _squareDuty = 0.5;
         }
       }
 
@@ -598,7 +581,7 @@ function SfxrSynth() {
       if (++_envelopeTime > _envelopeLength) {
         _envelopeTime = 0;
 
-        switch (++_envelopeStage)  {
+        switch (++_envelopeStage) {
           case 1:
             _envelopeLength = _envelopeLength1;
             break;
@@ -637,10 +620,10 @@ function SfxrSynth() {
       // Moves the high-pass filter cutoff
       if (_filters && _hpFilterDeltaCutoff) {
         _hpFilterCutoff *= _hpFilterDeltaCutoff;
-        if (_hpFilterCutoff < .00001) {
-          _hpFilterCutoff = .00001;
-        } else if (_hpFilterCutoff > .1) {
-          _hpFilterCutoff = .1;
+        if (_hpFilterCutoff < 0.00001) {
+          _hpFilterCutoff = 0.00001;
+        } else if (_hpFilterCutoff > 0.1) {
+          _hpFilterCutoff = 0.1;
         }
       }
 
@@ -662,19 +645,19 @@ function SfxrSynth() {
         // Gets the sample from the oscillator
         switch (_waveType) {
           case 0: // Square wave
-            _sample = ((_phase / _periodTemp) < _squareDuty) ? .5 : -.5;
+            _sample = _phase / _periodTemp < _squareDuty ? 0.5 : -0.5;
             break;
           case 1: // Saw wave
-            _sample = 1 - _phase / _periodTemp * 2;
+            _sample = 1 - (_phase / _periodTemp) * 2;
             break;
           case 2: // Sine wave (fast and accurate approx)
             _pos = _phase / _periodTemp;
-            _pos = (_pos > .5 ? _pos - 1 : _pos) * 6.28318531;
-            _sample = 1.27323954 * _pos + .405284735 * _pos * _pos * (_pos < 0 ? 1 : -1);
-            _sample = .225 * ((_sample < 0 ? -1 : 1) * _sample * _sample  - _sample) + _sample;
+            _pos = (_pos > 0.5 ? _pos - 1 : _pos) * 6.28318531;
+            _sample = 1.27323954 * _pos + 0.405284735 * _pos * _pos * (_pos < 0 ? 1 : -1);
+            _sample = 0.225 * ((_sample < 0 ? -1 : 1) * _sample * _sample - _sample) + _sample;
             break;
           case 3: // Noise
-            _sample = _noiseBuffer[Math.abs(_phase * 32 / _periodTemp | 0)];
+            _sample = _noiseBuffer[Math.abs(((_phase * 32) / _periodTemp) | 0)];
         }
 
         // Applies the low and high pass filters
@@ -683,8 +666,8 @@ function SfxrSynth() {
           _lpFilterCutoff *= _lpFilterDeltaCutoff;
           if (_lpFilterCutoff < 0) {
             _lpFilterCutoff = 0;
-          } else if (_lpFilterCutoff > .1) {
-            _lpFilterCutoff = .1;
+          } else if (_lpFilterCutoff > 0.1) {
+            _lpFilterCutoff = 0.1;
           }
 
           if (_lpFilterOn) {
@@ -713,14 +696,15 @@ function SfxrSynth() {
       }
 
       // Averages out the super samples and applies volumes
-      _superSample *= .125 * _envelopeVolume * _masterVolume;
+      _superSample *= 0.125 * _envelopeVolume * _masterVolume;
 
       // Clipping if too loud
-      buffer[i] = _superSample >= 1 ? 32767 : _superSample <= -1 ? -32768 : _superSample * 32767 | 0;
+      buffer[i] =
+        _superSample >= 1 ? 32767 : _superSample <= -1 ? -32768 : (_superSample * 32767) | 0;
     }
 
     return length;
-  }
+  };
 }
 
 // Adapted from http://codebase.es/riffwave/
@@ -731,31 +715,34 @@ window['jsfxr'] = function(settings) {
   synth._params.setSettings(settings);
   // Synthesize Wave
   var envelopeFullLength = synth.totalReset();
-  var data = new Uint8Array(((envelopeFullLength + 1) / 2 | 0) * 4 + 44);
+  var data = new Uint8Array((((envelopeFullLength + 1) / 2) | 0) * 4 + 44);
   var used = synth.synthWave(new Uint16Array(data.buffer, 44), envelopeFullLength) * 2;
   var dv = new Uint32Array(data.buffer, 0, 44);
   // Initialize header
   dv[0] = 0x46464952; // "RIFF"
-  dv[1] = used + 36;  // put total size here
+  dv[1] = used + 36; // put total size here
   dv[2] = 0x45564157; // "WAVE"
-  dv[3] = 0x20746D66; // "fmt "
+  dv[3] = 0x20746d66; // "fmt "
   dv[4] = 0x00000010; // size of the following
   dv[5] = 0x00010001; // Mono: 1 channel, PCM format
-  dv[6] = 0x0000AC44; // 44,100 samples per second
+  dv[6] = 0x0000ac44; // 44,100 samples per second
   dv[7] = 0x00015888; // byte rate: two bytes per sample
   dv[8] = 0x00100002; // 16 bits per sample, aligned on every two bytes
   dv[9] = 0x61746164; // "data"
-  dv[10] = used;      // put number of samples here
+  dv[10] = used; // put number of samples here
 
   // Base64 encoding written by me, @maettig
   used += 44;
   var i = 0,
-      base64Characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
-      output = 'data:audio/wav;base64,';
-  for (; i < used; i += 3)
-  {
-    var a = data[i] << 16 | data[i + 1] << 8 | data[i + 2];
-    output += base64Characters[a >> 18] + base64Characters[a >> 12 & 63] + base64Characters[a >> 6 & 63] + base64Characters[a & 63];
+    base64Characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/',
+    output = 'data:audio/wav;base64,';
+  for (; i < used; i += 3) {
+    var a = (data[i] << 16) | (data[i + 1] << 8) | data[i + 2];
+    output +=
+      base64Characters[a >> 18] +
+      base64Characters[(a >> 12) & 63] +
+      base64Characters[(a >> 6) & 63] +
+      base64Characters[a & 63];
   }
   return output;
-}
+};

@@ -1,7 +1,7 @@
 //Click/Touch the guitar, or any key to play!
 
 //Convert circle elements to paths
-MorphSVGPlugin.convertToPath("circle");
+MorphSVGPlugin.convertToPath('circle');
 
 //Note to self: Name stuff better in illustrator!
 //Varibles for the animation
@@ -33,83 +33,154 @@ spark_3 = document.getElementById('spark-4');
 
 //Declare timeline
 var pluck = new TimelineMax({
-	paused: true
-})
+  paused: true
+});
 
 //String Animtaions
-pluck.to(stringStraight_6_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_6_.getAttribute('points')}})
-					.to(stringStraight_6_, 1, {morphSVG: {points: stringStraight_6_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness, 0.04)})
+pluck
+  .to(stringStraight_6_, 0.1, {
+    ease: Expo.easeOut,
+    morphSVG: { points: stringPlucked_6_.getAttribute('points') }
+  })
+  .to(stringStraight_6_, 1, {
+    morphSVG: { points: stringStraight_6_.getAttribute('points') },
+    ease: Elastic.easeOut.config(stringStringyness, 0.04)
+  })
 
-					.to(stringStraight_7_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_7_.getAttribute('points')}}, "-=1.1")
-					.to(stringStraight_7_, 1, {morphSVG: {points: stringStraight_7_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness,0.04)}, "-=1")
+  .to(
+    stringStraight_7_,
+    0.1,
+    { ease: Expo.easeOut, morphSVG: { points: stringPlucked_7_.getAttribute('points') } },
+    '-=1.1'
+  )
+  .to(
+    stringStraight_7_,
+    1,
+    {
+      morphSVG: { points: stringStraight_7_.getAttribute('points') },
+      ease: Elastic.easeOut.config(stringStringyness, 0.04)
+    },
+    '-=1'
+  )
 
-					.to(stringStraight_8_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_8_.getAttribute('points')}}, "-=1.1")
-					.to(stringStraight_8_, 1, {morphSVG: {points: stringStraight_8_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness, 0.04)}, "-=1")
+  .to(
+    stringStraight_8_,
+    0.1,
+    { ease: Expo.easeOut, morphSVG: { points: stringPlucked_8_.getAttribute('points') } },
+    '-=1.1'
+  )
+  .to(
+    stringStraight_8_,
+    1,
+    {
+      morphSVG: { points: stringStraight_8_.getAttribute('points') },
+      ease: Elastic.easeOut.config(stringStringyness, 0.04)
+    },
+    '-=1'
+  )
 
-					.to(stringStraight_9_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_9_.getAttribute('points')}}, "-=1.1")
-					.to(stringStraight_9_, 1, {morphSVG: {points: stringStraight_9_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness, 0.04)}, "-=1")
+  .to(
+    stringStraight_9_,
+    0.1,
+    { ease: Expo.easeOut, morphSVG: { points: stringPlucked_9_.getAttribute('points') } },
+    '-=1.1'
+  )
+  .to(
+    stringStraight_9_,
+    1,
+    {
+      morphSVG: { points: stringStraight_9_.getAttribute('points') },
+      ease: Elastic.easeOut.config(stringStringyness, 0.04)
+    },
+    '-=1'
+  )
 
-					.to(stringStraight_10_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_10_.getAttribute('points')}}, "-=1.1")
-					.to(stringStraight_10_, 1, {morphSVG: {points: stringStraight_10_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness, 0.04)}, "-=1")
+  .to(
+    stringStraight_10_,
+    0.1,
+    { ease: Expo.easeOut, morphSVG: { points: stringPlucked_10_.getAttribute('points') } },
+    '-=1.1'
+  )
+  .to(
+    stringStraight_10_,
+    1,
+    {
+      morphSVG: { points: stringStraight_10_.getAttribute('points') },
+      ease: Elastic.easeOut.config(stringStringyness, 0.04)
+    },
+    '-=1'
+  )
 
-					.to(stringStraight_11_, 0.1, {ease: Expo.easeOut,morphSVG: {points: stringPlucked_11_.getAttribute('points')}}, "-=1.1")
-					.to(stringStraight_11_, 1, {morphSVG: {points: stringStraight_11_.getAttribute('points')},ease: Elastic.easeOut.config(stringStringyness, 0.04)}, "-=1")
+  .to(
+    stringStraight_11_,
+    0.1,
+    { ease: Expo.easeOut, morphSVG: { points: stringPlucked_11_.getAttribute('points') } },
+    '-=1.1'
+  )
+  .to(
+    stringStraight_11_,
+    1,
+    {
+      morphSVG: { points: stringStraight_11_.getAttribute('points') },
+      ease: Elastic.easeOut.config(stringStringyness, 0.04)
+    },
+    '-=1'
+  )
 
-//Note Animations
-					.to(note_1, 0.4, {x:"-50%", y:"-50%"}, "-=1.1")
-					.to(note_1, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(note_1, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  //Note Animations
+  .to(note_1, 0.4, { x: '-50%', y: '-50%' }, '-=1.1')
+  .to(note_1, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(note_1, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-					.to(note_2, 0.4, {x:"50%", y:"-50%"}, "-=1.1")
-					.to(note_2, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(note_2, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  .to(note_2, 0.4, { x: '50%', y: '-50%' }, '-=1.1')
+  .to(note_2, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(note_2, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-					.to(note_3, 0.4, {x:"-20%", y:"-50%"}, "-=1.1")
-					.to(note_3, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(note_3, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  .to(note_3, 0.4, { x: '-20%', y: '-50%' }, '-=1.1')
+  .to(note_3, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(note_3, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-					.to(note_4, 0.4, {x:"50%", y:"-25%"}, "-=1.1")
-					.to(note_4, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(note_4, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  .to(note_4, 0.4, { x: '50%', y: '-25%' }, '-=1.1')
+  .to(note_4, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(note_4, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-//Sparks Animations
-					.to(spark_1, 0.4, {x:"-50%", y:"50%"}, "-=1.1")
-					.to(spark_1, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(spark_1, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  //Sparks Animations
+  .to(spark_1, 0.4, { x: '-50%', y: '50%' }, '-=1.1')
+  .to(spark_1, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(spark_1, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-					.to(spark_2, 0.4, {x:"-50%", y:"-50%"}, "-=1.1")
-					.to(spark_2, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(spark_2, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  .to(spark_2, 0.4, { x: '-50%', y: '-50%' }, '-=1.1')
+  .to(spark_2, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(spark_2, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-					.to(spark_3, 0.4, {x:"50%", y:"-50%"}, "-=1.1")
-					.to(spark_3, 0.2, {opacity:1 , ease:SlowMo.easeIn}, "-=1.1")
-					.to(spark_3, 0.2, {opacity:0 , ease:SlowMo.easeOut}, "-=0.9")
+  .to(spark_3, 0.4, { x: '50%', y: '-50%' }, '-=1.1')
+  .to(spark_3, 0.2, { opacity: 1, ease: SlowMo.easeIn }, '-=1.1')
+  .to(spark_3, 0.2, { opacity: 0, ease: SlowMo.easeOut }, '-=0.9')
 
-//Speaker Animtaions
-					.to(speaker_1, 0.1, {ease: Expo.easeOut,morphSVG:speakerWobble_1}, "-=1.1")
-					.to(speaker_1, 0.4, {morphSVG:speaker_1,ease: Elastic.easeOut}, "-=1")
+  //Speaker Animtaions
+  .to(speaker_1, 0.1, { ease: Expo.easeOut, morphSVG: speakerWobble_1 }, '-=1.1')
+  .to(speaker_1, 0.4, { morphSVG: speaker_1, ease: Elastic.easeOut }, '-=1')
 
-					.to(speaker_2, 0.1, {ease: Expo.easeOut,morphSVG:speakerWobble_2}, "-=1.05")
-					.to(speaker_2, 0.4, {morphSVG:speaker_2,ease: Elastic.easeOut}, "-=0.95");
-
+  .to(speaker_2, 0.1, { ease: Expo.easeOut, morphSVG: speakerWobble_2 }, '-=1.05')
+  .to(speaker_2, 0.4, { morphSVG: speaker_2, ease: Elastic.easeOut }, '-=0.95');
 
 //Trigger Audio
 var i = 0;
 function playAudio() {
-	if (i < 12) {
-		++i;
-	} else {
-		i = 1;
-	}
-	var myAudio = document.getElementById("audio-" + i);
-	myAudio.play();
+  if (i < 12) {
+    ++i;
+  } else {
+    i = 1;
+  }
+  var myAudio = document.getElementById('audio-' + i);
+  myAudio.play();
 }
 
 function rockOut() {
-	pluck.restart();
-	pluck.play();
-	playAudio();
+  pluck.restart();
+  pluck.play();
+  playAudio();
 }
 
 //Do the stuff when clicked
-guitar.addEventListener("click", rockOut);
+guitar.addEventListener('click', rockOut);

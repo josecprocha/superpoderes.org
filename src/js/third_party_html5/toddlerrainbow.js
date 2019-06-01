@@ -2,7 +2,7 @@ const $ = (selector, startNode = document) => [...startNode.querySelectorAll(sel
 const game = {
   el: document.querySelector('#game'),
   p: $('#game p'),
-  start: function () {
+  start: function() {
     game.rainbow('none');
     game.build();
     game.oscillator = game.audio.createOscillator();
@@ -10,7 +10,7 @@ const game = {
     game.oscillator.frequency.value = 0;
     game.oscillator.start();
   },
-  build: function () {
+  build: function() {
     for (var i = 0; i < 5; i++) {
       var div = document.createElement('div');
       game.el.appendChild(div);
@@ -22,60 +22,64 @@ const game = {
     }
   },
   colors: ['e33', 'e93', 'ed3', '3b9', '39e', '93e', 'e39'],
-  random: function (array) {
+  random: function(array) {
     return parseInt(Math.random() * array.length);
   },
   r: 0,
-  hover: function (event) {
+  hover: function(event) {
     game.sound();
     event.target.className = 'invisible';
-    setTimeout(function () {
-      this.style.visibility = 'hidden';
-    }.bind(event.target), 2800);
+    setTimeout(
+      function() {
+        this.style.visibility = 'hidden';
+      }.bind(event.target),
+      2800
+    );
     if ($('b.invisible', game.el).length === $('b', game.el).length) {
       game.end();
     }
   },
   audio: new AudioContext(),
-  sound: function () {
+  sound: function() {
     var f = 440 + Math.random() * 440;
     game.oscillator.frequency.value = f;
-    setTimeout(function () {
+    setTimeout(function() {
       game.oscillator.frequency.value = 0;
     }, 60);
   },
-  music: function () {
+  music: function() {
     for (var i = 0; i < 12; i++) {
-      setTimeout(function () {
+      setTimeout(function() {
         game.sound();
       }, i * 160);
     }
   },
-  fall: function () {
+  fall: function() {
     var b = document.createElement('b');
     b.className = 'fall';
     var x = Math.random() * innerWidth * 0.9;
     b.style.left = x + 'px';
     game.el.appendChild(b);
   },
-  rainbow: function (s) {
+  rainbow: function(s) {
     for (var i in game.p) {
       game.p[i].style.display = s;
     }
   },
-  end: function () {
+  end: function() {
     game.rainbow('block');
     for (var i = 0; i < 100; i++) {
       setTimeout(game.fall, i * 12);
     }
     game.music();
-    setTimeout(function () {
-      $('b', game.el).forEach(function (el) {
+    setTimeout(function() {
+      $('b', game.el).forEach(function(el) {
         el.remove();
       });
       game.rainbow('none');
       game.build();
     }, 2500);
-  } };
+  }
+};
 
 game.start();

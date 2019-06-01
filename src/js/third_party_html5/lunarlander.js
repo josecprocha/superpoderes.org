@@ -25,7 +25,8 @@ const mainSceneFactory = {
       up: false,
       right: false,
       down: false,
-      left: false };
+      left: false
+    };
 
     state.options = options;
     state.mainContainer = new PIXI.Container();
@@ -37,7 +38,13 @@ const mainSceneFactory = {
     state.mainContainer.position = { x: 205, y: 205 };
     matter.render.container.addChild(state.background.graphics);
     matter.render.container.addChild(state.mainContainer);
-    state.ground = mainSceneFactory.createGround(options.width / 2, options.height + 60, options.width * 5, options.height / 2, options.width);
+    state.ground = mainSceneFactory.createGround(
+      options.width / 2,
+      options.height + 60,
+      options.width * 5,
+      options.height / 2,
+      options.width
+    );
     state.worldContainer.addChild(state.ground.graphics);
     state.ship = mainSceneFactory.createShip(options.width / 2 + 200, 30, state.input);
     state.minimap = mainSceneFactory.createMinimap(options.width - 130, 10);
@@ -53,12 +60,16 @@ const mainSceneFactory = {
     mainSceneFactory.handleKeys(state);
     const { position } = state.ship.matterBody;
     [state.worldContainer.position.x, state.worldContainer.position.y] = [
-    0 - position.x + state.options.width / 2,
-    0 - position.y + state.options.height / 2];
+      0 - position.x + state.options.width / 2,
+      0 - position.y + state.options.height / 2
+    ];
 
     state.minimap.render(state.ground, state.ship);
     const { bounds } = state.ground.matterBody;
-    state.ship.matterBody.position.x = Math.min(bounds.max.x - state.options.width / 2, Math.max(bounds.min.x + state.options.width / 2, position.x));
+    state.ship.matterBody.position.x = Math.min(
+      bounds.max.x - state.options.width / 2,
+      Math.max(bounds.min.x + state.options.width / 2, position.x)
+    );
     state.background.render(state.ship.matterBody.velocity);
     state.iteration++;
   },
@@ -103,8 +114,8 @@ const mainSceneFactory = {
 
   createMatter: state => {
     state.addMatter([state.ground, state.ship]);
-  } };
-
+  }
+};
 
 const minimapFactory = {
   create: (x, y) => {
@@ -115,7 +126,8 @@ const minimapFactory = {
       graphics,
       render: (ground, ship) => {
         minimapFactory.render(state, ground, ship);
-      } };
+      }
+    };
 
     return state;
   },
@@ -163,8 +175,8 @@ const minimapFactory = {
     minimapFactory.renderGround(state, ground);
     minimapFactory.renderShip(state, ship);
     // state.graphics.cacheAsBitmap = true;
-  } };
-
+  }
+};
 
 const groundFactory = {
   create: (x, y, width, height, screenWidth) => {
@@ -184,8 +196,9 @@ const groundFactory = {
         friction: 1,
         airFriction: 0,
         restitution: 0.1,
-        isStatic: true } };
-
+        isStatic: true
+      }
+    };
 
     return state;
   },
@@ -194,17 +207,17 @@ const groundFactory = {
     const stepSize = Math.floor(width / stepCount);
     const groundVertices = Array(...Array(stepCount)).map((_, index) => {
       return [
-      stepSize * index + stepSize / 2 + -width / 2,
-      -height / 2 - Math.floor(random() * 5) * elevationVariance];
-
+        stepSize * index + stepSize / 2 + -width / 2,
+        -height / 2 - Math.floor(random() * 5) * elevationVariance
+      ];
     });
     return [
-    [-width / 2, -height / 2],
-    ...groundVertices,
-    [width / 2, -height / 2],
-    [width / 2, height / 2],
-    [-width / 2, height / 2]].
-    map(([x, y]) => ({ x, y }));
+      [-width / 2, -height / 2],
+      ...groundVertices,
+      [width / 2, -height / 2],
+      [width / 2, height / 2],
+      [-width / 2, height / 2]
+    ].map(([x, y]) => ({ x, y }));
   },
 
   update: (state, options) => {
@@ -236,8 +249,8 @@ const groundFactory = {
       graphics.endFill();
     });
     graphics.cacheAsBitmap = true;
-  } };
-
+  }
+};
 
 const backgroundFactory = {
   create: (width, height) => {
@@ -249,8 +262,8 @@ const backgroundFactory = {
       return {
         x,
         y,
-        speed };
-
+        speed
+      };
     });
     const state = {
       stars,
@@ -259,7 +272,8 @@ const backgroundFactory = {
       graphics,
       render: vector => {
         backgroundFactory.render(state, vector);
-      } };
+      }
+    };
 
     return state;
   },
@@ -273,14 +287,18 @@ const backgroundFactory = {
       graphics.beginFill(0xffffff);
       graphics.drawCircle(x, y, speed);
       graphics.endFill();
-      [star.x, star.y] = vec2.add([], [star.x, star.y], [-vector.x * particleSpeed, -vector.y * particleSpeed]);
+      [star.x, star.y] = vec2.add(
+        [],
+        [star.x, star.y],
+        [-vector.x * particleSpeed, -vector.y * particleSpeed]
+      );
       [star.x, star.y] = [
-      (star.x + state.width) % state.width,
-      (star.y + state.height) % state.height];
-
+        (star.x + state.width) % state.width,
+        (star.y + state.height) % state.height
+      ];
     });
-  } };
-
+  }
+};
 
 const shipFactory = {
   create: (x, y, size, rotation, input) => {
@@ -302,28 +320,25 @@ const shipFactory = {
       matterOptions: {
         friction: 1,
         airFriction: 0,
-        resitution: 0.1 } };
-
+        resitution: 0.1
+      }
+    };
 
     return state;
   },
 
   generateVertices: size => {
-    return [
-    [0, -0.4],
-    [0.4, 0.4],
-    [0, 0.2],
-    [-0.4, 0.4]].
-    map(([x, y]) => ({ x: x * size, y: y * size - 4 }));
+    return [[0, -0.4], [0.4, 0.4], [0, 0.2], [-0.4, 0.4]].map(([x, y]) => ({
+      x: x * size,
+      y: y * size - 4
+    }));
   },
 
   generateFlameVertices: size => {
-    return [
-    [-0.2, 0.3],
-    [0, 0.6],
-    [0.2, 0.3],
-    [0, 0.2]].
-    map(([x, y]) => ({ x: x * size, y: y * size - 4 }));
+    return [[-0.2, 0.3], [0, 0.6], [0.2, 0.3], [0, 0.2]].map(([x, y]) => ({
+      x: x * size,
+      y: y * size - 4
+    }));
   },
 
   update: state => {
@@ -356,8 +371,8 @@ const shipFactory = {
       graphics.endFill();
     }
     graphics.cacheAsBitmap = true;
-  } };
-
+  }
+};
 
 // start controls
 function setupEventListeners(input) {
@@ -383,8 +398,8 @@ function handleKeyUp(input) {
         break;
       case 37:
         input.left = false;
-        break;}
-
+        break;
+    }
   };
 }
 
@@ -405,10 +420,11 @@ function handleKeyDown(input) {
         break;
       case 37:
         input.left = true;
-        break;}
-
+        break;
+    }
   };
 }
 // end controls
 
-const d = "m -104.875,-92.09375 0,768.1875 1045.40625,0 0,-768.1875 z m 792,112.875 34.65625,11.90625 20.78125,0.96875 7.9375,27.71875 14.84375,-0.96875 1,27.71875 -19.8125,2.96875 -17.83323,10.88861 -0.97927,19.79889 -21.76826,41.59622 -16.82611,38.61541 -21.8125,-11.90625 -34.625,-3.9375 -24.78125,5.9375 -7.90625,-2 -24.75,0 -25.73329,-0.98391 -15.31378,13.83209 11.32832,18.83963 40.12327,-2.25028 32.87302,18.58819 19.19178,26.29536 26.63402,26.66748 -32.39197,7.92422 -27.00314,8.90591 -51.49567,-1.96968 -28.71875,-23.76392 -38.59931,-21.77166 -33.50197,0.84141 -15.01258,17.95902 22.03906,12.99888 31.72405,3.22072 -12.59415,20.3177 1.40096,23.85627 -34.66386,2.83963 -34.48373,-10.07244 -21.94059,13.16875 -29.70203,-16.81589 -33.52512,4.78517 -17.95385,-15.67626 6.9233,-24.75342 -6.9375,-22.78588 18.82117,-31.6612 -60.41058,16.83385 -12.875,8.90625 -13.84379,-10.90625 -2.96875,15.84375 -14.84375,7.9375 -10.90625,-2 -14.84375,15.84375 -22.78125,7.9375 -14.84375,6.90625 -12.875,15.84375 25.75,6.9375 22.75,13.875 0,10.875 14.875,2 2.96875,31.6875 14.84375,-1 -2.96875,-17.8125 21.78125,0.96875 3.96875,6.9375 0.96875,21.78125 -0.96875,14.84375 8.90625,8.90625 18.8125,0 30.6875,-18.8125 25.75,4.96875 14.84375,-6.9375 21.78125,8.90625 24.75,4.96875 20.78125,-8.9375 14.875,-0.96875 0.96875,12.875 21.78125,12.875 1,-28.71875 9.90625,0 3.96875,12.875 16.8125,7.90625 c 33.27463,-18.73251 24.47258,-18.82094 53.4734,17.82147 l 26.73948,-24.75556 24.74257,-0.9951 3.96071,21.78218 22.77135,2.98236 12.88861,18.80662 16.81714,-20.79115 21.77351,-15.84158 18.80879,-27.71659 21.81095,-9.90934 16.82334,-16.82457 13.85055,15.85303 8.92605,20.78775 -3.96968,21.78651 15.85056,12.86974 0.96875,21.78125 5.9375,9.90625 2.987,21.76764 -23.75247,1.97091 14.84777,16.84159 6.9177,18.79486 -11.875,12.875 -49.5,2 -17.84375,-10.90625 0,-31.6875 -13.84375,0 -15.84375,13.875 -27.71875,9.90625 -46.53125,22.75 -65.34375,0 -14.875,-16.8125 -17.8125,1 0,23.75 -28.71875,6.9375 -26.71875,-8.90625 3.95204,-23.76578 -28.70668,-0.9901 -22.77228,16.82612 -36.62933,-12.88274 -16.84375,-19.78125 -13.84375,0 -22.78496,11.86603 1.99195,30.68471 -53.4706,7.93843 -18.82766,-22.78744 -32.67018,-22.75371 -42.57859,-16.83168 -7.90625,-14.875 -22.78125,-9.875 -5.9375,-11.90625 -26.730195,-40.57952 -3.96875,-29.71875 -43.5625,-4.9375 L 49.5,318.8125 l -14.84375,-2.96875 0,-11.875 19.804765,-26.75248 28.721225,-2.95266 2.956374,-33.67698 -21.773824,-85.1284 39.59375,-18.8125 14.84375,4.9375 18.8125,-10.875 14.875,13.84375 10.875,-19.8125 30.6875,2 19.8125,-3.96875 6.9375,-19.8125 20.78125,-6.90625 32.6875,-21.78125 45.52073,11.875928 25.73948,40.572092 19.8125,-5.9375 23.75,7.9375 L 400,118.8125 430.6875,112.875 465.34375,97.03125 500,79.21875 l 27.71875,0.96875 22.78125,1 29.6875,-12.875 L 601,51.5 617.82457,77.231745 645.53125,78.21875 648.5,38.625 z";
+const d =
+  'm -104.875,-92.09375 0,768.1875 1045.40625,0 0,-768.1875 z m 792,112.875 34.65625,11.90625 20.78125,0.96875 7.9375,27.71875 14.84375,-0.96875 1,27.71875 -19.8125,2.96875 -17.83323,10.88861 -0.97927,19.79889 -21.76826,41.59622 -16.82611,38.61541 -21.8125,-11.90625 -34.625,-3.9375 -24.78125,5.9375 -7.90625,-2 -24.75,0 -25.73329,-0.98391 -15.31378,13.83209 11.32832,18.83963 40.12327,-2.25028 32.87302,18.58819 19.19178,26.29536 26.63402,26.66748 -32.39197,7.92422 -27.00314,8.90591 -51.49567,-1.96968 -28.71875,-23.76392 -38.59931,-21.77166 -33.50197,0.84141 -15.01258,17.95902 22.03906,12.99888 31.72405,3.22072 -12.59415,20.3177 1.40096,23.85627 -34.66386,2.83963 -34.48373,-10.07244 -21.94059,13.16875 -29.70203,-16.81589 -33.52512,4.78517 -17.95385,-15.67626 6.9233,-24.75342 -6.9375,-22.78588 18.82117,-31.6612 -60.41058,16.83385 -12.875,8.90625 -13.84379,-10.90625 -2.96875,15.84375 -14.84375,7.9375 -10.90625,-2 -14.84375,15.84375 -22.78125,7.9375 -14.84375,6.90625 -12.875,15.84375 25.75,6.9375 22.75,13.875 0,10.875 14.875,2 2.96875,31.6875 14.84375,-1 -2.96875,-17.8125 21.78125,0.96875 3.96875,6.9375 0.96875,21.78125 -0.96875,14.84375 8.90625,8.90625 18.8125,0 30.6875,-18.8125 25.75,4.96875 14.84375,-6.9375 21.78125,8.90625 24.75,4.96875 20.78125,-8.9375 14.875,-0.96875 0.96875,12.875 21.78125,12.875 1,-28.71875 9.90625,0 3.96875,12.875 16.8125,7.90625 c 33.27463,-18.73251 24.47258,-18.82094 53.4734,17.82147 l 26.73948,-24.75556 24.74257,-0.9951 3.96071,21.78218 22.77135,2.98236 12.88861,18.80662 16.81714,-20.79115 21.77351,-15.84158 18.80879,-27.71659 21.81095,-9.90934 16.82334,-16.82457 13.85055,15.85303 8.92605,20.78775 -3.96968,21.78651 15.85056,12.86974 0.96875,21.78125 5.9375,9.90625 2.987,21.76764 -23.75247,1.97091 14.84777,16.84159 6.9177,18.79486 -11.875,12.875 -49.5,2 -17.84375,-10.90625 0,-31.6875 -13.84375,0 -15.84375,13.875 -27.71875,9.90625 -46.53125,22.75 -65.34375,0 -14.875,-16.8125 -17.8125,1 0,23.75 -28.71875,6.9375 -26.71875,-8.90625 3.95204,-23.76578 -28.70668,-0.9901 -22.77228,16.82612 -36.62933,-12.88274 -16.84375,-19.78125 -13.84375,0 -22.78496,11.86603 1.99195,30.68471 -53.4706,7.93843 -18.82766,-22.78744 -32.67018,-22.75371 -42.57859,-16.83168 -7.90625,-14.875 -22.78125,-9.875 -5.9375,-11.90625 -26.730195,-40.57952 -3.96875,-29.71875 -43.5625,-4.9375 L 49.5,318.8125 l -14.84375,-2.96875 0,-11.875 19.804765,-26.75248 28.721225,-2.95266 2.956374,-33.67698 -21.773824,-85.1284 39.59375,-18.8125 14.84375,4.9375 18.8125,-10.875 14.875,13.84375 10.875,-19.8125 30.6875,2 19.8125,-3.96875 6.9375,-19.8125 20.78125,-6.90625 32.6875,-21.78125 45.52073,11.875928 25.73948,40.572092 19.8125,-5.9375 23.75,7.9375 L 400,118.8125 430.6875,112.875 465.34375,97.03125 500,79.21875 l 27.71875,0.96875 22.78125,1 29.6875,-12.875 L 601,51.5 617.82457,77.231745 645.53125,78.21875 648.5,38.625 z';

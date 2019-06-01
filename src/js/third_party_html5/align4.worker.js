@@ -15,12 +15,12 @@ var GameState = function(cloneGameState) {
   this.winningChips = undefined;
 
   // initialize an empty board
-  for(var col = 0; col < TOTAL_COLUMNS; col++) {
+  for (var col = 0; col < TOTAL_COLUMNS; col++) {
     this.board[col] = [];
   }
 
   // clone from existing game state (if one was passed in)
-  if(cloneGameState) {
+  if (cloneGameState) {
     for (var col = 0; col < TOTAL_COLUMNS; col++) {
       for (var row = 0; row < cloneGameState.board[col].length; row++) {
         this.board[col][row] = cloneGameState.board[col][row];
@@ -28,7 +28,7 @@ var GameState = function(cloneGameState) {
     }
     this.score = cloneGameState.score;
   }
-}
+};
 GameState.prototype.makeMove = function(player, col) {
   var coords = undefined;
   var row = this.board[col].length;
@@ -38,7 +38,7 @@ GameState.prototype.makeMove = function(player, col) {
     coords = { col: col, row: row };
   }
   return coords;
-}
+};
 GameState.prototype.isBoardFull = function() {
   for (var col = 0; col < TOTAL_COLUMNS; col++) {
     if (this.board[col].length < TOTAL_ROWS) {
@@ -47,20 +47,20 @@ GameState.prototype.isBoardFull = function() {
     }
   }
   return true;
-}
+};
 GameState.prototype.setScore = function(player, col, row) {
   var isWin =
-      this.checkRuns(player, col, row, 0, 1) || // vertical
-      this.checkRuns(player, col, row, 1, 0) || // horizontal
-      this.checkRuns(player, col, row, 1, 1) || // diagonal "/"
-      this.checkRuns(player, col, row, 1, -1)   // diagonal "\"
+    this.checkRuns(player, col, row, 0, 1) || // vertical
+    this.checkRuns(player, col, row, 1, 0) || // horizontal
+    this.checkRuns(player, col, row, 1, 1) || // diagonal "/"
+    this.checkRuns(player, col, row, 1, -1); // diagonal "\"
 
-  if(isWin) {
-    this.score = (player === 1) ? HUMAN_WIN_SCORE : COMPUTER_WIN_SCORE;
+  if (isWin) {
+    this.score = player === 1 ? HUMAN_WIN_SCORE : COMPUTER_WIN_SCORE;
   } else {
     this.score = NO_WIN_SCORE;
   }
-}
+};
 GameState.prototype.checkRuns = function(player, col, row, colStep, rowStep) {
   var runCount = 0;
 
@@ -72,7 +72,7 @@ GameState.prototype.checkRuns = function(player, col, row, colStep, rowStep) {
       if (runCount === 4) {
         // winning run, step backwards to find the chips that make up this run
         this.winningChips = [];
-        for(var backstep = step; backstep >= step - 3; backstep--) {
+        for (var backstep = step; backstep >= step - 3; backstep--) {
           this.winningChips.push({
             col: col + backstep * colStep,
             row: row + backstep * rowStep
@@ -82,7 +82,7 @@ GameState.prototype.checkRuns = function(player, col, row, colStep, rowStep) {
       }
     } else {
       runCount = 0;
-      if(step === 0) {
+      if (step === 0) {
         // no room left for a win
         break;
       }
@@ -91,32 +91,36 @@ GameState.prototype.checkRuns = function(player, col, row, colStep, rowStep) {
 
   // no winning run found
   return false;
-}
+};
 GameState.prototype.getPlayerForChipAt = function(col, row) {
   var player = undefined;
   if (this.board[col] !== undefined && this.board[col][row] !== undefined) {
     player = this.board[col][row];
   }
   return player;
-}
+};
 GameState.prototype.isWin = function() {
-  return (this.score === HUMAN_WIN_SCORE || this.score === COMPUTER_WIN_SCORE);
-}
+  return this.score === HUMAN_WIN_SCORE || this.score === COMPUTER_WIN_SCORE;
+};
 
 // listen for messages from the main thread
-self.addEventListener('message', function(e) {
-  switch(e.data.messageType) {
-    case 'reset':
-      resetGame();
-      break;
-    case 'human-move':
-      makeHumanMove(e.data.col);
-      break;
-    case 'computer-move':
-      makeComputerMove(e.data.maxDepth);
-      break;
-  }
-}, false);
+self.addEventListener(
+  'message',
+  function(e) {
+    switch (e.data.messageType) {
+      case 'reset':
+        resetGame();
+        break;
+      case 'human-move':
+        makeHumanMove(e.data.col);
+        break;
+      case 'computer-move':
+        makeComputerMove(e.data.maxDepth);
+        break;
+    }
+  },
+  false
+);
 
 function resetGame() {
   currentGameState = new GameState();
@@ -147,7 +151,7 @@ function makeComputerMove(maxDepth) {
   var isLossImminent = false;
   for (var depth = 0; depth <= maxDepth; depth++) {
     var origin = new GameState(currentGameState);
-    var isTopLevel = (depth === maxDepth);
+    var isTopLevel = depth === maxDepth;
 
     // fun recursive AI stuff kicks off here
     var tentativeCol = think(origin, 2, depth, isTopLevel);
@@ -189,7 +193,7 @@ function think(node, player, recursionsRemaining, isTopLevel) {
 
   // consider each column as a potential move
   for (var col = 0; col < TOTAL_COLUMNS; col++) {
-    if(isTopLevel) {
+    if (isTopLevel) {
       self.postMessage({
         messageType: 'progress',
         col: col
@@ -204,9 +208,9 @@ function think(node, player, recursionsRemaining, isTopLevel) {
       childNode.makeMove(player, col);
       childNodes[col] = childNode;
 
-      if(!childNode.isWin() && recursionsRemaining > 0) {
+      if (!childNode.isWin() && recursionsRemaining > 0) {
         // no game stopping win and there are still recursions to make, think deeper
-        var nextPlayer = (player === 1) ? 2 : 1;
+        var nextPlayer = player === 1 ? 2 : 1;
         think(childNode, nextPlayer, recursionsRemaining - 1);
       }
 

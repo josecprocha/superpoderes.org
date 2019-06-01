@@ -2,14 +2,14 @@ const $ = (selector, startNode = document) => [...startNode.querySelectorAll(sel
 const game = {
   el: document.querySelector('#game'),
   p: document.querySelector('#game p'),
-  start: function () {
+  start: function() {
     game.build();
     game.oscillator = game.audio.createOscillator();
     game.oscillator.connect(game.audio.destination);
     game.oscillator.frequency.value = 0;
     game.oscillator.start();
   },
-  build: function () {
+  build: function() {
     for (var i = 0; i < 5; i++) {
       var div = document.createElement('div');
       game.el.appendChild(div);
@@ -22,11 +22,11 @@ const game = {
     game.paint();
   },
   colors: ['e33', 'e93', 'ed3', '3b9', '39e', '93e', 'e39'],
-  random: function (array) {
+  random: function(array) {
     return parseInt(Math.random() * array.length);
   },
   r: 0,
-  paint: function () {
+  paint: function() {
     var balls = $('b', game.el);
     var r;
     do {
@@ -34,7 +34,7 @@ const game = {
     } while (r == game.r);
     const ro = 2 + parseInt(Math.random() * 2);
     const color = '#' + game.colors[r];
-    balls.forEach(function (el, i) {
+    balls.forEach(function(el, i) {
       el.dataset.pick = 0;
       el.style.background = color;
     });
@@ -46,7 +46,7 @@ const game = {
     document.body.style.background = '#' + game.colors[r3];
     game.r = r;
   },
-  click: function (event) {
+  click: function(event) {
     if (Number(event.target.dataset.pick)) {
       game.sound();
       var divs = $('div', game.el);
@@ -60,21 +60,21 @@ const game = {
     }
   },
   audio: new AudioContext(),
-  sound: function () {
+  sound: function() {
     var f = 440 + Math.random() * 440;
     game.oscillator.frequency.value = f;
-    setTimeout(function () {
+    setTimeout(function() {
       game.oscillator.frequency.value = 0;
     }, 60);
   },
-  music: function () {
+  music: function() {
     for (var i = 0; i < 12; i++) {
-      setTimeout(function () {
+      setTimeout(function() {
         game.sound();
       }, i * 160);
     }
   },
-  fall: function () {
+  fall: function() {
     var b = document.createElement('b');
     b.className = 'fall';
     var x = Math.random() * innerWidth * 0.9;
@@ -84,19 +84,20 @@ const game = {
     b.style.background = '#' + color;
     game.el.appendChild(b);
   },
-  end: function () {
+  end: function() {
     game.p.style.display = 'block';
     for (var i = 0; i < 100; i++) {
       setTimeout(game.fall, i * 12);
     }
     game.music();
-    setTimeout(function () {
-      $('b', game.el).forEach(function (el) {
+    setTimeout(function() {
+      $('b', game.el).forEach(function(el) {
         el.remove();
       });
       game.p.style.display = 'none';
       game.build();
     }, 2500);
-  } };
+  }
+};
 
 game.start();

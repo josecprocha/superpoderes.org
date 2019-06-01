@@ -310,6 +310,5 @@ https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Teko:700
 </div><a class="sig" href="http://nathan.tokyo" target="_blank">NATHAN.TOKYO</a>
   {{-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> --}}
   <script src="{!! asset('js/jquery.min.js') !!}"></script>
-  <script src="{!! asset('js/third_party_html5/platform.js') !!}"></script>
 </body>
 </html>

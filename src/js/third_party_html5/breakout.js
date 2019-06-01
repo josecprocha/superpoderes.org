@@ -1,5 +1,5 @@
-const canvas = document.querySelector("#canvas");
-const ctx = canvas.getContext("2d");
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
 
 canvas.width = 650;
 canvas.height = 400;
@@ -27,15 +27,14 @@ var lives = 3;
 var scoreDiv = document.querySelector('.score');
 var livesDiv = document.querySelector('.lives');
 
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);
-document.addEventListener("mousemove", mouseMoveHandler, false);
+document.addEventListener('keydown', keyDownHandler, false);
+document.addEventListener('keyup', keyUpHandler, false);
+document.addEventListener('mousemove', mouseMoveHandler, false);
 
 function keyDownHandler(e) {
   if (e.keyCode === 39) {
     rightPressed = true;
-  } else
-  if (e.keyCode === 37) {
+  } else if (e.keyCode === 37) {
     leftPressed = true;
   }
 }
@@ -43,8 +42,7 @@ function keyDownHandler(e) {
 function keyUpHandler(e) {
   if (e.keyCode === 39) {
     rightPressed = false;
-  } else
-  if (e.keyCode === 37) {
+  } else if (e.keyCode === 37) {
     leftPressed = false;
   }
 }
@@ -66,7 +64,7 @@ function collisionDetection() {
           b.status = 0;
           score += 10;
           if (score === brickRowCount * brickColumnCount * 10) {
-            alert("YOU WIN!");
+            alert('YOU WIN!');
             return reset();
           }
         }
@@ -87,7 +85,7 @@ function buildBricks() {
 function drawBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-  ctx.fillStyle = "#fff";
+  ctx.fillStyle = '#fff';
   ctx.fill();
   ctx.closePath();
 }
@@ -95,7 +93,7 @@ function drawBall() {
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-  ctx.fillStyle = "#fff";
+  ctx.fillStyle = '#fff';
   ctx.fill();
   ctx.closePath();
 }
@@ -125,26 +123,23 @@ function draw() {
   drawBricks();
   drawBall();
   drawPaddle();
-  scoreDiv.textContent = "Score " + score;
-  livesDiv.textContent = "Lives " + lives;
+  scoreDiv.textContent = 'Score ' + score;
+  livesDiv.textContent = 'Lives ' + lives;
   collisionDetection();
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
   if (y + dy < ballRadius) {
     dy = -dy;
-  } else
-  if (y + dy > canvas.height - ballRadius) {
+  } else if (y + dy > canvas.height - ballRadius) {
     if (x > paddleX && x < paddleX + paddleWidth) {
       dy = -dy;
-    } else
-    {
+    } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER");
+        alert('GAME OVER');
         return reset();
-      } else
-      {
+      } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
         dx = 3;
@@ -156,8 +151,7 @@ function draw() {
 
   if (rightPressed && paddleX < canvas.width - paddleWidth) {
     paddleX += 7;
-  } else
-  if (leftPressed && paddleX > 0) {
+  } else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
   x += dx;

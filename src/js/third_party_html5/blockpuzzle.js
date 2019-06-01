@@ -8,17 +8,21 @@ var clickable = true;
 
 $(function() {
   $(document).on('click', '.block', function() {
-    if( clickable ) {
+    if (clickable) {
       var row = $(this).parent();
       var id = row.attr('id');
       var rowArray = [];
 
-      for( var i = 0; i < row.children().length; i++) {
+      for (var i = 0; i < row.children().length; i++) {
         var selector = '#' + id + ' div:nth-of-type(' + (i + 1) + ')';
-        rowArray.push($(selector).attr('class').substring(6));
+        rowArray.push(
+          $(selector)
+            .attr('class')
+            .substring(6)
+        );
       }
 
-      column.splice(id.substring(1),1);
+      column.splice(id.substring(1), 1);
       column.unshift(rowArray);
 
       clicks++;
@@ -46,26 +50,26 @@ function Restart() {
   $('.points').text('Points: ' + points);
   $('.clicks').text('Clicks: ' + clicks);
 
-  window[ 'Level' + level.toString() ]();
+  window['Level' + level.toString()]();
 }
 
 function MakeHTML() {
   var str = '';
   var maxWidth = 0;
   var colWidth = '';
-  for( i=0; i<column.length; i++ ) {
+  for (i = 0; i < column.length; i++) {
     str = str.concat('<div id="r' + i + '" class="row clearfix">');
-    for( var j = 0; j < column[i].length; j++) {
+    for (var j = 0; j < column[i].length; j++) {
       str = str.concat('<div class="block"></div>');
     }
     str = str.concat('</div>');
-    if( column[i].length > maxWidth ){
+    if (column[i].length > maxWidth) {
       colWidth = (5 * column[i].length).toString() + 'rem';
       maxWidth = column[i].length;
     }
   }
   $('.col').css('width', colWidth);
-  $('.col').text("");
+  $('.col').text('');
   $('.col').append(str);
 }
 
@@ -75,57 +79,68 @@ function BuildColumn() {
   ClearColumn();
   MakeHTML();
 
-  if(column.length > 0) {
-    for(var i = 0; i < column.length; i++) {
+  if (column.length > 0) {
+    for (var i = 0; i < column.length; i++) {
       var row = column[i];
-      for(var j = 0; j < row.length; j++) {
+      for (var j = 0; j < row.length; j++) {
         var selector = '#r' + i.toString() + ' div:nth-of-type(' + (j + 1) + ')';
 
-        if( row[j] == 'red') {
+        if (row[j] == 'red') {
           $(selector).addClass('red');
         }
-        if( row[j] == 'orange') {
+        if (row[j] == 'orange') {
           $(selector).addClass('orange');
         }
-        if( row[j] == 'yellow') {
+        if (row[j] == 'yellow') {
           $(selector).addClass('yellow');
         }
-        if( row[j] == 'green') {
+        if (row[j] == 'green') {
           $(selector).addClass('green');
         }
-        if( row[j] == 'blue') {
+        if (row[j] == 'blue') {
           $(selector).addClass('blue');
         }
-        if( row[j] == 'purple') {
+        if (row[j] == 'purple') {
           $(selector).addClass('purple');
         }
       }
     }
-    setTimeout( function() {
+    setTimeout(function() {
       CheckMatch();
     }, 500);
-  }
-  else {
+  } else {
     LoadNextLevel();
   }
 }
 
 function ClearColumn() {
   RemoveRow();
-  for(var i = 0; i < column.length; i++) {
-    $('#r' + i.toString()).children().removeClass('red');
-    $('#r' + i.toString()).children().removeClass('orange');
-    $('#r' + i.toString()).children().removeClass('yellow');
-    $('#r' + i.toString()).children().removeClass('green');
-    $('#r' + i.toString()).children().removeClass('blue');
-    $('#r' + i.toString()).children().removeClass('purple');
+  for (var i = 0; i < column.length; i++) {
+    $('#r' + i.toString())
+      .children()
+      .removeClass('red');
+    $('#r' + i.toString())
+      .children()
+      .removeClass('orange');
+    $('#r' + i.toString())
+      .children()
+      .removeClass('yellow');
+    $('#r' + i.toString())
+      .children()
+      .removeClass('green');
+    $('#r' + i.toString())
+      .children()
+      .removeClass('blue');
+    $('#r' + i.toString())
+      .children()
+      .removeClass('purple');
   }
 }
 
 function RemoveRow() {
-  for( var i = 0; i < column.length; i++ ) {
-    if( column[i].length == 0 ) {
-      column.splice(i,1);
+  for (var i = 0; i < column.length; i++) {
+    if (column[i].length == 0) {
+      column.splice(i, 1);
       RemoveRow();
       return;
     }
@@ -133,199 +148,188 @@ function RemoveRow() {
 }
 
 function CheckMatch() {
-  for(var i = 0; i < column.length; i++) {
-    for(var j = 0; j < column[i].length; j++) {
+  for (var i = 0; i < column.length; i++) {
+    for (var j = 0; j < column[i].length; j++) {
       var check = column[i][j];
 
-      if( column.length == 1 ) {
-        if( check == column[i][j + 1] && check == column[i][j - 1] ) {
-          column[i].splice(j-1,3);
+      if (column.length == 1) {
+        if (check == column[i][j + 1] && check == column[i][j - 1]) {
+          column[i].splice(j - 1, 3);
           points += 100;
           BuildColumn();
           return;
         }
-      }
-
-      else {
-        if( i == 0) {
-          if( j == 0 ) {
-            if( check == column[i + 1][j] && check == column[i][j + 1] ) {
-              column[i].splice(j,2);
-              column[i+1].splice(j,1);
+      } else {
+        if (i == 0) {
+          if (j == 0) {
+            if (check == column[i + 1][j] && check == column[i][j + 1]) {
+              column[i].splice(j, 2);
+              column[i + 1].splice(j, 1);
               points += 100;
               BuildColumn();
               return;
             }
-          }
-          else {
-
-            if( j == column[i].length - 1 ) {
-              if( check == column[i + 1][j] && check == column[i][j - 1] ) {
-                column[i].splice(j-1,2);
-                column[i+1].splice(j,1);
+          } else {
+            if (j == column[i].length - 1) {
+              if (check == column[i + 1][j] && check == column[i][j - 1]) {
+                column[i].splice(j - 1, 2);
+                column[i + 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-            }
-            else {
-              if( check == column[i + 1][j] && check == column[i][j + 1] ) {
-                column[i].splice(j,2);
-                column[i+1].splice(j,1);
+            } else {
+              if (check == column[i + 1][j] && check == column[i][j + 1]) {
+                column[i].splice(j, 2);
+                column[i + 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-              if( check == column[i + 1][j] && check == column[i][j - 1] ) {
-                column[i].splice(j-1,2);
-                column[i+1].splice(j,1);
+              if (check == column[i + 1][j] && check == column[i][j - 1]) {
+                column[i].splice(j - 1, 2);
+                column[i + 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-              if( check == column[i][j + 1] && check == column[i][j - 1] ) {
-                column[i].splice(j-1,3);
+              if (check == column[i][j + 1] && check == column[i][j - 1]) {
+                column[i].splice(j - 1, 3);
                 points += 100;
                 BuildColumn();
                 return;
               }
             }
           }
-        }
-        else {
-          if( i == column.length - 1 ) {
-            if( j == 0 ) {
-              if( check == column[i][j + 1] && check == column[i - 1][j] ) {
-                column[i].splice(j,2);
-                column[i-1].splice(j,1);
+        } else {
+          if (i == column.length - 1) {
+            if (j == 0) {
+              if (check == column[i][j + 1] && check == column[i - 1][j]) {
+                column[i].splice(j, 2);
+                column[i - 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-            }
-            else {
-              if( j == column[i].length - 1 ) {
-                if( check == column[i - 1][j] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,2);
-                  column[i-1].splice(j,1);
+            } else {
+              if (j == column[i].length - 1) {
+                if (check == column[i - 1][j] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-              }
-              else {
-                if( check == column[i][j + 1] && check == column[i - 1][j] ) {
-                  column[i].splice(j,2);
-                  column[i-1].splice(j,1);
+              } else {
+                if (check == column[i][j + 1] && check == column[i - 1][j]) {
+                  column[i].splice(j, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i][j - 1] && check == column[i - 1][j] ) {
-                  column[i].splice(j-1,2);
-                  column[i-1].splice(j,1);
+                if (check == column[i][j - 1] && check == column[i - 1][j]) {
+                  column[i].splice(j - 1, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i][j + 1] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,3);
+                if (check == column[i][j + 1] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 3);
                   points += 100;
                   BuildColumn();
                   return;
                 }
               }
             }
-          }
-          else {
-            if( j == 0 ) {
-              if( check == column[i + 1][j] && check == column[i][j + 1] ) {
-                column[i].splice(j,2);
-                column[i+1].splice(j,1);
+          } else {
+            if (j == 0) {
+              if (check == column[i + 1][j] && check == column[i][j + 1]) {
+                column[i].splice(j, 2);
+                column[i + 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-              if( check == column[i - 1][j] && check == column[i][j + 1] ) {
-                column[i].splice(j,2);
-                column[i-1].splice(j,1);
+              if (check == column[i - 1][j] && check == column[i][j + 1]) {
+                column[i].splice(j, 2);
+                column[i - 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-              if( check == column[i + 1][j] && check == column[i - 1][j] ) {
-                column[i-1].splice(j,1);
-                column[i].splice(j,1);
-                column[i+1].splice(j,1);
+              if (check == column[i + 1][j] && check == column[i - 1][j]) {
+                column[i - 1].splice(j, 1);
+                column[i].splice(j, 1);
+                column[i + 1].splice(j, 1);
                 points += 100;
                 BuildColumn();
                 return;
               }
-            }
-            else {
-              if( j == column[i].length - 1 ) {
-                if( check == column[i + 1][j] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,2);
-                  column[i+1].splice(j,1);
+            } else {
+              if (j == column[i].length - 1) {
+                if (check == column[i + 1][j] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 2);
+                  column[i + 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i - 1][j] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,2);
-                  column[i-1].splice(j,1);
+                if (check == column[i - 1][j] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i + 1][j] && check == column[i - 1][j] ) {
-                  column[i-1].splice(j,1);
-                  column[i].splice(j,1);
-                  column[i+1].splice(j,1);
+                if (check == column[i + 1][j] && check == column[i - 1][j]) {
+                  column[i - 1].splice(j, 1);
+                  column[i].splice(j, 1);
+                  column[i + 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-              }
-              else {
-                if( check == column[i + 1][j] && check == column[i][j + 1] ) {
-                  column[i].splice(j,2);
-                  column[i+1].splice(j,1);
+              } else {
+                if (check == column[i + 1][j] && check == column[i][j + 1]) {
+                  column[i].splice(j, 2);
+                  column[i + 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i + 1][j] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,2);
-                  column[i+1].splice(j,1);
+                if (check == column[i + 1][j] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 2);
+                  column[i + 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i - 1][j] && check == column[i][j + 1] ) {
-                  column[i].splice(j,2);
-                  column[i-1].splice(j,1);
+                if (check == column[i - 1][j] && check == column[i][j + 1]) {
+                  column[i].splice(j, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i - 1][j] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,2);
-                  column[i-1].splice(j,1);
+                if (check == column[i - 1][j] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 2);
+                  column[i - 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i][j + 1] && check == column[i][j - 1] ) {
-                  column[i].splice(j-1,3);
+                if (check == column[i][j + 1] && check == column[i][j - 1]) {
+                  column[i].splice(j - 1, 3);
                   points += 100;
                   BuildColumn();
                   return;
                 }
-                if( check == column[i + 1][j] && check == column[i - 1][j] ) {
-                  column[i-1].splice(j,1);
-                  column[i].splice(j,1);
-                  column[i+1].splice(j,1);
+                if (check == column[i + 1][j] && check == column[i - 1][j]) {
+                  column[i - 1].splice(j, 1);
+                  column[i].splice(j, 1);
+                  column[i + 1].splice(j, 1);
                   points += 100;
                   BuildColumn();
                   return;
@@ -341,8 +345,8 @@ function CheckMatch() {
 }
 
 function LoadNextLevel() {
-  if( !last ) {
-    if(level > 0) {
+  if (!last) {
+    if (level > 0) {
       points += Math.floor(1000 / clicks);
       $('.points').text('Points: ' + points);
     }
@@ -350,9 +354,8 @@ function LoadNextLevel() {
     $('.clicks').text('Clicks: ' + clicks);
     oldPoints = points;
 
-    window[ 'Level' + (level + 1 ).toString() ]();
-  }
-  else {
+    window['Level' + (level + 1).toString()]();
+  } else {
     Win();
   }
 }
@@ -710,7 +713,7 @@ function Level24() {
   column.unshift(['red', 'green', 'green', 'blue', 'blue', 'purple']);
   column.unshift(['yellow', 'yellow', 'orange', 'red', 'red', 'purple']);
   column.unshift(['red', 'orange', 'blue', 'yellow', 'yellow', 'red']);
-  column.unshift(['red', 'green', 'orange', 'green', 'orange','purple']);
+  column.unshift(['red', 'green', 'orange', 'green', 'orange', 'purple']);
   column.unshift(['purple', 'purple', 'blue', 'purple', 'blue', 'yellow']);
   column.unshift(['green', 'green', 'orange', 'orange', 'blue', 'yellow']);
 
@@ -725,7 +728,7 @@ function Level25() {
   column.unshift(['green', 'orange', 'blue', 'orange', 'red', 'blue']);
   column.unshift(['green', 'yellow', 'yellow', 'orange', 'red', 'blue']);
   column.unshift(['blue', 'orange', 'blue', 'blue', 'yellow', 'orange']);
-  column.unshift(['green', 'orange', 'yellow', 'yellow', 'red','yellow']);
+  column.unshift(['green', 'orange', 'yellow', 'yellow', 'red', 'yellow']);
   column.unshift(['purple', 'purple', 'blue', 'purple', 'blue', 'blue']);
   column.unshift(['red', 'red', 'yellow', 'red', 'yellow', 'yellow']);
 
@@ -734,5 +737,9 @@ function Level25() {
 
 function Win() {
   $('body').text('');
-  $('body').append('<div class="win">You Win!<div class="win-score">Your final score was:<br/>' + points +'</div><div class="win-text">Congratulations for completing the game! Thanks for taking the time to play through. I hope you enjoyed playing! Feel free to play again and try for a higher score!<br/><br/>Feel free to check out more of my <a href="https://codepen.io/charlie-volpe/">CodePens</a> as well as <a href="http://charlievolpe.com">my website</a>. Post your highscore in the comments if you like!</div></div>');
+  $('body').append(
+    '<div class="win">You Win!<div class="win-score">Your final score was:<br/>' +
+      points +
+      '</div><div class="win-text">Congratulations for completing the game! Thanks for taking the time to play through. I hope you enjoyed playing! Feel free to play again and try for a higher score!<br/><br/>Feel free to check out more of my <a href="https://codepen.io/charlie-volpe/">CodePens</a> as well as <a href="http://charlievolpe.com">my website</a>. Post your highscore in the comments if you like!</div></div>'
+  );
 }

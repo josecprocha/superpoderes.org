@@ -28,7 +28,7 @@ var map = {
 
   /*
 
-  Key vairables:
+  Key variables:
 
   id       [required] - an integer that corresponds with a tile in the data array.
   colour   [required] - any javascript compatible colour variable.

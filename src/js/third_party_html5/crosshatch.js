@@ -1,5 +1,4 @@
 $(function() {
-
   // Console Log
   function cl($m) {
     console.log($m);
@@ -82,7 +81,7 @@ $(function() {
   }
 
   function log($t) {
-    document.getElementById("log").innerHTML = $t;
+    document.getElementById('log').innerHTML = $t;
   }
 
   function clearCanvas() {
@@ -92,7 +91,6 @@ $(function() {
   }
 
   function points() {
-
     var oldX = story[story.length - 2][0];
     var newX = story[story.length - 1][0];
     var oldY = story[story.length - 2][1];
@@ -102,13 +100,17 @@ $(function() {
     var deltaY = Math.abs(oldY - newY);
 
     function good() {
-      cl('good')
-      $('#points').text('Well done, kiddo!').attr('class', 'ok');
+      cl('good');
+      $('#points')
+        .text('Well done, kiddo!')
+        .attr('class', 'ok');
       $('#avatar').attr('class', 'ok');
     }
 
     function bad() {
-      $('#points').text('Oh, not like that...').attr('class', 'no');
+      $('#points')
+        .text('Oh, not like that...')
+        .attr('class', 'no');
       $('#avatar').attr('class', 'no');
     }
 
@@ -125,60 +127,57 @@ $(function() {
         bad();
       }
     }
-
   }
 
   /* Event assignments */
 
-  $('canvas').on('click', function(event) {
+  $('canvas')
+    .on('click', function(event) {
+      x = Math.round(event.pageX / st) * st;
+      y = Math.round(event.pageY / st) * st;
 
-    x = (Math.round(event.pageX / st)) * st;
-    y = (Math.round(event.pageY / st)) * st;
+      story.push([x, y]);
 
-    story.push([x, y]);
+      // Primo click
+      if (first) {
+        first = false;
+      } else {
+        context.beginPath();
+        context.moveTo(oldX, oldY);
+        context.lineTo(x, y);
 
-    // Primo click
-    if (first) {
+        // Inverte il verso del filo
+        toggleFronteRetro(context);
 
-      first = false;
+        // Disegna il tratto
+        context.stroke();
 
-    } else {
-      context.beginPath();
-      context.moveTo(oldX, oldY);
-      context.lineTo(x, y);
+        // Calcola il punteggio
+        points();
+      }
 
-      // Inverte il verso del filo
-      toggleFronteRetro(context);
+      // Update vars
+      oldX = x;
+      oldY = y;
+      fronte = !fronte;
+      //log(+ x + ', ' + y);
+    })
+    .on('mousemove', function(event) {
+      var x = Math.round(event.pageX / st) * st - 5;
+      var y = Math.round(event.pageY / st) * st - 4;
 
-      // Disegna il tratto
-      context.stroke();
-
-      // Calcola il punteggio
-      points();
-    }
-
-    // Update vars
-    oldX = x;
-    oldY = y;
-    fronte = !fronte;
-    //log(+ x + ', ' + y);
-
-  }).on('mousemove', function(event) {
-    var x = (Math.round(event.pageX / st)) * st - 5;
-    var y = (Math.round(event.pageY / st)) * st - 4;
-
-    $('#cursor').css({
-      'left': x + 'px',
-      'top': y + 'px'
+      $('#cursor').css({
+        left: x + 'px',
+        top: y + 'px'
+      });
     });
-  });
 
   $('#endPath').on('click', function(event) {
     first = true;
   });
 
   $('.colors a').on('click', function(event) {
-    filo.color = $(this).css('background-color')
+    filo.color = $(this).css('background-color');
     $('.colors a').removeClass('active');
     $(this).addClass('active');
   });
@@ -188,14 +187,12 @@ $(function() {
   });
 
   $('#replay').on('click', function(event) {
-
     clearCanvas();
 
     fronte = false;
     setFiloFronte(context);
 
-    for (i = 0; i < (story.length - 1); i++) {
-
+    for (i = 0; i < story.length - 1; i++) {
       context.beginPath();
       context.moveTo(story[i][0], story[i][1]);
       context.lineTo(story[i + 1][0], story[i + 1][1]);
@@ -211,13 +208,19 @@ $(function() {
     		//context.lineTo(story[i][0], story[i][1]);
     }, 500);
     }*/
-
   });
 
   window.requestAnimFrame = (function(callback) {
-    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
-      window.setTimeout(callback, 1000 / 60);
-    };
+    return (
+      window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.oRequestAnimationFrame ||
+      window.msRequestAnimationFrame ||
+      function(callback) {
+        window.setTimeout(callback, 1000 / 60);
+      }
+    );
   })();
 
   function drawLine(myLine, contextFilo) {
@@ -234,7 +237,6 @@ $(function() {
   }
 
   function animateLine(myRectangle, canvasFilo, contextFilo) {
-
     var distX = Math.round((myLine.b[0] - myLine.a[0]) / 2);
     var distY = Math.round((myLine.b[1] + myLine.a[1]) / 2);
 
@@ -281,10 +283,8 @@ $(function() {
   //drawRectangle(myRectangle, contextFilo);
 
   $(function() {
-
     //drawLine(myLine, contextFilo);
     animateLine(myLine, canvasFilo, contextFilo);
-
   });
 
   // wait one second before starting animation
@@ -296,5 +296,4 @@ $(function() {
   }, 1000);*/
 
   initContext();
-
 });

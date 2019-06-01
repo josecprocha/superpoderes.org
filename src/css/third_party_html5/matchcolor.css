@@ -1,31 +1,31 @@
-body{
+body {
   background: #e3e3e3;
   margin: 0;
   text-align: center;
   margin-top: 2%;
 }
 
-a{
-  color: #2096F1;
+a {
+  color: #2096f1;
   text-decoration: none;
 }
 
-#container{
+#container {
   display: inline-block;
   width: 500px;
   -webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-canvas{
+canvas {
   display: inline-block;
 }
 
-.hud{
+.hud {
   height: 50px;
   margin-bottom: 2px;
   line-height: 50px;
@@ -34,7 +34,7 @@ canvas{
   font-size: 2em;
 }
 
-.score{
+.score {
   display: inline-block;
   padding-right: 10px;
   -webkit-transition: color 0.3s;

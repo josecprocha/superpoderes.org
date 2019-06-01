@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
   window.requestAnimationFrame(function() {
     var manager = new GameManager(4, KeyboardInputManager, HTMLActuator);
   });
@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function GameManager(size, InputManager, Actuator) {
   this.size = size;
-  this.inputManager = new InputManager;
-  this.actuator = new Actuator;
+  this.inputManager = new InputManager();
+  this.actuator = new Actuator();
 
   this.startTiles = 2;
 
-  this.inputManager.on("move", this.move.bind(this));
-  this.inputManager.on("restart", this.restart.bind(this));
+  this.inputManager.on('move', this.move.bind(this));
+  this.inputManager.on('restart', this.restart.bind(this));
 
   this.setup();
 }
@@ -180,8 +180,7 @@ GameManager.prototype.findFarthestPosition = function(cell, vector) {
       x: previous.x + vector.x,
       y: previous.y + vector.y
     };
-  } while (this.grid.withinBounds(cell) &&
-    this.grid.cellAvailable(cell));
+  } while (this.grid.withinBounds(cell) && this.grid.cellAvailable(cell));
 
   return {
     farthest: previous,
@@ -214,7 +213,8 @@ GameManager.prototype.tileMatchesAvailable = function() {
           };
 
           var other = self.grid.cellContent(cell);
-          if (other) {}
+          if (other) {
+          }
 
           if (other && other.value === tile.value) {
             return true;
@@ -241,7 +241,7 @@ function Grid(size) {
 
 Grid.prototype.build = function() {
   for (var x = 0; x < this.size; x++) {
-    var row = this.cells[x] = [];
+    var row = (this.cells[x] = []);
 
     for (var y = 0; y < this.size; y++) {
       row.push(null);
@@ -309,14 +309,13 @@ Grid.prototype.removeTile = function(tile) {
 };
 
 Grid.prototype.withinBounds = function(position) {
-  return position.x >= 0 && position.x < this.size &&
-    position.y >= 0 && position.y < this.size;
+  return position.x >= 0 && position.x < this.size && position.y >= 0 && position.y < this.size;
 };
 
 function HTMLActuator() {
-  this.tileContainer = document.getElementsByClassName("tile-container")[0];
-  this.scoreContainer = document.getElementsByClassName("score-container")[0];
-  this.messageContainer = document.getElementsByClassName("game-message")[0];
+  this.tileContainer = document.getElementsByClassName('tile-container')[0];
+  this.scoreContainer = document.getElementsByClassName('score-container')[0];
+  this.messageContainer = document.getElementsByClassName('game-message')[0];
 
   this.score = 0;
 }
@@ -355,14 +354,14 @@ HTMLActuator.prototype.clearContainer = function(container) {
 HTMLActuator.prototype.addTile = function(tile) {
   var self = this;
 
-  var element = document.createElement("div");
+  var element = document.createElement('div');
   var position = tile.previousPosition || {
     x: tile.x,
     y: tile.y
   };
   positionClass = this.positionClass(position);
 
-  var classes = ["tile", "tile-" + tile.value, positionClass];
+  var classes = ['tile', 'tile-' + tile.value, positionClass];
   this.applyClasses(element, classes);
 
   element.textContent = tile.value;
@@ -376,14 +375,14 @@ HTMLActuator.prototype.addTile = function(tile) {
       self.applyClasses(element, classes);
     });
   } else if (tile.mergedFrom) {
-    classes.push("tile-merged");
+    classes.push('tile-merged');
     this.applyClasses(element, classes);
 
     tile.mergedFrom.forEach(function(merged) {
       self.addTile(merged);
     });
   } else {
-    classes.push("tile-new");
+    classes.push('tile-new');
     this.applyClasses(element, classes);
   }
 
@@ -391,7 +390,7 @@ HTMLActuator.prototype.addTile = function(tile) {
 };
 
 HTMLActuator.prototype.applyClasses = function(element, classes) {
-  element.setAttribute("class", classes.join(" "));
+  element.setAttribute('class', classes.join(' '));
 };
 
 HTMLActuator.prototype.normalizePosition = function(position) {
@@ -403,7 +402,7 @@ HTMLActuator.prototype.normalizePosition = function(position) {
 
 HTMLActuator.prototype.positionClass = function(position) {
   position = this.normalizePosition(position);
-  return "tile-position-" + position.x + "-" + position.y;
+  return 'tile-position-' + position.x + '-' + position.y;
 };
 
 HTMLActuator.prototype.updateScore = function(score) {
@@ -415,23 +414,23 @@ HTMLActuator.prototype.updateScore = function(score) {
   this.scoreContainer.textContent = this.score;
 
   if (difference > 0) {
-    var addition = document.createElement("div");
-    addition.classList.add("score-addition");
-    addition.textContent = "+" + difference;
+    var addition = document.createElement('div');
+    addition.classList.add('score-addition');
+    addition.textContent = '+' + difference;
 
     this.scoreContainer.appendChild(addition);
   }
 };
 
 HTMLActuator.prototype.message = function(won) {
-  var type = won ? "game-won" : "game-over";
-  var message = won ? "You win!" : "Game over!"
+  var type = won ? 'game-won' : 'game-over';
+  var message = won ? 'You win!' : 'Game over!';
   this.messageContainer.classList.add(type);
-  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  this.messageContainer.getElementsByTagName('p')[0].textContent = message;
 };
 
 HTMLActuator.prototype.clearMessage = function() {
-  this.messageContainer.classList.remove("game-won", "game-over");
+  this.messageContainer.classList.remove('game-won', 'game-over');
 };
 
 function KeyboardInputManager() {
@@ -470,45 +469,47 @@ KeyboardInputManager.prototype.listen = function() {
     72: 3
   };
 
-  document.addEventListener("keydown", function(event) {
-    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
-      event.shiftKey;
+  document.addEventListener('keydown', function(event) {
+    var modifiers = event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
     var mapped = map[event.which];
 
     if (!modifiers) {
       if (mapped !== undefined) {
         event.preventDefault();
-        self.emit("move", mapped);
+        self.emit('move', mapped);
       }
 
       if (event.which === 32) self.restart.bind(self)(event);
     }
   });
 
-  var retry = document.getElementsByClassName("retry-button")[0];
-  retry.addEventListener("click", this.restart.bind(this));
+  var retry = document.getElementsByClassName('retry-button')[0];
+  retry.addEventListener('click', this.restart.bind(this));
 
-  var gestures = [Hammer.DIRECTION_UP, Hammer.DIRECTION_RIGHT,
-    Hammer.DIRECTION_DOWN, Hammer.DIRECTION_LEFT
+  var gestures = [
+    Hammer.DIRECTION_UP,
+    Hammer.DIRECTION_RIGHT,
+    Hammer.DIRECTION_DOWN,
+    Hammer.DIRECTION_LEFT
   ];
 
-  var gameContainer = document.getElementsByClassName("game-container")[0];
+  var gameContainer = document.getElementsByClassName('game-container')[0];
   var handler = Hammer(gameContainer, {
     drag_block_horizontal: true,
     drag_block_vertical: true
   });
 
-  handler.on("swipe", function(event) {
+  handler.on('swipe', function(event) {
     event.gesture.preventDefault();
     mapped = gestures.indexOf(event.gesture.direction);
 
-    if (mapped !== -1) self.emit("move", mapped);
+    if (mapped !== -1) self.emit('move', mapped);
   });
 };
 
 KeyboardInputManager.prototype.restart = function(event) {
   event.preventDefault();
-  this.emit("restart");
+  this.emit('restart');
 };
 
 function Tile(position, value) {

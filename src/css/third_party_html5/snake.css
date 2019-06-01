@@ -64,25 +64,11 @@ Tiles
 .tile {
   background: rgba(0, 0, 0, 0.15);
   position: absolute;
-  transition-property:
-    background,
-    box-shadow,
-    opacity,
-    -webkit-transform;
-  transition-property:
-    background,
-    box-shadow,
-    opacity,
-    transform
-  ;
-  transition-property:
-    background,
-    box-shadow,
-    opacity,
-    transform,
-    -webkit-transform;
+  transition-property: background, box-shadow, opacity, -webkit-transform;
+  transition-property: background, box-shadow, opacity, transform;
+  transition-property: background, box-shadow, opacity, transform, -webkit-transform;
   -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+  transform: translateZ(0);
   transition-duration: 3000ms;
 }
 

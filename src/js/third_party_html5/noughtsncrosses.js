@@ -1,6 +1,6 @@
 /*Noughts and Crosses. Part of Free Code Camp curriculum. Responsive. Tested on Firefox, Chrome and Edge*/
 
-$(document).ready(function () {
+$(document).ready(function() {
   introMenu.show();
   info.hide();
   typeChoice.hide();
@@ -8,7 +8,7 @@ $(document).ready(function () {
   loader.hide();
 });
 
-function Contestant(moves = [], type = "", score = 0) {
+function Contestant(moves = [], type = '', score = 0) {
   this.moves = moves;
   this.type = type;
   this.score = score;
@@ -18,19 +18,19 @@ let player = new Contestant();
 let computer = new Contestant();
 let playerTurn;
 let gameEnd = false;
-let mode = "";
+let mode = '';
 let board;
 const boardStart = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 const winCombos = [
-[1, 2, 3],
-[1, 5, 9],
-[1, 4, 7],
-[2, 5, 8],
-[3, 6, 9],
-[3, 5, 7],
-[4, 5, 6],
-[7, 8, 9]];
-
+  [1, 2, 3],
+  [1, 5, 9],
+  [1, 4, 7],
+  [2, 5, 8],
+  [3, 6, 9],
+  [3, 5, 7],
+  [4, 5, 6],
+  [7, 8, 9]
+];
 
 const boardtile = $('.row > div');
 const result = $('.result');
@@ -49,15 +49,22 @@ const modeSetting = $('.setting');
 
 //Animate Start menu and Information panels
 function introAnimation() {
-  introMenu.animate({
-    opacity: 0 },
-  1000, function () {
-    introMenu.hide();
-    info.show();
-    info.animate({
-      opacity: 1 },
-    1000);
-  });
+  introMenu.animate(
+    {
+      opacity: 0
+    },
+    1000,
+    function() {
+      introMenu.hide();
+      info.show();
+      info.animate(
+        {
+          opacity: 1
+        },
+        1000
+      );
+    }
+  );
 }
 
 // Reset board and styles after game end
@@ -79,7 +86,7 @@ function reset() {
 //Show Start menu on game end
 function playAgain() {
   result.hide();
-  introMenu.css("opacity", "0.9");
+  introMenu.css('opacity', '0.9');
   introMenu.show();
   typeChoice.hide();
   modeSetting.show();
@@ -87,7 +94,9 @@ function playAgain() {
 
 //Apply difficulty level
 function settingHandler() {
-  mode = $(this).attr('class').split(' ')[1];
+  mode = $(this)
+    .attr('class')
+    .split(' ')[1];
   modeSetting.hide();
   typeChoice.show();
 }
@@ -228,7 +237,7 @@ function calculateBestMove(moves) {
 
 //Handle computers turn;
 function computerAction(tile) {
-  window.setTimeout(function () {
+  window.setTimeout(function() {
     loader.hide();
     let tileKey = 0;
     // Target middle if free
@@ -278,9 +287,7 @@ function computerAction(tile) {
     if (!gameEnd) {
       playerMessage.text('Your Turn');
     }
-  },
-  2000);
-
+  }, 2000);
 }
 
 //Event Handlers
