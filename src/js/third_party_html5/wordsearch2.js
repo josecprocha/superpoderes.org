@@ -42,7 +42,7 @@
       'diagonal',
       'diagonalUp',
       'diagonalBack',
-      'diagonalUpBack'
+      'diagonalUpBack',
     ];
 
     // The definition of the orientation, calculates the next square given a
@@ -71,7 +71,7 @@
       },
       diagonalUpBack: function(x, y, i) {
         return { x: x - i, y: y - i };
-      }
+      },
     };
 
     // Determines if an orientation is possible given the starting square (x,y),
@@ -102,7 +102,7 @@
       },
       diagonalUpBack: function(x, y, h, w, l) {
         return x + 1 >= l && y + 1 >= l;
-      }
+      },
     };
 
     // Determines the next possible valid square given the square (x,y) was ]
@@ -133,7 +133,7 @@
       },
       diagonalUpBack: function(x, y, l) {
         return { x: l - 1, y: x >= l - 1 ? y + 1 : y };
-      }
+      },
     };
 
     /**
@@ -388,7 +388,7 @@
           orientations: opts.orientations || allOrientations,
           fillBlanks: opts.fillBlanks !== undefined ? opts.fillBlanks : true,
           maxAttempts: opts.maxAttempts || 3,
-          preferOverlap: opts.preferOverlap !== undefined ? opts.preferOverlap : true
+          preferOverlap: opts.preferOverlap !== undefined ? opts.preferOverlap : true,
         };
 
         // add the words to the puzzle
@@ -453,7 +453,7 @@
             height: puzzle.length,
             width: puzzle[0].length,
             orientations: allOrientations,
-            preferOverlap: true
+            preferOverlap: true,
           },
           found = [],
           notFound = [];
@@ -492,7 +492,7 @@
 
         console.log(puzzleString);
         return puzzleString;
-      }
+      },
     };
   };
 
@@ -842,7 +842,7 @@
         }
 
         $('#solve').addClass('gameSolved');
-      }
+      },
     };
   };
 
@@ -875,13 +875,13 @@ $(function() {
     'bond',
     'market',
     'value',
-    'index'
+    'index',
   ];
   // start a word find game
   var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words', {
     height: 8,
     width: 15,
-    fillBlanks: true
+    fillBlanks: true,
   });
   $('#solve').click(function() {
     wordfindgame.solve(gamePuzzle, words);

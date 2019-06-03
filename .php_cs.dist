@@ -1,0 +1,54 @@
+<?php
+/**
+ * https://github.com/FriendsOfPHP/PHP-CS-Fixer
+ * https://github.com/junstyle/vscode-php-cs-fixer.
+ *
+ * https://www.php-fig.org/psr/psr-2/
+ * https://blog.sideci.com/5-php-coding-standards-you-will-love-and-how-to-use-them-adf6a4855696
+ */
+$header = <<<'EOF'
+This file is part of "Escola de Super Poderes" Project.
+
+(c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+
+This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.
+EOF;
+
+$finder = PhpCsFixer\Finder::create()
+    ->exclude('tests/Fixtures')
+    ->in(__DIR__)
+    ->append([__DIR__.'/php-cs-fixer'])
+;
+
+$config = PhpCsFixer\Config::create()
+    ->setRiskyAllowed(false)
+    ->setRules([
+        '@PHP56Migration' => true,
+        '@PHPUnit60Migration:risky' => false,
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => false,
+        //'header_comment' => ['header' => $header],
+        'list_syntax' => ['syntax' => 'long'],
+    ])
+    ->setFinder($finder)
+;
+
+// special handling of fabbot.io service if it's using too old PHP CS Fixer version
+if (false !== getenv('FABBOT_IO')) {
+    try {
+        PhpCsFixer\FixerFactory::create()
+            ->registerBuiltInFixers()
+            ->registerCustomFixers($config->getCustomFixers())
+            ->useRuleSet(new PhpCsFixer\RuleSet($config->getRules()))
+        ;
+    } catch (PhpCsFixer\ConfigurationException\InvalidConfigurationException $e) {
+        $config->setRules([]);
+    } catch (UnexpectedValueException $e) {
+        $config->setRules([]);
+    } catch (InvalidArgumentException $e) {
+        $config->setRules([]);
+    }
+}
+
+return $config;

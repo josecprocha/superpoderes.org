@@ -8,11 +8,15 @@
   // positive intergers get multiplied
   @if $exponent > 1 {
     @for $i from 2 through $exponent {
-      $value: $value * $base; } }
+      $value: $value * $base;
+    }
+  }
   // negitive intergers get divided. A number divided by itself is 1
   @if $exponent < 1 {
     @for $i from 0 through -$exponent {
-      $value: $value / $base; } }
+      $value: $value / $base;
+    }
+  }
   // return the last value written
   @return $value;
 }
@@ -62,8 +66,6 @@
   }
 }
 
-
-
 // main.scss
 $field-width: 500px;
 $grid-spacing: 15px;
@@ -71,7 +73,7 @@ $grid-row-cells: 4;
 $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
 $tile-border-radius: 3px;
 
-$text-color: #776E65;
+$text-color: #776e65;
 $bright-text-color: #f9f6f2;
 
 $tile-color: #eee4da;
@@ -82,13 +84,13 @@ $game-container-background: #bbada0;
 
 $transition-speed: 100ms;
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-
   background: #faf8ef;
   color: $text-color;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 18px;
 }
 
@@ -96,8 +98,8 @@ body {
   margin: 80px 0;
 }
 
-.heading:after {
-  content: "";
+.heading::after {
+  content: '';
   display: block;
   clear: both;
 }
@@ -137,12 +139,12 @@ h1.title {
   color: white;
   margin-top: 8px;
 
-  &:after {
+  &::after {
     position: absolute;
     width: 100%;
     top: 10px;
     left: 0;
-    content: "Score";
+    content: 'Score';
     text-transform: uppercase;
     font-size: 13px;
     line-height: 13px;
@@ -157,7 +159,7 @@ h1.title {
     font-size: $height;
     line-height: $height;
     font-weight: bold;
-    color: rgba($text-color, .9);
+    color: rgba($text-color, 0.9);
     z-index: 100;
     @include animation(move-up 600ms ease-in);
     @include animation-fill-mode(both);
@@ -233,7 +235,7 @@ hr {
       right: 0;
       bottom: 0;
       left: 0;
-      background: rgba($tile-color, .5);
+      background: rgba($tile-color, 0.5);
       z-index: 100;
 
       text-align: center;
@@ -270,11 +272,12 @@ hr {
       @include animation-fill-mode(both);
 
       &.game-won {
-        background: rgba($tile-gold-color, .5);
+        background: rgba($tile-gold-color, 0.5);
         color: $bright-text-color;
       }
 
-      &.game-won, &.game-over {
+      &.game-won,
+      &.game-over {
         display: block;
       }
     }
@@ -293,7 +296,7 @@ hr {
     }
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       clear: both;
     }
@@ -307,7 +310,7 @@ hr {
 
     border-radius: $tile-border-radius;
 
-    background: rgba($tile-color, .35);
+    background: rgba($tile-color, 0.35);
 
     &:last-child {
       margin-right: 0;
@@ -358,17 +361,27 @@ hr {
   $limit: 11;
 
   // Colors for all 11 states, false = no special color
-  $special-colors: false false, // 2
-                   false false, // 4
-                   #f78e48 true, // 8
-                   #fc5e2e true, // 16
-                   #ff3333 true, // 32
-                   #ff0000 true, // 64
-                   false true, // 128
-                   false true, // 256
-                   false true, // 512
-                   false true, // 1024
-                   false true; // 2048
+  $special-colors: false false,
+    // 2
+      false false,
+    // 4
+      #f78e48 true,
+    // 8
+      #fc5e2e true,
+    // 16
+      #ff3333 true,
+    // 32
+      #ff0000 true,
+    // 64
+      false true,
+    // 128
+      false true,
+    // 256
+      false true,
+    // 512
+      false true,
+    // 1024
+      false true; // 2048
 
   // Build tile colors
   @while $exponent <= $limit {
@@ -400,7 +413,7 @@ hr {
 
       @if not $special-background {
         box-shadow: 0 0 30px 10px rgba($tile-gold-glow-color, $glow-opacity / 1.8),
-                    inset 0 0 0 1px rgba(white, $glow-opacity / 3);
+          inset 0 0 0 1px rgba(white, $glow-opacity / 3);
       }
 
       // Adjust font size for bigger numbers
@@ -482,7 +495,8 @@ hr {
   $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
   $tile-border-radius: 3px;
 
-  html, body {
+  html,
+  body {
     font-size: 15px;
   }
 

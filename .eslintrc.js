@@ -1,13 +1,13 @@
 /**
- * [Setting up ESLint on VS Code with Airbnb JavaScript Style Guide](https://blog.echobind.com/integrating-prettier-eslint-airbnb-style-guide-in-vscode-47f07b5d7d6a)
  * [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
  * [Prettier - Integrating with Linters](https://prettier.io/docs/en/integrating-with-linters.html)
+ *
+ * eslint:recommended - rules that report common problems in js.
+ * airbnb - es6, node, react.
+ * prettier - turn off all rules that are unnecessary or might conflict with Prettier.
+ *   typescript, babel, flowtype, react, standard, unicorn, vue.
  */
 
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
-  plugins: ['prettier'],
-  rules: {
-    'prettier/prettier': ['error']
-  }
+  extends: ['eslint:recommended', 'airbnb', 'prettier'],
 };

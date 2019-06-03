@@ -4,18 +4,30 @@ root = true # Stop search on current file.
 
 [*]
 # Unix-style newlines with a newline ending every file
-end_of_line = crlf # crlf is Windows way. Unix uses lf and macintosh, cr.
+end_of_line = lf # 'crlf' (\r\n) is Windows way, Linux and macOS uses lf (\n). For 'native', not to set.
 insert_final_newline = true
 # Set default charset
 charset = utf-8
 # 2 space indentation
 indent_style = space
 indent_size = 2
+tab_width = 2
 # Remove whitespace
 trim_trailing_whitespace = true # remove any whitespace characters preceding newline characters
+
+# Supported By A Limited Number of Editors
+max_line_length = 80
 
 [*.md]
 trim_trailing_whitespace = false
 
 [*.yml]
 indent_size = 2
+
+[*.php]
+indent_size = 4 # PSR-2 Coding Style Guide
+tab_width = 4
+
+[*.blade.php]
+indent_size = 2 # PSR-2 Coding Style Guide
+tab_width = 2

@@ -1,7 +1,7 @@
 <!--
 A Pen created at CodePen.io. You can find this one at https://codepen.io/popfugl/pen/KdYXpV.
 
- A complete 15 game.
+A complete 15 game.
 The game adjusts automatically to fit within the width and height of the screen.
 Optimized for iphone usage. (No click-delay).
 Annoying sound (but it's there).
