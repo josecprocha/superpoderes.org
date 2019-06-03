@@ -1,10 +1,10 @@
 {
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
+  "editor.rulers": [80, 120],
   // https://code.visualstudio.com/docs/languages/identifiers
   "files.associations": {
-    "*.dist": "php",
-    "*.blade.php": "html"
+    "*.dist": "php"
   },
   "beautify.ignore": [
     "/node_modules/**/*",
