@@ -1,24 +1,38 @@
 <!--
-A Pen created at CodePen.io. You can find this one at https://codepen.io/juliangarnier/pen/BsIih.
+A Pen created at CodePen.io. You can find this one at https://codepen.io/
+juliangarnier/pen/BsIih.
 
 3D chess game done in HTML/CSS/JS.
 Works only in webkit.
 
-Github repo:
+Github repository:
 https://github.com/juliangarnier/3D-Hartwig-chess-set
 
-Using Photon : http://photon.attasi.com and Chess.js : https://github.com/jhlywa/chess.js
+Using Photon : http://photon.attasi.com and Chess.js : https://github.com/
+jhlywa/chess.js
 -->
 
 <!--
-Copyright (c) 2019 by Julian Garnier (https://codepen.io/juliangarnier/pen/BsIih)
+Copyright (c) 2019 by Julian Garnier (https://codepen.io/juliangarnier/pen/
+BsIih)
 
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
   {{--
@@ -40,9 +54,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> --}}
   <link rel="stylesheet" href="{!! asset('css/reset.css') !!}">
   <style>
-/* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+
+  /* NOTE: The styles were added inline because Prefixfree needs access to your
+  styles and they must be inlined if they are on local disk! */
+
 /*
-    BEST VIEWED IN FULL SCREEN :
+  BEST VIEWED IN FULL SCREEN :
 
   ==========================================
   https://codepen.io/juliangarnier/full/BsIih
@@ -52,7 +69,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 @import url(https://fonts.googleapis.com/css?family=Lato:400,900);
 
-* { box-sizing: border-box; tap-highlight-color:rgba(0,0,0,0); }
+* {
+  box-sizing: border-box;
+  tap-highlight-color:rgba(0,0,0,0);
+}
 
 body {
   position: absolute;
