@@ -3,8 +3,8 @@
  * [prettier.io Options](https://prettier.io/docs/en/options.html)
  * [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
  *
- * Support: JS, JSX, Angular, Vue, Flow, TypeScript, CSS, Less, SCSS, HTML, JSON, GraphQL, Markdown
- * GFM, MDX, YAML.
+ * Support: JS, JSX, Angular, Vue, Flow, TypeScript, CSS, Less, SCSS, HTML,
+ * JSON, GraphQL, Markdown, GFM, MDX, YAML.
  */
 
 module.exports = {

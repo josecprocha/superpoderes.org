@@ -12,11 +12,11 @@ This file is part of "Escola de Super Poderes" Project.
 (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
 
 This source file is subject to the MIT license that is bundled
-with this source code in the file LICENSE.
+with this source code in the file LICENSE.md.
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
-    ->exclude('tests/Fixtures')
+    ->exclude(['node_modules', 'vendor'])
     ->in(__DIR__)
     ->append([__DIR__.'/php-cs-fixer'])
 ;
@@ -24,9 +24,10 @@ $finder = PhpCsFixer\Finder::create()
 $config = PhpCsFixer\Config::create()
     ->setRiskyAllowed(false)
     ->setRules([
+        // More info: vendor\friendsofphp\php-cs-fixer\src\RuleSet.php
         '@PHP56Migration' => true,
         '@PHPUnit60Migration:risky' => false,
-        '@PhpCsFixer' => true,
+        '@PhpCsFixer' => true, // include Symfony, whose include PSR2.
         '@PhpCsFixer:risky' => false,
         //'header_comment' => ['header' => $header],
         'list_syntax' => ['syntax' => 'long'],
@@ -34,7 +35,8 @@ $config = PhpCsFixer\Config::create()
     ->setFinder($finder)
 ;
 
-// special handling of fabbot.io service if it's using too old PHP CS Fixer version
+// special handling of fabbot.io service if it's using too old PHP CS Fixer
+// version
 if (false !== getenv('FABBOT_IO')) {
     try {
         PhpCsFixer\FixerFactory::create()
