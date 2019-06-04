@@ -1,0 +1,197 @@
+/* BORDER-BOX - this makes sure that all my padding and borders and whatnot do not add to the size of my divs */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* CLEARFIX - this forces a container to clear its children elements - otherwise, the .frame doesn't encircle the divs within - it just stops partway down!*/
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/* MAIN STYLES */
+
+body {
+  background: url("https://img0.etsystatic.com/000/0/5602603/il_570xN.344154282.jpg");
+  font-size: 10px;
+}
+
+h1 {
+  font-family: "Pacifico";
+  font-size: 4rem;
+  text-align: center;
+  color: #FF585A;
+  text-shadow: 2px 2px 0 black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: "Gloria Hallelujah";
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* WRAPPERS */
+
+.wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+.wrapper-left {
+  width: 30%;
+  float: left;
+}
+
+.wrapper-middle {
+  width: 40%;
+  float: left;
+}
+
+.wrapper-right {
+  width: 30%;
+  float: left;
+}
+
+.frame {
+  border: 40px solid saddlebrown;
+  width: 100%;
+  margin: 40px 0;
+  display: inline-block;
+  cursor: url("http://www.cursor.cc/cursor/477/6/cursor.png"), auto;
+  box-shadow: 5px 3px 5px rgba(42,42,42,0.6);
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+  display: block;
+  margin: 0;
+}
+
+.grid:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.grid {
+  width: 12.5%;
+  background: white;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid silver;
+}
+
+.grid-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: silver;
+}
+
+.grid-content div {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+
+.grid-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: silver;
+    font-size: 1.5em;
+}
+
+/* I learned the above trick for making CSS-only fully responsive squares with centred content from http://jsfiddle.net/josedvq/38Tnx/ */
+
+p {
+  font-family: "Gloria Hallelujah";
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 1s all ease-in-out;
+  clear: both;
+}
+
+p:hover {
+  transform: scale(1.1);
+}
+
+a {
+  color: #FF585A;
+  transition: 1s all ease-in-out;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF3708;
+}
+
+/* ADDED CLASSES */
+
+.blue-background {
+  background: #BBF8FF;
+  border: none;
+}
+
+.yellow-background {
+  background: #E8C356;
+  border: none;
+}
+
+.green-background {
+  background: #404C28;
+  border: none;
+}
+
+/* OTHER PAINTINGS */
+
+.pug {
+  width: 55%;
+  margin: 20% auto;
+}
+
+.pug img {
+  width: 100%;
+  border: 20px solid #523C21;
+  box-shadow: 5px 3px 5px rgba(42,42,42,0.6);
+  transition: .5s all ease-in-out;
+}
+
+.pug img:hover {
+  transform: rotate(-9deg);
+}
+
+.duck {
+  width: 65%;
+  margin: 100px auto;
+}
+
+.duck img {
+  width: 100%;
+  border: 20px solid #87502F;
+  box-shadow: 5px 3px 5px rgba(42,42,42,0.6);
+  transition: .5s all ease-in-out;
+}
+
+.duck img:hover {
+  transform: rotate(5deg);
+}

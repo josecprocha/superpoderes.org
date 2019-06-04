@@ -1,0 +1,73 @@
+/* CAJAS */
+.a,
+.b {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  display: inline-block;
+  background: white;
+  position: relative;
+  top: 4px;
+}
+.b {
+  background: black;
+}
+/* negro que se mueve */
+.b1 {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  background: black;
+  position: absolute;
+  z-index: 10;
+}
+.b2 {
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+  background: black;
+  position: absolute;
+  z-index: 10;
+}
+
+.point {
+  border-radius: 50%;
+  background: gold;
+  cursor: pointer;
+}
+
+/* DECORAR */
+body {
+  font-family: sans;
+  font-size: 17px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.center {
+  width: 900px;
+  margin: auto;
+  margin-top: 100px;
+  background: white;
+  padding: 30px;
+}
+
+.contiene_juego {
+  margin-top: 20px;
+  width: 900px;
+  height: 400px;
+  position: relative;
+  /*border:1px solid black; */
+}
+
+/* NAV */
+.nav {
+  margin-top: 20px;
+}
+.nav div {
+  background: #3e3e3e;
+  color: white;
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
+}

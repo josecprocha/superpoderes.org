@@ -1,0 +1,18 @@
+body {
+  background: #000;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 50px auto 0;
+}
+
+.info {
+  display: flex;
+  width: 650px;
+  color: white;
+  justify-content: space-between;
+  font-size: 14px;
+}

@@ -15,6 +15,6 @@ Name: My wife, Greicy.
 /* SITE */
 
 Last update: 2019/04/14
-Standards: HTML5, CSS3, Laravel, Standard.js
+Standards: HTML5, CSS3, Laravel, AirBnB.js
 Components: Google Font API, Font Awesome, Adorable Avatars
 Software: Visual Studio Code, Sublime Text, XAMPP

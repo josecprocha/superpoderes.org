@@ -51,7 +51,12 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
-            'collation' => 'utf8mb4_unicode_ci',
+            # MySQL 5.5.3
+            # 'collation' => 'utf8mb4_unicode_ci',
+            # MySQL 5.6
+              'collation' => 'utf8mb4_unicode_520_ci', // https://stackoverflow.com/questions/37307146/difference-between-utf8mb4-unicode-ci-and-utf8mb4-unicode-520-ci-collations-in-m
+            # MySQL 8.0
+            # 'collation' => 'utf8mb4_0900_ai_ci', // https://stackoverflow.com/questions/43644218/why-is-table-charset-set-to-utf8mb4-and-collation-to-utf8mb4-unicode-520-ci
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,

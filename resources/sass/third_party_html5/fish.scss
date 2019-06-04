@@ -1,0 +1,184 @@
+$color-base : #0D1B2A;
+$color-base-darker : #010F1E;
+$color-base-dark  : #051424;
+$color-base-light : #182635;
+$color-base-lighter: #2C3C4D;
+
+$water-fill : ($color-base-dark,$color-base-darker,$color-base-lighter);
+
+.game-canvas
+{
+  overflow:hidden;
+  width: 100%;
+  min-height: 400px;
+	height : 80vh;
+	position : relative;
+  z-index: 1;
+	.water-layer
+	{
+		position: absolute;
+		top : 0;
+		right : 0;
+		bottom : 0;
+		left : 0;
+		margin-top: 60px;
+
+      > [class*='water-layer-']
+      {
+      opacity: 0.5;
+      position: absolute;
+      top : 0;
+			right : 0;
+			bottom : 0;
+			left : 0;
+           	margin-top: 55px;
+            &:after{
+              content : '';
+              display: block;
+              position : absolute;
+              top : 99%;
+              height: 400px;
+              left: 0;
+              right: 0;
+            }
+           	svg {
+                height: 55px;
+                width: 100%;
+                position : absolute;
+                left: 0;
+                bottom : 100%;
+           	}
+           }
+       .water-layer-1{
+       	top : -10px;
+       }
+       .water-layer-3{
+       	top : 20px;
+       	margin-top: 30px;
+       	svg{
+       		height: 30px;
+       	}
+       }
+
+       @for $i from 1 through 3 {
+       	  .water-layer-#{$i}{
+       	  	background: nth($water-fill, $i);
+            &:after{
+              background: nth($water-fill, $i);
+            }
+       	  	svg {
+       	  		fill : nth($water-fill, $i);
+       	  	}
+       	  }
+       }
+	}
+
+
+  .water-bottom
+  {
+    position :absolute;
+    left: 0;
+    bottom : 0;
+    right : 0;
+    z-index: -1;
+    #water-bottom-layer{
+      width: 100%;
+      height: 140px;
+     display: block;
+    }
+  }
+
+  .stone{
+    position : absolute;
+    &.stone-1
+    {
+      bottom : 30px;
+    left: 20%;
+    }
+    &.stone-2
+    {
+      bottom : 40px;
+     right: 30%;
+    }
+
+  }
+
+  .prey-fish-wrapper
+  {
+    position : absolute;
+    bottom : 0;
+    left: 0;
+    right: 0;
+    top : 100px;
+    overflow : hidden;
+  }
+
+  .bubble,.fish-bubble{
+    position:absolute;
+    display: block;
+    width : 20px;
+    height: 20px;
+    border:1px solid #fff;
+    background : fade-out(#fff, 0.5);
+    border-radius : 50%;
+  }
+
+  #p-fish
+  {
+    position : absolute;
+    left : 50%;
+    top : 80%;
+    z-index: 2;
+    //opacity: 0.6;
+    > svg{
+      -webkit-backface-visibility: visible;
+      backface-visibility: visible;
+    }
+    .score-notifier{
+      position : absolute;
+      opacity: 0;
+      font-size: 30px;
+      color : #fff;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 3;
+    }
+    .p-fish-mouth-close
+    {
+      fill : lighten($color-base-dark,0%);
+
+    }
+    .fish{
+      overflow : visible;
+    }
+    .bubbles
+    {
+      fill : fade-out(#fff, 0.5);
+      stroke : fade-out(#fff, 0.5);
+
+      > *{
+        opacity: 0;
+      }
+    }
+    .stool{
+      fill : #000;
+      stroke : none;
+      > *{
+        opacity: 0;
+      }
+    }
+  }
+
+  .s-fish {
+    width: 20px;
+    height: 20px;
+    background : url('http://nfrontcreative.com/assets/images/s-fish.svg');
+    background-size : 100% 100%;
+    position : absolute;
+    display: block;
+  }
+
+
+}

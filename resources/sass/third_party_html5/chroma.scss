@@ -1,0 +1,331 @@
+$mainColor: orchid;
+$darkBackground:#252525;
+$lightBackground:#eeeeee;
+$headingFont: 'Fredoka One',Calibri,sans-serif;
+$bodyFont: Roboto, Calibri, sans-serif;
+@mixin roundIt() {
+  border-radius: 10px;
+}
+@mixin darkShadow() {
+  box-shadow: 3px 3px 0 rgba(black, .4);
+}
+
+@mixin textShadow() {
+  text-shadow: 2px 2px 0 rgba(black, .4);
+}
+@mixin screen() {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+  padding: 3em;
+}
+@mixin container() {
+  margin: 5rem auto 0;
+  width: 320px;
+}
+html {
+  box-sizing: border-box;
+}
+*,*:before,*:after {
+  box-sizing: inherit;
+  outline: none;
+}
+body {
+  background: $darkBackground;
+  font-family: $bodyFont;
+  color: white;
+  text-align: center;
+}
+.title {
+  @include textShadow();
+  font-family: $headingFont;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: white;
+  margin: 1em;
+}
+
+#start-screen {
+  @include screen();
+  height: 100%;
+  font-size: 150%;
+  z-index: 99999;
+  box-sizing: border-box;
+  padding: 1rem;
+  p {
+    max-width: 500px;
+    margin: 1em auto;
+  }
+  .title {
+    color: $mainColor;
+    font-size: 3em;
+    span {
+      color: white;
+    }
+  }
+  .fake-color-chip {
+    @include darkShadow();
+    @include roundIt();
+    position: relative;
+    top: 70px;
+    left: -100px;
+    opacity: 0;
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+
+  }
+  button {
+    @include roundIt();
+    @include darkShadow();
+    background: $mainColor;
+    font-size: inherit;
+    font-family: $headingFont;
+    text-transform: uppercase;
+    border: none;
+    padding: .5em;
+    transition: background .3s linear;
+    color: white;
+    text-shadow: 0 -2px 0 rgba(black, .5);
+  }
+}
+
+#levels-screen {
+  @include screen();
+  .levels-list {
+    @include container();
+  }
+  h1 {
+    text-align: center;
+  }
+  li {
+    @include roundIt();
+    @include darkShadow();
+    width: 60px;
+    height: 60px;
+    font-family: $headingFont;
+    float: left;
+    margin: 10px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-shadow: 0 2px 0 rgba(black, .3);
+    &.locked-level {
+      background-color: gray;
+    }
+    &.unlocked-level {
+      cursor: pointer;
+    }
+    &.complete {
+      font-size: 1.1em;
+      line-height: 1.5;
+      padding-top: 4px;
+    }
+  }
+}
+
+#game-screen {
+  display: none;
+  .hints {
+    @include container();
+    p {
+      font-size: 1.2em;
+    }
+  }
+}
+
+.lights-on {
+  background: $lightBackground;
+  color: black;
+  .title {
+    color: #666;
+    text-shadow: none;
+  }
+}
+
+h2 {
+  margin: 2em 0 0;
+}
+
+#color-container {
+  position: relative;
+  margin: 1em auto;
+  // top bottom left and right divs
+  & > div {
+    position: absolute;
+    width: auto;
+    top: 0;
+    left: 0;
+    &#left,
+    &#right {
+      width: 50px;
+      height: auto;
+      .color-chip,
+      .target-chip {
+        display: block;
+      }
+    }
+  }
+}
+
+#scramble {
+  width: 300px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.color-chip,
+.target-chip,
+#color-drop {
+  @include roundIt();
+  color: rgba(white, .25);
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999em;
+  overflow: hidden;
+  z-index: 9999;
+  &.locked {
+    pointer-events: none;
+    &:before {
+      content: "\f023";
+      font-family: FontAwesome;
+      text-align: right;
+      padding: .25em;
+      display: block;
+      color: rgba(black, .2);
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+.target-chip {
+  background: rgba(0, 0, 0, .2);
+}
+
+//TODO. make this thing pick up the color of the selected chip
+#color-drop {
+  // background-color:transparent;
+  pointer-events: none;
+  // border:solid 1px red;
+}
+
+.debug .highlight {
+  box-shadow: 0 0 4px rgba(yellow, .5);
+}
+
+.debug .color-chip,
+.debug .target-chip {
+  text-indent: 0;
+  font-size: .8rem;
+  line-height: 1.4;
+}
+
+a {
+  color: lightblue;
+  text-decoration:none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#controls,
+#scoreboard {
+  font-size: 1.3em;
+  position: fixed;
+  right: 0;
+  top: 2rem;
+  background: rgba(0, 0, 0, .2);
+  width: 3rem;
+}
+
+#controls span {
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  display: block;
+  cursor: pointer;
+}
+
+#scoreboard {
+  right: auto;
+  left: 0;
+}
+
+#feedback-screen {
+  @include roundIt();
+  display: none;
+  position: fixed;
+  width: 400px;
+  min-height: 50vh;
+  top: 20vh;
+  left: 50%;
+  margin-left: -200px;
+  background: black;
+  color: black;
+  padding: 1rem;
+  font-size: 1.5em;
+  background-color: white;
+  box-shadow: 6px 10px 20px rgba(black, .6), 0 0 0 100vw rgba(black, .8);
+  text-shadow: 0 2px 0 rgba(white, .3);
+  .title {
+    color: white;
+  }
+  .button {
+    display: block;
+    background: rgba(white, .3);
+    cursor: pointer;
+    margin: .4em;
+    border-radius: .2em;
+    padding: .5em;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 1em;
+  height: 1em;
+  background: rgba(white, .3);
+  border-radius: 100px;
+  margin: .2em;
+  line-height: 1em;
+  color: rgba(white, .7);
+  cursor: pointer;
+}
+
+.stars {
+  color: gold;
+  font-size: 2em;
+}
+
+.fa-star-o {
+  color: #191919;
+}
+
+#stats {
+  display: none;
+  background: rgba(gray, .2);
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  text-align: left;
+  padding: 1em;
+  line-height: 1.4;
+}
+
+.debug #stats {
+  display: block;
+}

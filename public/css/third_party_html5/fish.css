@@ -1,0 +1,202 @@
+.game-canvas {
+  overflow: hidden;
+  width: 100%;
+  min-height: 400px;
+  height: 80vh;
+  position: relative;
+  z-index: 1;
+}
+
+.game-canvas .water-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 60px;
+}
+
+.game-canvas .water-layer > [class*=water-layer-] {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 55px;
+}
+
+.game-canvas .water-layer > [class*=water-layer-]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 99%;
+  height: 400px;
+  left: 0;
+  right: 0;
+}
+
+.game-canvas .water-layer > [class*=water-layer-] svg {
+  height: 55px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+}
+
+.game-canvas .water-layer .water-layer-1 {
+  top: -10px;
+}
+
+.game-canvas .water-layer .water-layer-3 {
+  top: 20px;
+  margin-top: 30px;
+}
+
+.game-canvas .water-layer .water-layer-3 svg {
+  height: 30px;
+}
+
+.game-canvas .water-layer .water-layer-1 {
+  background: #051424;
+}
+
+.game-canvas .water-layer .water-layer-1:after {
+  background: #051424;
+}
+
+.game-canvas .water-layer .water-layer-1 svg {
+  fill: #051424;
+}
+
+.game-canvas .water-layer .water-layer-2 {
+  background: #010F1E;
+}
+
+.game-canvas .water-layer .water-layer-2:after {
+  background: #010F1E;
+}
+
+.game-canvas .water-layer .water-layer-2 svg {
+  fill: #010F1E;
+}
+
+.game-canvas .water-layer .water-layer-3 {
+  background: #2C3C4D;
+}
+
+.game-canvas .water-layer .water-layer-3:after {
+  background: #2C3C4D;
+}
+
+.game-canvas .water-layer .water-layer-3 svg {
+  fill: #2C3C4D;
+}
+
+.game-canvas .water-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.game-canvas .water-bottom #water-bottom-layer {
+  width: 100%;
+  height: 140px;
+  display: block;
+}
+
+.game-canvas .stone {
+  position: absolute;
+}
+
+.game-canvas .stone.stone-1 {
+  bottom: 30px;
+  left: 20%;
+}
+
+.game-canvas .stone.stone-2 {
+  bottom: 40px;
+  right: 30%;
+}
+
+.game-canvas .prey-fish-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100px;
+  overflow: hidden;
+}
+
+.game-canvas .bubble,
+.game-canvas .fish-bubble {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+.game-canvas #p-fish {
+  position: absolute;
+  left: 50%;
+  top: 80%;
+  z-index: 2;
+}
+
+.game-canvas #p-fish > svg {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.game-canvas #p-fish .score-notifier {
+  position: absolute;
+  opacity: 0;
+  font-size: 30px;
+  color: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+}
+
+.game-canvas #p-fish .p-fish-mouth-close {
+  fill: #051424;
+}
+
+.game-canvas #p-fish .fish {
+  overflow: visible;
+}
+
+.game-canvas #p-fish .bubbles {
+  fill: rgba(255, 255, 255, 0.5);
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.game-canvas #p-fish .bubbles > * {
+  opacity: 0;
+}
+
+.game-canvas #p-fish .stool {
+  fill: #000;
+  stroke: none;
+}
+
+.game-canvas #p-fish .stool > * {
+  opacity: 0;
+}
+
+.game-canvas .s-fish {
+  width: 20px;
+  height: 20px;
+  background: url("http://nfrontcreative.com/assets/images/s-fish.svg");
+  background-size: 100% 100%;
+  position: absolute;
+  display: block;
+}
+

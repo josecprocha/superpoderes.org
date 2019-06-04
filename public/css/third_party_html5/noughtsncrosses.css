@@ -1,0 +1,486 @@
+html {
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  font-size: 20px;
+}
+
+@media (max-width: 440px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  background-color: black;
+}
+
+h1,
+h2,
+p {
+  padding: 10px;
+  margin: 10px;
+}
+
+@media (max-width: 440px) {
+  h1,
+  h2,
+  p {
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  margin: 50px auto;
+}
+
+/*Board*/
+
+.board-container {
+  position: relative;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 4rem;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.row > div {
+  width: 90px;
+  height: 90px;
+  padding: 10px 20px;
+}
+
+@media (max-width: 440px) {
+  .row > div {
+    width: 70px;
+    height: 70px;
+    padding: 5px 10px;
+  }
+}
+
+.X {
+  color: #ff1012;
+  text-shadow: 0 0 1px #fff, 0 0 10px #ff1012, 0 0 25px #ff1012;
+}
+
+.X.flicker {
+  -webkit-animation-name: flicker;
+          animation-name: flicker;
+  -webkit-animation-duration: 5.1s;
+          animation-duration: 5.1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.O {
+  color: #08ff00;
+  text-shadow: 0 0 1px #fff, 0 0 10px #08ff00, 0 0 25px #08ff00;
+}
+
+.O.flicker {
+  -webkit-animation-name: flicker;
+          animation-name: flicker;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.l1 {
+  border-bottom: 5px solid #72fff7;
+  border-right: 5px solid #72fff7;
+}
+
+.l2 {
+  border-bottom: 5px solid #72fff7;
+}
+
+.l3 {
+  border-right: 5px solid #72fff7;
+}
+
+/*Modals*/
+
+.modal {
+  position: absolute;
+  top: 50px;
+  left: 58px;
+  width: 300px;
+  height: 250px;
+  background: black;
+  color: #72fff7;
+  z-index: 1;
+  opacity: 0.95;
+  border: 5px solid #72fff7;
+  border-radius: 10px;
+}
+
+@media (max-width: 440px) {
+  .modal {
+    width: 240px;
+    height: 200px;
+    top: 30px;
+    left: 25px;
+  }
+}
+
+.intro h1 {
+  font-size: 2rem;
+}
+
+.intro p span {
+  font-size: 2.5rem;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.setting p {
+  display: flex;
+  justify-content: center;
+}
+
+.setting p span {
+  font-size: 1rem;
+}
+
+.result > div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.winner {
+  font-size: 1.5rem;
+}
+
+.play-again {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/*Player Scores*/
+
+.info {
+  width: 200px;
+  height: 250px;
+  border: 1.5px solid #72fff7;
+  border-radius: 10px;
+  margin: 0 50px;
+  opacity: 0;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .info {
+    display: none !important;
+  }
+}
+
+.player {
+  order: 1;
+}
+
+.comp-info {
+  order: 2;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.player-message {
+  -webkit-animation-name: pulse;
+          animation-name: pulse;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+/*Dot loader*/
+
+.loader {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  height: 30px;
+}
+
+.loader > div {
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.loader-o {
+  background: #08ff00;
+  box-shadow: 0 0 5px #08ff00, 0 0 10px #ff4345, 0 0 25px #39ff33;
+}
+
+.loader-x {
+  background: #ff1012;
+  box-shadow: 0 0 5px #ff4345, 0 0 10px #ff1012, 0 0 25px #ff1012;
+}
+
+.dot-a {
+  -webkit-animation-name: dot-a;
+          animation-name: dot-a;
+}
+
+.dot-b {
+  -webkit-animation-name: dot-b;
+          animation-name: dot-b;
+}
+
+.dot-c {
+  -webkit-animation-name: dot-c;
+          animation-name: dot-c;
+}
+
+/*Animation Keyframes*/
+
+@-webkit-keyframes dot-a {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-a {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes dot-b {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-b {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes dot-c {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes dot-c {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flicker {
+  50% {
+    opacity: 0.85;
+  }
+
+  50.5% {
+    opacity: 0.1;
+  }
+
+  51% {
+    opacity: 0.9;
+  }
+
+  51.5% {
+    opacity: 0.1;
+  }
+
+  52% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes flicker {
+  50% {
+    opacity: 0.85;
+  }
+
+  50.5% {
+    opacity: 0.1;
+  }
+
+  51% {
+    opacity: 0.9;
+  }
+
+  51.5% {
+    opacity: 0.1;
+  }
+
+  52% {
+    opacity: 0.85;
+  }
+}
+

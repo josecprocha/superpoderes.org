@@ -1,0 +1,588 @@
+{
+  "mouse": [
+    {
+      "id": "reaction",
+      "name": "React",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "crosshatch",
+      "name": "Canvas Crosshatch",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "pathfinder",
+      "name": "Path Finder",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "platform",
+      "name": "Platform",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "planetdefense",
+      "name": "Planet Defense",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "mouseminigame",
+      "name": "Mouse Mini Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "powersurge",
+      "name": "Power Surge",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "reactionB",
+      "name": "Reaction",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "shootthetarget",
+      "name": "Shoot the target!!",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "toddlerrainbow",
+      "name": "Toddler Rainbow",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "ultimatearcadeshooter",
+      "name": "Ultimate Arcade Shooter",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "connectingdots",
+      "name": "Connecting Dots",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "fishing",
+      "name": "Fishing",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "fish",
+      "name": "Fish",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "vdasteroids",
+      "name": "Vincent Danna's Asteroids",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "breakout",
+      "name": "Breakout",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "toddlercolor",
+      "name": "Toddler Color Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "whackamole",
+      "name": "Whack a Mole",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "whackamoleB",
+      "name": "Whack a Mole and Simon",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "paintbynumber",
+      "name": "Paint by Number",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "shootinghoops",
+      "name": "Shooting Hoops",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "keyboard": [
+    {
+      "id": "savetheprincess",
+      "name": "Save the Princess",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "interactivesnake",
+      "name": "Interactive Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "asteroids",
+      "name": "Asteroids",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "maze",
+      "name": "Maze",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "glitchmaze",
+      "name": "Glitch Maze",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "crossthestreet",
+      "name": "Cross the Street",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "crosstotheotherside",
+      "name": "Cross to the Other Side",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "asteroidsB",
+      "name": "Asteroids",
+      "btn": "btn-dark",
+      "enabled": false
+    },
+    {
+      "id": "cybersnake",
+      "name": "MVC Cyber Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "snake",
+      "name": "Snake",
+      "btn": "btn-dark",
+      "enabled": false
+    },
+    {
+      "id": "snakeB",
+      "name": "Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "simplesnake",
+      "name": "Simple Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "isometricsnake",
+      "name": "Isometric Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "snakeC",
+      "name": "Snake",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "platformengine",
+      "name": "Platform Engine",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "savethesemicolon",
+      "name": "Save the Semicolon",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "destroythosemeteors",
+      "name": "Destroy Those Meteors",
+      "btn": "btn-danger",
+      "enabled": false
+    },
+    {
+      "id": "canvasteroids",
+      "name": "Canvasteroids",
+      "btn": "btn-danger",
+      "enabled": false
+    }
+  ],
+  "puzzle": [
+    {
+      "id": "hanoi",
+      "name": "Tower of Hanoi",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "cubnpup",
+      "name": "Cub n Pup",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "tetris",
+      "name": "Tetris",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "swinepeeper",
+      "name": "Swinepeeper",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "chess",
+      "name": "Chess",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "tictacdoom",
+      "name": "Tic Tac Doom",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "gomoku",
+      "name": "Gomoku",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "mcdraughts",
+      "name": "McDraughts",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "blockpuzzle",
+      "name": "Block Puzzle",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "mahjongg",
+      "name": "Mahjongg",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "bycss",
+      "name": "Bycss",
+      "btn": "btn-dark",
+      "enabled": false
+    },
+    {
+      "id": "chroma",
+      "name": "Chroma",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "sudoku",
+      "name": "Sudoku",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "materialsudoku",
+      "name": "Sudoku with Material Design",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "tictactoeB",
+      "name": "Tic Tac Toe",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "15",
+      "name": "15 Game",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "minesweeper",
+      "name": "Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "minesweeperB",
+      "name": "Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "infiniteminesweeper",
+      "name": "Infinite Mine Sweeper",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "themine",
+      "name": "The Mine",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "align4",
+      "name": "Align 4",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "tetrisB",
+      "name": "Tetris",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "rotation",
+      "name": "Rotation",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "solitaire",
+      "name": "Solitaire",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "tictactoeC",
+      "name": "Tic Tac Toe",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "noughtsncrosses",
+      "name": "Noughts & Crosses (Tic Tac Toe)",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "risk",
+      "name": "Risk",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "experiment": [
+    {
+      "id": "planetsquiz",
+      "name": "Planets Quiz",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "lunarlander",
+      "name": "Lunar Lander",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "multiplicationtoy",
+      "name": "Multiplication Toy",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "art": [
+    {
+      "id": "drumkit",
+      "name": "JavaScript Drum Kit",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "pianokeyboard",
+      "name": "Piano Keyboard",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "animatedguitar",
+      "name": "Animated Guitar",
+      "btn": "btn-primary",
+      "enabled": false
+    }
+  ],
+  "esports": [
+    {
+      "id": "clicksoccer",
+      "name": "Click Soccer",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "memory": [
+    {
+      "id": "memory",
+      "name": "Memory",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "reactmemory",
+      "name": "React Memory",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "flip",
+      "name": "Flip",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "friends": [
+    {
+      "id": "pong",
+      "name": "Pong",
+      "btn": "btn-warning",
+      "enabled": true
+    },
+    {
+      "id": "tictactoe",
+      "name": "Tic Tac Toe",
+      "btn": "btn-warning",
+      "enabled": true
+    },
+    {
+      "id": "checkers",
+      "name": "Checkers",
+      "btn": "btn-warning",
+      "enabled": true
+    },
+    {
+      "id": "3dhartwigchess",
+      "name": "3D Hartwig Chess",
+      "btn": "btn-dark",
+      "enabled": false
+    },
+    {
+      "id": "dots",
+      "name": "Dots",
+      "btn": "btn-warning",
+      "enabled": true
+    },
+    {
+      "id": "fanorona",
+      "name": "Fanorona (WIP)",
+      "btn": "btn-warning",
+      "enabled": true
+    }
+  ],
+  "fun": [
+    {
+      "id": "matchcolor",
+      "name": "Match Color",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "paperstonescissors",
+      "name": "Paper - Stone - Scissors",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "pinballphysics",
+      "name": "Pinball Physics",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "math": [
+    {
+      "id": "mathness",
+      "name": "Mathness",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "arithmetic",
+      "name": "Arithmetic",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "bgmath",
+      "name": "Battlestar Galactica Math",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "mathemat1cs",
+      "name": "MATHEMAT1CS",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "blackjack",
+      "name": "Blackjack",
+      "btn": "btn-primary",
+      "enabled": false
+    },
+    {
+      "id": "2048",
+      "name": "2048",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "3072",
+      "name": "3072",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ],
+  "language": [
+    {
+      "id": "crosswordgenerator",
+      "name": "Crossword Generator",
+      "btn": "btn-primary",
+      "enabled": true
+    },
+    {
+      "id": "wordsearch2",
+      "name": "Word Search 2",
+      "btn": "btn-primary",
+      "enabled": true
+    }
+  ]
+}

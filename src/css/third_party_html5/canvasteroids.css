@@ -1,0 +1,71 @@
+body {
+  font-family: 'Audiowide', cursive;
+  background: url(http://home.htw-berlin.de/~s0533200/toys/asteroids/cubes.png);
+}
+header {
+  font-size: 40px;
+  text-align: center;
+  margin: 10px auto 0;
+  width: 400px;
+  background: #f2f2f2; /* Old browsers */
+  background: -moz-linear-gradient(top, #f2f2f2 0%, #e5e5e5 50%, #f2f2f2 100%); /* FF3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #f2f2f2),
+    color-stop(50%, #e5e5e5),
+    color-stop(100%, #f2f2f2)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(
+    top,
+    #f2f2f2 0%,
+    #e5e5e5 50%,
+    #f2f2f2 100%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #f2f2f2 0%, #e5e5e5 50%, #f2f2f2 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #f2f2f2 0%, #e5e5e5 50%, #f2f2f2 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #f2f2f2 0%, #e5e5e5 50%, #f2f2f2 100%); /* W3C */
+  border: 10px solid #851b15;
+  border-radius: 15px 15px 0 0;
+  border-bottom: none;
+  box-shadow: #888 0px 0px 10px;
+  text-shadow: #fff 0px 1px 1px;
+}
+
+#canvas {
+  display: block;
+  border: 10px solid #851b15;
+  border-radius: 15px;
+  margin: 0 auto;
+  background: #2c4715; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #2c4715 0%, #182300 98%); /* FF3.6+ */
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, #2c4715),
+    color-stop(98%, #182300)
+  ); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #2c4715 0%,
+    #182300 98%
+  ); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #2c4715 0%, #182300 98%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #2c4715 0%, #182300 98%); /* IE10+ */
+  background: radial-gradient(ellipse at center, #2c4715 0%, #182300 98%); /* W3C */
+  box-shadow: #888 0px 0px 10px;
+}
+footer {
+  width: 600px;
+  margin: 0 auto;
+  text-align: right;
+}
+footer a {
+  color: #000;
+  text-decoration: underline;
+}

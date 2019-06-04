@@ -1,0 +1,623 @@
+// Colors
+$bg-color: #FCEFEF;
+$dot-color: #F1A66A;
+$line-color: #F1A66A;
+$filled-cell-color: #F1A66A;
+$input-bg-color: #fff;
+
+// Shadows
+$basic-shadow: 0 0.5vmin 0px $dot-color;
+$selected-shadow: 0 0.25vmin 0px $dot-color;
+$hover-shadow: 0 0.75vmin 0px $dot-color;
+$dark-shadow: 0 0.5vmin 0px darken($dot-color, 40%);
+$dark-active-shadow: 0 0.25vmin 0px darken($dot-color, 40%);
+$dark-hover-shadow: 0 0.75vmin 0px darken($dot-color, 40%);
+$vertical-line-shadow: none;
+$horizontal-line-shadow: none;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body, html {
+  box-shadow: inset 0 0 20vmin 0vmin hsla(0, 0, 85%, 0.75);
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  touch-action: manipulation;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.overview {
+  display: flex;
+  font-size: 5vmin;
+  font-weight: bold;
+  padding: 2.5vmin 0;
+
+  .players {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 75vmin;
+  }
+
+  .status {
+    background-color: $line-color;
+    box-shadow: $dark-shadow;
+    color: $bg-color;
+    cursor: default;
+    padding: 2.5vmin 0;
+    text-align: center;
+    transition: opacity 0.5s;
+    user-select: none;
+    width: 50%;
+  }
+
+  .status {
+    border-radius: 16px;
+    width: 100%;
+  }
+}
+
+.overview {
+  width: 75vmin;
+
+  .player {
+    $radius: 5vmin;
+
+    cursor: default;
+    display: flex;
+    justify-content: center;
+
+    & > * {
+      padding: 2.5vmin;
+      text-align: center;
+    }
+
+    .name {
+      background-color: $line-color;
+      border: 1vmin solid $line-color;
+      border-radius: $radius 0 0 $radius;
+      box-shadow: $dark-shadow;
+      box-sizing: border-box;
+      color: $bg-color;
+      min-width: 50%;
+      padding: 2.5vmin 1vmin;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .score {
+      align-items: center;
+      background-color: $bg-color;
+      border: 1vmin solid $line-color;
+      border-radius: 0 $radius $radius 0;
+      box-shadow: $dark-shadow;
+      box-sizing: border-box;
+      color: $line-color;
+      display: flex;
+      justify-content: center;
+      min-width: 30%;
+    }
+
+    &:last-child {
+      flex-direction: row-reverse;
+    }
+
+    &:last-child .name {
+      border-radius: 0 $radius $radius 0;
+    }
+
+    &:last-child .score {
+      border-radius: $radius 0 0 $radius;
+    }
+
+    .name, .score {
+      transition:
+        background-color 0.5s,
+        border-color 0.5s,
+        box-shadow 0.2s,
+        color 0.5s;
+    }
+
+    &.current-player {
+      .name, .score {
+        background-color: $dot-color;
+        border-color: $dot-color;
+        color: $bg-color;
+      }
+    }
+
+    &:not(.current-player) {
+      .name, .score {
+        box-shadow: $basic-shadow;
+        background-color: $bg-color;
+        border-color: $bg-color;
+        color: $dot-color;
+      }
+    }
+  }
+}
+
+.dot-graph {
+  $line-size: 8fr;
+  $dot-size: 1fr;
+
+  display: grid;
+  height: 75vmin;
+  padding: 5vh;
+  transition: transform 0.3s;
+  width: 75vmin;
+
+  &.isThumbnail {
+    margin: -10vmin;
+    padding-bottom: 0;
+    transform: scaleX(0.5) scaleY(0.5);
+  }
+}
+
+#game * {
+  overflow: hidden;
+}
+
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dot {
+  align-items: center;
+  animation-duration: 0.5s;
+  animation-name: grow-shrink;
+  display: flex;
+  height: 400%;
+  justify-content: center;
+  margin-left: -150%;
+  margin-top: -150%;
+  -webkit-tap-highlight-color: transparent;
+  width: 400%;
+  /* TODO Provide alternative fix for display change when transform comes into play */
+  will-change: transform;
+  z-index: 1;
+
+  & span {
+    $dot-size: 50%;
+
+    background-color: $dot-color;
+    border-radius: $dot-size / 4;
+    display: block;
+    height: $dot-size;
+    transition:
+      0.2s background-color,
+      0.2s border-radius,
+      0.2s box-shadow,
+      0.2s transform;
+    width: $dot-size;
+
+    &.selected {
+      transform: scale(2);
+    }
+
+    &.second-selected {
+      animation-duration: 0.5s;
+      animation-name: second-dot-select;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes second-dot-select {
+  to {
+    transform: rotateZ(180deg);
+  }
+}
+
+.h-line,
+.v-line {
+  background-color: $line-color;
+  opacity: 0.25;
+  transition: 1s opacity, 0.5s transform;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+}
+
+.v-line {
+  transform: scaleY(0);
+  box-shadow: $vertical-line-shadow;
+
+  &.selected {
+    transform: scaleY(1);
+  }
+}
+
+.h-line {
+  transform: scaleX(0);
+  box-shadow: $horizontal-line-shadow;
+
+  &.selected {
+    transform: scaleX(1);
+  }
+}
+
+.cell {
+  align-items: center;
+  background-color: $filled-cell-color;
+  display: flex;
+  font-size: 0;
+  justify-content: center;
+  line-height: 0;
+  opacity: 0.75;
+  transform: scale3d(0, 0, 1);
+  transition: transform 0.25s;
+  user-select: none;
+
+  &.filled-cell {
+    transform: scale3d(1, 1, 1);
+  }
+
+  .player {
+    color: $bg-color;
+    cursor: default;
+    font-size: 0;
+    font-weight: bold;
+    height: 100%;
+    line-height: 0;
+    width: 100%;
+
+    svg {
+      display: inline;
+      margin: 0;
+      padding: 0;
+      width: 99%;
+
+      text {
+        fill: $bg-color;
+        font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.confetti-root {
+  background-color: #0066cc;
+  left: 50vw;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.confetti {
+  animation-iteration-count: infinite;
+  animation-name: confetti;
+  animation-timing-function: linear;
+  background-color: #0066cc;
+  height: 1vmin;
+  min-height: 8px;
+  min-width: 16px;
+  position: absolute;
+  top: -10vh;
+  width: 2vmin;
+}
+
+@keyframes confetti {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 110vh, 0) rotateZ(1440deg);
+  }
+}
+
+.new-game {
+  color: $line-color;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90vmin;
+
+  h1 {
+    font-size: 10vmin;
+    margin: 2.5vmin;
+  }
+
+  .players {
+    font-size: 5vmin;
+
+    .fa {
+      font-size: 7.5vmin;
+    }
+  }
+
+  & input[type='text'] {
+    -webkit-appearance: none;
+    border: 0.5vmin solid $line-color;
+    border-radius: 2.5vmin;
+    box-shadow: $basic-shadow;
+    color: $line-color;
+    font-size: 7.5vmin;
+    margin: 2.5vmin;
+    outline: none;
+    padding: 1vmin;
+    transition: box-shadow 0.2s;
+    width: 35vmin;
+  }
+
+  & input[type='text']:hover {
+    box-shadow: $hover-shadow;
+  }
+
+  & input[type='text']:focus {
+    box-shadow: $selected-shadow;
+  }
+
+  & input[type='text']::placeholder {
+    color: $line-color;
+  }
+
+  button {
+    font-size: 7.5vmin;
+    margin: 2.5vmin auto;
+  }
+}
+
+button {
+  background-color: $line-color;
+  border: none;
+  border-radius: 2.5vmin;
+  box-shadow: $dark-shadow;
+  color: $bg-color;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-size: 5vmin;
+  margin: 1vmin;
+  padding: 1vmin 5vmin;
+  transition:
+    box-shadow 0.2s,
+    transform 0.1s;
+}
+
+input:hover {
+  box-shadow: $hover-shadow;
+}
+
+button:hover {
+  box-shadow: $dark-hover-shadow;
+}
+
+button:active {
+  transform: scaleX(0.95) scaleY(0.95);
+}
+
+.dot-game {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 75vmin;
+  word-break: break-all;
+}
+
+.size-select {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 2.5vmin;
+
+  i {
+    font-size: 7.5vmin;
+    margin-right: 2.5vmin;
+  }
+}
+
+.size-option {
+  align-items: center;
+  background-color: $input-bg-color;
+  border: 0.5vmin solid $line-color;
+  border-left-width: 0;
+  border-right-width: 0;
+  box-shadow: $basic-shadow;
+  color: $dot-color;
+  display: flex;
+  font-size: 7.5vmin;
+  padding: 0.5rem 1rem;
+  transition:
+    background-color 0.2s,
+    box-shadow 0.2s,
+    color 0.2s;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    background-color: lighten($dot-color, 25%);
+  }
+
+  &.checked {
+    background-color: $dot-color;
+    color: $input-bg-color;
+  }
+
+  &:first-of-type {
+    border-left-width: 0.5vmin;
+    border-radius: 2.5vmin 0 0 2.5vmin;
+  }
+
+  &:last-of-type {
+    border-radius: 0 2.5vmin 2.5vmin 0;
+    border-right-width: 0.5vmin;
+  }
+}
+
+.volume-control,
+.back-control {
+  align-items: center;
+  background-color: $dot-color;
+  box-shadow: $dark-shadow;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow 0.2s;
+  z-index: 3;
+
+  &:hover {
+    box-shadow: $dark-hover-shadow;
+  }
+
+  &:active {
+    box-shadow: $dark-active-shadow;
+  }
+
+  & i {
+    transition: transform 0.2s;
+  }
+
+  &:hover i {
+    transform: scaleX(1.25) scaleY(1.25);
+  }
+
+  &:active i {
+    transform: scaleX(0.75) scaleY(0.75);
+  }
+}
+
+.volume-control,
+.back-control {
+  $icon-radius: 3.5vmin;
+  $distance-from-edge: 3.5vmin;
+
+  border-radius: $icon-radius * 2;
+  font-size: $icon-radius;
+  height: $icon-radius * 2;
+  top: $distance-from-edge;
+  width: $icon-radius * 2;
+
+  &.volume-control {
+    right: $distance-from-edge;
+  }
+
+  &.back-control {
+    left: $distance-from-edge;
+  }
+}
+
+@media (max-aspect-ratio: 3/4), (min-aspect-ratio: 4/3) {
+  .volume-control,
+  .back-control {
+    $icon-radius: 16px;
+    $distance-from-edge: 16px;
+
+    border-radius: $icon-radius * 2;
+    font-size: $icon-radius;
+    height: $icon-radius * 2;
+    top: $distance-from-edge;
+    width: $icon-radius * 2;
+
+    &.volume-control {
+      right: $distance-from-edge;
+    }
+
+    &.back-control {
+      left: $distance-from-edge;
+    }
+  }
+}
+
+.AnimatedBg {
+  height: 100vh;
+  opacity: 0.5;
+  overflow: hidden;
+  position: absolute;
+  width: 100vw;
+  z-index: -1;
+}
+
+.AnimatedBg-Cover {
+  background-color: $bg-color;
+  height: 100%;
+  opacity: 0.75;
+  position: absolute;
+  width: 100%;
+}
+
+.AnimatedBg-Fill {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: slide;
+  animation-timing-function: linear;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='64px' width='64px'><text x='0' y='32' font-size='32'>🐱</text></svg>");
+  bottom: -64px;
+  filter: grayscale(0%) contrast(0%);
+  left: -64px;
+  opacity: 0.5;
+  position: absolute;
+  right: 0;
+  top: 0px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0px) translateY(0px);
+  }
+  to {
+    transform: translateX(64px) translateY(-64px);
+  }
+}
+
+.GridIcon {
+  height: 9vmin;
+  margin-right: 2.5vmin;
+  width: 9vmin;
+}
+
+.GridIcon-Node {
+  background-color: $dot-color;
+  border-radius: 50vmax;
+  height: 100%;
+  width: 100%;
+}
+
+/***************************************************************
+ * THANKS FOR PLAYING!
+ ***************************************************************
+ * ░░░░░░░░░░░░░░░░░░░░░
+ * ░░░░░░▄▀▀▄▀▀▄░░░░░░░░
+ * ░░░░░█▒▄░▄░░▒█▄▄▄░░░░
+ * ░░░▄▄█░▀░▀░░░█▄▓▓█░░░
+ * ░▄▀▒▒▒▀▄▀▄▄▄▀▒▒▀█▓▄░░░
+ * ▄▀▀▒▀▒▒▒▒▒░░░▒▒▒█▓▓█░░░
+ * █▒▒▒▒▒▒▒▒▄░░░░▒▒██▀░░░░
+ * ▀▄▒▒▒▒▒▒▒█▀░░▒▄█▄▀░░░░░
+ * ░░▀▀▄▄▄▄█▄░░▒▒▀▄█▄▄░░░
+ */
