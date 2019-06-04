@@ -18,6 +18,7 @@ class CreateLegalConditionsTable extends Migration
             $table->string('condition_name');
             $table->string('condition_type');
             $table->string('legislation');
+            $table->softDeletes();
         });
 
         DB::table('legal_conditions')->insert([

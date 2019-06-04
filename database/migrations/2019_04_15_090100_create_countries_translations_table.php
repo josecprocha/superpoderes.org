@@ -16,6 +16,7 @@ class CreateCountriesTranslationsTable extends Migration
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->string('translated_country_name');
+            $table->softDeletes();
         });
 
         DB::table('countries_translations')->insert([

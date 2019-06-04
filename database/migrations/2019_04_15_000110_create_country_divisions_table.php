@@ -16,6 +16,7 @@ class CreateCountryDivisionsTable extends Migration
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->string('division_name');
             $table->string('category');
+            $table->softDeletes();
         });
 
         DB::table('country_divisions')->insert([

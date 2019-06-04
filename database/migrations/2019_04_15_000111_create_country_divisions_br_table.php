@@ -14,6 +14,7 @@ class CreateCountryDivisionsBrTable extends Migration
         Schema::create('country_divisions_br', function (Blueprint $table) {
             $table->char('id', 2)->primary();
             $table->foreign('country_divisions_id')->references('id')->on('country_divisions');
+            $table->softDeletes();
         });
 
         DB::table('country_divisions_br')->insert([

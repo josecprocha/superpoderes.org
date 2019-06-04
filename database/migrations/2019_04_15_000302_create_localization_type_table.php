@@ -16,6 +16,7 @@ class CreateLocalizationTypeTable extends Migration
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('localization_name');
+            $table->softDeletes();
         });
 
         DB::table('localization_type')->insert([

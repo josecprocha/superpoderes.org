@@ -18,6 +18,7 @@ class CreateDistrictsBrTable extends Migration
       $table->char('cities_br_id', 7)->references('id')->on('cities_br'); // IBGE contry_division + IBGE City code
       $table->char('id', 9)->primary(); // IBGE contry_division + IBGE District code
       $table->string('district_name');
+      $table->softDeletes();
     });
 
     DB::table('distritos')->insert([

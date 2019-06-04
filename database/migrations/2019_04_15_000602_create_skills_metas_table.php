@@ -18,6 +18,7 @@ class CreateSkillsMetasTable extends Migration
       $table->foreign('skills_id')->references('id')->on('skills');
       $table->string('property_name');
       $table->string('property_value');
+      $table->softDeletes();
     });
 
     ###############################################################################

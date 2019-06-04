@@ -16,6 +16,7 @@ class CreateEthnicitiesTable extends Migration
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('ethnicity_name');
+            $table->softDeletes();
         });
 
         DB::table('ethnicities')->insert([

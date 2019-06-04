@@ -14,6 +14,7 @@ class CreatePeopleKinshipsTable extends Migration
         Schema::create('people_kinships', function (Blueprint $table) {
             $table->unsignedTinyInteger('id')->primary();
             $table->string('kinship_description');
+            $table->softDeletes();
         });
 
         DB::table('people_kinships')->insert([

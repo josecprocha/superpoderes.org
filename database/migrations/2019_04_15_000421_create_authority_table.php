@@ -17,6 +17,7 @@ class CreateAuthorityTable extends Migration
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('authority_title');
             $table->text('authority_description');
+            $table->softDeletes();
         });
 
         DB::table('authority')->insert([

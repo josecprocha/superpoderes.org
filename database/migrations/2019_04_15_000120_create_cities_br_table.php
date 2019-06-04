@@ -17,6 +17,7 @@ class CreateCitiesBrTable extends Migration
       $table->foreign('country_divisions_br_id')->references('id')->on('country_divisions_br');
       $table->char('id', 7)->primary(); // IBGE contry_division + IBGE City code
       $table->string('city_name');
+      $table->softDeletes();
     });
 
     DB::table('municipios')->insert([

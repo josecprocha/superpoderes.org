@@ -15,6 +15,7 @@ class CreateLanguagesTable extends Migration
             $table->string('id')->primary(); // IETF BCP 47 language tag
             $table->string('language_name');
             $table->string('language_en');
+            $table->softDeletes();
         });
 
         DB::table('languages')->insert([

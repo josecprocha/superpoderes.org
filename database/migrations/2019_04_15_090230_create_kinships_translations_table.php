@@ -16,6 +16,7 @@ class CreatePeopleKinshipsTranslationsTable extends Migration
             $table->foreign('kinships_id')->references('id')->on('kinships');
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('kinship_description_tr');
+            $table->softDeletes();
         });
 
         DB::table('people_kinships_translation')->insert([

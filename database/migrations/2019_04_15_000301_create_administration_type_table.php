@@ -17,6 +17,7 @@ class CreateAdministrationTypeTable extends Migration
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('administration_name');
             $table->string('info')->nullable();
+            $table->softDeletes();
         });
 
         DB::table('administration_type')->insert([

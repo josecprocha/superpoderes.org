@@ -19,6 +19,7 @@ class CreateSkillsTable extends Migration
             $table->string('code');
             $table->string('description');
             $table->unsignedInt('years'); // year granulated: 2 ^ appropriate_year are sum to generate a integer. Numbers in 1st byte corresponds into 0 to 7 years, 2nd byte, 8 to 15, 3rd byte, 16 and 17 years.
+            $table->softDeletes();
         });
 
 ###############################################################################

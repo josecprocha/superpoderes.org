@@ -16,6 +16,7 @@ class CreateCountriesTable extends Migration
             $table->unsignedSmallInteger('iso_a1')->unique();
             $table->char('iso_a3', 3)->unique();
             $table->string('country_name'); // ->collation('utf8mb4_bin') não é necessário, a colação atual já é utf8mb4, já permite caracteres especiais.
+            $table->softDeletes();
         });
 
         DB::table('countries')->insert([

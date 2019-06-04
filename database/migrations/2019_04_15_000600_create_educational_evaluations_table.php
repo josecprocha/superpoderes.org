@@ -20,6 +20,7 @@ class CreateEducationalEvaluationsTable extends Migration
             $table->text('evaluation_description');
             $table->string('webpage');
             $table->boolean('in_use');
+            $table->softDeletes();
         });
 
         DB::table('educational_evaluations')->insert([

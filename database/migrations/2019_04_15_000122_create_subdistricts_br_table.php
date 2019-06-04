@@ -19,6 +19,7 @@ class CreateSubdistrictsBrTable extends Migration
             $table->char('districts_br_id', 9)->references('id')->on('districts_br');
             $table->char('id', 11)->primary();
             $table->string('subdistrict_name');
+            $table->softDeletes();
         });
 
         DB::table('distritos')->insert([
