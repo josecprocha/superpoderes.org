@@ -27,7 +27,7 @@ class CreateSkillsMetasTable extends Migration
     ###############################################################################
     ###############################################################################
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00', 'property_name' => 'Campo de experiências', 'property_value' => 'Traços, sons, cores e formas'],
       ['skills_id' => 'BR00EI01TS01', 'property_name' => 'Faixas Etárias', 'property_value' => 'Bebês (zero a 1 ano e 6 meses)'],
       ['skills_id' => 'BR00EI01TS01', 'property_name' => 'Abordagem das experiências de aprendizagem', 'property_value' => 'Os bebês, em suas explorações corporais e sonoras, descobrem a junção de sons, gestos e palavras, buscando dar sentido às suas ações. Por meio de diferentes situações nas quais podem movimentar-se, escutar e responder à música, experimentar um ritmo regular e explorar sons, tons e cantar, têm a oportunidade de ampliar e aprimorar suas habilidades e descobertas sobre a música e os movimentos.  Nesse contexto, é importante que os bebês tenham garantidos vínculos seguros e estáveis, espaços acolhedores e desafiadores e disponibilizados ao seu alcance objetos, materiais e brinquedos diversificados e de qualidade que lhe propiciem oportunidades para explorar as diferentes formas de sons, fazendo uso de seu corpo e de todos os seus sentidos, brincando com brinquedos sonoros, com instrumentos de efeito sonoro e demais objetos do ambiente natural que produzam sons diversos. Também é importante que participem de situações nas quais possam brincar com as possibilidades expressivas da própria voz e explorar objetos buscando diferentes sons e ajustando seus movimentos corporais, como bater palma conforme o ritmo da música, acompanhar a música batendo em um objeto ou buscar sons diferentes em objetos que lhes são familiares.'],
@@ -411,7 +411,7 @@ class CreateSkillsMetasTable extends Migration
     // ------------------------------------------------------------------------
     // Portuguese (Língua Portuguesa)
     // ------------------------------------------------------------------------
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EF01LP01', 'property_name' => 'Modalidade', 'property_value' => 'Ensino Fundamental'],
       ['skills_id' => 'BR00EF01LP01', 'property_name' => 'Componente', 'property_value' => 'Língua Portuguesa'],
       ['skills_id' => 'BR00EF01LP01', 'property_name' => 'Ano/Faixa', 'property_value' => '1º'],
@@ -3547,7 +3547,7 @@ class CreateSkillsMetasTable extends Migration
     // English (Língua Inglesa)
     // ------------------------------------------------------------------------
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EF06LI01', 'property_name' => 'Modalidade', 'property_value' => 'Ensino Fundamental'],
       ['skills_id' => 'BR00EF06LI01', 'property_name' => 'Componente', 'property_value' => 'Língua Inglesa'],
       ['skills_id' => 'BR00EF06LI01', 'property_name' => 'Ano/Faixa', 'property_value' => '6º'],
@@ -4259,7 +4259,7 @@ class CreateSkillsMetasTable extends Migration
     // History, Geography, Religious Education, Physical Education, Science and Art
     // ------------------------------------------------------------------------
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EF15AR01', 'property_name' => 'Modalidade', 'property_value' => 'Ensino Fundamental'],
       ['skills_id' => 'BR00EF15AR01', 'property_name' => 'Componente', 'property_value' => 'Arte'],
       ['skills_id' => 'BR00EF15AR01', 'property_name' => 'Ano/Faixa', 'property_value' => '1º; 2º; 3º; 4º; 5º'],
@@ -8312,7 +8312,7 @@ class CreateSkillsMetasTable extends Migration
     // Mathematics
     // ------------------------------------------------------------------------
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EF01MA01', 'property_name' => 'Modalidade', 'property_value' => 'Ensino Fundamental'],
       ['skills_id' => 'BR00EF01MA01', 'property_name' => 'Componente', 'property_value' => 'Matemática'],
       ['skills_id' => 'BR00EF01MA01', 'property_name' => 'Ano/Faixa', 'property_value' => '1º'],
@@ -10050,7 +10050,7 @@ class CreateSkillsMetasTable extends Migration
     ###########################################################################
     ###########################################################################
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EM13CNT310', 'property_name' => 'Modalidade', 'property_value' => 'Ensino Médio'],
       ['skills_id' => 'BR00EM13CNT310', 'property_name' => 'Componente', 'property_value' => 'Linguagens e suas Tecnologias'],
       ['skills_id' => 'BR00EM13CNT310', 'property_name' => 'Ano/Faixa', 'property_value' => '1º, 2º, 3º'],
@@ -10602,7 +10602,7 @@ class CreateSkillsMetasTable extends Migration
       ['skills_id' => 'BR00EM13LP54', 'property_name' => 'Ano/Faixa', 'property_value' => '1º, 2º, 3º']
     ]);
 
-    DB::table('skills_meta')->insert([
+    DB::table('skills_metas')->insert([
       ['skills_id' => 'BR00EM13LP01', 'property_name' => 'Campos de Atuação', 'property_value' => 'Todos os Campos de atuação social'],
       ['skills_id' => 'BR00EM13LP02', 'property_name' => 'Campos de Atuação', 'property_value' => 'Todos os Campos de atuação social'],
       ['skills_id' => 'BR00EM13LP03', 'property_name' => 'Campos de Atuação', 'property_value' => 'Todos os Campos de atuação social'],

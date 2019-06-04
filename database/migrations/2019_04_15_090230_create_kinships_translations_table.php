@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePeopleKinshipsTranslationsTable extends Migration
+class CreateKinshipsTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreatePeopleKinshipsTranslationsTable extends Migration
             $table->softDeletes();
         });
 
-        DB::table('people_kinships_translation')->insert([
+        DB::table('kinships_translation')->insert([
             ['people_kinships_id' => 1, 'languages_id' => 'pt-br', 'kinship_description_tr' => 'Pai ou mãe (1º grau ascendente)'],
             ['people_kinships_id' => 2, 'languages_id' => 'pt-br', 'kinship_description_tr' => 'Padrasto ou madrasta (1º grau por afinidade)'],
             ['people_kinships_id' => 3, 'languages_id' => 'pt-br', 'kinship_description_tr' => 'Avô ou avó (2º grau ascendente)'],
@@ -40,6 +40,6 @@ class CreatePeopleKinshipsTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people_kinships_translations');
+        Schema::dropIfExists('kinships_translations');
     }
 }

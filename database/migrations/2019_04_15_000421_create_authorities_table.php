@@ -11,7 +11,7 @@ class CreateAuthorityTable extends Migration
      */
     public function up()
     {
-        Schema::create('authority', function (Blueprint $table) {
+        Schema::create('authorities', function (Blueprint $table) {
             $table->unsignedMediumInteger('id')->primary();
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->foreign('languages_id')->references('id')->on('languages');
@@ -20,7 +20,7 @@ class CreateAuthorityTable extends Migration
             $table->softDeletes();
         });
 
-        DB::table('authority')->insert([
+        DB::table('authorities')->insert([
             // escola
             ['id' => 1, 'countries_id' => 'BR', 'languages_id' => 'pt-BR', 'authority_title' => 'Apoio Fora da Secretaria', 'authority_description' => 'Agente de Apoio, Agente de Serviços Escolares, Auxiliares de Serviços Gerais e outros cargos com atividades como vigilância, zeladoria, portaria, limpeza e manutenção da escola. Não lidam com a secretaria.'],
             ['id' => 2, 'countries_id' => 'BR', 'languages_id' => 'pt-BR', 'authority_title' => 'Apoio Dentro da Secretaria', 'authority_description' => 'Agente de Organização, Inspetor, Secretário, Assistentes Administrativos, Auxiliares Administrativos, Assistentes Técnicos, Oficiais Administrativos, Oficiais Operacionais e outros cargos que desenvolvem e executam ações envolvendo documentação e atendimento a pais.'],
@@ -35,6 +35,6 @@ class CreateAuthorityTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authority');
+        Schema::dropIfExists('authorities');
     }
 }

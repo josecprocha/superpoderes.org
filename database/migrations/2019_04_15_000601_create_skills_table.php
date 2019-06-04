@@ -1,15 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateSkillsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -22,11 +20,11 @@ class CreateSkillsTable extends Migration
             $table->softDeletes();
         });
 
-###############################################################################
-###############################################################################
-#       Brazilian kindergarten (Ensino Infantil), BNCC
-###############################################################################
-###############################################################################
+        //##############################################################################
+        //##############################################################################
+        //       Brazilian kindergarten (Ensino Infantil), BNCC
+        //##############################################################################
+        //##############################################################################
 
         DB::table('skills')->insert([
             ['id' => 'BR00EI01TS01', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01TS01', 'description' => 'Explorar sons produzidos com o próprio corpo e com objetos do ambiente.', 'years' => 3],
@@ -88,17 +86,17 @@ class CreateSkillsTable extends Migration
             ['id' => 'BR00EI03EF04', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF04', 'description' => 'Recontar histórias ouvidas e planejar coletivamente roteiros de vídeos e de encenações, definindo os contextos, os personagens, a estrutura da história.', 'years' => 48],
             ['id' => 'BR00EI01EF05', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01EF05', 'description' => 'Imitar as variações de entonação e gestos realizados pelos adultos, ao ler histórias e ao cantar.', 'years' => 3],
             ['id' => 'BR00EI03EF05', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF05', 'description' => 'Recontar histórias ouvidas para produção de reconto escrito, tendo o professor como escriba.', 'years' => 48],
-            ['id' => 'BR00EI01EF06', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI01EF06', 'description' => 'Comunicar-se com outras pessoas usando movimentos, gestos, balbucios, fala e outras formas de expressão.', 'years' => 3],
+            ['id' => 'BR00EI01EF06', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01EF06', 'description' => 'Comunicar-se com outras pessoas usando movimentos, gestos, balbucios, fala e outras formas de expressão.', 'years' => 3],
             ['id' => 'BR00EI02EF06', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02EF06', 'description' => 'Criar e contar histórias oralmente, com base em imagens ou temas sugeridos.', 'years' => 14],
-            ['id' => 'BR00EI03EF06', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI03EF06', 'description' => 'Produzir suas próprias histórias orais e escritas (escrita espontânea), em situações com função social significativa.', 'years' => 48],
+            ['id' => 'BR00EI03EF06', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF06', 'description' => 'Produzir suas próprias histórias orais e escritas (escrita espontânea), em situações com função social significativa.', 'years' => 48],
             ['id' => 'BR00EI02EF08', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02EF08', 'description' => 'Manipular textos e participar de situações de escuta para ampliar seu contato com diferentes gêneros textuais (parlendas, histórias de aventura, tirinhas, cartazes de sala, cardápios, notícias etc.).', 'years' => 14],
-            ['id' => 'BR00EI01EF07', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI01EF07', 'description' => 'Conhecer e manipular materiais impressos e audiovisuais em diferentes portadores (livro, revista, gibi, jornal, cartaz, CD, tablet etc.).', 'years' => 3],
+            ['id' => 'BR00EI01EF07', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01EF07', 'description' => 'Conhecer e manipular materiais impressos e audiovisuais em diferentes portadores (livro, revista, gibi, jornal, cartaz, CD, tablet etc.).', 'years' => 3],
             ['id' => 'BR00EI02EF07', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02EF07', 'description' => 'Manusear diferentes portadores textuais, demonstrando reconhecer seus usos sociais.', 'years' => 14],
-            ['id' => 'BR00EI03EF07', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI03EF07', 'description' => 'Levantar hipóteses sobre gêneros textuais veiculados em portadores conhecidos, recorrendo a estratégias de observação gráfica e/ou de leitura.', 'years' => 48],
+            ['id' => 'BR00EI03EF07', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF07', 'description' => 'Levantar hipóteses sobre gêneros textuais veiculados em portadores conhecidos, recorrendo a estratégias de observação gráfica e/ou de leitura.', 'years' => 48],
             ['id' => 'BR00EI01EF08', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01EF08', 'description' => 'Participar de situações de escuta de textos em diferentes gêneros textuais (poemas, fábulas, contos, receitas, quadrinhos, anúncios etc.).', 'years' => 3],
             ['id' => 'BR00EI03EF08', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF08', 'description' => 'Selecionar livros e textos de gêneros conhecidos para a leitura de um adulto e/ou para sua própria leitura (partindo de seu repertório sobre esses textos, como a recuperação pela memória, pela leitura das ilustrações etc.).', 'years' => 48],
             ['id' => 'BR00EI01EF09', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01EF09', 'description' => 'Conhecer e manipular diferentes instrumentos e suportes de escrita.', 'years' => 3],
-            ['id' => 'BR00EI02EF09', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI02EF09', 'description' => 'Manusear diferentes instrumentos e suportes de escrita para desenhar, traçar letras e outros sinais gráficos.', 'years' => 14],
+            ['id' => 'BR00EI02EF09', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02EF09', 'description' => 'Manusear diferentes instrumentos e suportes de escrita para desenhar, traçar letras e outros sinais gráficos.', 'years' => 14],
             ['id' => 'BR00EI03EF09', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03EF09', 'description' => 'Levantar hipóteses em relação à linguagem escrita, realizando registros de palavras e textos, por meio de escrita espontânea.', 'years' => 48],
             ['id' => 'BR00EI01ET01', 'educational_evaluations_id' => 'BR00', 'code' => 'EI01ET01', 'description' => 'Explorar e descobrir as propriedades de objetos e materiais (odor, cor, sabor, temperatura).', 'years' => 3],
             ['id' => 'BR00EI02ET01', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02ET01', 'description' => 'Explorar e descrever semelhanças e diferenças entre as características e propriedades dos objetos (textura, massa, tamanho).', 'years' => 14],
@@ -119,16 +117,16 @@ class CreateSkillsTable extends Migration
             ['id' => 'BR00EI02ET06', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02ET06', 'description' => 'Utilizar conceitos básicos de tempo (agora, antes, durante, depois, ontem, hoje, amanhã, lento, rápido, depressa, devagar).', 'years' => 14],
             ['id' => 'BR00EI03ET06', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03ET06', 'description' => 'Relatar fatos importantes sobre seu nascimento e desenvolvimento, a história dos seus familiares e da sua comunidade.', 'years' => 48],
             ['id' => 'BR00EI02ET07', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02ET07', 'description' => 'Contar oralmente objetos, pessoas, livros etc., em contextos diversos.', 'years' => 14],
-            ['id' => 'BR00EI03ET07', 'educational_evaluations_id' => 'BR00' , 'code' => 'EI03ET07', 'description' => 'Relacionar números às suas respectivas quantidades e identificar o antes, o depois e o entre em uma sequência.', 'years' => 48],
+            ['id' => 'BR00EI03ET07', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03ET07', 'description' => 'Relacionar números às suas respectivas quantidades e identificar o antes, o depois e o entre em uma sequência.', 'years' => 48],
             ['id' => 'BR00EI02ET08', 'educational_evaluations_id' => 'BR00', 'code' => 'EI02ET08', 'description' => 'Registrar com números a quantidade de crianças (meninas e meninos, presentes e ausentes) e a quantidade de objetos da mesma natureza (bonecas, bolas, livros etc.).', 'years' => 14],
             ['id' => 'BR00EI03ET08', 'educational_evaluations_id' => 'BR00', 'code' => 'EI03ET08', 'description' => 'Expressar medidas (peso, altura etc.), construindo gráficos básicos.', 'years' => 48],
         ]);
 
-    ###############################################################################
-    ###############################################################################
-    #       Brazilian elementary School (Ensino Fundamental), BNCC
-    ###############################################################################
-    ###############################################################################
+        //##############################################################################
+        //##############################################################################
+        //       Brazilian elementary School (Ensino Fundamental), BNCC
+        //##############################################################################
+        //##############################################################################
 
         DB::table('skills')->insert([
             ['id' => 'BR00EF01LP01', 'educational_evaluations_id' => 'BR00', 'code' => 'EF01LP01', 'description' => 'Reconhecer que textos são lidos e escritos da esquerda para a direita e de cima para baixo da página.', 'years' => 64],
@@ -1434,14 +1432,14 @@ class CreateSkillsTable extends Migration
             ['id' => 'BR00EF09ER05', 'educational_evaluations_id' => 'BR00', 'code' => 'EF09ER05', 'description' => 'Analisar as diferentes ideias de imortalidade elaboradas pelas tradições religiosas (ancestralidade, reencarnação, transmigração e ressurreição).', 'years' => 16384],
             ['id' => 'BR00EF09ER06', 'educational_evaluations_id' => 'BR00', 'code' => 'EF09ER06', 'description' => 'Reconhecer a coexistência como uma atitude ética de respeito à vida e à dignidade humana.', 'years' => 16384],
             ['id' => 'BR00EF09ER07', 'educational_evaluations_id' => 'BR00', 'code' => 'EF09ER07', 'description' => 'Identificar princípios éticos (familiares, religiosos e culturais) que possam alicerçar a construção de projetos de vida.', 'years' => 16384],
-            ['id' => 'BR00EF09ER08', 'educational_evaluations_id' => 'BR00', 'code' => 'EF09ER08', 'description' => 'Construir projetos de vida assentados em princípios e valores éticos.', 'years' => 16384]
+            ['id' => 'BR00EF09ER08', 'educational_evaluations_id' => 'BR00', 'code' => 'EF09ER08', 'description' => 'Construir projetos de vida assentados em princípios e valores éticos.', 'years' => 16384],
         ]);
 
-###########################################################################
-###########################################################################
-#       Brazilian high School (Ensino Médio), BNCC
-###########################################################################
-###########################################################################
+        //##########################################################################
+        //##########################################################################
+        //       Brazilian high School (Ensino Médio), BNCC
+        //##########################################################################
+        //##########################################################################
 
         DB::table('skills')->insert([
             ['id' => 'BR00EM13CNT310', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13CNT310', 'description' => 'Investigar e analisar os efeitos de programas de infraestrutura e demais serviços básicos (saneamento, energia elétrica, transporte, telecomunicações, cobertura vacinal, atendimento primário à saúde e produção de alimentos, entre outros) e identificar necessidades locais e/ou regionais em relação a esses serviços, a fim de avaliar e/ou promover ações que contribuam para a melhoria na qualidade de vida e nas condições de saúde da população.', 'years' => 229376],
@@ -1626,14 +1624,12 @@ class CreateSkillsTable extends Migration
             ['id' => 'BR00EM13LP51', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13LP51', 'description' => 'Selecionar obras do repertório artístico-literário contemporâneo à disposição segundo suas predileções, de modo a constituir um acervo pessoal e dele se apropriar para se inserir e intervir com autonomia e criticidade no meio cultural.', 'years' => 229376],
             ['id' => 'BR00EM13LP52', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13LP52', 'description' => 'Analisar obras significativas das literaturas brasileiras e de outros países e povos, em especial a portuguesa, a indígena, a africana e a latino-americana, com base em ferramentas da crítica literária (estrutura da composição, estilo, aspectos discursivos) ou outros critérios relacionados a diferentes matrizes culturais, considerando o contexto de produção (visões de mundo, diálogos com outros textos, inserções em movimentos estéticos e culturais etc.) e o modo como dialogam com o presente.', 'years' => 229376],
             ['id' => 'BR00EM13LP53', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13LP53', 'description' => 'Produzir apresentações e comentários apreciativos e críticos sobre livros, filmes, discos, canções, espetáculos de teatro e dança, exposições etc. (resenhas, vlogs e podcasts literários e artísticos, playlists comentadas, fanzines, e-zines etc.).', 'years' => 229376],
-            ['id' => 'BR00EM13LP54', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13LP54', 'description' => 'Criar obras autorais, em diferentes gêneros e mídias - mediante seleção e apropriação de recursos textuais e expressivos do repertório artístico -, e/ou produções derivadas (paródias, estilizações, fanfics, fanclipes etc.), como forma de dialogar crítica e/ou subjetivamente com o texto literário.', 'years' => 229376]
+            ['id' => 'BR00EM13LP54', 'educational_evaluations_id' => 'BR00', 'code' => 'EM13LP54', 'description' => 'Criar obras autorais, em diferentes gêneros e mídias - mediante seleção e apropriação de recursos textuais e expressivos do repertório artístico -, e/ou produções derivadas (paródias, estilizações, fanfics, fanclipes etc.), como forma de dialogar crítica e/ou subjetivamente com o texto literário.', 'years' => 229376],
         ]);
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

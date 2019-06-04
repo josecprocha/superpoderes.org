@@ -11,7 +11,7 @@ class CreatePeopleKinshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('people_kinships', function (Blueprint $table) {
+        Schema::create('kinships', function (Blueprint $table) {
             $table->unsignedTinyInteger('id')->primary();
             $table->string('kinship_description');
             $table->softDeletes();
@@ -38,6 +38,6 @@ class CreatePeopleKinshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people_kinships');
+        Schema::dropIfExists('kinships');
     }
 }
