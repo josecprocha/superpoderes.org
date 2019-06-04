@@ -11,9 +11,9 @@ class CreatePeopleKinshipsTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('people_kinships_translations', function (Blueprint $table) {
+        Schema::create('kinships_translations', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
-            $table->foreign('people_kinships_id')->references('id')->on('people_kinships');
+            $table->foreign('kinships_id')->references('id')->on('kinships');
             $table->foreign('languages_id')->references('id')->on('languages');
             $table->string('kinship_description_tr');
         });

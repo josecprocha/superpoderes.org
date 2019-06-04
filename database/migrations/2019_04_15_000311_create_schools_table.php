@@ -14,13 +14,13 @@ class CreateSchoolsTable extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->bigIncrements('id');
             // educational system
-            $Table->foreign('systems_id')->references('id')->on('systems');
-            $Table->string('school_name');
-            $Table->foreign('addresses_id')->references('id')->on('addresses');
-            $Table->string('city');
+            $table->foreign('systems_id')->references('id')->on('systems');
+            $table->string('school_name');
+            $table->foreign('addresses_id')->references('id')->on('addresses');
+            $table->string('city');
             // $Table->foreign('cities_id')->references('id')->on('cities');
-            $Table->foreign('administration_type_id')->references('id')->on('administration_type');
-            $Table->foreign('localization_type_id')->references('id')->on('localization_type');
+            $table->foreign('administration_type_id')->references('id')->on('administration_type');
+            $table->foreign('localization_type_id')->references('id')->on('localization_type');
             $table->timestamps();
         });
     }
