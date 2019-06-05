@@ -18,7 +18,6 @@ class CreateEnrollmentsTable extends Migration
             $table->foreign('classrooms_id')->references('id')->on('classrooms');
             $table->unsignedTinyInteger('number')->nullable();
             $table->date('registration_date')->nullable();
-            $table->foreign('departure_id')->references('id')->on('departures'); // Default = 'Ativo'
             $table->foreign('performances_id')->references('id')->on('performances'); // Default = 'Cursando'
             $table->timestamps();
         });

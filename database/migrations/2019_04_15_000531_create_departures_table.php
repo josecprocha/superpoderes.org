@@ -1,20 +1,19 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDeparturesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
         Schema::create('departures', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->foreign('enrollment_id')->references('id')->on('enrollments');
             $table->date('departure_date');
             $table->foreign('transferred_country_id')->references('id')->on('countries')->nullable();
             $table->foreign('transferred_country_division_id')->references('id')->on('countries_dividions')->nullable();
@@ -30,8 +29,6 @@ class CreateDeparturesTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {
