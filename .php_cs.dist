@@ -1,22 +1,31 @@
 <?php
-/**
- * https://github.com/FriendsOfPHP/PHP-CS-Fixer
- * https://github.com/junstyle/vscode-php-cs-fixer.
+
+/*
+ * This file is part of "School of Super Powers" Project and is writed on top of
+ * Laravel framework ({@link https://github.com/laravel/laravel})
  *
- * https://www.php-fig.org/psr/psr-2/
- * https://blog.sideci.com/5-php-coding-standards-you-will-love-and-how-to-use-them-adf6a4855696
+ * @author (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled with this
+ * source code in the file LICENSE.md.
+ * Source is available in {@link https://github.com/josecprocha/superpowers}.
  */
+
 $header = <<<'EOF'
-This file is part of "Escola de Super Poderes" Project.
+This file is part of "School of Super Powers" Project and is writed on top of
+Laravel framework ({@link https://github.com/laravel/laravel})
 
-(c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+@author (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
 
-This source file is subject to the MIT license that is bundled
-with this source code in the file LICENSE.md.
+This source file is subject to the MIT license that is bundled with this
+source code in the file LICENSE.md.
+Source is available in {@link https://github.com/josecprocha/superpowers}.
 EOF;
 
 $finder = PhpCsFixer\Finder::create()
-    ->exclude(['node_modules', 'vendor'])
+    ->exclude(['node_modules', 'vendor']) // Exclude directories from matching
+    ->notPath(['node_modules', 'vendor']) // excludes files by path
+    ->ignoreVCSIgnored(true) // excludes files/directories matching the .gitignore patterns
     ->in(__DIR__)
     ->append([__DIR__.'/php-cs-fixer'])
 ;
@@ -29,7 +38,7 @@ $config = PhpCsFixer\Config::create()
         '@PHPUnit60Migration:risky' => false,
         '@PhpCsFixer' => true, // include Symfony, whose include PSR2.
         '@PhpCsFixer:risky' => false,
-        //'header_comment' => ['header' => $header],
+        'header_comment' => ['header' => $header],
         'list_syntax' => ['syntax' => 'long'],
     ])
     ->setFinder($finder)
