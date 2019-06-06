@@ -47,5 +47,16 @@
   "prettier.stylelintIntegration": true,
   "eslint.autoFixOnSave": false,
   "prettier.endOfLine": "lf",
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  // https://github.com/neild3r/vscode-php-docblocker
+  "php-docblocker.gap": true, // set to false to disable the gap between the description and tags
+  "php-docblocker.returnGap": true, // set to true to add a gap between the param and return tags
+  "php-docblocker.returnVoid": false, // set to false to turn off the automatic void return type when it can't be determined
+  "php-docblocker.extra": [""], // an array of extra tags to add to each DocBlock (These can include tabstops and snippet variables)
+  "php-docblocker.useShortNames": false, // Whether we should use short type names. e.g. bool or boolean
+  "php-docblocker.qualifyClassNames": true, // When adding type hints for class names search namespace use statements and qualify the class
+  "php-docblocker.author": {
+    "name": "(c) José Cândido Pereira da Rocha",
+    "email": "josecprocha@gmail.com"
+  } // An object containing your default author tag settings
 }
