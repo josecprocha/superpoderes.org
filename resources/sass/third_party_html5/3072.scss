@@ -58,10 +58,12 @@
 $field-width: 500px;
 $grid-spacing: 15px;
 $grid-row-cells: 4;
-$tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
+$tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) /
+  $grid-row-cells;
 $tile-border-radius: 3px;
 
-$text-color: #a9e2f3;
+//$text-color: #a9e2f3;
+$text-color: red;
 $bright-text-color: #f9f6f2;
 
 //$tile-color: #FFFFFF;
@@ -90,7 +92,7 @@ body {
   margin: 80px 0;
 }
 
-.heading: after {
+.heading::after {
   content: '';
   display: block;
   clear: both;
@@ -131,7 +133,7 @@ h1.title {
   color: white;
   margin-top: 8px;
 
-  &:after {
+  &::after {
     position: absolute;
     width: 100%;
     top: 10px;
@@ -147,7 +149,7 @@ h1.title {
   .score-addition {
     position: absolute;
     right: 30px;
-    color: red;
+    //color: red;
     font-size: $height;
     line-height: $height;
     font-weight: bold;
@@ -204,12 +206,10 @@ hr {
     margin-top: 40px;
     position: relative;
     padding: $grid-spacing;
-
     cursor: default;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-
     background: $game-container-background;
     border-radius: $tile-border-radius * 2;
     width: $field-width;
@@ -220,7 +220,6 @@ hr {
 
     .game-message {
       display: none;
-
       position: absolute;
       top: 0;
       right: 0;
@@ -228,7 +227,6 @@ hr {
       left: 0;
       background: rgba($tile-color, 0.5);
       z-index: 100;
-
       text-align: center;
 
       p {
@@ -286,7 +284,7 @@ hr {
       margin-bottom: 0;
     }
 
-    &:after {
+    &::after {
       content: '';
       display: block;
       clear: both;
@@ -298,9 +296,7 @@ hr {
     height: $tile-size;
     margin-right: $grid-spacing;
     float: left;
-
     border-radius: $tile-border-radius;
-
     background: rgba($tile-color, 0.35);
 
     &:last-child {
@@ -334,12 +330,10 @@ hr {
 
 .tile {
   border-radius: $tile-border-radius;
-
   background: $tile-color;
   text-align: center;
   font-weight: bold;
   z-index: 10;
-
   font-size: 55px;
 
   @include transition($transition-speed ease-in-out);
@@ -349,27 +343,9 @@ hr {
   $exponent: 1;
   $limit: 11;
 
-  $special-colors: false false,
-    // 2
-      false false,
-    // 4
-      #f78e48 true,
-    // 8
-      #fc5e2e true,
-    // 16
-      #ff3333 true,
-    // 32
-      #ff0000 true,
-    // 64
-      false true,
-    // 128
-      false true,
-    // 256
-      false true,
-    // 512
-      false true,
-    // 1024
-      false true; // 2048
+  $special-colors: false false, false false, #f78e48 true, #fc5e2e true,
+    #f33 true, #f33 #f00 true, #f00e true, false true, false true, false true,
+    false true; // 2048
 
   @while $exponent <= $limit {
     $power: pow($base, $exponent);
@@ -396,7 +372,11 @@ hr {
       $glow-opacity: max($exponent - 4, 0) / ($limit - 4);
 
       @if not $special-background {
-        box-shadow: 0 0 30px 10px rgba($tile-gold-glow-color, $glow-opacity / 1.8),
+        box-shadow: 0
+            0
+            30px
+            10px
+            rgba($tile-gold-glow-color, $glow-opacity / 1.8),
           inset 0 0 0 1px rgba(white, $glow-opacity / 3);
       }
 
@@ -473,7 +453,8 @@ hr {
   $field-width: 280px;
   $grid-spacing: 10px;
   $grid-row-cells: 4;
-  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
+  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) /
+    $grid-row-cells;
   $tile-border-radius: 3px;
   html,
   body {
