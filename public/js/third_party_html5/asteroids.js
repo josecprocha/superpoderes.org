@@ -15,7 +15,7 @@ var message;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textFont("Courier");
+  textFont('Courier');
   ship = new Ship();
   initialize("let's play!", initastnum);
 }
@@ -41,13 +41,13 @@ function draw() {
       }, 2000);
       ship.getBonus();
       energy[i].alive = false;
-    };
+    }
     if (energy[i].life <= 20) {
       energy[i].alive = false;
-    };
+    }
     if (!energy[i].alive) {
       energy.splice(i, 1);
-    };
+    }
   }
 
   if (ship.alive) {
@@ -55,14 +55,15 @@ function draw() {
     ship.render();
     ship.edges();
   } else {
-    console.log("Game Over");
-    message = "Game Over";
+    console.log('Game Over');
+    message = 'Game Over';
     //restart();
-  };
+  }
 
-  if (asteroids.length == 0) { // player cleared the level
+  if (asteroids.length == 0) {
+    // player cleared the level
     astnum += 3;
-    initialize("You Win! Level up!", astnum);
+    initialize('You Win! Level up!', astnum);
   }
 
   for (var i = asteroids.length - 1; i >= 0; i--) {
@@ -75,7 +76,7 @@ function draw() {
         ship.danger = !ship.danger;
       }, 100);
       ship.getDamage(asteroids[i]);
-      console.log("Damaging the shield " + ship.shieldLevel);
+      console.log('Damaging the shield ' + ship.shieldLevel);
       asteroids[i].explode();
       asteroids.splice(i, 1);
       //console.log(asteroids.length);
@@ -85,65 +86,62 @@ function draw() {
 
   //interface info
   ship.interface();
+}
+
+function initialize(messageText, newastnum) {
+  message = messageText;
+  gameLevel += 1;
+  astnum = newastnum;
+  basicinit();
+}
+
+function restart(messageText, newastnum) {
+  ship.init();
+  gameLevel = 1;
+  asteroids = [];
+  energy = [];
+  message = messageText;
+  astnum = newastnum;
+  basicinit();
+}
+
+function basicinit() {
+  for (var i = 0; i < astnum; i++) {
+    asteroids.push(new Asteroid());
   }
+  ship.shieldLevel == 100;
+  ship.safe = true;
+  setTimeout(function() {
+    ship.safe = false;
+    message = '';
+  }, 4000);
+}
 
-
-  function initialize(messageText, newastnum) {
-    message = messageText;
-    gameLevel += 1;
-    astnum = newastnum;
-    basicinit();
+function keyReleased() {
+  if (keyCode == RIGHT_ARROW || keyCode == LEFT_ARROW) {
+    ship.setRotation(0);
+  } else if (keyCode == UP_ARROW) {
+    ship.boosting = false;
   }
+}
 
-  function restart(messageText, newastnum) {
-    ship.init();
-    gameLevel = 1;
-    asteroids = [];
-    energy = [];
-    message = messageText;
-    astnum = newastnum;
-    basicinit();
+function keyPressed() {
+  if (key == ' ') {
+    ship.lasers.push(new Laser(ship.pos, ship.heading));
+  } else if (keyCode == RIGHT_ARROW) {
+    ship.setRotation(0.1);
+  } else if (keyCode == LEFT_ARROW) {
+    ship.setRotation(-0.1);
+  } else if (keyCode == UP_ARROW) {
+    ship.boosting = true;
+  } else if (keyCode == ENTER && message == 'Game Over') {
+    console.log('DAMN!!');
+    restart("let's play again!", initastnum);
   }
-
-  function basicinit() {
-    for (var i = 0; i < astnum; i++) {
-      asteroids.push(new Asteroid());
-    }
-    ship.shieldLevel == 100;
-    ship.safe = true;
-    setTimeout(function() {
-      ship.safe = false;
-      message = "";
-    }, 4000);
-  }
-
-
-  function keyReleased() {
-    if (keyCode == RIGHT_ARROW || keyCode == LEFT_ARROW) {
-      ship.setRotation(0);
-    } else if (keyCode == UP_ARROW) {
-      ship.boosting = false;
-    }
-  }
-
-  function keyPressed() {
-    if (key == ' ') {
-      ship.lasers.push(new Laser(ship.pos, ship.heading));
-    } else if (keyCode == RIGHT_ARROW) {
-      ship.setRotation(0.1);
-    } else if (keyCode == LEFT_ARROW) {
-      ship.setRotation(-0.1);
-    } else if (keyCode == UP_ARROW) {
-      ship.boosting = true;
-    } else if (keyCode == ENTER && message == "Game Over") {
-      console.log("DAMN!!");
-      restart("let's play again!", initastnum);
-    }
-  }
-
+}
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 /////// SHIP Class
@@ -168,19 +166,19 @@ Ship.prototype.interface = function() {
   textSize(14);
   fill(255);
   noStroke();
-  text("Score = " + this.score, 50, 50);
+  text('Score = ' + this.score, 50, 50);
   //text("Shield = " + constrain(round(ship.shieldLevel), 0, 100), 50, 65);
   if (this.shieldLevel >= this.shieldMax) {
-    text("Shield = Max!", 50, 65);
+    text('Shield = Max!', 50, 65);
   } else {
-    text("Shield = " + constrain(round(this.shieldLevel), 0, round(this.shieldLevel)), 50, 65);
+    text('Shield = ' + constrain(round(this.shieldLevel), 0, round(this.shieldLevel)), 50, 65);
   }
-  text("Level = " + gameLevel, 50, 80);
+  text('Level = ' + gameLevel, 50, 80);
   if (message) {
     textSize(32);
     text(message, width / 2 - message.length * 10, height / 2);
   }
-}
+};
 
 Ship.prototype.init = function() {
   this.pos = createVector(width / 2, height / 2 + 50);
@@ -188,7 +186,7 @@ Ship.prototype.init = function() {
   ship.alive = true;
   ship.score = 0;
   ship.shieldLevel = 100;
-}
+};
 
 Ship.prototype.hit = function(obj) {
   var d = dist(this.pos.x, this.pos.y, obj.pos.x, obj.pos.y);
@@ -197,7 +195,7 @@ Ship.prototype.hit = function(obj) {
   } else {
     return false;
   }
-}
+};
 
 Ship.prototype.getDamage = function(obj) {
   var damount = obj.r; // the bigger the object hitting the ship the heavier the damage amount
@@ -205,13 +203,13 @@ Ship.prototype.getDamage = function(obj) {
   if (this.shieldLevel <= 0) {
     this.explode();
   }
-}
+};
 
 Ship.prototype.getBonus = function() {
   this.shieldLevel += 30;
   this.score += 20;
   this.shieldLevel = constrain(this.shieldLevel, 0, this.shieldMax);
-}
+};
 
 Ship.prototype.explode = function() {
   var debrisVel = p5.Vector.random2D().mult(random(0.5, 1.5));
@@ -219,7 +217,7 @@ Ship.prototype.explode = function() {
   var debrisNum = 50;
   generateDebris(this.pos, debrisVel, debrisNum); // handeling ship explosion
   this.alive = false;
-}
+};
 
 Ship.prototype.update = function() {
   this.pos.add(this.vel);
@@ -232,15 +230,16 @@ Ship.prototype.update = function() {
     this.lasers[i].render();
     this.lasers[i].update();
     //console.log(this.lasers.length);
-    if (this.lasers[i].offscreen()) { // cleaning up my laser beam array when beams are out off the screen
+    if (this.lasers[i].offscreen()) {
+      // cleaning up my laser beam array when beams are out off the screen
       this.lasers.splice(i, 1);
       //console.log(this.lasers.length);
     } else {
       for (var j = asteroids.length - 1; j >= 0; j--) {
         if (this.lasers[i].hits(asteroids[j])) {
-          console.log("asteroid number " + j + " has been hitted! " + asteroids.length);
+          console.log('asteroid number ' + j + ' has been hitted! ' + asteroids.length);
           var debrisVel = p5.Vector.add(this.lasers[i].vel.mult(0.2), asteroids[j].vel);
-          var debrisNum = (asteroids[j].r) * 5;
+          var debrisNum = asteroids[j].r * 5;
           generateDebris(asteroids[j].pos, debrisVel, debrisNum); // handeling asteroids explosions
           var newAsteroids = asteroids[j].breakup(); // returns an array of two smaller asteroids
           if (newAsteroids.length > 0) {
@@ -264,13 +263,13 @@ Ship.prototype.update = function() {
       }
     }
   }
-}
+};
 
 Ship.prototype.boost = function() {
   var boostForce = p5.Vector.fromAngle(this.heading);
   boostForce.mult(0.1);
   this.vel.add(boostForce);
-}
+};
 
 Ship.prototype.render = function() {
   push();
@@ -278,7 +277,7 @@ Ship.prototype.render = function() {
   rotate(this.heading + PI / 2);
   fill(0);
   if (this.boosting) {
-    console.log("bosting");
+    console.log('bosting');
     stroke(255, 0, 0);
     line(-this.r + 3, this.r + 3, this.r - 3, this.r + 3);
   }
@@ -291,7 +290,7 @@ Ship.prototype.render = function() {
   }
   triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
   pop();
-}
+};
 
 Ship.prototype.edges = function() {
   if (this.pos.x > width + this.r) {
@@ -304,16 +303,15 @@ Ship.prototype.edges = function() {
   } else if (this.pos.y < -this.r) {
     this.pos.y = height + this.r;
   }
-}
+};
 
 Ship.prototype.setRotation = function(angle) {
   this.rotation = angle;
-}
+};
 
 Ship.prototype.turn = function(angle) {
   this.heading += this.rotation;
-}
-
+};
 
 ////// LASER
 
@@ -327,17 +325,17 @@ function Laser(spos, angle) {
 // collision detection for asteroids and other eventual additional stuff
 Laser.prototype.hits = function(target) {
   var d = dist(this.pos.x, this.pos.y, target.pos.x, target.pos.y);
-  if(d < this.r + target.r){
+  if (d < this.r + target.r) {
     //console.log("hit!");
     return true;
   } else {
     return false;
   }
-}
+};
 
 Laser.prototype.update = function() {
   this.pos.add(this.vel);
-}
+};
 
 Laser.prototype.render = function() {
   push();
@@ -345,16 +343,20 @@ Laser.prototype.render = function() {
   stroke(255);
   point(this.pos.x, this.pos.y);
   pop();
-}
+};
 
 Laser.prototype.offscreen = function() {
-  if (this.pos.x > width + this.r || this.pos.x < -this.r || this.pos.y > height + this.r || this.pos.y < -this.r) {
+  if (
+    this.pos.x > width + this.r ||
+    this.pos.x < -this.r ||
+    this.pos.y > height + this.r ||
+    this.pos.y < -this.r
+  ) {
     return true;
   } else {
     return false;
   }
-}
-
+};
 
 ///// ENERGY
 
@@ -370,7 +372,7 @@ function Energy(pos, vel) {
   this.update = function() {
     this.pos.add(this.vel);
     this.life -= 0.2;
-  }
+  };
 
   this.render = function() {
     if (this.life > 20) {
@@ -378,7 +380,7 @@ function Energy(pos, vel) {
       stroke(0, this.life, 0);
       ellipse(this.pos.x, this.pos.y, this.r, this.r);
     }
-  }
+  };
 }
 
 Energy.prototype.edges = function() {
@@ -392,12 +394,11 @@ Energy.prototype.edges = function() {
   } else if (this.pos.y < -this.r) {
     this.pos.y = height + this.r;
   }
-}
+};
 
 function generateEnergy(pos, vel) {
-    energy.push(new Energy(pos, vel));
+  energy.push(new Energy(pos, vel));
 }
-
 
 ///// DEBRIS
 
@@ -410,23 +411,21 @@ function Debris(pos, vel) {
   this.update = function() {
     this.pos.add(this.vel);
     this.transparency -= 2;
-  }
+  };
 
   this.render = function() {
     if (this.transparency > 0) {
       stroke(this.transparency);
       point(this.pos.x, this.pos.y);
     }
-  }
+  };
 }
-
 
 function generateDebris(pos, vel, n) {
   for (var i = 0; i < n; i++) {
     debris.push(new Debris(pos, vel));
   }
 }
-
 
 ///// ASTEROIDS
 
@@ -464,7 +463,7 @@ Asteroid.prototype.explode = function() {
   var debrisVel = this.vel.copy();
   var debrisNum = this.r * 5;
   generateDebris(this.pos, debrisVel, debrisNum); // handeling ship explosion
-}
+};
 
 Asteroid.prototype.breakup = function() {
   var newA = [];
@@ -473,12 +472,12 @@ Asteroid.prototype.breakup = function() {
     newA[1] = new Asteroid(this.pos, this.sides);
   }
   return newA; // returning the array with my new asteroids
-}
+};
 
 Asteroid.prototype.update = function() {
   this.pos.add(this.vel);
   this.angle += this.increment;
-}
+};
 
 Asteroid.prototype.render = function() {
   push();
@@ -497,7 +496,7 @@ Asteroid.prototype.render = function() {
   }
   endShape(CLOSE);
   pop();
-}
+};
 
 Asteroid.prototype.edges = function() {
   if (this.pos.x > width + this.r) {
@@ -510,12 +509,12 @@ Asteroid.prototype.edges = function() {
   } else if (this.pos.y < -this.r) {
     this.pos.y = height + this.r;
   }
-}
+};
 
 Asteroid.prototype.setRotation = function(angle) {
   this.rotation = angle;
-}
+};
 
 Asteroid.prototype.turn = function(angle) {
   this.heading += this.rotation;
-}
+};

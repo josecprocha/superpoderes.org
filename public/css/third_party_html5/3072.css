@@ -2,8 +2,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #181A1A;
-  color: #A9E2F3;
+  background: #181a1a;
+  color: red;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
 }
@@ -12,7 +12,7 @@ body {
   margin: 80px 0;
 }
 
-.heading:after {
+.heading::after {
   content: "";
   display: block;
   clear: both;
@@ -53,7 +53,7 @@ h1.title {
 .score-container {
   position: relative;
   float: right;
-  background: #E6E0F8;
+  background: #e6e0f8;
   padding: 15px 25px;
   font-size: 25px;
   height: 25px;
@@ -64,7 +64,7 @@ h1.title {
   margin-top: 8px;
 }
 
-.score-container:after {
+.score-container::after {
   position: absolute;
   width: 100%;
   top: 10px;
@@ -74,17 +74,16 @@ h1.title {
   font-size: 13px;
   line-height: 13px;
   text-align: center;
-  color: #1E1F21;
+  color: #1e1f21;
 }
 
 .score-container .score-addition {
   position: absolute;
   right: 30px;
-  color: red;
   font-size: 25px;
   line-height: 25px;
   font-weight: bold;
-  color: rgba(169, 226, 243, 0.9);
+  color: rgba(255, 0, 0, 0.9);
   z-index: 100;
   -webkit-animation: move-up 600ms ease-in;
   -moz-animation: move-up 600ms ease-in;
@@ -99,7 +98,7 @@ p {
 }
 
 a {
-  color: #A9E2F3;
+  color: red;
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
@@ -111,7 +110,7 @@ strong.important {
 
 hr {
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffcccc;
   margin-top: 20px;
   margin-bottom: 30px;
 }
@@ -149,7 +148,7 @@ hr {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
-  background: #E6E0F8;
+  background: #e6e0f8;
   border-radius: 6px;
   width: 500px;
   height: 500px;
@@ -220,7 +219,7 @@ hr {
   margin-bottom: 0;
 }
 
-.grid-row:after {
+.grid-row::after {
   content: "";
   display: block;
   clear: both;
@@ -348,7 +347,7 @@ hr {
 
 .tile {
   border-radius: 3px;
-  background: #1E1F21;
+  background: #1e1f21;
   text-align: center;
   font-weight: bold;
   z-index: 10;
@@ -386,13 +385,12 @@ hr {
 
 .tile.tile-64 {
   color: #f9f6f2;
-  background: #c93312;
+  background: #c94f2e;
 }
 
 .tile.tile-128 {
   color: #f9f6f2;
-  background: #9a8129;
-  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2380952381), inset 0 0 0 1px rgba(255, 255, 255, 0.1428571429);
+  background: rgba(206, 62, 20, 0.9633333333);
   font-size: 45px;
 }
 
@@ -575,7 +573,7 @@ hr {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    background: #E6E0F8;
+    background: #e6e0f8;
     border-radius: 6px;
     width: 500px;
     height: 500px;
@@ -646,7 +644,7 @@ hr {
     margin-bottom: 0;
   }
 
-  .grid-row:after {
+  .grid-row::after {
     content: "";
     display: block;
     clear: both;

@@ -5,17 +5,23 @@
 }
 
 .clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ' ';
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
 /* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
 /* close commented backslash hack */
 
 html {
@@ -46,8 +52,8 @@ a:hover {
   width: 5rem;
   height: 5rem;
   margin: 0 auto;
-  border: .25rem solid rgba(0,0,0,.2);
-  border-radius: .4rem;
+  border: 0.25rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.4rem;
   cursor: pointer;
 }
 
@@ -59,35 +65,35 @@ a:hover {
   background: #2c82c9;
 }
 .blue:before {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 1rem;
   height: 3rem;
-  border: .2rem solid rgba(0,0,0,.2);
-  border-radius: .5rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 .blue:after {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   margin-left: 2.625rem;
   width: 1rem;
   height: 3rem;
-  border: .2rem solid rgba(0,0,0,.2);
-  border-radius: .5rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 
 .green {
   background: #2cc990;
 }
 .green:after {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 3rem;
   height: 3rem;
-  border: .2rem solid rgba(0,0,0,.2);
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 
@@ -96,23 +102,23 @@ a:hover {
   background: #eee657;
 }
 .yellow:before {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 1.5rem;
   height: 1.5rem;
-  border: .2rem solid rgba(0,0,0,.2);
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 .yellow:after {
-  content:"";
+  content: '';
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 1.5rem;
   height: 1.5rem;
-  border: .2rem solid rgba(0,0,0,.2);
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
 }
 
@@ -120,50 +126,50 @@ a:hover {
   background: #fcb941;
 }
 .orange:after {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 3rem;
   height: 3rem;
-  border: .2rem solid rgba(0,0,0,.2);
-  border-radius: .5rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 
 .red {
   background: #fc6042;
 }
 .red:before {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   width: 3rem;
   height: 1rem;
-  border: .2rem solid rgba(0,0,0,.2);
-  border-radius: .5rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 .red:after {
-  content:"";
+  content: '';
   position: absolute;
-  margin: .625rem;
+  margin: 0.625rem;
   margin-top: 2.625rem;
   width: 3rem;
   height: 1rem;
-  border: .2rem solid rgba(0,0,0,.2);
-  border-radius: .5rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 
 .level {
   position: fixed;
   left: 0;
   top: 0;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .points {
   position: fixed;
   right: 0;
   top: 0;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .clicks {
@@ -171,7 +177,7 @@ a:hover {
   top: 0;
   left: 25%;
   width: 50%;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -183,7 +189,7 @@ a:hover {
   width: 50%;
   height: 5rem;
   line-height: 5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   margin: 2rem auto;
   cursor: pointer;
 }
@@ -193,7 +199,7 @@ a:hover {
 }
 
 .info {
-	position: relative;
+  position: relative;
   top: 0;
   height: 3rem;
 }
@@ -203,14 +209,14 @@ a:hover {
 }
 
 .restart {
-	background: #777;
+  background: #777;
   color: #f7f7f7;
   margin: 1rem auto;
   width: 8rem;
   height: 3rem;
   line-height: 3rem;
   text-align: center;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -219,7 +225,7 @@ a:hover {
 }
 
 .rules {
-	padding: 1.5rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
 }
 

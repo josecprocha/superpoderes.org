@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #FDE3A7;
+  background-color: #fde3a7;
   -webkit-transition-duration: 0.5s; /* Safari */
   transition-duration: 0.5s;
 }
@@ -12,7 +12,10 @@ body {
 .game-narrative {
   margin: 0 auto; /* Center the item vertically & horizontally */
   position: fixed; /* Break it out of the regular flow */
-  top: 0; left: 0; bottom: 0; right: 0; /* Set the bounds in which to center it, relative to its parent/container */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; /* Set the bounds in which to center it, relative to its parent/container */
 
   padding: 20px;
   display: flex;
@@ -44,7 +47,7 @@ body {
   font-size: 20px;
   background-color: #d35400;
   padding: 10px 20px 10px 20px;
-  border: solid #F89406 2px;
+  border: solid #f89406 2px;
   text-decoration: none;
 }
 
@@ -54,7 +57,7 @@ body {
 }
 
 .game-btn:focus {
-  outline:0;
+  outline: 0;
 }
 
 #narrative-three-btns {
@@ -103,7 +106,7 @@ body {
 }
 
 #identity-label {
-  color: #FFF;
+  color: #fff;
   font-family: 'Share Tech', sans-serif;
   font-size: 2em;
   text-align: center;
@@ -127,7 +130,7 @@ body {
 
 .cell {
   font-family: 'Gloria Hallelujah', cursive;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #121a21;
   text-align: center;
   width: 100px;
@@ -149,7 +152,7 @@ body {
 
 .cell-selected {
   color: #c0392b;
-  transform: translate(3px,3px);
+  transform: translate(3px, 3px);
   box-shadow: 3px 3px 0px 0px #000000;
   background-color: #121a21;
 }
@@ -173,12 +176,15 @@ body {
 }
 
 #game-over {
-  color: #FFF;
+  color: #fff;
   font-family: 'Share Tech', sans-serif;
 
   margin: 0 auto; /* Center the item vertically & horizontally */
   position: fixed; /* Break it out of the regular flow */
-  top: 0; left: 0; bottom: 0; right: 0; /* Set the bounds in which to center it, relative to its parent/container */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; /* Set the bounds in which to center it, relative to its parent/container */
 
   padding: 20px;
   display: flex;
@@ -214,7 +220,7 @@ body {
   font-size: 20px;
   background-color: #d35400;
   padding: 10px 20px 10px 20px;
-  border: solid #F89406 2px;
+  border: solid #f89406 2px;
   text-decoration: none;
 }
 

@@ -12,37 +12,39 @@ const DOWN = { x: 0, y: 1 };
 
 const randomPosition = () => ({
   x: Math.floor(25 * Math.random()),
-  y: Math.floor(25 * Math.random()) });
+  y: Math.floor(25 * Math.random())
+});
 
-
-const wrap = x => x < 0 ? x + 25 : x % 25;
+const wrap = x => (x < 0 ? x + 25 : x % 25);
 
 const input = (() => {
   // It gotta be possible creating this more efficiently, without
   // adding and removing event listeners all the time...
-  const createPromise = () => new Promise(resolve => {
-    const onInput = e => {
-      e.preventDefault();
+  const createPromise = () =>
+    new Promise(resolve => {
+      const onInput = e => {
+        e.preventDefault();
 
-      // Oh wow... the uglyness makes me cry :(
-      resolve(e.keyCode || 'MOUSE_CLICK');
-      promise = createPromise();
+        // Oh wow... the uglyness makes me cry :(
+        resolve(e.keyCode || 'MOUSE_CLICK');
+        promise = createPromise();
 
-      document.removeEventListener('click', onInput);
-      document.removeEventListener('keydown', onInput);
-    };
-    document.addEventListener('click', onInput);
-    document.addEventListener('keydown', onInput);
-  });
+        document.removeEventListener('click', onInput);
+        document.removeEventListener('keydown', onInput);
+      };
+      document.addEventListener('click', onInput);
+      document.addEventListener('keydown', onInput);
+    });
 
   let promise = createPromise();
 
   return () => promise;
 })();
 
-const delay = timeout => new Promise(resolve => {
-  setTimeout(resolve, timeout);
-});
+const delay = timeout =>
+  new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
 
 const createGame = canvas => {
   // STATE
@@ -58,34 +60,42 @@ const createGame = canvas => {
     const EAT_APPLE = 'EAT_APPLE';
     // ACTIONS
     const play = () => ({
-      type: PLAY });
+      type: PLAY
+    });
 
     const reset = () => ({
-      type: RESET });
+      type: RESET
+    });
 
     const tick = () => ({
-      type: TICK });
+      type: TICK
+    });
 
     const gameOver = () => ({
-      type: GAME_OVER });
+      type: GAME_OVER
+    });
 
     const move = direction => ({
       type: MOVE,
-      direction });
+      direction
+    });
 
     const changeDirection = direction => ({
       type: CHANGE_DIRECTION,
-      direction });
+      direction
+    });
 
     const spawnApple = (x, y) => ({
       type: SPAWN_APPLE,
       x,
-      y });
+      y
+    });
 
     const eatApple = (x, y) => ({
       type: EAT_APPLE,
       x,
-      y });
+      y
+    });
 
     // REDUCERS
     // reducer for game state
@@ -96,8 +106,8 @@ const createGame = canvas => {
         case GAME_OVER:
           return 'GAME_OVER';
         default:
-          return state;}
-
+          return state;
+      }
     };
     // reducer for tick speed (ms per tick)
     const speed = (state = INITIAL_SPEED, action) => {
@@ -107,8 +117,8 @@ const createGame = canvas => {
         case RESET:
           return INITIAL_SPEED;
         default:
-          return state;}
-
+          return state;
+      }
     };
     // reducer for game score
     const score = (state = 0, action) => {
@@ -118,14 +128,15 @@ const createGame = canvas => {
         case RESET:
           return 0;
         default:
-          return state;}
-
+          return state;
+      }
     };
     // combined reducer for overall game state
     const game = combineReducers({
       state,
       speed,
-      score });
+      score
+    });
 
     // reducer for snake direction
     const direction = (state = RIGHT, action) => {
@@ -135,8 +146,8 @@ const createGame = canvas => {
         case RESET:
           return RIGHT;
         default:
-          return state;}
-
+          return state;
+      }
     };
     // reducer for snake parts
     const parts = (state = [{ x: 1, y: 1 }], action) => {
@@ -145,51 +156,53 @@ const createGame = canvas => {
           const { direction } = action;
           const head = {
             x: wrap(state[0].x + direction.x),
-            y: wrap(state[0].y + direction.y) };
+            y: wrap(state[0].y + direction.y)
+          };
 
           state = state.slice(0, -1);
           state.unshift(head);
           return state;
         case EAT_APPLE:
-          return [
-          ...state,
-          state[state.length - 1]];
+          return [...state, state[state.length - 1]];
 
         case RESET:
           return [{ x: 1, y: 1 }];
         default:
-          return state;}
-
+          return state;
+      }
     };
     // combined reducer for the snake
     const snake = combineReducers({
       direction,
-      parts });
+      parts
+    });
 
     // reducer for the apples
     const apples = (state = [], action) => {
       switch (action.type) {
         case SPAWN_APPLE:
           return [
-          ...state,
-          {
-            x: action.x,
-            y: action.y }];
-
+            ...state,
+            {
+              x: action.x,
+              y: action.y
+            }
+          ];
 
         case EAT_APPLE:
           return state.filter(({ x, y }) => x !== action.x || y !== action.y);
         case RESET:
           return [];
         default:
-          return state;}
-
+          return state;
+      }
     };
     // root reducer
     const reducer = combineReducers({
       game,
       snake,
-      apples });
+      apples
+    });
 
     // SAGAS
     function* inputSaga() {
@@ -210,22 +223,22 @@ const createGame = canvas => {
             break;
           case 40:
             yield put(changeDirection(DOWN));
-            break;}
-
+            break;
+        }
       }
     }
     function* gameLoop(getState) {
       try {
         while (true) {
           const {
-            game: {
-              speed } } =
-
-          getState();
+            game: { speed }
+          } = getState();
           yield call(delay, speed);
           yield put(tick());
         }
-      } catch (e) {/* gameLoop cancelled */}
+      } catch (e) {
+        /* gameLoop cancelled */
+      }
     }
     function* gameSaga(getState) {
       while (true) {
@@ -240,17 +253,16 @@ const createGame = canvas => {
       while (true) {
         yield take(TICK);
         const {
-          snake: {
-            direction } } =
-
-        getState();
+          snake: { direction }
+        } = getState();
         yield put(move(direction));
         const {
           snake: {
-            parts: [head, ...tail] },
+            parts: [head, ...tail]
+          },
 
-          apples } =
-        getState();
+          apples
+        } = getState();
         // collision with tail
         for (let i = 0; i < tail.length; i++) {
           const { x, y } = tail[i];
@@ -275,12 +287,9 @@ const createGame = canvas => {
       }
     }
 
-    return applyMiddleware(sagaMiddleware(
-    inputSaga,
-    gameSaga,
-    snakeSaga,
-    applesSaga))(
-    createStore)(reducer);
+    return applyMiddleware(sagaMiddleware(inputSaga, gameSaga, snakeSaga, applesSaga))(createStore)(
+      reducer
+    );
   })();
 
   // RENDERING
@@ -317,16 +326,14 @@ const createGame = canvas => {
     lastState = store.getState();
 
     const {
-      game: {
-        state,
-        speed,
-        score },
+      game: { state, speed, score },
 
       snake: {
-        parts: [head, ...tail] },
+        parts: [head, ...tail]
+      },
 
-      apples } =
-    store.getState();
+      apples
+    } = store.getState();
 
     context.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -344,8 +351,8 @@ const createGame = canvas => {
       case 'GAME_OVER':
         renderScore(score);
         renderText('Game over! Click anywhere to play again');
-        break;}
-
+        break;
+    }
   };
 
   render();

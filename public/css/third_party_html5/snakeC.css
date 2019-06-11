@@ -1,4 +1,4 @@
-body{
+body {
   background: #e3e3e3;
   margin: 0;
   overflow: hidden;
@@ -6,8 +6,8 @@ body{
   margin-top: 5%;
 }
 
-canvas{
+canvas {
   display: inline-block;
   border: 1px #181818 solid;
-  background: #C2C2C2;
+  background: #c2c2c2;
 }

@@ -1,18 +1,17 @@
 $(function() {
-
   // create DOM canvas
-  var canvas = document.createElement("canvas");
-  var ctx    = canvas.getContext('2d');
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
 
   //set canvas dim
-  canvas.width  = window.innerWidth;
+  canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
   document.body.appendChild(canvas);
 
   function rand(min, max, interval) {
-    if(interval === undefined) interval = 1;
-    return Math.round((Math.floor(Math.random() * (max - min + 1)) + min) / interval) *interval;
+    if (interval === undefined) interval = 1;
+    return Math.round((Math.floor(Math.random() * (max - min + 1)) + min) / interval) * interval;
   }
 
   function randIndex(thearray) {
@@ -20,17 +19,15 @@ $(function() {
   }
 
   var player = (function() {
-
     var x = 100,
-        y = canvas.height/2,
-        w = 10,
-        h = 10,
-        speed = 10,
-        dead = false,
-        death = 0;
+      y = canvas.height / 2,
+      w = 10,
+      h = 10,
+      speed = 10,
+      dead = false,
+      death = 0;
 
     return {
-
       getX: function() {
         return x;
       },
@@ -57,13 +54,13 @@ $(function() {
       },
 
       resurrect: function() {
-        this.moveTo(100 , canvas.height/2);
+        this.moveTo(100, canvas.height / 2);
         dead = false;
         this.draw();
       },
 
       respawn: function() {
-        this.moveTo(100 , canvas.height/2);
+        this.moveTo(100, canvas.height / 2);
         this.draw();
         blocks.nextLevel();
       },
@@ -73,66 +70,60 @@ $(function() {
       },
 
       draw: function() {
-        ctx.fillStyle = "#50BEFA";
+        ctx.fillStyle = '#50BEFA';
         ctx.fillRect(x, y, w, h);
       },
 
       moveTo: function(a, b) {
-        if(dead) return;
+        if (dead) return;
         x = a;
         y = b;
-        if(y+h>canvas.height) {
+        if (y + h > canvas.height) {
           y = canvas.height - h;
         }
-      },
-    }
+      }
+    };
   })();
 
-
   var blocks = (function() {
-
     var blocks = [],
-        level = 0,
-        level_factor = 1.20,
-        start = {
-          n : 10,
-          x1 : 210,
-          x2 : 700,
-          h_min : 15,
-          h_max : 100,
-          speed_min : 0.5,
-          speed_max : 5,
-          direction : ['up','down']
-        };
-
+      level = 0,
+      level_factor = 1.2,
+      start = {
+        n: 10,
+        x1: 210,
+        x2: 700,
+        h_min: 15,
+        h_max: 100,
+        speed_min: 0.5,
+        speed_max: 5,
+        direction: ['up', 'down']
+      };
 
     function Block(direction) {
       this.w = 10;
       this.h = rand(start.h_min, start.h_max);
-      this.x = rand(start.x1,start.x2,10);
+      this.x = rand(start.x1, start.x2, 10);
       this.y = 0;
-      this.speed = rand(start.speed_min,start.speed_max);
+      this.speed = rand(start.speed_min, start.speed_max);
       this.direction = direction;
-      if(direction === "up") {
+      if (direction === 'up') {
         this.y = canvas.height + rand(5, 350);
-      }
-      else {
+      } else {
         this.y -= rand(5, 350);
       }
     }
 
     return {
-
       curLevel: function() {
         return level;
       },
 
       nextLevel: function() {
-
         ++level;
         blocks = [];
 
-        var n = Math.ceil(start.n + (level*level_factor));
+        var n = Math.ceil(start.n + level * level_factor);
 
         //console.log(n);
 
@@ -140,36 +131,35 @@ $(function() {
       },
 
       draw: function(b) {
-        if(player.isDead()) ctx.fillStyle = "#800000";
-        else ctx.fillStyle = "#D98D00";
+        if (player.isDead()) ctx.fillStyle = '#800000';
+        else ctx.fillStyle = '#D98D00';
         ctx.fillRect(b.x, b.y, b.w, b.h);
       },
 
       drawZone: function() {
-        ctx.fillStyle = "#111111";
-        ctx.fillRect(start.x1, 0, start.x2-start.x1+10, canvas.height);
+        ctx.fillStyle = '#111111';
+        ctx.fillRect(start.x1, 0, start.x2 - start.x1 + 10, canvas.height);
       },
 
       createXBlocks: function(n) {
-        for(i=0;i<n;++i) {
+        for (i = 0; i < n; ++i) {
           blocks.push(new Block(randIndex(start.direction)));
         }
       },
 
       moveAll: function() {
-
         //if(pause) return;
 
         var px = player.getX(),
-            py = player.getY(),
-            pw = player.getW(),
-            ph = player.getH();
+          py = player.getY(),
+          pw = player.getW(),
+          ph = player.getH();
 
-        if(player.isDead()) return;
-        else if(px > start.x2) {
+        if (player.isDead()) return;
+        else if (px > start.x2) {
           //level pass
           ctrl.x = 0;
-          ctrl.y = canvas.height/2;
+          ctrl.y = canvas.height / 2;
           ctrl.velX = 0;
           ctrl.velY = 0;
           player.respawn();
@@ -177,62 +167,61 @@ $(function() {
         }
 
         var len = blocks.length;
-        for(i=0;i < len;++i) {
-          if(blocks[i].direction === 'up') {
+        for (i = 0; i < len; ++i) {
+          if (blocks[i].direction === 'up') {
             blocks[i].y -= blocks[i].speed;
-            if((blocks[i].y + blocks[i].h) < 0) {
+            if (blocks[i].y + blocks[i].h < 0) {
               blocks[i].y = canvas.height + rand(10, 350);
             }
-          }
-          else {
+          } else {
             blocks[i].y += blocks[i].speed;
-            if(blocks[i].y > canvas.height) {
+            if (blocks[i].y > canvas.height) {
               blocks[i].y = 0;
               blocks[i].y -= rand(10, 350);
             }
           }
 
           //colission detection
-          if(((px > blocks[i].x) && (px < (blocks[i].x + blocks[i].w))) &&
-             ((py > blocks[i].y) && py < (blocks[i].y + blocks[i].h) )) {
+          if (
+            px > blocks[i].x &&
+            px < blocks[i].x + blocks[i].w &&
+            (py > blocks[i].y && py < blocks[i].y + blocks[i].h)
+          ) {
+            player.die();
+          } else if (
+            px + pw < blocks[i].x + blocks[i].w &&
+            px + pw > blocks[i].x &&
+            (py + ph < blocks[i].y + blocks[i].h && py + ph > blocks[i].y)
+          ) {
             player.die();
           }
-          else if(((px+pw < (blocks[i].x + blocks[i].w)) && (px+pw > blocks[i].x)) &&
-             ((py+ph < (blocks[i].y + blocks[i].h)) && py+ph > blocks[i].y)) {
-            player.die();
-          }
-
         }
       },
 
       drawAll: function() {
-        for(var i in blocks) {
+        for (var i in blocks) {
           this.draw(blocks[i]);
         }
-      },
-
-    }
+      }
+    };
   })();
 
-
   var ctrl = {
-    x : 100,  //initial x
-    y : (canvas.height/2),  // initial y
-    velY : 0,
-    velX : 0,
-    speed : 1400, // max speed
-    friction : 0.68, // friction
-    keys : []
-  }
+    x: 100, //initial x
+    y: canvas.height / 2, // initial y
+    velY: 0,
+    velX: 0,
+    speed: 1400, // max speed
+    friction: 0.68, // friction
+    keys: []
+  };
 
   function updateCtrl() {
-
-
     // restart
-    if(ctrl.keys[32]) {
-      if(player.isDead()) {
+    if (ctrl.keys[32]) {
+      if (player.isDead()) {
         ctrl.x = 0;
-        ctrl.y = canvas.height/2;
+        ctrl.y = canvas.height / 2;
         ctrl.velX = 0;
         ctrl.velY = 0;
         player.resurrect();
@@ -261,7 +250,6 @@ $(function() {
         ctrl.velX--;
       }
     }
-
 
     // apply some friction to y velocity.
     ctrl.velY *= ctrl.friction;
@@ -292,17 +280,14 @@ $(function() {
   updateCtrl();
 
   // key events
-  document.body.addEventListener("keydown", function (e) {
+  document.body.addEventListener('keydown', function(e) {
     ctrl.keys[e.keyCode] = true;
   });
-  document.body.addEventListener("keyup", function (e) {
+  document.body.addEventListener('keyup', function(e) {
     ctrl.keys[e.keyCode] = false;
   });
 
-
-
   blocks.nextLevel();
-
 
   function update() {
     blocks.moveAll();
@@ -315,45 +300,44 @@ $(function() {
     blocks.drawAll();
     player.draw();
 
-    if(player.isDead()) {
-      ctx.fillStyle = "#9F000C";
-      ctx.font="14px Verdana";
-      ctx.fillText("Game over!",10,50);
-      ctx.fillText("Press [SPACE]",10,70);
-    }
-    else {
-      ctx.fillStyle = "#D98D00";
-      ctx.font="14px Verdana";
-      ctx.fillText("Cross to the other side",10,20);
-      ctx.fillText("---------------------->",10,40);
+    if (player.isDead()) {
+      ctx.fillStyle = '#9F000C';
+      ctx.font = '14px Verdana';
+      ctx.fillText('Game over!', 10, 50);
+      ctx.fillText('Press [SPACE]', 10, 70);
+    } else {
+      ctx.fillStyle = '#D98D00';
+      ctx.font = '14px Verdana';
+      ctx.fillText('Cross to the other side', 10, 20);
+      ctx.fillText('---------------------->', 10, 40);
 
-      ctx.fillText("Use keyboard arrows",10,60);
-      ctx.fillText("or [A] [W] [S] [D]",10,80);
+      ctx.fillText('Use keyboard arrows', 10, 60);
+      ctx.fillText('or [A] [W] [S] [D]', 10, 80);
 
-
-      ctx.fillText("Level : " + blocks.curLevel(),10,150);
-      ctx.fillText("Death : " + player.getDeath(),10,170);
+      ctx.fillText('Level : ' + blocks.curLevel(), 10, 150);
+      ctx.fillText('Death : ' + player.getDeath(), 10, 170);
     }
   }
 
-
-  var fps = 0, now, lastUpdate = (new Date)*1;
+  var fps = 0,
+    now,
+    lastUpdate = new Date() * 1;
 
   // The higher this value, the less the FPS will be affected by quick changes
   // Setting this to 1 will show you the FPS of the last sampled frame only
   var fpsFilter = 50;
 
-  function drawFrame(){
-    var thisFrameFPS = 1000 / ((now=new Date) - lastUpdate);
-    if (now!=lastUpdate){
+  function drawFrame() {
+    var thisFrameFPS = 1000 / ((now = new Date()) - lastUpdate);
+    if (now != lastUpdate) {
       fps += (thisFrameFPS - fps) / fpsFilter;
       lastUpdate = now;
 
-      if(isNaN(fps)) fps = 1;
+      if (isNaN(fps)) fps = 1;
 
-      ctx.fillStyle = "#888";
-      ctx.font="10px Verdana";
-      ctx.fillText(fps.toFixed(0) + " fps",5,canvas.height-5);
+      ctx.fillStyle = '#888';
+      ctx.font = '10px Verdana';
+      ctx.fillText(fps.toFixed(0) + ' fps', 5, canvas.height - 5);
     }
   }
 
@@ -363,6 +347,5 @@ $(function() {
     update();
     draw();
     drawFrame();
-  }, 1000/animation_fps);
-
-  });
+  }, 1000 / animation_fps);
+});

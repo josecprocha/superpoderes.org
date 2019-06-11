@@ -1,13 +1,12 @@
 #canvas-demo {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: 1;
 }
 
-#points
-{
+#points {
   position: absolute;
   left: 20px;
   top: 20px;
@@ -20,8 +19,7 @@
   padding-right: 10px;
 }
 
-#info
-{
+#info {
   position: absolute;
   left: 530px;
   top: 20px;

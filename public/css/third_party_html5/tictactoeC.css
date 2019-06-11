@@ -3,7 +3,12 @@ body {
   color: white;
   margin: 0;
   height: 100vh;
-  background: linear-gradient(to top, rgba(225, 255, 255, 1) 0%, rgba(200, 238, 251, 1) 50%, rgba(177, 216, 245, 1) 100%);
+  background: linear-gradient(
+    to top,
+    rgba(225, 255, 255, 1) 0%,
+    rgba(200, 238, 251, 1) 50%,
+    rgba(177, 216, 245, 1) 100%
+  );
 }
 
 #label {
@@ -33,7 +38,7 @@ h3 {
 
 button {
   height: 7vmin;
-  margin: .5vmin;
+  margin: 0.5vmin;
   font-size: 4vmin;
   color: #112;
 }
@@ -77,7 +82,7 @@ button {
 
 #xScoreLabel {
   color: red;
-  display: inline
+  display: inline;
 }
 
 #xScore,
@@ -101,7 +106,7 @@ button {
 .modal {
   width: 100vw;
   padding: 32.895vh 0;
-  background: rgba(0, 0, 0, .7);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   text-align: center;
   font-size: 8vmin;
