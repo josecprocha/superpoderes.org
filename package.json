@@ -39,6 +39,7 @@
     "babel-regenerator-runtime": "6.5.0",
     "bourbon": "5.1.0",
     "bourbon-neat": "^3.0.1",
+    "cdnizer": "^3.0.2",
     "chroma-js": "2.0.3",
     "compass-mixins": "^0.12.10",
     "dat.gui": "0.7.6",
