@@ -40,7 +40,7 @@
       "id": "powersurge",
       "name": "Power Surge",
       "btn": "btn-danger",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": "reactionB",
@@ -492,7 +492,7 @@
       "id": "3dhartwigchess",
       "name": "3D Hartwig Chess",
       "btn": "btn-dark",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": "dots",
