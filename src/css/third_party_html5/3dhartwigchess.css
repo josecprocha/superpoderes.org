@@ -249,6 +249,7 @@ body:not(.animated) *:not(#panes) {
 #board::after,
 #frame::after,
 #frame::before {
+  z-index: -1; /* fix for frame always on top */
   position: absolute;
   content: '';
   width: 100%;
@@ -430,6 +431,7 @@ tbody th:last-child span {
 /* ---------------------------------------------------------------------------------------------------- piece */
 
 .piece {
+  z-index: 3;
   position: absolute;
   width: 1em;
   height: 1em;

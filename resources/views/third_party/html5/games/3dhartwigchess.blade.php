@@ -118,7 +118,6 @@ OTHER DEALINGS IN THE SOFTWARE.
             <div id="b-jail" class="jail"></div>
             <div id="frame"></div>
             <table id="board">
-              <!--
               <thead>
                 <tr>
                   <th></th>
@@ -133,7 +132,6 @@ OTHER DEALINGS IN THE SOFTWARE.
                   <th></th>
                 </tr>
               </thead>
-              -->
               <tbody>
                 <tr>
                   <th><span>8</span></th>
