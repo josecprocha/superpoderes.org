@@ -1,6 +1,6 @@
 <html lang="pt-br">
   <head>
-    <title>Página Não Encontrada</title>
+    <title>@lang('errors.503btn')</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -16,11 +16,11 @@
           </div>
           <div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
           <p class="text-grey-darker text-2xl md:text-3xl font-light mb-8 leading-normal">
-            Desculpe, estamos fazendo alguma manutenção. Por favor, volte em breve.
+            @lang('errors.503text')
           </p>
           <a href="{{ url('/') }}">
             <button class="bg-transparent text-grey-darkest font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg">
-              Voltar pra Página Inicial
+              @lang('errors.btn')
             </button>
           </a>
         </div>
