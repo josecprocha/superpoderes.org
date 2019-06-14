@@ -19,8 +19,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Mouse</h1>
-    <p class="lead">Games to train fine motor coordination using the mouse.</p>
+    <h1 class="display-4">@lang('html5games.mouse')</h1>
+    <p class="lead">@lang('html5games.mousetext')</p>
   </div>
   <br />
 
@@ -76,8 +76,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Keyboard Action</h1>
-    <p class="lead">Action games using the arrow keys and space button to train coordination and intentional use of the keyboard.</p>
+    <h1 class="display-4">@lang('html5games.keyboard')</h1>
+    <p class="lead">@lang('html5games.keyboardtext')</p>
   </div>
   <br />
 
@@ -119,8 +119,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Puzzles and Mind Sport</h1>
-    <p class="lead">Games to welcome children to the world of Mind Sports.</p>
+    <h1 class="display-4">@lang('html5games.puzzles')</h1>
+    <p class="lead">@lang('html5games.puzzlestext')</p>
   </div>
   <br />
 
@@ -162,8 +162,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Experiments and Science</h1>
-    <p class="lead">No game, just simulation of equipment that allows children to learn by experimenting.</p>
+    <h1 class="display-4">@lang('html5games.experiments')</h1>
+    <p class="lead">@lang('html5games.experimentstext')</p>
   </div>
   <br />
 
@@ -205,8 +205,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Art</h1>
-    <p class="lead">Music, painting and animation.</p>
+    <h1 class="display-4">@lang('html5games.art')</h1>
+    <p class="lead">@lang('html5games.arttext')</p>
   </div>
   <br />
 
@@ -248,8 +248,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Esports and Challenge</h1>
-    <p class="lead">Challenging games where you often need to think and act quickly to win challenges.</p>
+    <h1 class="display-4">@lang('html5games.esports')</h1>
+    <p class="lead">@lang('html5games.esportstext')</p>
   </div>
   <br />
 
@@ -291,8 +291,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Memory Training</h1>
-    <p class="lead">Games where you need to memorize information to win. For Memory Championship.</p>
+    <h1 class="display-4">@lang('html5games.memory')</h1>
+    <p class="lead">@lang('html5games.memorytext')</p>
   </div>
   <br />
 
@@ -334,8 +334,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Friends</h1>
-    <p class="lead">Games for two people play on the same computer.</p>
+    <h1 class="display-4">@lang('html5games.friends')</h1>
+    <p class="lead">@lang('html5games.friendstext')</p>
   </div>
   <br />
 
@@ -377,8 +377,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Fun and Rest</h1>
-    <p class="lead">No games, only objects to promote fun.</p>
+    <h1 class="display-4">@lang('html5games.fun')</h1>
+    <p class="lead">@lang('html5games.funtext')</p>
   </div>
   <br />
 
@@ -420,8 +420,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Mental Calculation and Math</h1>
-    <p class="lead">Games involving numbers, mathematical concepts and mental calculation.</p>
+    <h1 class="display-4">@lang('html5games.math')</h1>
+    <p class="lead">@lang('html5games.mathtext')</p>
   </div>
   <br />
 
@@ -463,8 +463,8 @@
     background-size: cover;
     background-position: center;
     ">
-    <h1 class="display-4">Language</h1>
-    <p class="lead">Reading, writing and language games.</p>
+    <h1 class="display-4">@lang('html5games.language')</h1>
+    <p class="lead">@lang('html5games.languagetext')</p>
   </div>
   <br />
 
