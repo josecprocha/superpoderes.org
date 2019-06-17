@@ -1,36 +1,74 @@
 <!--
 A Pen created at CodePen.io. You can find this one at https://codepen.io/jcoulterdesign/pen/NOMeEb.
 
-My contribution to the Codepen Halloween challenge. Lot's of stuff going on here. The concept initially started off as a simple 'Walk down a corridor and avoid traps' game, but it just kinda escalated from there. I decided i wanted to go up and down, solve puzzles etc.
+My contribution to the Codepen Halloween challenge. Lot's of stuff going on
+here. The concept initially started off as a simple 'Walk down a corridor and
+avoid traps' game, but it just kinda escalated from there. I decided i wanted
+to go up and down, solve puzzles etc.
 
-The logic behind it is actually relatively simple and uses a 7+ year old technique. By clicking on an arrow (in this case a label), it checks the relevant input and then using the : checked pseudo selector, we can traverse down the DOM the correct amount of iterations and shift the entire viewport a whole 'segment' over. The lifts work entirely the same way except instead when we click down, we are actually checking the segment below.
+The logic behind it is actually relatively simple and uses a 7+ year old
+technique. By clicking on an arrow (in this case a label), it checks the
+relevant input and then using the : checked pseudo selector, we can traverse
+down the DOM the correct amount of iterations and shift the entire viewport a
+whole 'segment' over. The lifts work entirely the same way except instead when
+we click down, we are actually checking the segment below.
 
-As for game logic, we use the same concept again. The pickaxe for example is a label for a checkbox. When we click it, the checkbox is checked, then, when we click the boulder, we tell css to see if *both* the boulder and pickaxe inputs are checked. If it is, display it none, otherwise show a message.
+As for game logic, we use the same concept again. The pickaxe for example is a
+label for a checkbox. When we click it, the checkbox is checked, then, when we
+click the boulder, we tell css to see if *both* the boulder and pickaxe inputs
+are checked. If it is, display it none, otherwise show a message.
 
-Don't ask how i did the lock mechanism....i kinda fluked it somehow. Just a bunch of check boxes overlayed on top of each other. They hide when clicked to show the one underneath. As for how the code is checked, take a look at the checkCode mixin.
+Don't ask how i did the lock mechanism....i kinda fluked it somehow. Just a
+bunch of check boxes overlayed on top of each other. They hide when clicked to
+show the one underneath. As for how the code is checked, take a look at the
+checkCode mixin.
 
-Everything else is pretty standard. Bunch of animations, a circular clipping mask for the game viewport etc.
+Everything else is pretty standard. Bunch of animations, a circular clipping
+mask for the game viewport etc.
 
-I added a bunch of mixins to help add animated sprites, object comparisons and interactive items into the grid. Things like makeInteractiveObjectAt($objectID, $Segment, $Tile)
+I added a bunch of mixins to help add animated sprites, object comparisons and
+interactive items into the grid. Things like makeInteractiveObjectAt($objectID,
+$Segment, $Tile)
 
-The sprites were drawn by me in Pyxel (would not have been able to do this if i hadnt bought it). Unfortunately i'm not a pixel artist, i really wish i was because this would really have the quality feel i wanted. If you're a pixel artist and would like to contribute though.... :)
+The sprites were drawn by me in Pyxel (would not have been able to do this if I
+hadnt bought it). Unfortunately i'm not a pixel artist, i really wish i was
+because this would really have the quality feel i wanted. If you're a pixel
+artist and would like to contribute though.... :)
 
-I had some potential pitfalls along the way. One of them being an intermittent 413 error from Codepen. I think this had something to do with the compiled SASS being too large. It forced me to rethink some of the ways things were written. It is however, still very very un-optimised. It started off being extremely versatile, change a few numbers here and boom different sized level, all inputs and label generated for you. But now if i change a digit somewhere it will more than likely destroy the massive chain of interactions.
+I had some potential pitfalls along the way. One of them being an intermittent
+413 error from Codepen. I think this had something to do with the compiled
+SASS being too large. It forced me to rethink some of the ways things were
+written. It is however, still very very un-optimised. It started off being
+extremely versatile, change a few numbers here and boom different sized level,
+all inputs and label generated for you. But now if i change a digit somewhere
+it will more than likely destroy the massive chain of interactions.
 -->
 
 <!--
-Copyright (c) 2019 by Jamie Coulter (https://codepen.io/jcoulterdesign/pen/NOMeEb)
+Copyright (c) 2019 by Jamie Coulter
+(https://codepen.io/jcoulterdesign/pen/NOMeEb)
 
 
 Fork of an original work that is now private.
 
 
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
 <!DOCTYPE html>
@@ -52,46 +90,46 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mineLogo.gif'>
         </div>
         <div class='subtitle'>
-          <h1>A no JS Adventure game</h1>
+          <h1>@lang('game_themine.subtitle')</h1>
         </div>
         <div class='bar'>
           <div class='bar_inner'></div>
         </div>
-        <span>Loading checkboxes...</span>
+        <span>@lang('game_themine.bar')</span>
       </div>
     </div>
     <div class='game_intro'>
       <input checked='checked' class='dialogue' id='intro-1' name='intro' type='radio'>
       <div class='dialogue'>
-        Ahhhhhhh!!
+        @lang('game_themine.dialogue_intro_1')
         <label for='intro-2'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
         </label>
       </div>
       <input class='dialogue' id='intro-2' name='intro' type='radio'>
       <div class='dialogue'>
-        The floor just collapsed under me
+        @lang('game_themine.dialogue_intro_2')
         <label for='intro-3'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
         </label>
       </div>
       <input class='dialogue' id='intro-3' name='intro' type='radio'>
       <div class='dialogue'>
-        Geez it sure is dark in here
+        @lang('game_themine.dialogue_intro_3')
         <label for='intro-4'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
         </label>
       </div>
       <input class='dialogue' id='intro-4' name='intro' type='radio'>
       <div class='dialogue'>
-        Let me light my torch...
+        @lang('game_themine.dialogue_intro_4')
         <label for='intro-5'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
         </label>
       </div>
       <input class='dialogue' id='intro-5' name='intro' type='radio'>
       <div class='dialogue end'>
-        Better. Need to find a way out.
+        @lang('game_themine.dialogue_intro_5')
       </div>
       <input class='dialogue' id='intro-6' name='intro' type='radio'>
       <div class='overlay'></div>
@@ -389,7 +427,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='1' for='interactiveObject1'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'>
               <div class='response'>
-                Nothing useful in here
+                @lang('game_themine.nothing1')
               </div>
             </label>
           </div>
@@ -560,7 +598,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='8' for='interactiveObject8'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                A strange note
+                @lang('game_themine.note')
               </div>
             </label>
           </div>
@@ -625,10 +663,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='3' for='interactiveObject3'>
               <img class='forced' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_062.png'>
               <div class='responseSuccess'>
-                Ha! That got it
+                @lang('game_themine.gotit')
               </div>
               <div class='forcedResponse'>
-                I need a tool to get past this
+                @lang('game_themine.needtool')
                 <label for='interactiveObject3'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -694,7 +732,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='4' for='interactiveObject4'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_166.png'>
               <div class='response'>
-                That seemed to do something...
+                @lang('game_themine.something')
               </div>
             </label>
           </div>
@@ -928,7 +966,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='21' for='interactiveObject21'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-25.png'>
               <div class='response'>
-                Nothing i can use
+                @lang('game_themine.nothing2')
               </div>
             </label>
           </div>
@@ -937,7 +975,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='2' for='interactiveObject2'>
               <img class='object' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_035.png'>
               <div class='response'>
-                A pickaxe. This should come in handy
+                @lang('game_themine.pickaxe')
               </div>
             </label>
           </div>
@@ -1105,7 +1143,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='15' for='interactiveObject15'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_161.png'>
               <div class='response'>
-                Dynamite sticks
+                @lang('game_themine.dynamite')
               </div>
             </label>
           </div>
@@ -1278,7 +1316,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='6' for='interactiveObject6'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                A Plank of wood
+                @lang('game_themine.wood')
               </div>
             </label>
           </div>
@@ -1341,7 +1379,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='18' for='interactiveObject18'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'>
               <div class='response'>
-                Nothing useful in here
+                @lang('game_themine.nothing1')
               </div>
             </label>
           </div>
@@ -1514,7 +1552,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='19' for='interactiveObject19'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                Full of junk
+                @lang('game_themine.junk')
               </div>
             </label>
           </div>
@@ -1632,7 +1670,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='17' for='interactiveObject17'>
               <img class='forced' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_168.png'>
               <div class='forcedResponse'>
-                If only i had some dynamite &amp; fuses
+                @lang('game_themine.ifonly')
                 <label for='interactiveObject17'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -1745,7 +1783,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='12' for='interactiveObject12'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                Cog handle
+                @lang('game_themine.cog')
               </div>
             </label>
           </div>
@@ -1863,7 +1901,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='11' for='interactiveObject--lock'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/doorLocked.png'>
               <div class='response'>
-                A locked door
+                @lang('game_themine.door')
               </div>
             </label>
           </div>
@@ -1926,10 +1964,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='7' for='interactiveObject7'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_169.png'>
               <div class='responseSuccess'>
-                planks on
+                @lang('game_themine.planks')
               </div>
               <div class='forcedResponse'>
-                CSS won't let me jump this
+                @lang('game_themine.css')
                 <label for='interactiveObject7'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -1941,7 +1979,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='10' for='interactiveObject10'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'>
               <div class='response'>
-                A strange note
+                @lang('game_themine.note')
               </div>
             </label>
           </div>
@@ -2058,10 +2096,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='5' for='interactiveObject5'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/beam.gif'>
               <div class='responseSuccess'>
-                door gone
+                @lang('game_themine.door2')
               </div>
               <div class='forcedResponse'>
-                Something must blow this up
+                @lang('game_themine.blow')
                 <label for='interactiveObject5'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -2184,7 +2222,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='20' for='interactiveObject20'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'>
               <div class='response'>
-                Just an empty box
+                @lang('game_themine.box')
               </div>
             </label>
           </div>
@@ -2789,7 +2827,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='22' for='interactiveObject22'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                Nope empty
+                @lang('game_themine.nope')
               </div>
             </label>
           </div>
@@ -2907,10 +2945,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='13' for='interactiveObject13'>
               <img class='forced' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_148.png'>
               <div class='responseSuccess'>
-                That turned off the water
+                @lang('game_themine.water')
               </div>
               <div class='forcedResponse'>
-                There's no handle
+                @lang('game_themine.handle')
                 <label for='interactiveObject13'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -2976,7 +3014,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='14' for='interactiveObject14'>
               <img class='forced' src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/waterOn.gif'>
               <div class='forcedResponse'>
-                Cant get through here
+                @lang('game_themine.through')
                 <label for='interactiveObject14'>
                   <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrowMovement.png'>
                 </label>
@@ -3044,7 +3082,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             <label data-reference='16' for='interactiveObject16'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-_094.png'>
               <div class='response'>
-                Box of fuses
+                @lang('game_themine.fuses')
               </div>
             </label>
           </div>
@@ -3084,57 +3122,57 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       <div class='game_inventory__item'>
         <div class='item pickaxe' data-reference='0'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/apple.gif'>
-          <div class='details'>A healthy snack</div>
-          <div class='name'>Apple</div>
+          <div class='details'>@lang('game_themine.apple1')</div>
+          <div class='name'>@lang('game_themine.apple2')</div>
         </div>
         <div class='item pickaxe' data-reference='2'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/pickInventory.gif'>
-          <div class='details'>A sturdy looking pickaxe</div>
-          <div class='name'>Pickaxe</div>
+          <div class='details'>@lang('game_themine.pickaxe1')</div>
+          <div class='name'>@lang('game_themine.pickaxe2')</div>
         </div>
         <div class='item pickaxe' data-reference='6'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/plankInventory.gif'>
-          <div class='details'>A thick plank of wood</div>
-          <div class='name'>Plank</div>
+          <div class='details'>@lang('game_themine.plank1')</div>
+          <div class='name'>@lang('game_themine.plank2')</div>
         </div>
         <div class='item pickaxe' data-reference='8'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note1.gif'>
-          <div class='details'>A mysterious note</div>
-          <div class='name'>Note 1</div>
+          <div class='details'>@lang('game_themine.note4')</div>
+          <div class='name'>@lang('game_themine.note1')</div>
         </div>
         <div class='item pickaxe' data-reference='9'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note2.gif'>
-          <div class='details'>A mysterious note</div>
-          <div class='name'>Note 2</div>
+          <div class='details'>@lang('game_themine.note4')</div>
+          <div class='name'>@lang('game_themine.note2')</div>
         </div>
         <div class='item pickaxe' data-reference='10'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/note3.gif'>
-          <div class='details'>A mysterious note</div>
-          <div class='name'>Note 3</div>
+          <div class='details'>@lang('game_themine.note4')</div>
+          <div class='name'>@lang('game_themine.note3')</div>
         </div>
         <div class='item pickaxe' data-reference='12'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/handleInventory.gif'>
-          <div class='details'>Looks like its used to turn something</div>
-          <div class='name'>Handle</div>
+          <div class='details'>@lang('game_themine.handle1') </div>
+          <div class='name'>@lang('game_themine.handle2')</div>
         </div>
         <div class='item pickaxe' data-reference='15'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/dynamiteInventory.gif'>
-          <div class='details'>No good without any fuses</div>
-          <div class='name'>Dynamite sticks</div>
+          <div class='details'>@lang('game_themine.dynamite1')</div>
+          <div class='name'>@lang('game_themine.dynamite2')</div>
         </div>
         <div class='item pickaxe' data-reference='16'>
           <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/fusesInventory.gif'>
-          <div class='details'>Some fuses for dynamite</div>
-          <div class='name'>Fuses</div>
+          <div class='details'>@lang('game_themine.fuses1')</div>
+          <div class='name'>@lang('game_themine.fuses2')</div>
         </div>
       </div>
     </div>
     <div class='game_win'>
       <div class='game_win__inner'>
         <div class='character'></div>
-        <p>Thanks for playing</p>
-        <a href='https://www.codepen.io/jcoulterdesign' target='_blank'>Follow me on codepen</a>
-        <span>for more shenanigans</span>
+        <p>@lang('game_themine.thanks')</p>
+        <a href='https://www.codepen.io/jcoulterdesign' target='_blank'>@lang('game_themine.follow')</a>
+        <span>@lang('game_themine.shenanigans')</span>
       </div>
     </div>
   </div>
