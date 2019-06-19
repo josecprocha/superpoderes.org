@@ -1,15 +1,17 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/**
+ * This file is part of "School of Super Powers" Project.
+ *
+ * @author (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+ *
+ * This source file is subject to the {@license ISC} license that is bundled
+ * with this source code in the file LICENSE.md. Source is available in {@link
+ * https://github.com/josecprocha/superpowers}.
+ *
+ * Made with Laravel — {@see https://github.com/laravel/laravel to know more
+ * about this framework}.
+ */
 
 Route::get('/', function () {
     return view('welcome');
@@ -54,7 +56,15 @@ Route::get('third_party', function () {
 // Selected codepen.io games.
 
 Route::get('third_party/html5', function () {
-    return view('third_party.html5.html5select')->with('array', json_decode(file_get_contents('../resources/views/third_party/html5/html5games.json'), true)); // Game Select
+    return view('third_party.html5.html5select')
+        ->with(
+            'array',
+            json_decode(
+                file_get_contents('../resources/views/third_party/html5/html5games.json'),
+                true
+            )
+        )
+    ;
 });
 
 // Mouse

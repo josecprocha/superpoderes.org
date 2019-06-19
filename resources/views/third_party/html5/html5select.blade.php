@@ -9,8 +9,22 @@
   <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
 </head>
 <body>
-
   <br />
+
+  <?php
+  $laravelMouse = collect($array['mouse']);
+  $laravelKeyboard = collect($array['keyboard']);
+  $laravelPuzzle = collect($array['puzzle']);
+  $laravelExperiment = collect($array['experiment']);
+  $laravelArt = collect($array['art']);
+  $laravelEsports = collect($array['esports']);
+  $laravelMemory = collect($array['memory']);
+  $laravelFriends = collect($array['friends']);
+  $laravelFun = collect($array['fun']);
+  $laravelMath = collect($array['math']);
+  $laravelLanguage = collect($array['language']);
+  ?>
+
   <div class="jumbotron text-white rounded bg-dark"
     style="
     background-image: url('https://images.unsplash.com/photo-1554576575-a4e7b6e8409d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2048&q=80');
@@ -40,7 +54,7 @@
 
 	<div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['mouse'] as $mouse)
+      @foreach($laravelMouse->sortBy('name') as $mouse)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($mouse['enabled'])
@@ -83,7 +97,7 @@
 
 	<div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['keyboard'] as $keyboard)
+      @foreach($laravelKeyboard->sortBy('name') as $keyboard)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($keyboard['enabled'])
@@ -126,7 +140,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['puzzle'] as $puzzle)
+      @foreach($laravelPuzzle->sortBy('name') as $puzzle)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($puzzle['enabled'])
@@ -169,7 +183,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['experiment'] as $experiment)
+      @foreach($laravelExperiment->sortBy('name') as $experiment)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($experiment['enabled'])
@@ -212,7 +226,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['art'] as $art)
+      @foreach($laravelArt->sortBy('name') as $art)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($art['enabled'])
@@ -255,7 +269,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['esports'] as $esports)
+      @foreach($laravelEsports->sortBy('name') as $esports)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($esports['enabled'])
@@ -298,7 +312,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['memory'] as $memory)
+      @foreach($laravelMemory->sortBy('name') as $memory)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($memory['enabled'])
@@ -341,7 +355,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['friends'] as $friends)
+      @foreach($laravelFriends->sortBy('name') as $friends)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($friends['enabled'])
@@ -384,7 +398,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['fun'] as $fun)
+      @foreach($laravelFun->sortBy('name') as $fun)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($fun['enabled'])
@@ -427,7 +441,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['math'] as $math)
+      @foreach($laravelMath->sortBy('name') as $math)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($math['enabled'])
@@ -470,7 +484,7 @@
 
   <div class="container-fluid" id="content">
     <div class="card-deck">
-      @foreach($array['language'] as $language)
+      @foreach($laravelLanguage->sortBy('name') as $language)
 
         <div class="card align-items-center text-center mb-4" style="max-width: 15rem;">
           @if ($language['enabled'])
