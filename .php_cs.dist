@@ -38,12 +38,15 @@ $config = PhpCsFixer\Config::create()
     ->setRiskyAllowed(false)
     ->setRules([
         // More info: vendor\friendsofphp\php-cs-fixer\src\RuleSet.php
-        '@PHP56Migration' => true,
-        '@PHPUnit60Migration:risky' => false,
+        '@PHP73Migration' => true,
+        //'@PHP73Migration:risky' => false,
+        //'@PHPUnit73Migration:risky' => false,
         '@PhpCsFixer' => true, // include Symfony, whose include PSR2.
         '@PhpCsFixer:risky' => false,
         'header_comment' => ['header' => $header, 'commentType' => 'PHPDoc'],
-        'list_syntax' => ['syntax' => 'long'],
+        'method_argument_space' => ['on_multiline' => 'ensure_fully_multiline'],
+        // 'list_syntax' => ['syntax' => 'short'],
+        // 'array_syntax' => ['syntax' => 'short'],
     ])
     ->setFinder($finder)
 ;
