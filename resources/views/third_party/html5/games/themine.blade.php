@@ -848,7 +848,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             <label data-reference='9' for='interactiveObject9'>
               <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/creepyCorridor-24.png'>
               <div class='response'>
-                A strange note
+                @lang('game_themine.note')
               </div>
             </label>
           </div>
