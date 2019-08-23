@@ -127,6 +127,7 @@ mix
     'public/js/jquery.mobile.js',
   )
   //.js('node_modules/jquery-ui/build/release.js', 'public/js/jquery-ui.js')
+  .copy('node_modules/konami/konami.js', 'public/js/konami.js')
   .copy('node_modules/matter-js/build/matter.js', 'public/js/matter.js')
   .copy('node_modules/modernizr/src/Modernizr.js', 'public/js/modernizr.js')
   .copy('node_modules/normalize.css/normalize.css', 'public/css/normalize.css')

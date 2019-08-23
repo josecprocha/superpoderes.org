@@ -55,6 +55,7 @@
     "/js/jquery.min.js": "/js/jquery.min.js",
     "/js/jquery.slim.min.js": "/js/jquery.slim.min.js",
     "/js/jquery.mobile.js": "/js/jquery.mobile.js",
+    "/js/konami.js": "/js/konami.js",
     "/js/matter.js": "/js/matter.js",
     "/js/modernizr.js": "/js/modernizr.js",
     "/css/normalize.css": "/css/normalize.css",

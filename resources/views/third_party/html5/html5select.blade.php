@@ -7,6 +7,12 @@
   <title>Choose Your Game</title>
   {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
   <link rel="stylesheet" href="{!! asset('css/app.css') !!}" />
+  <script src="{!! asset('js/konami.js') !!}"></script>
+  <audio id="AYBABTU">
+    <source src="{!! asset('audio/invasion_of_the_gabber_rob.ogg') !!}" type="audio/ogg">
+    <source src="{!! asset('audio/invasion_of_the_gabber_rob.mp3') !!}" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 </head>
 <body>
   <br />
@@ -512,6 +518,13 @@
   </div>
 
   <script src="{!! asset('js/app.js') !!}"></script>
+  <script>
+    var easter_egg = new Konami(function() {
+      var music = document.getElementById("AYBABTU");
+      music.play();
+      //alert('ALL YOUR BASE ARE BELONG TO US!');
+    });
+  </script>
 
 </body>
 </html>

@@ -16960,7 +16960,7 @@ return jQuery;
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
- * Copyright JS Foundation and other contributors <https://js.foundation/>
+ * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
  * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
@@ -16971,7 +16971,7 @@ return jQuery;
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.11';
+  var VERSION = '4.17.15';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -19630,16 +19630,10 @@ return jQuery;
         value.forEach(function(subValue) {
           result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack));
         });
-
-        return result;
-      }
-
-      if (isMap(value)) {
+      } else if (isMap(value)) {
         value.forEach(function(subValue, key) {
           result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack));
         });
-
-        return result;
       }
 
       var keysFunc = isFull
@@ -20563,8 +20557,8 @@ return jQuery;
         return;
       }
       baseFor(source, function(srcValue, key) {
+        stack || (stack = new Stack);
         if (isObject(srcValue)) {
-          stack || (stack = new Stack);
           baseMergeDeep(object, source, key, srcIndex, baseMerge, customizer, stack);
         }
         else {
@@ -22381,7 +22375,7 @@ return jQuery;
       return function(number, precision) {
         number = toNumber(number);
         precision = precision == null ? 0 : nativeMin(toInteger(precision), 292);
-        if (precision) {
+        if (precision && nativeIsFinite(number)) {
           // Shift with exponential notation to avoid floating-point issues.
           // See [MDN](https://mdn.io/round#Examples) for more details.
           var pair = (toString(number) + 'e').split('e'),
@@ -23564,7 +23558,7 @@ return jQuery;
     }
 
     /**
-     * Gets the value at `key`, unless `key` is "__proto__".
+     * Gets the value at `key`, unless `key` is "__proto__" or "constructor".
      *
      * @private
      * @param {Object} object The object to query.
@@ -23572,6 +23566,10 @@ return jQuery;
      * @returns {*} Returns the property value.
      */
     function safeGet(object, key) {
+      if (key === 'constructor' && typeof object[key] === 'function') {
+        return;
+      }
+
       if (key == '__proto__') {
         return;
       }
@@ -27372,6 +27370,7 @@ return jQuery;
           }
           if (maxing) {
             // Handle invocations in a tight loop.
+            clearTimeout(timerId);
             timerId = setTimeout(timerExpired, wait);
             return invokeFunc(lastCallTime);
           }
@@ -31758,9 +31757,12 @@ return jQuery;
       , 'g');
 
       // Use a sourceURL for easier debugging.
+      // The sourceURL gets injected into the source that's eval-ed, so be careful
+      // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
+      // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
       var sourceURL = '//# sourceURL=' +
-        ('sourceURL' in options
-          ? options.sourceURL
+        (hasOwnProperty.call(options, 'sourceURL')
+          ? (options.sourceURL + '').replace(/[\r\n]/g, ' ')
           : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
@@ -31793,7 +31795,9 @@ return jQuery;
 
       // If `variable` is not specified wrap a with-statement around the generated
       // code to add the data object to the top of the scope chain.
-      var variable = options.variable;
+      // Like with sourceURL, we take care to not check the option's prototype,
+      // as this configuration is a code injection vector.
+      var variable = hasOwnProperty.call(options, 'variable') && options.variable;
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
       }
@@ -33998,10 +34002,11 @@ return jQuery;
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
       var lodashFunc = lodash[methodName];
       if (lodashFunc) {
-        var key = (lodashFunc.name + ''),
-            names = realNames[key] || (realNames[key] = []);
-
-        names.push({ 'name': methodName, 'func': lodashFunc });
+        var key = lodashFunc.name + '';
+        if (!hasOwnProperty.call(realNames, key)) {
+          realNames[key] = [];
+        }
+        realNames[key].push({ 'name': methodName, 'func': lodashFunc });
       }
     });
 
@@ -49854,40 +49859,40 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\less\third_party_html5\mahjongg.less */"./resources/less/third_party_html5/mahjongg.less");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\node_modules\bootstrap\scss\bootstrap.scss */"./node_modules/bootstrap/scss/bootstrap.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\platform.scss */"./resources/sass/third_party_html5/platform.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\reactionB.scss */"./resources/sass/third_party_html5/reactionB.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\shootthetarget.scss */"./resources/sass/third_party_html5/shootthetarget.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\fish.scss */"./resources/sass/third_party_html5/fish.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\vdasteroids.sass */"./resources/sass/third_party_html5/vdasteroids.sass");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\breakout.scss */"./resources/sass/third_party_html5/breakout.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\whackamoleB.scss */"./resources/sass/third_party_html5/whackamoleB.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\shootinghoops.scss */"./resources/sass/third_party_html5/shootinghoops.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\cybersnake.scss */"./resources/sass/third_party_html5/cybersnake.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\hanoi.scss */"./resources/sass/third_party_html5/hanoi.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\gomoku.scss */"./resources/sass/third_party_html5/gomoku.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\chroma.scss */"./resources/sass/third_party_html5/chroma.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\15.scss */"./resources/sass/third_party_html5/15.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\themine.scss */"./resources/sass/third_party_html5/themine.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\align4.scss */"./resources/sass/third_party_html5/align4.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\tetrisB.scss */"./resources/sass/third_party_html5/tetrisB.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\solitaire.scss */"./resources/sass/third_party_html5/solitaire.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\noughtsncrosses.scss */"./resources/sass/third_party_html5/noughtsncrosses.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\risk.scss */"./resources/sass/third_party_html5/risk.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\planetsquiz.scss */"./resources/sass/third_party_html5/planetsquiz.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\lunarlander.scss */"./resources/sass/third_party_html5/lunarlander.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\multiplicationtoy.scss */"./resources/sass/third_party_html5/multiplicationtoy.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\pianokeyboard.scss */"./resources/sass/third_party_html5/pianokeyboard.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\animatedguitar.scss */"./resources/sass/third_party_html5/animatedguitar.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\memory.scss */"./resources/sass/third_party_html5/memory.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\dots.scss */"./resources/sass/third_party_html5/dots.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\arithmetic.sass */"./resources/sass/third_party_html5/arithmetic.sass");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\2048.scss */"./resources/sass/third_party_html5/2048.scss");
-__webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\3072.scss */"./resources/sass/third_party_html5/3072.scss");
-module.exports = __webpack_require__(/*! E:\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\wordsearch2.scss */"./resources/sass/third_party_html5/wordsearch2.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\less\third_party_html5\mahjongg.less */"./resources/less/third_party_html5/mahjongg.less");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\node_modules\bootstrap\scss\bootstrap.scss */"./node_modules/bootstrap/scss/bootstrap.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\platform.scss */"./resources/sass/third_party_html5/platform.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\reactionB.scss */"./resources/sass/third_party_html5/reactionB.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\shootthetarget.scss */"./resources/sass/third_party_html5/shootthetarget.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\fish.scss */"./resources/sass/third_party_html5/fish.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\vdasteroids.sass */"./resources/sass/third_party_html5/vdasteroids.sass");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\breakout.scss */"./resources/sass/third_party_html5/breakout.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\whackamoleB.scss */"./resources/sass/third_party_html5/whackamoleB.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\shootinghoops.scss */"./resources/sass/third_party_html5/shootinghoops.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\cybersnake.scss */"./resources/sass/third_party_html5/cybersnake.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\hanoi.scss */"./resources/sass/third_party_html5/hanoi.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\gomoku.scss */"./resources/sass/third_party_html5/gomoku.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\chroma.scss */"./resources/sass/third_party_html5/chroma.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\15.scss */"./resources/sass/third_party_html5/15.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\themine.scss */"./resources/sass/third_party_html5/themine.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\align4.scss */"./resources/sass/third_party_html5/align4.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\tetrisB.scss */"./resources/sass/third_party_html5/tetrisB.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\solitaire.scss */"./resources/sass/third_party_html5/solitaire.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\noughtsncrosses.scss */"./resources/sass/third_party_html5/noughtsncrosses.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\risk.scss */"./resources/sass/third_party_html5/risk.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\planetsquiz.scss */"./resources/sass/third_party_html5/planetsquiz.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\lunarlander.scss */"./resources/sass/third_party_html5/lunarlander.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\multiplicationtoy.scss */"./resources/sass/third_party_html5/multiplicationtoy.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\pianokeyboard.scss */"./resources/sass/third_party_html5/pianokeyboard.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\animatedguitar.scss */"./resources/sass/third_party_html5/animatedguitar.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\memory.scss */"./resources/sass/third_party_html5/memory.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\dots.scss */"./resources/sass/third_party_html5/dots.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\arithmetic.sass */"./resources/sass/third_party_html5/arithmetic.sass");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\2048.scss */"./resources/sass/third_party_html5/2048.scss");
+__webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\3072.scss */"./resources/sass/third_party_html5/3072.scss");
+module.exports = __webpack_require__(/*! C:\Users\candi\OneDrive\Programação\Projeto ESP\superpoderes\resources\sass\third_party_html5\wordsearch2.scss */"./resources/sass/third_party_html5/wordsearch2.scss");
 
 
 /***/ })
