@@ -519,8 +519,8 @@
 
   <script src="{!! asset('js/app.js') !!}"></script>
   <script>
-    var easter_egg = new Konami(function() {
-      var music = document.getElementById("AYBABTU");
+    let easter_egg = new Konami(function() {
+      let music = document.getElementById("AYBABTU");
       music.play();
       //alert('ALL YOUR BASE ARE BELONG TO US!');
     });
