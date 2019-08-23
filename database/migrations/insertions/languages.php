@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace Database\Migrations\Insertions; //localization;
+namespace Database\Migrations\Insertions;
+
+//localization;
 
 DB::table('languages')->insert([
     [
