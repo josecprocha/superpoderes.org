@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "C:\\Users\\candi\\OneDrive\\Programação\\Projeto ESP\\lab.superpoderes.org"
     }
   ],
   "settings": {
@@ -50,10 +53,11 @@
      */
 
     // https://marketplace.visualstudio.com/items?itemName=ikappas.phpcs
-    "phpcs.executablePath": "vendor\\squizlabs\\php_codesniffer\\bin\\phpcs",
+    "phpcs.executablePath": ".\\vendor\\bin\\phpcs",
     // https://packagist.org/packages/escapestudios/symfony2-coding-standard
-    "phpcs.standard": "vendor/escapestudios/symfony2-coding-standard/Symfony",
-    "phpcs.ignorePatterns": ["**/*.blade.php"],
+    // must run first '''vendor/bin/phpcs --config-set installed_paths vendor/escapestudios/symfony2-coding-standard'''
+    "phpcs.standard": "Symfony",
+    "phpcs.ignorePatterns": ["**/*.blade.php,/node_modules/**/*,/vendor/**/*"],
     "phpcs.showSources": true,
 
     /**
@@ -69,7 +73,7 @@
      * @see vendor/friendsofphp/php-cs-fixer/src/RuleSet.php
      */
 
-    "php-cs-fixer.executablePath": "vendor\\friendsofphp\\php-cs-fixer\\php-cs-fixer",
+    "php-cs-fixer.executablePath": "/vendor/friendsofphp/php-cs-fixer/php-cs-fixer",
     "php-cs-fixer.executablePathWindows": "php-cs-fixer.bat",
     // it needs run ```composer global require friendsofphp/php-cs-fixer```
     "php-cs-fixer.onsave": true,
