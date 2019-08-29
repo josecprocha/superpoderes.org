@@ -13,7 +13,7 @@
  * about this framework}.
  */
 
-namespace login;
+namespace Database\Migrations; //login
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
