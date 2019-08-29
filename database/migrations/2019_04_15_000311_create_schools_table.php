@@ -13,7 +13,7 @@
  * about this framework}.
  */
 
-namespace institution;
+namespace Database\Migrations; //school;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -32,7 +32,7 @@ class CreateSchoolsTable extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->bigIncrements('id');
             // educational system
-            $table->foreign('systems_id')->references('id')->on('systems');
+            $table->foreign('educational_systems_id')->references('id')->on('educational_systems');
             $table->string('school_name');
             $table->foreign('addresses_id')->references('id')->on('addresses');
             $table->string('city');

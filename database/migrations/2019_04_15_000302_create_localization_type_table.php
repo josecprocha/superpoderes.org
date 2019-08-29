@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace institution;
+namespace Database\Migrations;
+
+//school;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,17 +38,7 @@ class CreateLocalizationTypeTable extends Migration
             $table->string('localization_name');
             $table->softDeletes();
         });
-
-        DB::table('localization_type')->insert([
-            ['id' => 'BR01', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Urbana'],
-            ['id' => 'BR02', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Rural'],
-            ['id' => 'BR03', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Terra indígena'],
-            ['id' => 'BR04', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Unidade de uso sustentável'], // https://escolaeducacao.com.br/unidades-de-conservacao-biologia/
-            ['id' => 'BR05', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Unidade de uso sustentável em terra indígena'],
-            ['id' => 'BR06', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Unidade de uso sustentável em área remanescente de quilombos'],
-            ['id' => 'BR07', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Área de assentamento'],
-            ['id' => 'BR08', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'localization_name' => 'Área remanescente de quilombos'],
-        ]);
+        require 'insertions/localization_type.php';
     }
 
     /**

@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace institution;
+namespace Database\Migrations;
+
+//school;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,14 +24,14 @@ use Illuminate\Support\Facades\Schema;
 /**
  * Educational system: groups of schools under the same coordinating institution.
  */
-class CreateSystemsTable extends Migration
+class CreateEducationalSystemsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('systems', function (Blueprint $table) {
+        Schema::create('educational_systems', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreign('countries_id')->references('id')->on('countries');
             $table->string('system_name');
@@ -44,6 +46,6 @@ class CreateSystemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('systems');
+        Schema::dropIfExists('educational_systems');
     }
 }
