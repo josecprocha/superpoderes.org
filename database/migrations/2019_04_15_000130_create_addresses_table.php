@@ -13,7 +13,7 @@
  * about this framework}.
  */
 
-namespace address;
+namespace Database\Migrations; //localization;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -32,14 +32,12 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('line1'); // Street and number
-            $table->string('line2'); // District
-            // ISO 3166
+            $table->string('line2'); // Neighborhood
+            // ISO 3166 country
             $table->foreign('countries_id')->references('id')->on('countries')->default('76');
-            // UF
-            $table->foreign('country_divisions_id')->references('id')->on('country_divisions')->nullable();
-            // $table->foreign('country_divisions_br_id')->references('id')->on('country_divisions_br');
-            $table->string('city');
-            // $table->foreign('districts_br_id')->references('id')->('districts_br');
+            // Country division
+            $table->foreign('countries_divisions_id')->references('id')->on('countries_divisions')->nullable();
+            $table->foreign('districts_id')->references('id')->on('districts');
             // https://en.wikipedia.org/wiki/Postal_code
             $table->char('postal_code', 10);
             $table->timestamps();
