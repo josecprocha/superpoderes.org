@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace person;
+namespace Database\Migrations;
+
+//profile;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,14 +24,14 @@ use Illuminate\Support\Facades\Schema;
 /**
  * Less-used people's data.
  */
-class CreatePeopleMetasTable extends Migration
+class CreatePeopleMetaTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('people_metas', function (Blueprint $table) {
+        Schema::create('people_meta', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreign('people_id')->references('id')->on('people');
             $table->string('attribute_name');
@@ -43,6 +45,6 @@ class CreatePeopleMetasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people_metas');
+        Schema::dropIfExists('people_meta');
     }
 }

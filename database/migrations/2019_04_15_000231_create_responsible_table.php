@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace person;
+namespace Database\Migrations;
+
+//profile;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -31,9 +33,9 @@ class CreateResponsibleTable extends Migration
     {
         Schema::create('responsible', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('people_id')->references('id')->on('people'); // A person of legal age ...
+            $table->foreign('responsible_id')->references('id')->on('people'); // A person of legal age ...
             $table->foreign('kinships_id')->references('id')->on('kinships');
-            $table->foreign('people_id')->references('id')->on('people'); // Can be responsible for n children.
+            $table->foreign('dependent_id')->references('id')->on('people'); // Can be responsible for n children.
             $table->timestamps();
         });
     }
