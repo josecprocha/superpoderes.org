@@ -46,6 +46,6 @@ class CreateCountriesDivisionsMetaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries_divisions_br');
+        Schema::dropIfExists('countries_divisions_meta');
     }
 }
