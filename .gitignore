@@ -37,3 +37,6 @@ Homestead.json
 
 # Google Drive and Mark Folder .ini annoying files
 desktop.ini
+
+# Sensible data
+database/migrations/sensible_insertions
