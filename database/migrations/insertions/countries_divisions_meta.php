@@ -17,7 +17,7 @@ namespace Database\Migrations\Insertions;
 
 //localization;
 
-DB::table('country_divisions_metas')->insert([
+DB::table('countries_divisions_metas')->insert([
     [
         'country_divisions_id' => 'BR-DF',
         'property_name' => 'ibge_id',

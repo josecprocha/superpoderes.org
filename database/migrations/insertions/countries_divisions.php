@@ -17,7 +17,7 @@ namespace Database\Migrations\Insertions;
 
 //localization;
 
-DB::table('country_divisions')->insert([
+DB::table('countries_divisions')->insert([
     [
         'id' => 'BR-DF',
         'countries_id' => 'BR',
