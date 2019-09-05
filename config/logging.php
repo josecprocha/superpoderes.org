@@ -1,10 +1,22 @@
 <?php
 
+/**
+ * This file is part of "School of Super Powers" Project.
+ *
+ * @author (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+ *
+ * This source file is subject to the {@license ISC} license that is bundled
+ * with this source code in the file LICENSE.md. Source is available in {@link
+ * https://github.com/josecprocha/superpowers}.
+ *
+ * Made with Laravel — {@see https://github.com/laravel/laravel to know more
+ * about this framework}.
+ */
+
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Log Channel
@@ -90,5 +102,4 @@ return [
             'level' => 'debug',
         ],
     ],
-
 ];

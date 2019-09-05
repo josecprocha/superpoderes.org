@@ -1,9 +1,21 @@
 <?php
 
+/**
+ * This file is part of "School of Super Powers" Project.
+ *
+ * @author (c) José Cândido Pereira da Rocha <josecprocha@gmail.com>
+ *
+ * This source file is subject to the {@license ISC} license that is bundled
+ * with this source code in the file LICENSE.md. Source is available in {@link
+ * https://github.com/josecprocha/superpowers}.
+ *
+ * Made with Laravel — {@see https://github.com/laravel/laravel to know more
+ * about this framework}.
+ */
+
 use Illuminate\Support\Str;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -34,7 +46,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
@@ -51,12 +62,12 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
-            # MySQL 5.5.3
-            # 'collation' => 'utf8mb4_unicode_ci',
-            # MySQL 5.6
-              'collation' => 'utf8mb4_unicode_520_ci', // https://stackoverflow.com/questions/37307146/difference-between-utf8mb4-unicode-ci-and-utf8mb4-unicode-520-ci-collations-in-m
-            # MySQL 8.0
-            # 'collation' => 'utf8mb4_0900_ai_ci', // https://stackoverflow.com/questions/43644218/why-is-table-charset-set-to-utf8mb4-and-collation-to-utf8mb4-unicode-520-ci
+            // MySQL 5.5.3
+            // 'collation' => 'utf8mb4_unicode_ci',
+            // MySQL 5.6
+            'collation' => 'utf8mb4_unicode_520_ci', // https://stackoverflow.com/questions/37307146/difference-between-utf8mb4-unicode-ci-and-utf8mb4-unicode-520-ci-collations-in-m
+            // MySQL 8.0 and MariaDB 10.3
+            // 'collation' => 'utf8mb4_0900_ai_ci', // https://stackoverflow.com/questions/43644218/why-is-table-charset-set-to-utf8mb4-and-collation-to-utf8mb4-unicode-520-ci
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
@@ -91,7 +102,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
     ],
 
     /*
@@ -119,7 +129,6 @@ return [
     */
 
     'redis' => [
-
         'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
@@ -140,7 +149,5 @@ return [
             'port' => env('REDIS_PORT', 6379),
             'database' => env('REDIS_CACHE_DB', 1),
         ],
-
     ],
-
 ];
