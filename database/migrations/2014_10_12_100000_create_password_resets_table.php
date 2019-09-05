@@ -20,7 +20,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Ralated with Laravel methods for sending password reminders and perform
+ * Associated with Laravel methods to send password reminders and perform
  * password resets.
  * More information: https://laravel.com/docs/5.8/passwords.
  */

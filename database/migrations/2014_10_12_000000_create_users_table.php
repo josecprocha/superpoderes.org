@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace Database\Migrations; //login
+namespace Database\Migrations;
+
+//login
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -38,6 +40,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken(); // used by the framework to help against "remember me" cookie hijacking
             $table->timestamps();
         });
+        include 'sensible_insertions/users.php';
     }
 
     /**
