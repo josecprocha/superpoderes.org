@@ -33,12 +33,15 @@ class CreateEducationalSystemsTable extends Migration
     {
         Schema::create('educational_systems', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('countries_id')->references('id')->on('countries');
             $table->string('system_name');
+            $table->string('responsible_department_name');
+            $table->string('email');
+            $table->string('phone');
             $table->foreign('addresses_id')->references('id')->on('addresses');
             $table->foreign('administration_type_id')->references('id')->on('administration_type');
             $table->timestamps();
         });
+        include 'sensible_insertions/educational_systems.php';
     }
 
     /**
