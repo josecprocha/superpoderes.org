@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace Database\Migrations; //profile;
+namespace Database\Migrations;
+
+//profile;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -31,17 +33,17 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->bigIncrements('id'); // 18.446.744.073.709.551.615, 19 full decimal places, not 20.
-            $table->string('username')->unique();
+            $table->string('username')->unique(); // for profile page addresses, not for login
             $table->string('first_name');
             $table->string('last_name');
             $table->boolean('twin')->default(false); // Yes or no
             $table->date('birthday');
             $table->foreign('current_country')->references('id')->on('countries')->default('BR'); // ISO 3166
             $table->foreign('country_of_birth')->references('id')->on('countries')->default('BR'); // ISO 3166
-            $table->string('adorable_io'); //->default(Str::random(15)); // use Illuminate\Support\Str;
-            // $table->foreign('disabilities_id')->references('id')->on('disabilities');
+            $table->string('random_string'); // Str::random(15) // use Illuminate\Support\Str;
             $table->timestamps();
         });
+        include 'sensible_insertions/people.php';
     }
 
     /**

@@ -22,23 +22,21 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Less-used people's data.
- * Religion, church, disability, fitzpatrick, gender etc.
+ * Genders list for reference purpose.
  */
-class CreatePeopleMetaTable extends Migration
+class CreateGendersTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('people_meta', function (Blueprint $table) {
+        Schema::create('genders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('people_id')->references('id')->on('people');
-            $table->string('attribute_name');
-            $table->string('attribute_value');
-            $table->timestamps();
+            $table->string('gender_name');
+            $table->softDeletes();
         });
+        include 'insertions/genders.php';
     }
 
     /**
@@ -46,6 +44,6 @@ class CreatePeopleMetaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people_meta');
+        Schema::dropIfExists('genders');
     }
 }

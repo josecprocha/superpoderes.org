@@ -17,7 +17,7 @@ namespace Database\Migrations\Insertions;
 
 //profile;
 
-DB::table('people_kinships')->insert([
+DB::table('kinships')->insert([
     [
         'id' => 1,
         'kinship_description' => 'Parent (ascending 1st degree)',
