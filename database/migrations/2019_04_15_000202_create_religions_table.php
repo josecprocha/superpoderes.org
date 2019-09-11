@@ -37,7 +37,7 @@ class CreateReligionsTable extends Migration
             $table->string('religion_name');
             $table->softDeletes();
         });
-        include 'insertions/religions.php';
+        require 'insertions/religions.php';
     }
 
     /**
