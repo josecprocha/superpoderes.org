@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace institution;
+namespace Database\Migrations;
+
+//education workers
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -39,8 +41,12 @@ class CreateSchoolWorkersTable extends Migration
             // With an administrative or secretarial role
             $table->foreign('authority_id')->references('id')->on('authority');
             $table->string('job_title');
+            $table->year('year');
+            $table->date('entry_date');
+            $table->date('departure_date');
             $table->timestamps();
         });
+        include 'sensible_insertions/school_workers.php';
     }
 
     /**
