@@ -38,7 +38,7 @@ class CreateCountriesDivisionsMetaTable extends Migration
             $table->string('property_value');
             $table->softDeletes();
         });
-        require 'insertions/countries_divisions_meta.php';
+        require 'insertions/111_countries_divisions_meta.php';
     }
 
     /**
