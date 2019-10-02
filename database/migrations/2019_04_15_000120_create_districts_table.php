@@ -38,7 +38,7 @@ class CreateDistrictsTable extends Migration
             $table->string('district_name');
             $table->softDeletes();
         });
-        require 'insertions/districts.php';
+        require 'insertions/120_districts.php';
     }
 
     /**
