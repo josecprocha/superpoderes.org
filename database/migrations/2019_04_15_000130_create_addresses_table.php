@@ -41,7 +41,7 @@ class CreateAddressesTable extends Migration
             $table->string('postal_code'); // https://en.wikipedia.org/wiki/Postal_code
             $table->timestamps();
         });
-        include 'sensible_insertions/addresses.php';
+        include 'sensible_insertions/130_addresses.php';
     }
 
     /**
