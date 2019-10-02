@@ -36,7 +36,7 @@ class CreateKinshipsTable extends Migration
             $table->string('kinship_description');
             $table->softDeletes();
         });
-        require 'insertions/kinships.php';
+        require 'insertions/230_kinships.php';
     }
 
     /**
