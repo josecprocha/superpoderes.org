@@ -41,7 +41,7 @@ class CreateEducationalSystemsTable extends Migration
             $table->foreign('administration_type_id')->references('id')->on('administration_type');
             $table->timestamps();
         });
-        include 'sensible_insertions/educational_systems.php';
+        include 'sensible_insertions/310_educational_systems.php';
     }
 
     /**
