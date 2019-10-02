@@ -38,7 +38,7 @@ class CreateCountriesTable extends Migration
             $table->string('country_name'); // ->collation('utf8mb4_bin') não é necessário, a colação atual já é utf8mb4, já permite caracteres especiais.
             $table->softDeletes();
         });
-        require 'insertions/countries.php';
+        require 'insertions/100_countries.php';
     }
 
     /**
