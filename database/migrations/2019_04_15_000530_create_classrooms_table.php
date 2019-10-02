@@ -40,9 +40,9 @@ class CreateClassroomsTable extends Migration
             $table->string('class'); // A, B, C...
             $table->foreign('classroom_types_id')->references('id')->on('classroom_types');
             $table->foreign('shifts_id')->references('id')->on('shifts');
-            $table->unsignedTinyInteger('duration'); // school days
-            $table->date('first_day');
-            $table->date('last_day');
+            $table->unsignedTinyInteger('duration')->nullable(); // school days
+            $table->date('first_day')->nullable();
+            $table->date('last_day')->nullable();
             $table->foreign('room_id')->references('id')->on('rooms')->nullable();
             $table->timestamps();
         });
