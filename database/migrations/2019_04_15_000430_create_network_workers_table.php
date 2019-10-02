@@ -45,7 +45,7 @@ class CreateNetworkWorkersTable extends Migration
             $table->date('departure_date');
             $table->timestamps();
         });
-        include 'sensible_insertions/network_workers.php';
+        include 'sensible_insertions/430_network_workers.php';
     }
 
     /**
