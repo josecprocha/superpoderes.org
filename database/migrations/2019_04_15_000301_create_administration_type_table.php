@@ -39,7 +39,7 @@ class CreateAdministrationTypeTable extends Migration
             $table->string('info')->nullable();
             $table->softDeletes();
         });
-        require 'insertions/administration_type.php';
+        require 'insertions/301_administration_type.php';
     }
 
     /**
