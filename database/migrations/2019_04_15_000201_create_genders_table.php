@@ -36,7 +36,7 @@ class CreateGendersTable extends Migration
             $table->string('gender_name');
             $table->softDeletes();
         });
-        require 'insertions/genders.php';
+        require 'insertions/201_genders.php';
     }
 
     /**
