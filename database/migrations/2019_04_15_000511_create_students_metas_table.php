@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,6 +38,7 @@ class CreateStudentsMetasTable extends Migration
             $table->string('attribute_value');
             $table->timestamps();
         });
+        include 'sensible_insertions/511_students_meta.php';
     }
 
     /**

@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,15 +38,7 @@ class CreateEthnicitiesTable extends Migration
             $table->string('ethnicity_name');
             $table->softDeletes();
         });
-
-        DB::table('ethnicities')->insert([
-            ['id' => 'BR01', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Branca'],
-            ['id' => 'BR02', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Preta'],
-            ['id' => 'BR03', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Parda'],
-            ['id' => 'BR04', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Amarela'],
-            ['id' => 'BR05', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Indígena'],
-            ['id' => 'BR06', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'registration_name' => 'Não Declarada'],
-        ]);
+        require 'insertions/501_ethnicities.php';
     }
 
     /**
