@@ -43,7 +43,7 @@ class CreateSchoolsTable extends Migration
             $table->foreign('localization_type_id')->references('id')->on('localization_type');
             $table->timestamps();
         });
-        include 'sensible_insertions/schools.php';
+        include 'sensible_insertions/311_schools.php';
     }
 
     /**
