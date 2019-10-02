@@ -38,7 +38,7 @@ class CreateCountriesDivisionsTable extends Migration
             $table->string('category');
             $table->softDeletes();
         });
-        require 'insertions/countries_divisions.php';
+        require 'insertions/110_countries_divisions.php';
     }
 
     /**
