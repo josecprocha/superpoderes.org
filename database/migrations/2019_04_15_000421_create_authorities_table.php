@@ -39,7 +39,7 @@ class CreateAuthoritiesTable extends Migration
             $table->text('authority_description');
             $table->softDeletes();
         });
-        require 'insertions/authorities.php';
+        require 'insertions/421_authorities.php';
     }
 
     /**
