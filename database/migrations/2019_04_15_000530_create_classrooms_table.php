@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -35,12 +37,16 @@ class CreateClassroomsTable extends Migration
             $table->bigIncrements('id');
             $table->foreign('teaching_modalities_id')->references('id')->on('teaching_modalities');
             $table->foreign('modalities_seriations_id')->references('id')->on('modalities_seriations')->nullable(); // Sala de recurso não tem seriação
+            $table->string('class'); // A, B, C...
             $table->foreign('classroom_types_id')->references('id')->on('classroom_types');
-            $table->foreign('shifts_id')->references('id')->on('shift');
-            $table->char('class', 1); // A, B, C...
-            $table->foreign('teachers_id')->references('id')->on('teachers')->nullable(); // Representative teacher
+            $table->foreign('shifts_id')->references('id')->on('shifts');
+            $table->unsignedTinyInteger('duration'); // school days
+            $table->date('first_day');
+            $table->date('last_day');
+            $table->foreign('room_id')->references('id')->on('rooms')->nullable();
             $table->timestamps();
         });
+        include 'sensible_insertions/530_classrooms.php';
     }
 
     /**

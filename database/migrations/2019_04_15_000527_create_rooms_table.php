@@ -22,23 +22,24 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Aux table: List shifts of educational works.
+ * Rooms.
  */
-class CreateShiftsTable extends Migration
+class CreateRoomsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('shifts', function (Blueprint $table) {
-            $table->char('id')->primary();
-            $table->foreign('countries_id')->references('id')->on('countries');
-            $table->foreign('languages_id')->references('id')->on('languages');
-            $table->string('shifts_name');
-            $table->softDeletes();
+        Schema::create('rooms', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('room_name');
+            $table->string('room_number');
+            $table->unsignedTinyInteger('square_meters');
+            $table->foreign('school_id')->references('id')->on('schools');
+            $table->timestamps();
         });
-        require 'insertions/521_shifts.php';
+        require 'insertions/527_rooms.php';
     }
 
     /**
@@ -46,6 +47,6 @@ class CreateShiftsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shifts');
+        Schema::dropIfExists('rooms');
     }
 }

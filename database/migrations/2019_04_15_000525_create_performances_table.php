@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,17 +38,7 @@ class CreatePerformancesTable extends Migration
             $table->string('performance_name');
             $table->softDeletes();
         });
-
-        DB::table('performances')->insert([
-            ['id' => 'BR01', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Aprovado'],
-            ['id' => 'BR02', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Progressão Parcial'],
-            ['id' => 'BR03', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Retido por Frequência Insuficiente'],
-            ['id' => 'BR04', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Retido por Rendimento Insuficiente'],
-            ['id' => 'BR05', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Retido Parcialmente'],
-            ['id' => 'BR06', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Aprovado Parcialmente'],
-            ['id' => 'BR07', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Terminalidade de Estudos'],
-            ['id' => 'BR08', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'performance_name' => 'Cursando'],
-        ]);
+        require 'insertions/525_performances.php';
     }
 
     /**

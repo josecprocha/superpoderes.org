@@ -13,7 +13,9 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -36,15 +38,7 @@ class CreateDepartureKindsTable extends Migration
             $table->string('kind_name');
             $table->softDeletes();
         });
-
-        DB::table('departure_kinds')->insert([
-            ['id' => 'BR01', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Ativo'],
-            ['id' => 'BR02', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Transferido'],
-            ['id' => 'BR03', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Abandono'],
-            ['id' => 'BR04', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Não comparece'],
-            ['id' => 'BR05', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Outros'],
-            ['id' => 'BR06', 'countries_id' => 'BR', 'languages_id' => 'pt_BR', 'kind_name' => 'Remanejado'],
-        ]);
+        require 'insertions/524_departure_kinds.php';
     }
 
     /**
