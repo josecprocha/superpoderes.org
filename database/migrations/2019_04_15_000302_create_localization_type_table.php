@@ -38,7 +38,7 @@ class CreateLocalizationTypeTable extends Migration
             $table->string('localization_name');
             $table->softDeletes();
         });
-        require 'insertions/localization_type.php';
+        require 'insertions/302_localization_type.php';
     }
 
     /**
