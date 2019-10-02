@@ -46,7 +46,7 @@ class CreateSchoolWorkersTable extends Migration
             $table->date('departure_date');
             $table->timestamps();
         });
-        include 'sensible_insertions/school_workers.php';
+        include 'sensible_insertions/422_school_workers.php';
     }
 
     /**
