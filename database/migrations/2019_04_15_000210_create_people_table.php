@@ -43,7 +43,7 @@ class CreatePeopleTable extends Migration
             $table->string('random_string'); // Str::random(15) // use Illuminate\Support\Str;
             $table->timestamps();
         });
-        include 'sensible_insertions/people.php';
+        include 'sensible_insertions/210_people.php';
     }
 
     /**
