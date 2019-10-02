@@ -37,7 +37,7 @@ class CreateLanguagesTable extends Migration
             $table->string('language_en');
             $table->softDeletes();
         });
-        require 'insertions/languages.php';
+        require 'insertions/090_languages.php';
     }
 
     /**
