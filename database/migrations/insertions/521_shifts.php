@@ -19,10 +19,10 @@ namespace Database\Migrations\Insertions;
 
 DB::table('shifts')->insert([
     [
-        'id' => 'BR01',
+        'id' => 'BR00',
         'contries_id' => 'BR',
         'languages_id' => 'pt_BR',
-        'shifts_name' => 'Matutino',
+        'shifts_name' => 'Matutino (Manhã)',
     ],
     [
         'id' => 'BR01',
@@ -34,7 +34,7 @@ DB::table('shifts')->insert([
         'id' => 'BR02',
         'contries_id' => 'BR',
         'languages_id' => 'pt_BR',
-        'shifts_name' => 'Vespertino',
+        'shifts_name' => 'Vespertino (Tarde)',
     ],
     [
         'id' => 'BR03',
