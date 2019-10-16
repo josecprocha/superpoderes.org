@@ -38,7 +38,7 @@ class CreateDepartureKindsTable extends Migration
             $table->string('kind_name');
             $table->softDeletes();
         });
-        require 'insertions/524_departure_kinds.php';
+        require 'insertions/524_enrollments_status.php';
     }
 
     /**

@@ -17,7 +17,7 @@ namespace Database\Migrations\Insertions;
 
 //classroom
 
-DB::table('departure_kinds')->insert([
+DB::table('enrollments_status')->insert([
     [
         'id' => 'BR01',
         'countries_id' => 'BR',
@@ -53,5 +53,11 @@ DB::table('departure_kinds')->insert([
         'countries_id' => 'BR',
         'languages_id' => 'pt_BR',
         'kind_name' => 'Remanejado',
+    ],
+    [
+        'id' => 'BR07',
+        'countries_id' => 'BR',
+        'languages_id' => 'pt_BR',
+        'kind_name' => 'Baixa Transferência',
     ],
 ]);

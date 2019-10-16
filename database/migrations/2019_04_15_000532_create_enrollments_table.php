@@ -13,14 +13,16 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * Information about a student subcription in a classroom.
+ * Information about a student subscription in a classroom.
  */
 class CreateEnrollmentsTable extends Migration
 {
@@ -32,13 +34,16 @@ class CreateEnrollmentsTable extends Migration
         Schema::create('enrollments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->year('year');
+            $table->date('registration_date')->nullable();
             $table->foreign('students_id')->references('id')->on('students');
             $table->foreign('classrooms_id')->references('id')->on('classrooms');
             $table->unsignedTinyInteger('number')->nullable();
-            $table->date('registration_date')->nullable();
+            $table->date('departure_date')->nullable();
+            $table->foreign('enrollments_status_id')->references('id')->on('enrollments_status')->default('BR01'); // default: 'Ativo'
             $table->foreign('performances_id')->references('id')->on('performances'); // Default = 'Cursando'
             $table->timestamps();
         });
+        include 'sensible_insertions/532_enrollments.php';
     }
 
     /**

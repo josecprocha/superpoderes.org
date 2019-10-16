@@ -13,27 +13,33 @@
  * about this framework}.
  */
 
-namespace classroom;
+namespace Database\Migrations;
+
+//classroom
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 /**
- * More information about departures.
+ * More information about a student subscription in a classroom.
  */
-class CreateDeparturesMetaTable extends Migration
+class CreateEnrollmentsMetaTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up()
     {
-        Schema::create('departures_meta', function (Blueprint $table) {
+        Schema::create('enrollments_meta', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreign('departure_id')->references('id')->on('departures');
+            $table->foreign('enrollments_id')->references('id')->on('enrollments');
             $table->string('attribute_name');
+            $table->string('attribute_value');
+            $table->timestamps();
+
             /*
+            Attributes about 'departure' subject:
             $table->foreign('transferred_country_id')->references('id')->on('countries')->nullable();
             $table->foreign('transferred_country_division_id')->references('id')->on('countries_dividions')->nullable();
             $table->foreign('transferred_city_id')->references('id')->on('cities')->nullable();
@@ -43,8 +49,6 @@ class CreateDeparturesMetaTable extends Migration
             $table->boolean('abandonment_confirmed'); // Abandonment = 30% of absences or more
             $table->boolean('other'); // student died or is missing
             */
-            $table->string('attribute_value');
-            $table->timestamps();
         });
     }
 
@@ -53,6 +57,6 @@ class CreateDeparturesMetaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departures_meta');
+        Schema::dropIfExists('enrollments_meta');
     }
 }
