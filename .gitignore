@@ -39,4 +39,4 @@ Homestead.json
 desktop.ini
 
 # Sensible data
-database/migrations/sensible_insertions
+database/migrations/sensible_insertions/**
